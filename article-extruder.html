@@ -1,35 +1,136 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recycling von PA/PE-Folien | Ihor Kryazhev</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Рециклинг PA/PE пленок | Ihor Kryazhev</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',sans-serif;background:#fff;color:#1f2937;line-height:1.8}
-  .lang-bar{position:fixed;top:0;right:0;z-index:999;display:flex;gap:4px;padding:8px 14px;background:rgba(15,59,44,.95);border-bottom-left-radius:12px}
-  .lang-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:700;padding:4px 11px;cursor:pointer;border-radius:4px}
-  .lang-btn.active{background:#e67e22;border-color:#e67e22}
-  .hero{background:linear-gradient(120deg,#f0fdf4,#e6f7ef);padding:5rem 2rem 3rem;text-align:center}
-  .container{max-width:860px;margin:0 auto;padding:3rem 1.5rem}
-  h2{font-size:1.5rem;color:#0f3b2c;margin:2rem 0 1rem;border-left:4px solid #e67e22;padding-left:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1f2937;line-height:1.8;font-size:1rem}
+.lang-bar{position:fixed;top:0;right:0;z-index:999;display:flex;gap:4px;padding:8px 14px;background:rgba(15,59,44,.95);border-bottom-left-radius:12px}
+.lang-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 11px;cursor:pointer;border-radius:4px;transition:.2s}
+.lang-btn.active,.lang-btn:hover{background:#e67e22;border-color:#e67e22}
+.hero{background:linear-gradient(120deg,#f0fdf4,#e6f7ef);padding:5rem 2rem 3rem;text-align:center}
+.hero h1{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:700;color:#0f3b2c;margin-bottom:1rem;line-height:1.3}
+.hero p{font-size:1rem;color:#4b5563;max-width:700px;margin:0 auto 1.5rem}
+.btn-wa{display:inline-block;background:#25d366;color:#fff;font-weight:700;text-decoration:none;padding:.75rem 2rem;border-radius:2rem;transition:.2s}
+.btn-wa:hover{background:#1ebe5d;transform:translateY(-2px)}
+.container{max-width:860px;margin:0 auto;padding:3rem 1.5rem}
+h2{font-size:1.5rem;font-weight:700;color:#0f3b2c;margin:2.5rem 0 1rem;border-left:4px solid #e67e22;padding-left:.8rem}
+h3{font-size:1.05rem;font-weight:600;color:#111827;margin:1.5rem 0 .5rem}
+p{margin-bottom:1rem;color:#374151}
+ul{margin:.5rem 0 1rem 1.5rem;color:#374151}
+ul li{margin-bottom:.4rem}
+ol{margin:.5rem 0 1rem 1.5rem;color:#374151}
+ol li{margin-bottom:.6rem}
+.data-box{background:#f0fdf4;border:1px solid #86efac;border-radius:1rem;padding:1.5rem;margin:1.5rem 0}
+.data-box table{width:100%;border-collapse:collapse}
+.data-box td,.data-box th{padding:.5rem .8rem;text-align:left;font-size:.9rem}
+.data-box th{color:#0f3b2c;font-weight:700;border-bottom:2px solid #86efac}
+.data-box td{border-bottom:1px solid #d1fae5}
+.sources{background:#f9fafb;border:1px solid #e5e7eb;border-radius:1rem;padding:1.5rem;margin:2rem 0;font-size:.85rem;color:#6b7280}
+.sources a{color:#0f3b2c;word-break:break-all}
+.cta-box{background:#0f3b2c;color:#fff;border-radius:1.5rem;padding:2.5rem;text-align:center;margin:3rem 0}
+.cta-box h2{color:#fff;border:none;padding:0;margin:0 0 1rem}
+.cta-box p{color:#d1fae5;margin-bottom:1.5rem}
+.back{display:inline-block;margin:1rem 0 2rem;color:#0f3b2c;text-decoration:none;font-weight:600}
+.back:hover{color:#e67e22}
+@media(max-width:600px){.container{padding:2rem 1rem}}
 </style>
 </head>
 <body>
+
 <div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('de')">DE</button>
+  <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+  <button class="lang-btn" onclick="setLang('de')">DE</button>
   <button class="lang-btn" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('ru')">RU</button>
 </div>
+
 <div class="hero">
-  <h1 data-de="Recycling von PA/PE-Barrierefolien: Marktanalyse" data-en="PA/PE Multilayer Barrier Film Recycling" data-ru="Рециклинг многослойных барьерных плёнок PA/PE"></h1>
-  <p data-de="Analytik und Lösungen für die Extrusion." data-en="Analysis and solutions for extrusion." data-ru="Аналитика и решения для экструзии."></p>
+  <h1 data-ru="Рециклинг многослойных барьерных плёнок PA/PE: анализ рынка, скрытые убытки и технологический тупик упаковщиков в Германии" data-de="Recycling von PA/PE-Barrierefolien: Marktanalyse, versteckte Verluste und technologische Sackgasse der Verpackungshersteller in Deutschland" data-en="PA/PE Multilayer Barrier Film Recycling: Market Analysis, Hidden Losses and Technological Dead End for Packaging Manufacturers in Germany"></h1>
+  <p data-ru="Глубокий аналитический обзор. Мюнхен, Германия." data-de="Tiefgreifende analytische Übersicht. München, Deutschland." data-en="In-depth analytical overview. Munich, Germany."></p>
+  <a href="https://wa.me/4915258400610" class="btn-wa">WhatsApp: +49 152 58400610</a>
 </div>
+
 <div class="container">
-  <h2 data-de="Marktanalyse" data-en="Market Analysis" data-ru="Анализ рынка"></h2>
-  <p data-de="Deutschland hält mit 21% die Führung." data-en="Germany leads with a 21% share." data-ru="Германия лидирует с долей 21%."></p>
+  <a href="index.html" class="back">← <span data-ru="На главную" data-de="Zur Startseite" data-en="Back to home"></span></a>
+
+  <h2 data-ru="1. Анализ рынка барьерных плёнок в Германии" data-de="1. Marktanalyse für Barrierefolien in Deutschland" data-en="1. Barrier Film Market Analysis in Germany"></h2>
+  <p data-ru="Германия удерживает лидерство на европейском рынке гибкой упаковки с долей около 21%, что обусловлено мощным пищевым, химическим и фармацевтическим секторами [2,3]. Рынок оценивается примерно в 1,34 млн тонн продукции ежегодно [1]." data-de="Deutschland hält mit einem Anteil von etwa 21% die Führung auf dem europäischen Markt für flexible Verpackungen, was auf die starken Lebensmittel-, Chemie- und Pharmesektoren zurückzuführen ist [2,3]. Der Markt wird auf rund 1,34 Mio. Tonnen pro Jahr geschätzt [1]." data-en="Germany holds leadership in the European flexible packaging market with a share of around 21%, driven by its powerful food, chemical and pharmaceutical sectors [2,3]. The market is estimated at approximately 1.34 million tonnes per year [1]."></p>
+
+  <h3 data-ru="Структура PA/PE плёнок" data-de="Struktur der PA/PE-Folien" data-en="PA/PE film structure"></h3>
+  <p data-ru="Современная барьерная упаковка — вакуумные пакеты, термоусадочные плёнки, колбасные оболочки — представляет собой 5-, 7- или 9-слойные структуры. Основной объём составляет полиэтилен (PE), обеспечивающий герметичность и эластичность. Функциональный слой — полиамид (PA) — отвечает за кислородный барьер и механическую память. Содержание PA: в стандартной колбасной оболочке или вакуумной плёнке доля полиамида варьируется в пределах 10–15% [4]." data-de="Moderne Barrierefolien — Vakuumbeutel, Schrumpffolien, Wursthüllen — sind 5-, 7- oder 9-schichtige Strukturen. Den Hauptanteil bildet Polyethylen (PE) für Dichtigkeit und Elastizität. Die Funktionsschicht — Polyamid (PA) — sorgt für die Sauerstoffbarriere. PA-Anteil in Standard-Wursthüllen oder Vakuumfolien: 10–15% [4]." data-en="Modern barrier packaging — vacuum bags, shrink films, sausage casings — consists of 5-, 7- or 9-layer structures. The main volume is polyethylene (PE) for sealing and elasticity. The functional layer — polyamide (PA) — provides oxygen barrier and mechanical memory. PA content in standard sausage casings or vacuum films: 10–15% [4]."></p>
+
+  <h3 data-ru="Ключевые игроки рынка Германии" data-de="Wichtigste Marktteilnehmer in Deutschland" data-en="Key market players in Germany"></h3>
+  <ul>
+    <li>Amcor (центры в Германии, включая поглощение Berry Global)</li>
+    <li>SÜDPACK Holding GmbH (лидер в области многослойных плёнок) [1]</li>
+    <li>Wipak (специализация на высокобарьерных решениях)</li>
+    <li>Innovia Films, Berry Global [1]</li>
+  </ul>
+
+  <h2 data-ru="2. Проблема технологических отходов: масштаб и структура" data-de="2. Das Problem der Produktionsabfälle: Ausmaß und Struktur" data-en="2. Production Waste Problem: Scale and Structure"></h2>
+  <p data-ru="По данным PlasticsEurope, средний объём технологических отходов на линиях соэкструзии составляет 5–8% от общего выпуска продукции." data-de="Laut PlasticsEurope beträgt der durchschnittliche Anteil von Produktionsabfällen auf Coextrusionslinien 5–8% der Gesamtproduktion." data-en="According to PlasticsEurope, the average volume of production waste on coextrusion lines is 5–8% of total output."></p>
+  <h3 data-ru="Основные категории отходов" data-de="Hauptkategorien der Abfälle" data-en="Main waste categories"></h3>
+  <ol>
+    <li data-ru="Кромка полотна (Trimmings) — постоянный технологический отход при обрезке экструдированного полотна" data-de="Randstreifen (Trimmings) — kontinuierlicher Prozessabfall beim Beschneiden der extrudierten Bahn" data-en="Edge trim (Trimmings) — continuous process waste from trimming the extruded web"></li>
+    <li data-ru="Сливы (Lumps/Purge) — блоки полимера при выходе на рабочий режим или смене рецептур" data-de="Purge (Lumps/Purge) — Polymerblöcke beim Hochfahren oder beim Rezepturwechsel" data-en="Purge (Lumps/Purge) — polymer blocks during startup or recipe changes"></li>
+    <li data-ru="Запускной брак — плёнка, не соответствующая стандартам при настройке линии" data-de="Anlaufausschuss — Folie, die beim Einrichten der Linie nicht den Standards entspricht" data-en="Startup rejects — film not meeting standards during line setup"></li>
+  </ol>
+  <p data-ru="Для завода мощностью 10 000 тонн/год объём таких отходов достигает 500–800 тонн ежегодно." data-de="Für ein Werk mit 10.000 Tonnen/Jahr Kapazität beträgt das Abfallvolumen 500–800 Tonnen pro Jahr." data-en="For a plant with 10,000 tonnes/year capacity, such waste volume reaches 500–800 tonnes annually."></p>
+
+  <h2 data-ru="3. Экономика: скрытые потери и налоговое давление" data-de="3. Wirtschaftlichkeit: versteckte Verluste und Steuerdruck" data-en="3. Economics: hidden losses and tax pressure"></h2>
+  <div class="data-box">
+    <table>
+      <tr><th data-ru="Параметр" data-de="Parameter" data-en="Parameter"></th><th data-ru="Значение" data-de="Wert" data-en="Value"></th></tr>
+      <tr><td data-ru="Закупка первичного композита PA/PE" data-de="Einkauf Primärkomposit PA/PE" data-en="Virgin PA/PE composite purchase"></td><td>1.85 – 2.10 €/kg</td></tr>
+      <tr><td data-ru="Реализация отходов (Production Scrap)" data-de="Verkauf von Produktionsabfällen" data-en="Production scrap sale"></td><td>0.30 – 0.40 €/kg</td></tr>
+      <tr><td data-ru="Прямые потери" data-de="Direkter Verlust" data-en="Direct loss"></td><td>~1.50 €/kg</td></tr>
+      <tr><td data-ru="Налог ЕС на нерециклируемый пластик" data-de="EU-Plastiksteuer auf nicht recycelbaren Kunststoff" data-en="EU plastic tax on non-recyclable plastic"></td><td>0.80 €/kg</td></tr>
+    </table>
+  </div>
+  <p data-ru="При объёме отходов 1 000 тонн в год прямые финансовые потери составляют 1,5 млн евро. Для крупного завода (7 000 т отходов) — до 10,5 млн евро в год." data-de="Bei 1.000 Tonnen Abfall pro Jahr betragen die direkten Verluste 1,5 Mio. Euro. Für ein großes Werk (7.000 t Abfall) — bis zu 10,5 Mio. Euro pro Jahr." data-en="With 1,000 tonnes of waste per year, direct financial losses amount to €1.5 million. For a large plant (7,000 t waste) — up to €10.5 million per year."></p>
+
+  <h2 data-ru="4. Технологические барьеры механического рециклинга" data-de="4. Technologische Barrieren des mechanischen Recyclings" data-en="4. Technological barriers of mechanical recycling"></h2>
+
+  <h3 data-ru="1. Гигроскопичность PA" data-de="1. Hygroskopizität von PA" data-en="1. PA hygroscopicity"></h3>
+  <p data-ru="Полиамид — крайне гигроскопичный материал. Согласно исследованиям SKZ Würzburg, PA-6 активно впитывает влагу из атмосферы [10]. При попадании в зону плавления экструдера (220°C+) влага вызывает гидролиз — разрыв молекулярных цепочек PA и вспенивание расплава. Результат: пористая, хрупкая гранула [4]." data-de="Polyamid ist ein extrem hygroskopisches Material. Laut SKZ Würzburg nimmt PA-6 aktiv Feuchtigkeit aus der Atmosphäre auf [10]. Bei Eintritt in die Schmelzzone des Extruders (220°C+) verursacht Feuchtigkeit Hydrolyse — Kettenspaltung und Schaumbildung. Ergebnis: poröses, sprödes Granulat [4]." data-en="Polyamide is an extremely hygroscopic material. According to SKZ Würzburg research, PA-6 actively absorbs moisture from the atmosphere [10]. When entering the extruder melting zone (220°C+), moisture causes hydrolysis — chain scission and melt foaming. Result: porous, brittle granules [4]."></p>
+
+  <h3 data-ru="2. Термическая деструкция адгезива" data-de="2. Thermische Zersetzung des Haftvermittlers" data-en="2. Thermal degradation of adhesive"></h3>
+  <p data-ru="Исследования IKV Aachen показывают: при достижении 230–250°C, необходимых для расплава PA, клеевой слой начинает деструктировать, образуя нагар на шнеках и забивая фильтры экструдера чёрными включениями («геликами») [4]." data-de="IKV-Aachen-Studien zeigen: Bei 230–250°C, die für die PA-Schmelze erforderlich sind, beginnt die Klebstoffschicht zu zersetzen, Ablagerungen auf den Schnecken zu bilden und die Extruderfilter mit schwarzen Einschlüssen zu verstopfen [4]." data-en="IKV Aachen research shows: at 230–250°C required for PA melt, the adhesive layer begins to degrade, forming deposits on screws and clogging extruder filters with black inclusions ('gels') [4]."></p>
+
+  <h3 data-ru="3. Реологическая несовместимость" data-de="3. Rheologische Unverträglichkeit" data-en="3. Rheological incompatibility"></h3>
+  <p data-ru="Разница температур плавления PE (105°C) и PA (220°C) составляет более 100°C. При грануляции без точной настройки PA остаётся в матрице PE в виде твёрдых островков — концентраторов напряжений. Это делает невозможным использование вторичного сырья в производстве тонких плёнок [11]." data-de="Der Schmelztemperaturunterschied zwischen PE (105°C) und PA (220°C) beträgt mehr als 100°C. Beim Granulieren ohne genaue Einstellung bleibt PA als feste Inseln in der PE-Matrix — Spannungskonzentratoren. Dies macht die Verwendung des Sekundärmaterials für Dünnfolien unmöglich [11]." data-en="The melting point difference between PE (105°C) and PA (220°C) is over 100°C. When granulating without precise tuning, PA remains in the PE matrix as solid islands — stress concentrators. This makes use of the secondary material in thin film production impossible [11]."></p>
+
+  <h2 data-ru="5. Практическое решение: механический цикл переработки" data-de="5. Praktische Lösung: mechanischer Recyclingzyklus" data-en="5. Practical solution: mechanical recycling cycle"></h2>
+  <p data-ru="Для производителей в Мюнхене и Баварии, стремящихся минимизировать потери и соответствовать нормам PPWR (Packaging and Packaging Waste Regulation) к 2030 году [3], предлагаю услуги технического аудита и настройки процесса." data-de="Für Hersteller in München und Bayern, die Verluste minimieren und die PPWR-Anforderungen bis 2030 erfüllen wollen [3], biete ich technische Audit- und Prozessoptimierungsdienstleistungen an." data-en="For manufacturers in Munich and Bavaria seeking to minimise losses and comply with PPWR (Packaging and Packaging Waste Regulation) requirements by 2030 [3], I offer technical audit and process setup services."></p>
+  <ol>
+    <li data-ru="Шредирование — подготовка первичного объёма материала" data-de="Schreddern — Vorbereitung des Primärvolumens" data-en="Shredding — primary material volume preparation"></li>
+    <li data-ru="Дробление — получение фракции нужной плотности" data-de="Mahlen — Erzielung der erforderlichen Dichtefraktion" data-en="Grinding — achieving the required density fraction"></li>
+    <li data-ru="Грануляция — настройка физики процесса для качественного сырья" data-de="Granulieren — Prozessphysik für qualitatives Rohmaterial einstellen" data-en="Granulation — setting process physics for quality raw material"></li>
+  </ol>
+
+  <div class="sources">
+    <strong>Источники / Quellen / Sources:</strong><br><br>
+    [1] Mordor Intelligence: Germany Plastic Packaging Films Market<br>
+    [2] Mordor Intelligence: Europe Flexible Packaging Market<br>
+    [3] European Commission: PPWR &amp; Plastic Tax Directives<br>
+    [4] Fraunhofer IVV / CCPE: Position Paper on Recycling Technologies for Multilayer Films<br>
+    [6] PlasticsEurope: 2023 Flexible Films Market in Europe<br>
+    [7] bvse: Marktbericht Kunststoffe 2024–2025<br>
+    [8] KI (Kunststoff Information): Polymer price indices<br>
+    [10] SKZ Würzburg: Hygroscopicity of technical polymers<br>
+    [11] ScienceDirect: Recycling of multilayer films
+  </div>
+
+  <div class="cta-box">
+    <h2 data-ru="Первая консультация — бесплатно" data-de="Erstberatung — kostenlos" data-en="First consultation — free"></h2>
+    <p data-ru="Технический аудит и настройка цикла переработки ваших отходов PA/PE. Онлайн или выезд." data-de="Technischer Audit und Einrichtung des Recyclingzyklus für Ihre PA/PE-Abfälle. Online oder vor Ort." data-en="Technical audit and setup of recycling cycle for your PA/PE waste. Online or on-site."></p>
+    <a href="https://wa.me/4915258400610" class="btn-wa">💬 WhatsApp: +49 152 58400610</a>
+  </div>
 </div>
+
 <script>
 function setLang(lang){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
@@ -37,7 +138,8 @@ function setLang(lang){
   document.querySelectorAll('[data-'+lang+']').forEach(el=>el.innerHTML=el.getAttribute('data-'+lang));
   localStorage.setItem('lang',lang);
 }
-setLang(localStorage.getItem('lang')||'de');
+const saved=localStorage.getItem('lang')||'ru';
+setLang(saved);
 </script>
 </body>
 </html>
