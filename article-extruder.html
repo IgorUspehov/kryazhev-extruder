@@ -1,3 +1,4 @@
+$(cat << 'EOT'
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -45,7 +46,7 @@ p{margin-bottom:1rem;color:#374151}
 <div class="container">
   <a href="index.html" class="back">← <span data-de="Zur Startseite" data-en="Back to home" data-ru="На главную"></span></a>
   <h2 data-de="1. Marktanalyse" data-en="1. Market Analysis" data-ru="1. Анализ рынка"></h2>
-  <p data-de="Deutschland hält mit 21% die Führung auf dem europäischen Markt für flexible Verpackungen." data-en="Germany holds leadership in the European flexible packaging market with a 21% share." data-ru="Германия удерживает лидерство на европейском рынке гибкой упаковки с долей 21%."></p>
+  <p data-de="Deutschland hält mit 21% die Führung auf dem europäischen Markt für flexible Verpackungen [2,3]." data-en="Germany holds leadership in the European flexible packaging market with a 21% share [2,3]." data-ru="Германия удерживает лидерство на европейском рынке гибкой упаковки с долей 21% [2,3]."></p>
   <div class="data-box">
     <table>
       <tr><th data-de="Parameter" data-en="Parameter" data-ru="Параметр"></th><th data-de="Wert" data-en="Value" data-ru="Значение"></th></tr>
@@ -68,3 +69,5 @@ setLang(localStorage.getItem('lang')||'de');
 </script>
 </body>
 </html>
+EOT
+)
