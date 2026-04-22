@@ -1,37 +1,54 @@
+# Technologisches Reglement für das Anfahren der Extrusionslinie
+# Technological Protocol for Extrusion Line Start-up
 # Технологический регламент запуска экструзионной линии
-**Технолог:** Игорь Успехов (Recycling & Extrusion Expert)
 
-Данный регламент описывает алгоритм вывода оборудования на рабочий режим при переработке вторичных полимеров.
-
----
-
-## 1. Подготовка и разогрев (Aufheizphase)
-
-Соблюдайте строгую очередность для защиты оборудования:
-
-* **Голова (Der Kopf):** Сначала разогреваем фильеру и адаптер. Это критично, чтобы расплав не встретил сопротивления в холодной головке.
-* **Цилиндр (Der Extruder):** После прогрева головы включаем зоны нагрева шнека.
-* **Контроль (Heizzonen):** Проверяем термопары (Thermoelemente) и вентиляторы обдува. Если зона не греет — вытащите и воткните назад термопару для восстановления контакта.
-
-## 2. Подготовка сырья (Materialvorbereitung)
-
-Для работы с вторичным сырьем (Recyclat) важна влажность и правильное смешивание:
-
-1.  **Смеситель (Mischer):** Включите смеситель, установите температуру 40-50°C для удаления поверхностной влаги.
-2.  **Загрузка:** Подача смеси в бункер (Trichter) производится только после полной стабилизации температур зон.
-
-## 3. Пуск и настройка (Anfahren und Einstellung)
-
-* **Старт шнека:** Включаем вращение на малых оборотах (Schneckendrehzahl). Внимательно смотрим на выход расплава из головы.
-* **Контроль изделия:** Формируем изделие (пленка, лист или садовая сетка). Проверяем ширину (Breite) и толщину (Dicke).
-* **Регулировка:**
-    * **Толщина:** Изменяем скорость вытяжных валов (Abzugswalzen). Выше скорость — тоньше изделие.
-    * **Масса:** Регулируем скорость шнека (Drehzahl). Больше оборотов — больше массы.
-    * **Ширина:** Настройка производится прижимными валами или калибратором.
+**Experte:** Igor Uspehov (Recycling & Extrusion Specialist)
 
 ---
 
-## Технический сервис:
-* Оптимизация рецептур под ПТР (MFR) заказчика.
-* Настройка оборудования под садовую сетку, пленку и лист.
-* Минимизация брака при переработке вторичных полимеров.
+## 1. Aufheizphase (Pre-heating / Разогрев) — STRIKTE REIHENFOLGE
+
+| DE | EN | RU |
+| :--- | :--- | :--- |
+| **1. DER KOPF:** Zuerst die Heizung des Kopfes einschalten. | **1. THE HEAD:** Turn on head heating first. | **1. ГОЛОВА:** Сначала включаем нагрев головы. |
+| **2. DER EXTRUDER:** Danach Heizzonen des Zylinders einschalten. | **2. THE BARREL:** Then turn on barrel heating zones. | **2. ЭКСТРУДЕР:** После головы включаем зоны цилиндра. |
+| **3. KONTROLLE:** Prüfung aller Zonen, Thermoelemente und Gebläse. | **3. CONTROL:** Check all zones, thermocouples, and fans. | **3. КОНТРОЛЬ:** Проверка всех зон, термопар и обдува. |
+
+---
+
+## 2. Materialvorbereitung / Material Preparation / Подготовка сырья
+
+1. **DE:** Mischer einschalten (40-50°C), Material nach Rezeptur befüllen.
+   **EN:** Turn on mixer (40-50°C), load material according to recipe.
+   **RU:** Включить смеситель (40-50°C), засыпать сырье по рецептуре.
+
+2. **DE:** Material in den Trichter laden.
+   **EN:** Load material into the hopper.
+   **RU:** Загрузка сырья в бункер.
+
+---
+
+## 3. Anfahren und Einstellung / Start-up and Adjustment / Пуск и настройка
+
+* **DE:** Schnecke langsam einschalten. Austritt am Kopf kontrollieren.
+* **EN:** Start screw slowly. Monitor melt output from the head.
+* **RU:** Включаем шнек потихоньку. Смотрим выход из головы.
+
+* **DE:** Einstellung: Schneckendrehzahl (Masse) und Abzug (Dicke).
+* **EN:** Adjustment: Screw speed (mass) and haul-off speed (thickness).
+* **RU:** Регулировка: Скорость шнека (масса) и валов (толщина).
+
+---
+
+## 4. Formgebung / Product Shaping / Формование
+
+* **DE:** Breite und Dicke kontrollieren (Folie, Platte, Gartengitter).
+* **EN:** Check width and thickness (film, sheet, garden mesh).
+* **RU:** Контроль ширины и толщины (пленка, лист, садовая сетка).
+
+---
+
+**Expertise:**
+- Sekundärrohstoffe / Recycled Polymers (Вторичное сырье).
+- Optimierung der MFR-Rezepturen (ПТР).
+- Prozessstabilisierung und Abfallminimierung.
