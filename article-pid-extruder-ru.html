@@ -2,28 +2,51 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Настройка ПИД-регулятора экструдера на Python - Игорь Кряжев</title>
+    <title>ПИД-регулирование экструдера — Игорь Кряжев</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
-        h1 { color: #0a2e52; border-bottom: 2px solid #ff9800; }
-        h2 { color: #0a2e52; margin-top: 30px; }
-        pre { background: #f4f4f4; padding: 15px; border-left: 5px solid #0a2e52; overflow-x: auto; font-size: 0.9rem; }
+        body { font-family: Arial, sans-serif; line-height: 1.8; color: #1a1a1a; max-width: 1000px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
+        h1 { color: #0a2e52; border-bottom: 4px solid #ff9800; padding-bottom: 15px; }
+        h2 { color: #0a2e52; margin-top: 40px; background: #eef4f9; border-left: 6px solid #ff9800; padding: 10px; }
+        pre { background: #2b2b2b; color: #f8f8f2; padding: 20px; border-radius: 5px; }
+        .formula { background: #fffde7; padding: 20px; border: 1px dashed #ff9800; text-align: center; font-style: italic; }
     </style>
 </head>
 <body>
-    <h1>Настройка ПИД-регулятора для экструдера на Python</h1>
+    <h1>Математические методы стабилизации расплава: ПИД-регулятор на Python</h1>
     <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
-    <h2>1. Введение</h2>
-    <p>Экструдер — объект с транспортным запаздыванием (30–120 сек). ПИД-регулятор необходим для стабилизации производительности при изменении насыпной плотности сырья.</p>
-    <h2>2. Коэффициенты для вторичного LLDPE</h2>
-    <ul>
-        <li><strong>Kp:</strong> 0,1–0,2 (Гц на кг/ч ошибки)</li>
-        <li><strong>Ki:</strong> 0,005–0,015</li>
-        <li><strong>Kd:</strong> 0,2–0,8</li>
-    </ul>
-    <h2>3. Период дискретизации</h2>
-    <p>Оптимальный период <strong>dt = 3 секунды</strong>. Это позволяет фильтровать шумы весового дозатора и сохранять скорость реакции.</p>
-    <pre># Базовая формула в коде
-output = Kp * error + Ki * integral + Kd * derivative</pre>
+
+    <h2>1. Суть проблемы: Инерция и запаздывание</h2>
+    <p>Экструдер обладает огромной тепловой и механической инерцией. Обычное релейное управление (Вкл/Выкл) вызывает температурные "качели". Для точного удержания давления перед фильтром используется ПИД-алгоритм.</p>
+
+    <div class="formula">
+        Output(t) = Kp*e(t) + Ki*∫e(t)dt + Kd*(de/dt)
+    </div>
+
+    <h2>2. Практическая реализация алгоритма</h2>
+    <pre>
+class PIDController:
+    def __init__(self, kp, ki, kd):
+        self.kp, self.ki, self.kd = kp, ki, kd
+        self.prev_error = 0
+        self.integral = 0
+
+    def update(self, setpoint, measured_value, dt=1):
+        error = setpoint - measured_value
+        self.integral += error * dt
+        # Ограничение для исключения перерегулирования
+        self.integral = max(-50, min(50, self.integral))
+        derivative = (error - self.prev_error) / dt
+        
+        output = (self.kp * error) + (self.ki * self.integral) + (self.kd * derivative)
+        self.prev_error = error
+        return output
+
+# Пример: поддержание давления 120 бар
+pid = PIDController(kp=1.2, ki=0.5, kd=0.1)
+new_speed = pid.update(120, 118.5)
+    </pre>
+
+    <h2>3. Настройка коэффициентов на линии</h2>
+    <p>Начинайте с Kp. Увеличивайте его до появления автоколебаний, затем уменьшите вдвое. Добавляйте Ki для устранения статической ошибки. Kd используйте осторожно — он чувствителен к шумам датчиков давления.</p>
 </body>
 </html>
