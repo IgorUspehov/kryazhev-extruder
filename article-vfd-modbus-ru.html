@@ -2,69 +2,21 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Управление ЧП по Modbus TCP — Игорь Кряжев</title>
+    <title>Modbus TCP управление — Игорь Кряжев</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.8; color: #1a1a1a; max-width: 1000px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
         h1 { color: #0a2e52; border-bottom: 4px solid #ff9800; padding-bottom: 15px; }
         h2 { color: #0a2e52; margin-top: 40px; background: #eef4f9; border-left: 6px solid #ff9800; padding: 10px; }
+        .tech-card { border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px; background: #fff; }
         pre { background: #2b2b2b; color: #f8f8f2; padding: 20px; border-radius: 5px; overflow-x: auto; }
-        .tech-box { border: 2px solid #0a2e52; padding: 20px; margin: 20px 0; border-radius: 8px; background: #fff; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background: #0a2e52; color: white; }
     </style>
 </head>
 <body>
-    <h1>Промышленная автоматизация: Управление частотным преобразователем по протоколу Modbus TCP на Python</h1>
+    <h1>Управление ЧП по Modbus TCP</h1>
     <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
-
-    <h2>1. Преимущества цифрового управления</h2>
-    <p>Во вторичной переработке полимеров стабильность оборотов — залог качества. В отличие от аналогового управления (0-10В), Modbus TCP исключает влияние электромагнитных помех от нагревателей. Мы получаем полный контроль: задание частоты, чтение тока, момента и кодов ошибок по одному кабелю Ethernet.</p>
-
-    <h2>2. Настройка сетевых параметров ЧП</h2>
-    <p>Перед запуском скрипта на инверторе (Delta, ABB, Danfoss) необходимо задать статический IP (например, 192.168.1.10) и разрешить управление через коммуникационный порт.</p>
-
-    <div class="tech-box">
-        <strong>Карта регистров (стандарт):</strong>
-        <ul>
-            <li><strong>0x2000:</strong> Control Word (Bit 0-1: Run/Stop).</li>
-            <li><strong>0x2001:</strong> Frequency Command (0-5000 для 50Гц).</li>
-            <li><strong>0x2103:</strong> Output Current (Ток в амперах).</li>
-        </ul>
-    </div>
-
-    <h2>3. Программная реализация на Python</h2>
-    <p>Используем библиотеку <code>pyModbusTCP</code> для прямого управления шнеком экструдера.</p>
-    <pre>
-from pyModbusTCP.client import ModbusClient
-import time
-
-class ExtruderDrive:
-    def __init__(self, ip):
-        self.client = ModbusClient(host=ip, port=502, auto_open=True)
-
-    def set_speed(self, hz):
-        # Преобразование Гц в значение регистра
-        val = int(hz * 100)
-        if self.client.write_single_register(0x2001, val):
-            print(f"Скорость {hz} Гц установлена")
-        
-    def read_load(self):
-        # Чтение тока нагрузки
-        regs = self.client.read_holding_registers(0x2103, 1)
-        return regs[0] / 10.0 if regs else 0
-
-drive = ExtruderDrive("192.168.1.10")
-drive.set_speed(42.5)
-print(f"Текущая нагрузка: {drive.read_load()} A")
-    </pre>
-
-    <h2>4. Таблица типичных ошибок связи</h2>
-    <table>
-        <tr><th>Код ошибки</th><th>Причина</th><th>Решение</th></tr>
-        <tr><td>0x01</td><td>Illegal Function</td><td>Проверьте тип регистра (Holding/Input)</td></tr>
-        <tr><td>0x02</td><td>Illegal Data Address</td><td>Регистр не существует в этой модели ЧП</td></tr>
-        <tr><td>Timeout</td><td>Обрыв кабеля</td><td>Проверьте пинг до шлюза 502</td></tr>
-    </table>
+    <h2>1. Управление через Python</h2><p>Цифровой протокол Modbus TCP обеспечивает точность 0.01 Гц...</p><pre>client.write_single_register(0x2001, 4500)</pre>
 </body>
 </html>
