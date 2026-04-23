@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>PID-Regler für Extruder in Python - Ihor Kryazhev</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0a2e52; border-bottom: 2px solid #ff9800; }
+        h2 { color: #0a2e52; margin-top: 30px; }
+        pre { background: #f4f4f4; padding: 15px; border-left: 5px solid #0a2e52; overflow-x: auto; font-size: 0.9rem; }
+        .formula { background: #fffde7; padding: 10px; border: 1px solid #ffe57f; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Einstellung des PID-Reglers für Extruder auf Python</h1>
+    <p><strong>Autor: Ihor Kryazhev, Technologieberater</strong></p>
+    <h2>1. Einführung</h2>
+    <p>Ein Extruder ist ein System mit Totzeit. Die PID-Regelung (Proportional-Integral-Derivativ) ist notwendig, um Schwankungen der Ausstoßleistung auszugleichen, die durch Transportverzögerungen (30-120 Sek.) entstehen.</p>
+    <h2>2. Koeffizienten (Ziegler-Nichols-Methode)</h2>
+    <p>Für LLDPE-Recyclinglinien (500 kg/h) sind typische Werte:</p>
+    <ul>
+        <li><strong>Kp:</strong> 0,1 - 0,2 (Hz pro kg/h Fehler)</li>
+        <li><strong>Ki:</strong> 0,005 - 0,015</li>
+        <li><strong>Kd:</strong> 0,2 - 0,8</li>
+    </ul>
+    <h2>3. Anti-Windup und Rauschfilterung</h2>
+    <p>Um eine Sättigung des Integrators zu verhindern, wird <strong>Anti-Windup</strong> implementiert. Messrauschen der Waage wird durch einen <strong>EWMA-Filter</strong> (Exponentially Weighted Moving Average) geglättet.</p>
+    <pre># Python EWMA Filter
+filtered = alpha * measured + (1 - alpha) * last_value</pre>
+</body>
+</html>

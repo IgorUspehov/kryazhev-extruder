@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройка ПИД-регулятора экструдера на Python - Игорь Кряжев</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0a2e52; border-bottom: 2px solid #ff9800; }
+        h2 { color: #0a2e52; margin-top: 30px; }
+        pre { background: #f4f4f4; padding: 15px; border-left: 5px solid #0a2e52; overflow-x: auto; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <h1>Настройка ПИД-регулятора для экструдера на Python</h1>
+    <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
+    <h2>1. Введение</h2>
+    <p>Экструдер — объект с транспортным запаздыванием (30–120 сек). ПИД-регулятор необходим для стабилизации производительности при изменении насыпной плотности сырья.</p>
+    <h2>2. Коэффициенты для вторичного LLDPE</h2>
+    <ul>
+        <li><strong>Kp:</strong> 0,1–0,2 (Гц на кг/ч ошибки)</li>
+        <li><strong>Ki:</strong> 0,005–0,015</li>
+        <li><strong>Kd:</strong> 0,2–0,8</li>
+    </ul>
+    <h2>3. Период дискретизации</h2>
+    <p>Оптимальный период <strong>dt = 3 секунды</strong>. Это позволяет фильтровать шумы весового дозатора и сохранять скорость реакции.</p>
+    <pre># Базовая формула в коде
+output = Kp * error + Ki * integral + Kd * derivative</pre>
+</body>
+</html>
