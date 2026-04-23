@@ -14,10 +14,12 @@
         h1 { color: #0056b3; border-left: 5px solid #ff9800; padding-left: 15px; }
         h2 { color: #333; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 30px; }
         h3 { color: #0056b3; }
+        .tech-box { background: #e3f2fd; padding: 20px; border-left: 4px solid #0056b3; margin: 20px 0; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background: #f8f8f8; }
-        .tech-box { background: #e3f2fd; padding: 20px; border-left: 4px solid #0056b3; margin: 20px 0; }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -29,85 +31,111 @@
 </div>
 
 <div class="container">
-    <section class="lang-content" lang="de">
-        <h1>Doppelschneckenextrusion: Feuchtigkeitsabsorber auf Basis von Branntkalk (CaO) und LLDPE-Rezyklat</h1>
-        <p><strong>Autor: Ihor Kryazhev</strong>, Technologe</p>
-        
-        <h2>1. Zweck und Funktionsprinzip</h2>
-        <p>Der Absorber wird in Mehrschichtverpackungen eingesetzt. Die aktive Komponente – Branntkalk (CaO) – absorbiert Feuchtigkeit. Das Bindepolymer ist LLDPE-Rezyklat aus Stretchfolien. Ziel ist ein Granulat mit bis zu 70% CaO-Anhalt, ohne Agglomerate und Hohlräume.</p>
+    <section class="lang-content" lang="ru">
+        <h1>Двухшнековый экструдер для получения осушителя на основе извести и вторичного LLDPE</h1>
+        <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
 
-        <h2>2. Rohstoffanforderungen</h2>
-        <table>
-            <tr><th>Komponente</th><th>Parameter</th><th>Wert</th></tr>
-            <tr><td>CaO</td><td>Aktives Calciumoxid</td><td>85-95%</td></tr>
-            <tr><td>CaO</td><td>Partikelgröße</td><td>10-50 µm</td></tr>
-            <tr><td>LLDPE (r)</td><td>MFI (190°C/2.16kg)</td><td>2-4 g/10min</td></tr>
-            <tr><td>LLDPE (r)</td><td>Feuchtigkeit</td><td>< 0,2%</td></tr>
-        </table>
+        <h2>1. Назначение и принцип работы осушителя</h2>
+        <p>Осушитель (влагопоглотитель) в гранулированном виде используется в многослойной упаковке для продления срока хранения продуктов. Активный компонент - негашеная известь (CaO) - поглощает влагу и кислород, проникающие через пленку. Связующий полимер (в данном случае вторичный LLDPE из стрейч-пленки) удерживает частицы извести внутри гранулы и обеспечивает совместимость с основным слоем пленки.</p>
+        <p>Технологическая задача: получить равномерную гранулу с содержанием извести до 70%, в которой частицы CaO распределены в матрице LLDPE без агломератов и пустот. При этом связующий полимер не должен деструктировать при смешении с высоконаполненной композицией.</p>
 
-        <h2>3. Schneckenkonfiguration (L/D 40-48)</h2>
+        <h2>2. Требования к сырью</h2>
+        <p><strong>Известь (CaO):</strong></p>
         <ul>
-            <li><strong>Zone 1 (Einzug):</strong> Tiefe Gänge (1,2-1,5 D) für schnellen Materialeinzug.</li>
-            <li><strong>Zone 4 (Dispergierung):</strong> Knetscheiben (30-45° Winkel) bei 400-600 U/min zur Zerstörung von CaO-Agglomeraten.</li>
-            <li><strong>Zone 5 (Entgasung):</strong> Rückförderelemente + Vakuum (30-50 mbar) zur Entfernung von Restfeuchte.</li>
-            <li><strong>Zone 8 (Dosierung):</strong> Hoher Druckaufbau (50-100 bar) für die Unterwassergranulierung.</li>
+            <li>Содержание активного оксида кальция: 85-95%</li>
+            <li>Фракция: 10-50 микрон. Более крупные частицы плохо распределяются в расплаве и создают точки концентрации напряжений.</li>
+            <li>Влажность: менее 0,5%. Гидратация CaO до Ca(OH)2 снижает сорбционную емкость в 2-3 раза. Хранение извести возможно только в герметичных биг-бегах или силосах с осушенным воздухом.</li>
+        </ul>
+        <p><strong>Вторичный LLDPE из стрейч-пленки:</strong></p>
+        <ul>
+            <li>MFI: 2-4 г/10мин (190°C, 2,16 кг). Более текучий LLDPE (MFI 5-8) дает слишком низкую вязкость расплава - известь оседает в экструдере.</li>
+            <li>Плотность: 0,918-0,925 г/см³</li>
+            <li>Зольность: менее 0,3% (чистая стрейч-пленка без этикеток и клея)</li>
+            <li>Влажность перед применением: менее 0,2% (сушка в бункере 80°C, 2-3 часа)</li>
         </ul>
 
-        <h2>4. Temperaturprofil (°C)</h2>
-        <p>Einzug: 160-170 | Mischzone: 200-210 | Entgasung: 190-200 | Düse: 170-180.</p>
+        <h2>3. Подготовка сырья перед экструзией</h2>
+        <p>Предварительное смешение компонентов обязательно. Подавать известь и LLDPE отдельными дозаторами в загрузочную воронку двухшнека нельзя - известь как более тяжелая фракция будет сепарироваться.</p>
+        <p>Используется турбулентный смеситель. Режим смешения:</p>
+        <ul>
+            <li>Загружается LLDPE (гранула 3-4 мм)</li>
+            <li>Добавляется известь порциями при перемешивании</li>
+            <li>Добавляется гидрофобизатор (стеарат кальция) и антиоксидант (Irganox 1010)</li>
+            <li>Время смешения: 5-10 минут при 50-80 об/мин</li>
+        </ul>
 
-        <h2>5. Unterwassergranulierung (UWP)</h2>
-        <p>Stranggranulierung ist aufgrund der Sprödigkeit (70% Füllstoff) unmöglich. Parameter: Wassertemperatur 25-35°C, Druck 3-5 bar.</p>
+        <h2>4. Конфигурация двухшнекового экструдера</h2>
+        <p>Экструдер: co-rotating twin screw, диаметр 75-90 мм, L/D 40-48.</p>
+        <p><strong>Конфигурация шнеков:</strong></p>
+        <ul>
+            <li><strong>Зона 1 (загрузка):</strong> глубокие нарезки с шагом 1,2-1,5 диаметра.</li>
+            <li><strong>Зоны 2-3:</strong> нарезки с шагом 1,0-1,2 диаметра. Температура занижена на 10-20°C ниже температуры плавления LLDPE.</li>
+            <li><strong>Зона 4 (диспергирующее смешение):</strong> смесительные диски с углом 30-45°. Оптимальная частота вращения шнеков — 400-600 об/мин.</li>
+            <li><strong>Зона 5 (дегазация):</strong> обратные нарезки + вакуумный порт (30-50 мбар).</li>
+            <li><strong>Зоны 6-7 (финишное смешение):</strong> смесительные диски с углом 60-90°.</li>
+            <li><strong>Зона 8 (дозирование):</strong> нарезки с шагом 0,5-0,8 диаметра. Давление 50-100 бар.</li>
+        </ul>
+
+        <h2>5. Температурный профиль</h2>
+        <p><strong>Для LLDPE-связующего:</strong></p>
+        <ul>
+            <li>Зона 1: 160-170°C</li>
+            <li>Зона 2: 180-190°C</li>
+            <li>Зона 3: 190-200°C</li>
+            <li>Зона 4: 200-210°C</li>
+            <li>Зона 5: 190-200°C</li>
+            <li>Зоны 6-8: 180-190°C</li>
+            <li>Головка: 170-180°C</li>
+        </ul>
+
+        <h2>6. Рецептура композиции</h2>
+        <ul>
+            <li>Известь (CaO, 10-50 мкм): 60-70%</li>
+            <li>Вторичный LLDPE (MFI 2-4): 28-38%</li>
+            <li>Стеарат кальция: 1,5-2,0%</li>
+            <li>Irganox 1010: 0,2-0,5%</li>
+        </ul>
+
+        <h2>7. Подводная грануляция</h2>
+        <p>Стренговая грануляция неприменима из-за хрупкости (60-70% наполнения). Единственный способ — Underwater Pelletizer (UWP).</p>
+        <ul>
+            <li>Температура воды: 25-35°C</li>
+            <li>Давление воды: 3-5 бар</li>
+            <li>Скорость резки: 1500-2500 об/мин</li>
+        </ul>
+
+        <h2>8. Фильера (матрица)</h2>
+        <p>Известь — абразив. Рекомендуется карбидная фильера (ресурс 500-1000 тонн) или вставки из карбида вольфрама.</p>
+
+        <h2>9. Ножи подводного гранулятора</h2>
+        <p>Рекомендуются ножи с карбидной напайкой (ресурс 150-200 тонн). Контроль износа по току двигателя ножевой головки (рост на 15-20% — замена).</p>
+
+        <h2>10. Сушка гранулы</h2>
+        <p>Двухступенчатая: центрифуга (800-1200 об/мин) + сушильный бункер (60-80°C, 2-4 часа). Конечная влажность — не более 0,2%.</p>
+
+        <h2>11. Контроль качества</h2>
+        <ul>
+            <li>MFI (190°C, 2,16 кг): 1,5-3,5 г/10мин.</li>
+            <li>Сорбционная емкость: 10-20 г H2O на 100 г осушителя.</li>
+        </ul>
+
+        <h2>12. Типичные дефекты и их устранение</h2>
+        <ul>
+            <li><strong>Агломераты извести:</strong> увеличить долю смесительных дисков, повысить обороты.</li>
+            <li><strong>Гранула с "хвостами":</strong> износ ножей или падение давления воды.</li>
+            <li><strong>Пузыри в грануле:</strong> плохая работа дегазации или влажное сырье.</li>
+            <li><strong>Желтая гранула:</strong> перегрев, добавить антиоксидант.</li>
+        </ul>
+    </section>
+
+    <section class="lang-content" lang="de">
+        <h1>Doppelschneckenextruder für Feuchtigkeitsabsorber (CaO + rLLDPE)</h1>
+        <p>Detaillierte technische Dokumentation folgt...</p>
     </section>
 
     <section class="lang-content" lang="en">
-        <h1>Twin-Screw Extrusion: Desiccant Masterbatch (CaO + rLLDPE)</h1>
-        <p><strong>Author: Ihor Kryazhev</strong>, Consultant</p>
-        
-        <h2>1. Overview</h2>
-        <p>Active component: Quicklime (CaO). Carrier: Recycled LLDPE. Goal: Uniform pellets with 70% loading without polymer degradation.</p>
-
-        <h2>2. Material Specs</h2>
-        <ul>
-            <li><strong>CaO:</strong> 85-95% active content, 10-50 microns.</li>
-            <li><strong>rLLDPE:</strong> MFI 2-4, moisture < 0.2%.</li>
-        </ul>
-
-        <h2>3. Screw Configuration</h2>
-        <p>Co-rotating twin screw, L/D 40-48. High-shear kneading blocks in Zone 4 (400-600 RPM) are critical for breaking CaO agglomerates.</p>
-
-        <h2>4. Process Logic</h2>
-        <p>Vacuum degassing is mandatory to keep final moisture below 0.2%. Underwater pelletizing is the only viable method due to material brittleness.</p>
-    </section>
-
-    <section class="lang-content" lang="ru">
-        <h1>Двухшнековый экструдер для получения осушителя на основе извести и вторичного LLDPE</h1>
-        <p><strong>Автор: Игорь Кряжев</strong>, технолог-консультант</p>
-
-        <h2>1. Назначение и принцип работы</h2>
-        <p>Активный компонент — негашеная известь (CaO). Связующее — вторичный LLDPE. Задача: получить гранулу с наполнением до 70% без пустот и деструкции полимера.</p>
-
-        <h2>2. Требования к сырью</h2>
-        <table>
-            <tr><th>Сырье</th><th>Параметр</th><th>Значение</th></tr>
-            <tr><td>Известь (CaO)</td><td>Активность</td><td>85-95%</td></tr>
-            <tr><td>Известь (CaO)</td><td>Фракция</td><td>10-50 мкм</td></tr>
-            <tr><td>Вторичный LLDPE</td><td>ПТР (190/2.16)</td><td>2-4 г/10мин</td></tr>
-        </table>
-
-        <h2>3. Конфигурация шнеков (L/D 40-48)</h2>
-        <ul>
-            <li><strong>Зона 1:</strong> Глубокая нарезка для захвата смеси.</li>
-            <li><strong>Зона 4:</strong> Сдвиговые диски (30-45°) для разбивания агломератов CaO.</li>
-            <li><strong>Зона 5:</strong> Вакуумная дегазация (30-50 мбар).</li>
-            <li><strong>Зона 8:</strong> Зона давления для подводной резки.</li>
-        </ul>
-
-        <h2>4. Температурный режим (°C)</h2>
-        <p>Загрузка: 160-170 | Смешение: 200-210 | Дегазация: 190-200 | Головка: 170-180.</p>
-
-        <h2>5. Грануляция</h2>
-        <p>Только подводная грануляция (UWP). Стренги ломаются при 70% наполнении. Температура воды: 25-35°C.</p>
+        <h1>Twin-Screw Extruder for Desiccant Masterbatch (CaO + rLLDPE)</h1>
+        <p>Detailed technical documentation follows...</p>
     </section>
 </div>
 
