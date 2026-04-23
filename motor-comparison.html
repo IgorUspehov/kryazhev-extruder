@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antriebstechnik: DC vs AC + VFD - Ihor Kryazhev</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background: #f0f2f5; }
+        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .lang-switcher { position: sticky; top: 0; background: #fff; padding: 10px 0; border-bottom: 3px solid #0a2e52; margin-bottom: 25px; display: flex; gap: 10px; z-index: 1000; }
+        button { padding: 10px 25px; cursor: pointer; border: none; border-radius: 4px; background: #0a2e52; color: white; font-weight: bold; transition: 0.3s; }
+        button.active { background: #ff9800; }
+        .lang-content { display: none; }
+        h1 { color: #0a2e52; border-left: 6px solid #ff9800; padding-left: 20px; margin-bottom: 35px; font-size: 1.8rem; }
+        h2 { color: #0a2e52; background: #e3f2fd; padding: 10px 15px; border-radius: 4px; margin-top: 40px; }
+        h3 { color: #0d47a1; margin-top: 25px; }
+        code { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; display: block; overflow-x: auto; font-family: 'Consolas', monospace; margin: 20px 0; }
+        .tech-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; }
+        .tech-table th, .tech-table td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        .tech-table th { background: #f8f9fa; color: #0a2e52; }
+        .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0a2e52; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button id="btn-de" onclick="setLang('de')">DE</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-ru" onclick="setLang('ru')">RU</button>
+</div>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Home</a>
+
+    <section class="lang-content" lang="ru">
+        <h1>Двигатель постоянного тока vs АС + ЧП: сравнение для экструдера</h1>
+        <p><strong>Технический анализ систем электропривода шнека гранулятора.</strong></p>
+
+        <h2>1. Введение: управление оборотами</h2>
+        <p>Скорость вращения шнека определяет производительность линии. При переработке вторичных полимеров стабильность оборотов критична из-за колебаний насыпной плотности и MFI сырья. Плавное регулирование через частотный преобразователь (ЧП) или систему постоянного тока (ДПТ) — база современной линии.</p>
+
+        <h2>2. Двигатель постоянного тока (ДПТ)</h2>
+        <p><strong>Физика процесса:</strong> Регулирование изменением напряжения на якоре. Высокий пусковой момент (200-300%) идеален для холодного пуска застывшего расплава.</p>
+        <p><strong>Проблема:</strong> Щеточный узел. Износ щеток каждые 2000-5000 часов требует регулярной остановки линии и обслуживания коллектора.</p>
+
+        <h2>3. Асинхронный двигатель + ЧП</h2>
+        <p><strong>Преимущества:</strong> Отсутствие щеток (межсервисный интервал только по подшипникам — до 3-5 лет). Плавный пуск ЧП исключает ударные нагрузки на редуктор и шнек, продлевая их ресурс в 2-3 раза.</p>
+        <p><strong>Экономия:</strong> Снижение энергопотребления на 20-30% по сравнению с механическим регулированием производительности.</p>
+
+        <h2>4. Управление через Linux (Python + Modbus)</h2>
+        <p>Интеграция ЧП в систему управления на Linux Mint осуществляется через Modbus RTU (RS-485) или Modbus TCP.</p>
+        <code>
+# Пример задания частоты через Python
+from pyModbusTCP.client import ModbusClient
+client = ModbusClient(host="192.168.1.100", port=502, auto_open=True)
+# Задание 30 Гц (регистр 40001)
+client.write_register(40001, 3000)
+        </code>
+
+        <h2>5. Сравнение надежности</h2>
+        <table class="tech-table">
+            <tr><th>Параметр</th><th>ДПТ + тиристоры</th><th>АД + ЧП</th></tr>
+            <tr><td>Обслуживание щеток</td><td>3-12 месяцев</td><td>Отсутствует</td></tr>
+            <tr><td>Наработка на отказ</td><td>8-12 тыс. часов</td><td>25-40 тыс. часов</td></tr>
+            <tr><td>Пуск</td><td>Плавный (электрически)</td><td>Плавный (программный)</td></tr>
+        </table>
+
+        <h2>9. Ключевые запросы</h2>
+        <p style="font-size: 0.8rem; color: #777;">
+            двигатель постоянного тока экструдера замена щеток, асинхронный двигатель с частотным преобразователем для шнека, частотный преобразователь Modbus TCP управление из Linux, ПИД-регулирование скорости шнека Python, плавный пуск экструдера частотным преобразователем, экономия электроэнергии частотный преобразователь экструдера 20-30%.
+        </p>
+    </section>
+
+    <section class="lang-content" lang="de">
+        <h1>Gleichstrommotor vs. AC + Frequenzumrichter für Extruder</h1>
+        <p>Technische Analyse und Vergleich der Antriebssysteme für Granulierlinien...</p>
+    </section>
+
+    <section class="lang-content" lang="en">
+        <h1>DC Motor vs. AC + VFD for Extruder Drive</h1>
+        <p>Technical comparison of drive systems for polymer granulation lines...</p>
+    </section>
+</div>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll(`[lang="${lang}"]`).forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${lang}`).classList.add('active');
+        localStorage.setItem('preferred_lang', lang);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem('preferred_lang') || 'de';
+        setLang(savedLang);
+    });
+</script>
+</body>
+</html>
