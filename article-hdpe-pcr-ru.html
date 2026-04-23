@@ -7,35 +7,41 @@
         body { font-family: Arial, sans-serif; line-height: 1.7; color: #1a1a1a; max-width: 1100px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
         h1 { color: #0a2e52; border-bottom: 4px solid #ff9800; padding-bottom: 15px; }
         h2 { color: #0a2e52; margin-top: 35px; border-left: 6px solid #ff9800; padding-left: 15px; background: #eef4f9; padding: 10px; }
+        h3 { color: #d35400; margin-top: 25px; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
         th, td { border: 1px solid #ccc; padding: 12px; text-align: left; }
         th { background: #0a2e52; color: white; }
-        .stats-box { background: #fff3cd; border: 1px solid #ffeeba; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .formula-box { background: #fffde7; border: 1px dashed #ff9800; padding: 20px; margin: 20px 0; font-family: "Courier New", monospace; }
     </style>
 </head>
 <body>
-    <h1>Рецептуры вторичного HDPE с 50% PCR для литья под давлением</h1>
+    <h1>Рецептуры вторичного HDPE с 50% PCR для литья под давлением и стабилизация MFI</h1>
     <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
     
     <h2>1. Введение</h2>
-    <p>Добавление 50% первичного HDPE с высоким ПТР повышает текучесть смеси до 3–6 г/10мин и снижает усадку до 1,5–1,8%, что оптимально для литья ящиков и паллет.</p>
-
-    <h2>2. Стабилизация MFI (ПТР)</h2>
-    <div class="stats-box">
-        <strong>Рост MFI без стабилизации:</strong>
-        <ul>
-            <li>Исходный: 1,8</li>
-            <li>1-я грануляция: 2,5 (+39%)</li>
-            <li>3-я грануляция: 6,2 (+244%)</li>
-        </ul>
-        <em>С добавкой 0,3% антиоксиданта рост ПТР после 3-й грануляции ограничивается значением 2,8.</em>
+    <p>Добавление 50% первичного HDPE с высоким ПТР повышает текучесть смеси до 3–6 г/10мин и снижает усадку до 1,5–1,8%.</p>
+    
+    <h2>8. Практический пример расчета смеси 50/50</h2>
+    <div class="formula-box">
+        lg MFI_см = w1 * lg MFI_1 + w2 * lg MFI_2 <br>
+        lg MFI_см = 0,5 * lg(1,2) + 0,5 * lg(9,0) = 0,5165 <br>
+        <strong>MFI_см = 10^0,5165 = 3,28 г/10мин</strong>
     </div>
 
-    <h2>3. Типовые рецептуры (50/50)</h2>
+    <h2>9. Контроль стабильности MFI при многократной переработке</h2>
     <table>
-        <tr><th>Изделие</th><th>Вторичный HDPE (PCR)</th><th>Первичный HDPE</th><th>Аддитивы</th></tr>
-        <tr><td>Ящики</td><td>50% (MFI 0,8-1,2)</td><td>45% (MFI 8-10)</td><td>УФ + Антиоксидант (0,5%)</td></tr>
-        <tr><td>Поддоны</td><td>50% (MFI 0,5-1,0)</td><td>40% (MFI 4-6)</td><td>Тальк (10%) + Антиоксидант</td></tr>
+        <tr><th>Циклы</th><th>Без антиоксиданта</th><th>С 0,4% антиоксиданта</th></tr>
+        <tr><td>1 (исходный)</td><td>3,2</td><td>3,2</td></tr>
+        <tr><td>2 (возврат)</td><td>4,8 (+50%)</td><td>3,5 (+9%)</td></tr>
+        <tr><td>3 (2-й возврат)</td><td>7,5 (+134%)</td><td>3,9 (+22%)</td></tr>
     </table>
+
+    <h2>10. Параметры литья</h2>
+    <ul>
+        <li><strong>Температура расплава:</strong> 200-220°C</li>
+        <li><strong>Температура формы:</strong> 25-35°C</li>
+        <li><strong>Давление впрыска:</strong> 60-100 МПа</li>
+        <li><strong>Усадка:</strong> 1,5-1,8%</li>
+    </ul>
 </body>
 </html>
