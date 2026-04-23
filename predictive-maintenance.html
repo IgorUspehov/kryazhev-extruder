@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predictive Maintenance: Granуlierlinie & KI - Ihor Kryazhev</title>
+    <title>Predictive Maintenance: Granulierlinie & KI - Ihor Kryazhev</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background: #f0f2f5; }
         .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -18,7 +18,6 @@
         .tech-table { width: 100%; border-collapse: collapse; margin: 25px 0; }
         .tech-table th, .tech-table td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
         .tech-table th { background: #f8f9fa; color: #0a2e52; }
-        .highlight { color: #d32f2f; font-weight: bold; }
         .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0a2e52; font-weight: bold; }
     </style>
 </head>
@@ -31,82 +30,36 @@
 </div>
 
 <div class="container">
-    <a href="index.html" class="back-link">← На главную / Home</a>
+    <a href="index.html" class="back-link">← Home</a>
 
     <section class="lang-content" lang="ru">
         <h1>Предиктивная диагностика линии грануляции на базе Linux Mint и нейросетей LSTM</h1>
-        <p><strong>Автор: Игорь Кряжев, эксперт по автоматизации экструзии</strong></p>
-
-        <h2>1. Введение: зачем линии грануляции нужна предиктивная диагностика</h2>
-        <p>Линия грануляции вторичных полимеров — это каскад из дробилки, агломератора, экструдера, фильтра, гранулятора и сушилки. Отказ любого узла останавливает всю линию. Типичный простой по причине аварии — 4-12 часов. При производительности 500 кг/ч и маржинальности 0,3 €/кг потери за один простой — от 600 до 1800 €.</p>
-        <p>Предиктивная диагностика — это переход от планово-предупредительного обслуживания к обслуживанию по фактическому состоянию. Метод основан на анализе трендов датчиков тока двигателей и вибрации узлов с использованием нейросетей (LSTM).</p>
-
-        
-
-        <h2>2. Какие узлы линии грануляции диагностируются</h2>
+        <p><strong>Автор: Игорь Кряжев</strong></p>
+        <h2>1. Введение</h2>
+        <p>Линия грануляции вторичных полимеров — это каскад из дробилки, агломератора, экструдера, фильтра, гранулятора и сушилки. Отказ любого узла останавливает всю линию.</p>
+        <h2>2. Диагностируемые узлы</h2>
         <h3>2.1. Агломератор</h3>
-        <ul>
-            <li><strong>Ток двигателя ротора:</strong> норма — 70-80% от номинала.</li>
-            <li><strong>Признак износа ножей:</strong> Рост тока на 15-20% от эталона означает необходимость заточки. Рост на 30-40% — аварийный режим.</li>
-            <li><strong>Вибрация:</strong> Допустимый уровень — 2,5-3,5 мм/с. Выше 5 мм/с — остановка на балансировку.</li>
-        </ul>
-
+        <p>Контроль тока двигателя ротора и вибрации корпуса. Рост тока на 15-20% — признак износа ножей.</p>
         <h3>2.2. Экструдер</h3>
-        <ul>
-            <li><strong>Давление перед фильтром:</strong> Рост до 120-150 бар сигнализирует о замене сеток. LSTM прогнозирует этот момент за 30-90 минут.</li>
-            <li><strong>Износ шнека:</strong> Падение тока при неизменной загрузке из-за обратного потока расплава (зазор > 0,5 мм).</li>
-        </ul>
-
-        <h3>2.3. Подводный гранулятор</h3>
-        <ul>
-            <li><strong>Ток ножевой головки:</strong> Рост на 15-20% — износ карбидных ножей.</li>
-        </ul>
-
-        <h2>3. Установка датчиков на линии</h2>
-        <table class="tech-table">
-            <tr><th>Тип датчика</th><th>Параметры</th><th>Назначение</th></tr>
-            <tr><td>Трансформаторы тока</td><td>4-20 мА (LEM/CR)</td><td>Нагрузка двигателей</td></tr>
-            <tr><td>Акселерометры</td><td>0-20 мм/с, Пьезо</td><td>Вибрация редукторов/корпусов</td></tr>
-            <tr><td>Датчики давления</td><td>0-300 бар (Gefran/Dynisco)</td><td>Состояние фильтра расплава</td></tr>
-        </table>
-
-        <h2>4. Аппаратная платформа</h2>
-        <p>Используется промышленный компьютер на базе <strong>Linux Mint 21.3</strong>. Сбор данных осуществляется через USB-модули ICP DAS или существующий ПЛК (Siemens S7-1200) по протоколу Modbus TCP.</p>
-
-        <h2>5. Программное обеспечение (Python + Modbus)</h2>
-        <p>Пример кода на Python для чтения данных из ПЛК:</p>
+        <p>Давление перед фильтром и ток двигателя. LSTM прогнозирует забивание сеток за 30-90 минут.</p>
+        <h2>3. Техническая реализация</h2>
+        <p>Датчики 4-20 мА подключаются к ПЛК или USB-модулям ввода. Данные анализируются скриптами Python на Linux Mint.</p>
         <code>
+# Пример чтения через Modbus TCP
 from pyModbusTCP.client import ModbusClient
-import time
-
 client = ModbusClient(host="192.168.1.100", port=502, auto_open=True)
-
-while True:
-    pressure_raw = client.read_holding_registers(100, 1) # Регистр давления
-    pressure_bar = pressure_raw[0] / 100.0
-    print(f"Давление фильтра: {pressure_bar} бар")
-    time.sleep(1)
+pressure = client.read_holding_registers(100, 1)[0] / 100.0
         </code>
-
-        <h2>6. Нейросетевая модель LSTM</h2>
-        <p>Модель анализирует окно данных за последние 24 часа. Архитектура включает два слоя LSTM (64 и 32 нейрона) и полноconnected слой. <strong>Точность прогноза:</strong> 95% за 3 часа до критического события.</p>
-
-        
-
-        <h2>10. Низкочастотные ключи</h2>
-        <p style="font-size: 0.8rem; color: #777;">
-            предиктивная диагностика линии грануляции датчики тока и вибрации, LSTM нейросеть прогнозирование отказа фильтра экструдера, система сбора данных Linux Mint Python для экструдера, прогнозирование износа ножей агломератора по току двигателя, Modbus TCP сбор данных с ПЛК Siemens для нейросети.
-        </p>
     </section>
 
     <section class="lang-content" lang="de">
-        <h1>Predictive Maintenance für Granulierlinien mit Linux Mint & LSTM</h1>
-        <p>Vollständige technische Dokumentation auf Deutsch wird vorbereitet...</p>
+        <h1>Predictive Maintenance für Granulierlinien</h1>
+        <p>Vollständige technische Dokumentation auf Deutsch...</p>
     </section>
 
     <section class="lang-content" lang="en">
-        <h1>Predictive Maintenance for Extrusion Lines using Linux Mint & LSTM</h1>
-        <p>Full technical documentation in English is being processed...</p>
+        <h1>Predictive Maintenance for Extrusion Lines</h1>
+        <p>Full technical documentation in English...</p>
     </section>
 </div>
 
