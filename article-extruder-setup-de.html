@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="UTF-8"><title>Extruderstart für recyceltes LDPE und HDPE: Rezepturen, Linux-Steuerungen</title>
+<meta name="description" content="Inbetriebnahme von Extrudern für recyceltes LDPE und HDPE. Rezepturen mit 50% PCR, Reduzierung von Agglomerationsausschuss, Granulatoreinstellung. Arbeit mit Embedded Linux Controllern.">
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="container">
+<h1>Extruderstart für recyceltes LDPE und HDPE: Rezepturen, Linux-Steuerungen</h1>
+<p><strong>Datum:</strong> 23. April 2024 | <strong>Autor:</strong> Ihor Kryazhev, Technologieberater für Extrusion</p>
+<h2>1. Technologische Herausforderungen bei der Umstellung auf 100% Sekundärrohstoffe</h2>
+<p>Bei der Verarbeitung von recyceltem LDPE und HDPE treten Qualitätsverluste hauptsächlich in den Phasen der Agglomeration (LDPE) und der Heißwäsche mit Flotation (HDPE) auf. Die Kenntnis spezifischer Parameter (Entgasungstemperatur, Schergeschwindigkeit, Filtration) ermöglicht eine Produktivitätssteigerung um 35% und eine Ausschussreduzierung um 20%.</p>
+<h2>2. Extruderstart für LDPE-Regranulat</h2>
+<ul><li>Voraggregation — Schüttdichte von 50 auf 500 kg/m³ (Herbold oder NGR)</li>
+<li>Doppelschneckenextruder mit Zwangsbeschickung (Zonen 180-240°C)</li>
+<li>Vakuumentgasung — Verdampfungsoberfläche 0,5-1,0 m² pro t/h</li>
+<li>Zweistufige Filtration 300→150 Mikron (für Lebensmittel 80 Mikron), Gneuss/Nordson-Siebe</li></ul>
+<h2>3. Rezeptur für HDPE mit 50% PCR</h2>
+<p>Für Haushaltschemikalienflaschen (Persil, Fairy): 50% Recyclat von REMONDIS (MFI 0,5, Dichte 0,958) + 50% primäres HDPE + Irganox 1010 (0,2-0,3%) + Antistatikum. Für 100% PCR ist eine Deodorierung erforderlich (Vakuum + Heißluft 120°C) sowie die Kontrolle flüchtiger Substanzen < 50 ppm.</p>
+<h2>4. Granulatoreinstellung und Ausschussreduzierung</h2>
+<ul><li>„Fischauge“ (nicht aufgeschmolzen) → Temperatur um 10-15°C erhöhen oder Beschickung reduzieren</li>
+<li>Verbackene Granulate → Wassertemperatur im Bad auf 35-40°C erhöhen, Trocknung einstellen</li>
+<li>Staub (feine Fraktion) → Messerspalt einstellen (0,1-0,2 mm) und Rotorgeschwindigkeit (850-1200 U/min)</li></ul>
+<h2>5. Arbeit mit Controllern unter Embedded Linux</h2>
+<p>Moderne Extruder (KraussMaffei, Erema, Battenfeld) werden mit Controllern unter Embedded Linux ausgestattet. Typische Aufgaben des Technologen: Diagnose des CANopen-Protokolls per SSH-Zugriff; PID-Regler der Heizzonen über HMI (QT-basiert) einstellen; Trendaufzeichnung (Temperatur/Druck/Leistung) per gnuplot; Notfallwiederherstellung nach Störungen — Dateisystemprüfung, Neustart von systemd, Arbeit mit dem U-Boot-Bootloader.</p>
+<p><strong>Praktischer Fall:</strong> Nach Spannungsschwankungen fiel in einem Werk in Bayern die Steuerung einer HDPE-Granulierlinie aus. Die Fernwartung über die serielle Schnittstelle und der Neustart des U-Boot-Bootloaders stellten den Betrieb innerhalb von 3 Stunden ohne Vor-Ort-Besuch wieder her.</p>
+<h2>6. Beispiele für erfolgreiche Umstellungen auf 100% Recyclat</h2>
+<ul><li>mtm plastics (Thüringen): Optimierung der Agglomeration (450 U/min, 130°C) steigerte die Ausbeute an klarem Regranulat von 15% auf 22%</li>
+<li>Anlage in Bayern: Zweistufige Wäsche mit heißer Lauge (80°C, NaOH 2%) reduzierte den Sandgehalt in LDPE von 1,2% auf 0,3%</li>
+<li>Hersteller von Drainagerohren (Polen): Rezeptur mit 60% Recyclat + 35% Primärmaterial + 5% Kreide senkte die Rohrkosten um 22% (DIN CERTCO-Zertifikat, Ringsteifigkeit SN4)</li></ul>
+<h2>7. Fazit für Betreiber von Extrusionsanlagen</h2>
+<p>Eine korrekte Anlageneinstellung und Rezeptur amortisiert sich bereits in der ersten Saison: Die Senkung des Ausschusses von 15% auf 3-5% erhöht die Marge um 25-30%.</p>
+<p><em>Daten April 2024: Benchmarking von 12 Anlagen in Deutschland, Österreich und Polen, Anleitungen von KraussMaffei und Erema.</em></p>
+<p><a href="/">← Zur Hauptseite</a></p>
+</div></body></html>
