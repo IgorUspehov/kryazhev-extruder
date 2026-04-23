@@ -3,30 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ihor Kryazhev - Extrusionstechnik & Recycling Experte</title>
+    <title>Ihor Kryazhev | Extrusion & Recycling Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --blue: #0056b3; --orange: #ff9800; --dark: #333; --light: #f4f4f4; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark); margin: 0; padding: 0; background: var(--light); }
-        header { background: #fff; border-bottom: 3px solid var(--blue); padding: 20px; position: sticky; top: 0; z-index: 1000; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .lang-switcher { display: flex; gap: 10px; justify-content: flex-end; margin-bottom: 10px; }
-        .lang-switcher button { padding: 8px 15px; cursor: pointer; border: none; border-radius: 4px; background: var(--blue); color: white; font-weight: bold; }
-        .lang-switcher button.active { background: var(--orange); }
-        .hero { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 20px; }
-        h1 { color: var(--blue); margin-top: 0; }
-        .status-badge { display: inline-block; background: var(--orange); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
-        .card { background: #fff; padding: 25px; border-radius: 8px; border-top: 4px solid var(--blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .contact-btn { display: inline-block; background: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
+        :root { --primary: #0a2e52; --accent: #ff9800; --text: #333; --bg: #f8f9fa; --white: #ffffff; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; color: var(--text); background: var(--bg); line-height: 1.6; }
+        
+        header { background: var(--primary); color: var(--white); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        
+        .lang-btns button { background: transparent; border: 1px solid var(--white); color: var(--white); padding: 5px 12px; cursor: pointer; font-weight: bold; transition: 0.3s; margin-left: 5px; }
+        .lang-btns button.active { background: var(--accent); border-color: var(--accent); }
+        
+        .hero { background: linear-gradient(rgba(10,46,82,0.9), rgba(10,46,82,0.9)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000'); background-size: cover; color: var(--white); padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .hero p { font-size: 1.2rem; color: #ccc; max-width: 800px; margin: 20px auto; }
+        
+        .section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { background: var(--white); padding: 30px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card i { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
+        .card h3 { margin-top: 0; color: var(--primary); }
+        
+        .article-list { list-style: none; padding: 0; }
+        .article-list li { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .article-list a { color: var(--primary); text-decoration: none; font-weight: bold; display: flex; align-items: center; }
+        .article-list a:hover { color: var(--accent); }
+        .article-list a i { margin-right: 10px; font-size: 1rem; color: var(--primary); }
+
+        .cta-btn { display: inline-block; background: #25d366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+        
         .lang-content { display: none; }
-        .footer { text-align: center; padding: 40px; color: #777; }
+        footer { background: #222; color: #777; padding: 40px 20px; text-align: center; margin-top: 60px; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container">
-        <div class="lang-switcher">
+    <div class="nav-container">
+        <div style="font-weight: bold; font-size: 1.2rem;">I.KRYAZHEV</div>
+        <div class="lang-btns">
             <button id="btn-de" onclick="setLang('de')">DE</button>
             <button id="btn-en" onclick="setLang('en')">EN</button>
             <button id="btn-ru" onclick="setLang('ru')">RU</button>
@@ -34,95 +52,102 @@
     </div>
 </header>
 
-<div class="container">
-    <section class="lang-content" lang="de">
-        <div class="hero">
-            <span class="status-badge">München, Bayern</span>
-            <h1>Ihor Kryazhev — Experte für Extrusion & Recycling</h1>
-            <p><strong>Technologe & Inbetriebnahme-Ingenieur</strong> mit über 25 Jahren Erfahrung in der Kunststoffverarbeitung.</p>
-            <p>Spezialisierung auf Krisenmanagement in der Produktion, Optimierung von Anlagen und Umstellung auf Sekundärrohstoffe.</p>
-            <a href="https://wa.me/4915258400610" class="contact-btn">WhatsApp Kontakt</a>
-        </div>
+<section class="hero">
+    <div class="lang-content" lang="de">
+        <h1>Inbetriebnahme & Extrusionstechnik</h1>
+        <p>Experte für Kunststoffrecycling und Optimierung von Produktionslinien in München</p>
+    </div>
+    <div class="lang-content" lang="en">
+        <h1>Commissioning & Extrusion Engineering</h1>
+        <p>Plastic recycling expert and production line optimization specialist in Munich</p>
+    </div>
+    <div class="lang-content" lang="ru">
+        <h1>Пусконаладка и Экструзионные Технологии</h1>
+        <p>Эксперт по переработке пластмасс и оптимизации производственных линий в Мюнхене</p>
+    </div>
+    <a href="https://wa.me/4915258400610" class="cta-btn"><i class="fab fa-whatsapp"></i> CONTACT WHATSAPP</a>
+</section>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Leistungen</h3>
-                <ul>
-                    <li>Inbetriebnahme von Extrusionslinien</li>
-                    <li>Fehlerbehebung (Troubleshooting) nach China-Importen</li>
-                    <li>Umstellung auf Recycling-Material (Sekundär-PE/PP)</li>
-                    <li>Optimierung von PID-Reglern und Schmelzedruck</li>
-                </ul>
+<div class="section">
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-tools"></i>
+            <div class="lang-content" lang="de">
+                <h3>Dienstleistungen</h3>
+                <p>Inbetriebnahme von Ein- und Doppelschneckenextruder, Troubleshooting bei China-Importen, SPS/PID-Optimierung.</p>
             </div>
-            <div class="card">
-                <h3>Erfahrung</h3>
-                <p>Über 250.000 Tonnen verarbeitetes Polymer. Betreuung von 25 Fabriken europaweit. Experte für Einschnecken- und Doppelschneckenextruder.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="lang-content" lang="en">
-        <div class="hero">
-            <span class="status-badge">Munich, Germany</span>
-            <h1>Ihor Kryazhev — Extrusion & Recycling Expert</h1>
-            <p><strong>Technical Lead & Commissioning Engineer</strong> with 25+ years of hands-on experience in polymer processing.</p>
-            <p>Specializing in production crisis management, line optimization, and transition to recycled materials.</p>
-            <a href="https://wa.me/4915258400610" class="contact-btn">Contact on WhatsApp</a>
-        </div>
-
-        <div class="grid">
-            <div class="card">
+            <div class="lang-content" lang="en">
                 <h3>Services</h3>
-                <ul>
-                    <li>Commissioning of extrusion lines</li>
-                    <li>Post-China-import troubleshooting</li>
-                    <li>Switching production to recycled resins</li>
-                    <li>Optimization of automation (PID, melt pressure)</li>
-                </ul>
+                <p>Commissioning of single and twin-screw extruders, troubleshooting of China imports, PLC/PID optimization.</p>
             </div>
-            <div class="card">
-                <h3>Track Record</h3>
-                <p>250k+ tons of processed polymers. 25+ factories launched worldwide. Specialist in single and twin-screw extrusion systems.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="lang-content" lang="ru">
-        <div class="hero">
-            <span class="status-badge">Мюнхен, Бавария</span>
-            <h1>Игорь Кряжев — Технолог-наладчик экструзии</h1>
-            <p><strong>Эксперт по переработке полимеров</strong>. 25+ лет опыта запуска и настройки производственных линий.</p>
-            <p>Кризис-менеджмент на производстве, перевод линий на вторичное сырье, исправление ошибок после китайских наладчиков.</p>
-            <a href="https://wa.me/4915258400610" class="contact-btn">Написать в WhatsApp</a>
-        </div>
-
-        <div class="grid">
-            <div class="card">
+            <div class="lang-content" lang="ru">
                 <h3>Услуги</h3>
-                <ul>
-                    <li>Пусконаладка экструзионных линий</li>
-                    <li>Исправление ошибок китайского оборудования</li>
-                    <li>Перевод производства на вторичку</li>
-                    <li>Настройка автоматики, датчиков и ПИД-регуляторов</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Результаты</h3>
-                <p>Более 250 000 тонн переработанного полимера. Запуск 25 заводов. Специалист по одношнековым и двухшнековым системам.</p>
+                <p>Запуск одно- и двухшнековых экструдеров, исправление ошибок китайского импорта, оптимизация ПЛК/ПИД.</p>
             </div>
         </div>
-    </section>
+
+        <div class="card">
+            <i class="fas fa-microchip"></i>
+            <div class="lang-content" lang="de">
+                <h3>Expertise</h3>
+                <p>Über 25 Jahre Erfahrung, 250.000 Tonnen verarbeitetes Polymer, Spezialist für Sekundärrohstoffe (PE, PP, PA).</p>
+            </div>
+            <div class="lang-content" lang="en">
+                <h3>Expertise</h3>
+                <p>25+ years of experience, 250,000 tons of processed polymer, specialist in recycled materials (PE, PP, PA).</p>
+            </div>
+            <div class="lang-content" lang="ru">
+                <h3>Опыт</h3>
+                <p>Более 25 лет стажа, 250 000 тонн переработанного полимера, специалист по вторичке (PE, PP, PA).</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="footer">
-    <p>&copy; 2026 Ihor Kryazhev | München, Deutschland</p>
+<div class="section">
+    <div class="card" style="border-top-color: var(--accent);">
+        <div class="lang-content" lang="de"><h3>Technische Dokumentation</h3></div>
+        <div class="lang-content" lang="en"><h3>Technical Articles</h3></div>
+        <div class="lang-content" lang="ru"><h3>Техническая документация</h3></div>
+        
+        <ul class="article-list">
+            <li>
+                <a href="dessicant-production.html">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="lang-content" lang="de">Herstellung von Feuchtigkeitsabsorbern (CaO + LLDPE)</span>
+                    <span class="lang-content" lang="en">Desiccant Masterbatch Production (CaO + rLLDPE)</span>
+                    <span class="lang-content" lang="ru">Производство осушителя (Известь + LLDPE)</span>
+                </a>
+            </li>
+            <li>
+                <a href="pa-ldpe-casing.html">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="lang-content" lang="de">Recycling von PA/LDPE-Wursthüllen</span>
+                    <span class="lang-content" lang="en">PA/LDPE Multilayer Casing Recycling</span>
+                    <span class="lang-content" lang="ru">Переработка колбасной оболочки ПВД/ПА</span>
+                </a>
+            </li>
+            <li>
+                <a href="agglomeration-guide.html">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="lang-content" lang="de">Agglomeration von Stretchfolie (LLDPE)</span>
+                    <span class="lang-content" lang="en">Stretch Film Agglomeration Guide</span>
+                    <span class="lang-content" lang="ru">Агломерация стрейч-пленки (LLDPE)</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
+
+<footer>
+    <p>&copy; 2026 Ihor Kryazhev | München, Deutschland | Professional Extrusion Services</p>
+</footer>
 
 <script>
     function setLang(lang) {
         document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
-        document.querySelectorAll(`[lang="${lang}"]`).forEach(el => el.style.display = 'block');
-        document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll(`[lang="${lang}"]`).forEach(el => el.style.display = 'inline-block');
+        document.querySelectorAll('.lang-switcher button, .lang-btns button').forEach(btn => btn.classList.remove('active'));
         document.getElementById(`btn-${lang}`).classList.add('active');
         localStorage.setItem('preferred_lang', lang);
         document.documentElement.lang = lang;
