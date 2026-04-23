@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herstellung von Feuchtigkeitsabsorbern (CaO + LLDPE) - Ihor Kryazhev</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background: #f4f4f4; }
+        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .lang-switcher { position: sticky; top: 0; background: #fff; padding: 10px 0; border-bottom: 2px solid #0056b3; margin-bottom: 20px; display: flex; gap: 10px; z-index: 1000; }
+        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 4px; background: #0056b3; color: white; font-weight: bold; }
+        button.active { background: #ff9800; }
+        .lang-content { display: none; }
+        h1 { color: #0056b3; border-left: 5px solid #ff9800; padding-left: 15px; }
+        h2 { color: #333; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 30px; }
+        h3 { color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f8f8f8; }
+        .tech-box { background: #e3f2fd; padding: 20px; border-left: 4px solid #0056b3; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button id="btn-de" onclick="setLang('de')">DE</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-ru" onclick="setLang('ru')">RU</button>
+</div>
+
+<div class="container">
+    <section class="lang-content" lang="de">
+        <h1>Doppelschneckenextrusion: Feuchtigkeitsabsorber auf Basis von Branntkalk (CaO) und LLDPE-Rezyklat</h1>
+        <p><strong>Autor: Ihor Kryazhev</strong>, Technologe</p>
+        
+        <h2>1. Zweck und Funktionsprinzip</h2>
+        <p>Der Absorber wird in Mehrschichtverpackungen eingesetzt. Die aktive Komponente – Branntkalk (CaO) – absorbiert Feuchtigkeit. Das Bindepolymer ist LLDPE-Rezyklat aus Stretchfolien. Ziel ist ein Granulat mit bis zu 70% CaO-Anhalt, ohne Agglomerate und Hohlräume.</p>
+
+        <h2>2. Rohstoffanforderungen</h2>
+        <table>
+            <tr><th>Komponente</th><th>Parameter</th><th>Wert</th></tr>
+            <tr><td>CaO</td><td>Aktives Calciumoxid</td><td>85-95%</td></tr>
+            <tr><td>CaO</td><td>Partikelgröße</td><td>10-50 µm</td></tr>
+            <tr><td>LLDPE (r)</td><td>MFI (190°C/2.16kg)</td><td>2-4 g/10min</td></tr>
+            <tr><td>LLDPE (r)</td><td>Feuchtigkeit</td><td>< 0,2%</td></tr>
+        </table>
+
+        <h2>3. Schneckenkonfiguration (L/D 40-48)</h2>
+        <ul>
+            <li><strong>Zone 1 (Einzug):</strong> Tiefe Gänge (1,2-1,5 D) für schnellen Materialeinzug.</li>
+            <li><strong>Zone 4 (Dispergierung):</strong> Knetscheiben (30-45° Winkel) bei 400-600 U/min zur Zerstörung von CaO-Agglomeraten.</li>
+            <li><strong>Zone 5 (Entgasung):</strong> Rückförderelemente + Vakuum (30-50 mbar) zur Entfernung von Restfeuchte.</li>
+            <li><strong>Zone 8 (Dosierung):</strong> Hoher Druckaufbau (50-100 bar) für die Unterwassergranulierung.</li>
+        </ul>
+
+        <h2>4. Temperaturprofil (°C)</h2>
+        <p>Einzug: 160-170 | Mischzone: 200-210 | Entgasung: 190-200 | Düse: 170-180.</p>
+
+        <h2>5. Unterwassergranulierung (UWP)</h2>
+        <p>Stranggranulierung ist aufgrund der Sprödigkeit (70% Füllstoff) unmöglich. Parameter: Wassertemperatur 25-35°C, Druck 3-5 bar.</p>
+    </section>
+
+    <section class="lang-content" lang="en">
+        <h1>Twin-Screw Extrusion: Desiccant Masterbatch (CaO + rLLDPE)</h1>
+        <p><strong>Author: Ihor Kryazhev</strong>, Consultant</p>
+        
+        <h2>1. Overview</h2>
+        <p>Active component: Quicklime (CaO). Carrier: Recycled LLDPE. Goal: Uniform pellets with 70% loading without polymer degradation.</p>
+
+        <h2>2. Material Specs</h2>
+        <ul>
+            <li><strong>CaO:</strong> 85-95% active content, 10-50 microns.</li>
+            <li><strong>rLLDPE:</strong> MFI 2-4, moisture < 0.2%.</li>
+        </ul>
+
+        <h2>3. Screw Configuration</h2>
+        <p>Co-rotating twin screw, L/D 40-48. High-shear kneading blocks in Zone 4 (400-600 RPM) are critical for breaking CaO agglomerates.</p>
+
+        <h2>4. Process Logic</h2>
+        <p>Vacuum degassing is mandatory to keep final moisture below 0.2%. Underwater pelletizing is the only viable method due to material brittleness.</p>
+    </section>
+
+    <section class="lang-content" lang="ru">
+        <h1>Двухшнековый экструдер для получения осушителя на основе извести и вторичного LLDPE</h1>
+        <p><strong>Автор: Игорь Кряжев</strong>, технолог-консультант</p>
+
+        <h2>1. Назначение и принцип работы</h2>
+        <p>Активный компонент — негашеная известь (CaO). Связующее — вторичный LLDPE. Задача: получить гранулу с наполнением до 70% без пустот и деструкции полимера.</p>
+
+        <h2>2. Требования к сырью</h2>
+        <table>
+            <tr><th>Сырье</th><th>Параметр</th><th>Значение</th></tr>
+            <tr><td>Известь (CaO)</td><td>Активность</td><td>85-95%</td></tr>
+            <tr><td>Известь (CaO)</td><td>Фракция</td><td>10-50 мкм</td></tr>
+            <tr><td>Вторичный LLDPE</td><td>ПТР (190/2.16)</td><td>2-4 г/10мин</td></tr>
+        </table>
+
+        <h2>3. Конфигурация шнеков (L/D 40-48)</h2>
+        <ul>
+            <li><strong>Зона 1:</strong> Глубокая нарезка для захвата смеси.</li>
+            <li><strong>Зона 4:</strong> Сдвиговые диски (30-45°) для разбивания агломератов CaO.</li>
+            <li><strong>Зона 5:</strong> Вакуумная дегазация (30-50 мбар).</li>
+            <li><strong>Зона 8:</strong> Зона давления для подводной резки.</li>
+        </ul>
+
+        <h2>4. Температурный режим (°C)</h2>
+        <p>Загрузка: 160-170 | Смешение: 200-210 | Дегазация: 190-200 | Головка: 170-180.</p>
+
+        <h2>5. Грануляция</h2>
+        <p>Только подводная грануляция (UWP). Стренги ломаются при 70% наполнении. Температура воды: 25-35°C.</p>
+    </section>
+</div>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll(`[lang="${lang}"]`).forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${lang}`).classList.add('active');
+        localStorage.setItem('preferred_lang', lang);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem('preferred_lang') || 'de';
+        setLang(savedLang);
+    });
+</script>
+</body>
+</html>
