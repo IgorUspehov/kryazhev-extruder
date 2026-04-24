@@ -534,6 +534,11 @@
 </style>
 </head>
 <body>
+<div style="position:fixed;top:0;right:0;z-index:9999;display:flex;gap:4px;padding:8px 14px;background:rgba(13,17,23,0.95);border-bottom-left-radius:12px;">
+  <button onclick="setLang('de')" id="btn-de" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 11px;cursor:pointer;border-radius:4px;">DE</button>
+  <button onclick="setLang('en')" id="btn-en" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 11px;cursor:pointer;border-radius:4px;">EN</button>
+  <button onclick="setLang('ru')" id="btn-ru" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 11px;cursor:pointer;border-radius:4px;">RU</button>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -744,5 +749,158 @@
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
+<script>
+var t = {
+  de: {
+    tag: "Technologe & Inbetriebnehmer",
+    title: "Inbetriebnahme von Extrusionsanlagen",
+    exp: "Jahre Erfahrung in der Polymerverarbeitung",
+    btn: "WhatsApp schreiben",
+    pain_label: "Bekannte Situationen?",
+    pain_title: "Die Anlage steht.<br>Die Produktion ist gefaehrdet.",
+    c1h: "Chinesische Techniker abgereist",
+    c1p: "Die Linie startet nicht. Dokumentation auf Chinesisch. Support nicht erreichbar.",
+    c2h: "Rezyklat laeuft nicht",
+    c2p: "Anlage fuer Primaermaterial ausgelegt. Rezyklat bringt Ausschuss, Risse, Instabilitaet.",
+    c3h: "Neustart von Null",
+    c3p: "Neue Fabrik, neue Linie. Sie brauchen einen Experten.",
+    cta_p: "Schreiben Sie - <em>wir loesen es.</em><br><span style='font-size:14px;color:var(--muted);font-weight:400;'>Erstberatung kostenlos. Vor-Ort-Einsatz moeglich.</span>",
+    cta_btn: "Jetzt schreiben &rarr;",
+    res_label: "Arbeitsergebnisse",
+    s25: "Werke in Betrieb",
+    s250: "Tonnen verarbeitet",
+    s25y: "Jahre Erfahrung",
+    srv_label: "Meine Leistungen",
+    srv_title: "Dienstleistungen",
+    s1h: "Erstberatung", s1p: "Online oder telefonisch.", s1free: "Kostenlos",
+    s2h: "Inbetriebnahme von Extrusionslinien", s2p: "Nach chinesischen Technikern, nach Stillstand.",
+    s3h: "Umstellung auf Rezyklat", s3p: "Granulat aus Folienabfaellen und Mischungen.",
+    s4h: "Rezepturentwicklung", s4p: "Neue Technologien. Optimierung fuer Ihr Rohmaterial.",
+    s5h: "Produktionsaufbau von Grund auf", s5p: "Geraeteauswahl, Inbetriebnahme, Personalschulung.",
+    s6h: "Vor-Ort-Einsatz", s6p: "Deutschland, Europa. Online und vor Ort.",
+    vid_label: "Meine Arbeiten",
+    vid_title: "Videos aus der Produktion",
+    foot: "Technologe - Inbetriebnehmer - Berater"
+  },
+  en: {
+    tag: "Process Engineer",
+    title: "Extrusion Equipment Commissioning",
+    exp: "years of experience in polymer processing",
+    btn: "Write on WhatsApp",
+    pain_label: "Familiar situations?",
+    pain_title: "Equipment is down.<br>Production is at risk.",
+    c1h: "Chinese technicians left",
+    c1p: "Line won't start. Documentation in Chinese. Tech support unreachable.",
+    c2h: "Recycled material won't run",
+    c2p: "Machine set up for virgin material. Recyclate causes rejects, breaks, instability.",
+    c3h: "Starting from scratch",
+    c3p: "New factory, new line. You need a specialist who knows what they are doing.",
+    cta_p: "Write to me - <em>we will solve it.</em><br><span style='font-size:14px;color:var(--muted);font-weight:400;'>First consultation free. On-site visits available.</span>",
+    cta_btn: "Write now &rarr;",
+    res_label: "Track record",
+    s25: "plants running",
+    s250: "tonnes processed",
+    s25y: "years experience",
+    srv_label: "Services",
+    srv_title: "What I do",
+    s1h: "Initial consultation", s1p: "Online or by phone.", s1free: "Free",
+    s2h: "Commissioning of extrusion lines", s2p: "After Chinese technicians, after downtime.",
+    s3h: "Switch to recycled material", s3p: "Granules from film waste and blends.",
+    s4h: "Formulation development", s4p: "New technologies. Optimisation for your raw material.",
+    s5h: "Production setup from scratch", s5p: "Equipment selection, startup, staff training.",
+    s6h: "On-site visits", s6p: "Germany, Europe. Online and on-site.",
+    vid_label: "My work",
+    vid_title: "Production videos",
+    foot: "Process Engineer - Commissioning - Consultant"
+  },
+  ru: {
+    tag: "Технолог-наладчик",
+    title: "Пуско-наладка экструзионного оборудования",
+    exp: "лет опыта в переработке полимеров",
+    btn: "Написать в WhatsApp",
+    pain_label: "Знакомые ситуации?",
+    pain_title: "Оборудование стоит.<br>Производство под угрозой.",
+    c1h: "Китайские наладчики уехали",
+    c1p: "Линия не запускается. Документация на китайском. Техподдержка недоступна.",
+    c2h: "Вторичное сырьё не идёт",
+    c2p: "Оборудование заточено под первичку. На вторичном - брак, обрывы, нестабильность.",
+    c3h: "Запуск с нуля",
+    c3p: "Новый завод, новая линия. Нужен специалист который знает что делает.",
+    cta_p: "Пишите - <em>разберёмся.</em><br><span style='font-size:14px;color:var(--muted);font-weight:400;'>Первая консультация бесплатно. Возможен выезд на место.</span>",
+    cta_btn: "Написать сейчас &rarr;",
+    res_label: "Результаты работы",
+    s25: "заводов работают",
+    s250: "тонн переработано",
+    s25y: "лет опыта",
+    srv_label: "Что делаю",
+    srv_title: "Услуги",
+    s1h: "Первичная консультация", s1p: "Онлайн или по телефону.", s1free: "Бесплатно",
+    s2h: "Пуско-наладка экструзионных линий", s2p: "После китайских наладчиков, после простоя.",
+    s3h: "Перевод на вторичное сырьё", s3p: "Гранулы из плёночных отходов и смесей.",
+    s4h: "Разработка рецептур", s4p: "Новые технологии. Оптимизация под ваше сырьё.",
+    s5h: "Организация производства с нуля", s5p: "Подбор оборудования, запуск, обучение.",
+    s6h: "Выезд на место", s6p: "Германия, Европа. Онлайн и с выездом.",
+    vid_label: "Мои работы",
+    vid_title: "Видео с производства",
+    foot: "Технолог - Наладчик - Консультант"
+  }
+};
+
+function setLang(lang) {
+  var l = t[lang];
+  ['de','en','ru'].forEach(function(x){
+    var b = document.getElementById('btn-'+x);
+    if(b) b.style.background = x===lang ? '#f97316' : 'rgba(255,255,255,.1)';
+  });
+  var els = {
+    '.tag': l.tag,
+    '.hero-title': l.title,
+    '.hero-exp-label': l.exp
+  };
+  for(var sel in els) {
+    var el = document.querySelector(sel);
+    if(el) el.innerHTML = els[sel];
+  }
+  var cta = document.querySelector('.cta-btn');
+  if(cta) cta.innerHTML = l.btn;
+  var sl = document.querySelector('.section-label');
+  if(sl) sl.innerHTML = l.pain_label;
+  var st = document.querySelector('.section-title');
+  if(st) st.innerHTML = l.pain_title;
+  var cards = document.querySelectorAll('.pain-card');
+  if(cards[0]) { cards[0].querySelector('h3').innerHTML = l.c1h; cards[0].querySelector('p').innerHTML = l.c1p; }
+  if(cards[1]) { cards[1].querySelector('h3').innerHTML = l.c2h; cards[1].querySelector('p').innerHTML = l.c2p; }
+  if(cards[2]) { cards[2].querySelector('h3').innerHTML = l.c3h; cards[2].querySelector('p').innerHTML = l.c3p; }
+  var pcta = document.querySelector('.pain-cta p');
+  if(pcta) pcta.innerHTML = l.cta_p;
+  var pctab = document.querySelector('.pain-cta .cta-btn');
+  if(pctab) pctab.innerHTML = l.cta_btn;
+  var sls = document.querySelectorAll('.section-label');
+  if(sls[1]) sls[1].innerHTML = l.res_label;
+  var stats = document.querySelectorAll('.stat-label');
+  if(stats[0]) stats[0].innerHTML = l.s25;
+  if(stats[1]) stats[1].innerHTML = l.s250;
+  if(stats[2]) stats[2].innerHTML = l.s25y;
+  if(sls[2]) sls[2].innerHTML = l.srv_label;
+  var srvt = document.querySelectorAll('.section-title');
+  if(srvt[1]) srvt[1].innerHTML = l.srv_title;
+  var sitems = document.querySelectorAll('.service-text');
+  var sk = ['s1','s2','s3','s4','s5','s6'];
+  sitems.forEach(function(it,i){
+    if(l[sk[i]+'h']) it.querySelector('h3').innerHTML = l[sk[i]+'h'];
+    if(l[sk[i]+'p']) it.querySelector('p').innerHTML = l[sk[i]+'p'];
+  });
+  var sfree = document.querySelector('.service-free');
+  if(sfree) sfree.innerHTML = l.s1free;
+  if(sls[3]) sls[3].innerHTML = l.vid_label;
+  if(srvt[2]) srvt[2].innerHTML = l.vid_title;
+  var fp = document.querySelector('.footer p:nth-child(2)');
+  if(fp) fp.innerHTML = l.foot;
+  localStorage.setItem('lang', lang);
+}
+
+var saved = localStorage.getItem('lang') || 'de';
+document.addEventListener('DOMContentLoaded', function(){ setLang(saved); });
+</script>
 </body>
 </html>
