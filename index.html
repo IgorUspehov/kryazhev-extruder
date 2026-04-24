@@ -880,7 +880,48 @@ function setLang(lang) {
   localStorage.setItem('lang', lang);
 }
 
-var saved = localStorage.getItem('lang') || 'de';
+  // Articles section translations
+  var artLabels = {
+    de: {
+      label: 'Nützliche Artikel',
+      title: 'Fachbeiträge zur Extrusion',
+      art1: 'Metallseparation: Magnet- und Wirbelstromabscheider',
+      art1d: 'Vollständige Anleitung zur Auswahl und Einstellung.',
+      art2: 'Recycling von PA/PE-Barrierefolien: Marktanalyse',
+      art2d: 'Markt, Preise, technologische Probleme beim Recycling.'
+    },
+    en: {
+      label: 'Useful Articles',
+      title: 'Technical Articles on Extrusion',
+      art1: 'Metal Separation: Magnetic and Eddy Current Separators',
+      art1d: 'Complete guide to selection and setup.',
+      art2: 'PA/PE Multilayer Film Recycling: Market Analysis',
+      art2d: 'Market, prices, technological problems in recycling.'
+    },
+    ru: {
+      label: 'Полезные статьи',
+      title: 'Технические статьи по экструзии',
+      art1: 'Сепарация металлов: магнитные и вихретоковые сепараторы',
+      art1d: 'Полное руководство по выбору и настройке.',
+      art2: 'Рециклинг PA/PE плёнок: анализ рынка',
+      art2d: 'Рынок, цены, технологические проблемы переработки.'
+    }
+  };
+
+  var origSetLang = setLang;
+  function setLang(lang) {
+    origSetLang(lang);
+    var a = artLabels[lang];
+    var el;
+    el = document.getElementById('art-label'); if(el) el.innerHTML = a.label;
+    el = document.getElementById('art-title'); if(el) el.innerHTML = a.title;
+    el = document.getElementById('art1-title'); if(el) el.innerHTML = a.art1;
+    el = document.getElementById('art1-desc'); if(el) el.innerHTML = a.art1d;
+    el = document.getElementById('art2-title'); if(el) el.innerHTML = a.art2;
+    el = document.getElementById('art2-desc'); if(el) el.innerHTML = a.art2d;
+  }
+
+  var saved = localStorage.getItem('lang') || 'de';
 document.addEventListener('DOMContentLoaded', function(){ setLang(saved); });
 </script>
 </body>
