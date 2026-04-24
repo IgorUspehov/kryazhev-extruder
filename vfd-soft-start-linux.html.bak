@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanftanlauf des Extrudermotors mit Frequenzumrichter und Linux-Steuerung | Igor Kryazhev</title>
+<meta name="description" content="Sanftanlauf für Extruder mit Frequenzumrichter, Linux-basierte Steuerung über Modbus TCP, PID-Regelung der Produktivität und Automatisierung von Recyclinganlagen.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #222; background: #f5f5f5; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
+.lang-tabs { display: flex; background: #2c3e50; flex-wrap: wrap; }
+.lang-btn { background: #34495e; border: none; padding: 14px 28px; font-size: 1rem; font-weight: 600; cursor: pointer; color: #ecf0f1; border-right: 1px solid #2c3e50; }
+.lang-btn.active { background: #27ae60; color: white; }
+.lang-panel { display: none; padding: 30px 40px; animation: fadeIn 0.3s ease; }
+.lang-panel.active-panel { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+h1 { font-size: 1.8rem; color: #27ae60; border-left: 5px solid #27ae60; padding-left: 20px; margin-bottom: 15px; }
+h2 { font-size: 1.4rem; color: #2c3e50; margin: 25px 0 15px 0; border-bottom: 2px solid #ecf0f1; }
+h3 { font-size: 1.2rem; color: #34495e; margin: 20px 0 10px 0; }
+.author { background: #e8f5e9; padding: 12px 20px; border-radius: 8px; margin: 20px 0; font-style: italic; color: #2e7d32; }
+.info-block { background: #f0f7ff; border-left: 4px solid #3498db; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+pre { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; margin: 15px 0; }
+code { font-family: 'Courier New', monospace; }
+ul, ol { margin: 15px 0 15px 30px; }
+footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ecf0f1; font-size: 0.85rem; color: #7f8c8d; text-align: center; }
+@media (max-width: 768px) { .lang-panel { padding: 20px; } .lang-btn { padding: 10px 16px; font-size: 0.85rem; } h1 { font-size: 1.4rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
+
+<!-- DEUTSCH - Hauptsprache -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Extrusion und Prozessautomatisierung: Sanftanlauf des Motors über Frequenzumrichter mit Linux-Steuerung</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Sekundärkunststoff-Recycling</div>
+
+<h2>1. Einleitung: Warum ein Sanftanlauf für Extruder notwendig ist</h2>
+<p>Beim Direktstart eines Asynchronmotors eines Extruders treten Einschaltströme auf, die 5-7 mal höher sind als der Nennstrom. Dies erzeugt Stoßbelastungen auf das Getriebe, die Schnecke und die Lager. Für einen 55-kW-Extruder beträgt der Nennstrom etwa 100 A, der Einschaltstrom kann 500-700 A erreichen. Dieser Stromstoß verursacht Spannungseinbrüche im Werknetz und kann Geräte beschädigen. Der Sanftanlauf über einen Frequenzumrichter löst dieses Problem. Er erhöht die Frequenz von 0 auf 50 Hz innerhalb einer vorgegebenen Zeit, und der Einschaltstrom überschreitet nicht 120-150% des Nennwerts.</p>
+<p>Für die Verarbeitung von Sekundärkunststoffen, bei denen das Material inhomogen sein und unterschiedliche Viskositäten aufweisen kann, ist der Sanftanlauf besonders wichtig. Der Kaltstart eines Extruders nach einem Stillstand erfordert eine allmähliche Erwärmung und den Übergang in den Arbeitsmodus. Der Frequenzumrichter mit Linux-Steuerung ermöglicht die Automatisierung dieses Prozesses, die Erfassung von Strom- und Temperaturdaten sowie die Echtzeitkorrektur der Parameter.</p>
+
+<h2>2. Hauptkomponenten des Sanftanlaufsystems</h2>
+<p>Das Steuerungssystem für den Sanftanlauf eines Extruders besteht aus drei Schlüsselelementen: Frequenzumrichter (VFD), Asynchronmotor und Controller. Der Frequenzumrichter gleichrichtet die Netzspannung von 400 V Wechselstrom in Gleichstrom und formt dann mit IGBT-Transistoren eine Dreiphasenspannung mit regelbarer Frequenz und Amplitude. Der Asynchronmotor mit Kurzschlussläufer ist der am weitesten verbreitete Typ für Extruder aufgrund seiner Zuverlässigkeit und des Fehlens von Bürsten.</p>
+<p>Der Linux-basierte Controller steuert den Frequenzumrichter über eine digitale Schnittstelle wie Modbus TCP oder Profinet. Er gibt die Beschleunigungszeit, die Strombegrenzung, die Form der Anlaufkennlinie (linear oder S-förmig) vor und überwacht Störmodi. Die Verwendung von Linux als Steuerungsplattform ermöglicht die Implementierung komplexer Algorithmen, die Erfassung und Analyse von Daten sowie die Integration der Anlage in die übergeordnete Automatisierungsebene des Werks.</p>
+
+<h2>3. Frequenzumrichter für Extruder: Auswahl und Parametrierung</h2>
+<p>Bei der Auswahl eines Frequenzumrichters für einen Sekundärkunststoff-Extruder sollte eine Leistungsreserve von 15-20% eingeplant werden. Für einen Doppelschneckenextruder mit 75 mm Durchmesser und einem 90-kW-Motor wird ein Frequenzumrichter mit 110 kW und einem Nennstrom von 200 A gewählt. Eine wichtige Eigenschaft ist die Überlastfähigkeit: Der Umrichter muss 150% des Nennstroms für 60 Sekunden liefern können, was für Kaltstarts und das Überwinden eines verstopften Filters erforderlich ist.</p>
+<p>Die Parametrierung des Frequenzumrichters umfasst die Einstellung der minimalen und maximalen Frequenz. Für Extruder wird die minimale Frequenz auf 10-15 Hz festgelegt (unterhalb dieser Frequenz ist das Drehmoment unzureichend), die maximale auf 50 oder 60 Hz je nach Motor. Die Beschleunigungszeit für Extruder wird auf 10 bis 30 Sekunden eingestellt. Der Regelmodus sollte sensorlose Vektorsteuerung (SVC) sein, da sie ein Anlaufdrehmoment von bis zu 150% des Nennwerts bereits bei 1-3 Hz liefert.</p>
+
+<h2>4. Steuerung des Frequenzumrichters über Linux</h2>
+<p>Der Linux-Controller wird über Ethernet mit dem Frequenzumrichter verbunden, typischerweise über das Modbus-TCP-Protokoll mit Port 502. Jeder Parameter des Umrichters hat sein eigenes Modbus-Register. Zum Beispiel kann Register 8192 für die Steuerung (Start, Stopp, Reversierung) zuständig sein, Register 8193 für die Frequenzvorgabe. Die Registeradressen variieren zwischen den Herstellern (Delta, Inovance, ABB, Siemens), aber das Prinzip bleibt gleich.</p>
+<p>Auf dem Linux-Controller läuft ein Python-Programm, das die Bibliothek pyModbusTCP verwendet. Es liest zyklisch (alle 100-500 ms) die aktuelle Frequenz, den Motorstrom und die Temperatur des Umrichters und schreibt neue Frequenzsollwerte. Bei einem Startbefehl setzt das Programm die Frequenz auf 0 Hz, aktiviert dann das Start-Bit und beginnt mit der schrittweisen Erhöhung:</p>
+<pre>for f in range(10, 5001, 100):
+    client.write_register(8193, f)
+    time.sleep(0.4)</pre>
+<p>Dieser Ansatz erlaubt es, die Beschleunigungszeit an die Bedingungen anzupassen – zum Beispiel auf 60 Sekunden bei Kaltstart und auf 10 Sekunden bei Warmstart nach kurzem Stillstand.</p>
+
+<h2>5. Sanftanlauf und Reduzierung der mechanischen Belastung</h2>
+<p>Der Sanftanlauf über den Frequenzumrichter reduziert die Spitzenbelastungen auf Getriebe und Schnecke des Extruders. Beim Direktstart kann das Drehmoment an der Motorwelle 200-300% des Nennwerts erreichen, was Mikrorisse in den Zahnrädern des Getriebes verursacht und dessen Lebensdauer von 30.000 auf 10.000 Betriebsstunden verkürzt. Beim Sanftanlauf überschreitet das Drehmoment 120-150% des Nennwerts nicht, und die Getriebelebensdauer bleibt erhalten. Auch die Schneckenlager werden nicht stoßbelastet, ihre Lebensdauer erhöht sich um den Faktor 2-3.</p>
+
+<h2>6. Automatisierung der Extrusionslinie auf Linux-Basis</h2>
+<p>Der Linux-Controller kann nicht nur die Startfunktion, sondern die gesamte Extrusionslinie steuern: Heizzonen-Temperaturregelung mit PID-Reglern, Dosiergeschwindigkeit, Drucküberwachung im Kopf und Alarme. Alle Daten werden in einer SQLite- oder InfluxDB-Datenbank gesammelt, und der Bediener sieht sie in einer Weboberfläche (Flask oder Grafana).</p>
+
+<h2>7. PID-Regler zur Produktivitätsstabilisierung</h2>
+<p>Der Frequenzumrichter kann zur Stabilisierung der Extruder-Produktivität betrieben werden. Eine Wägezelle misst die extrudierte Masse pro Zeit, der Controller berechnet die Abweichung und der PID-Regler gibt die Sollfrequenz vor. Typische PID-Parameter für Extruder: Kp = 0,1-0,3, Ki = 0,01-0,05, Kd = 0,1-0,5.</p>
+
+<h2>8. Sicherheit und Störmodi</h2>
+<p>Bei Linux-Steuerung muss ein Schutz gegen Kommunikationsausfall implementiert werden. Ein Watchdog-Timer stoppt den Motor, wenn keine Befehle empfangen werden. Der Frequenzumrichter sollte Parameter im nichtflüchtigen Speicher halten können.</p>
+
+<h2>9. Vorteile der Linux-Steuerung gegenüber SPS</h2>
+<p>Industrielle SPS sind zuverlässig, aber teuer und erfordern spezielle Software. Ein Linux-Controller (Industrie-PC oder Mini-PC mit SSD) bietet geringere Kosten, Open-Source-Werkzeuge (Python, InfluxDB, Grafana), einfache ERP/MES-Integration und Flexibilität. Für Recycling-Linien mit 1000-5000 t/Jahr ist dies wirtschaftlich sinnvoll.</p>
+
+<div class="info-block">
+<p><strong>Niederfrequente Schlüsselwörter (im Text platziert):</strong><br>
+✓ Sanftanlauf Extruder Frequenzumrichter VFD Linux Modbus TCP<br>
+✓ PID-Regler Produktivität Extruder Python Programmierung<br>
+✓ Reduzierung Getriebebelastung Sanftanlauf Extruder<br>
+✓ Automatisierung Extrusionslinie Linux Mint<br>
+✓ Vektorregelung Asynchronmotor Doppelschneckenextruder<br>
+✓ Anwendung Frequenzumrichter Sekundärkunststoff-Recycling</p>
+</div>
+
+<h2>10. Praxisbeispiel: Linux-Steuerung für Extruder mit Frequenzumrichter</h2>
+<p>In einem deutschen Betrieb wurde eine Steuerung für einen HDPE-Recycling-Extruder implementiert: Delta VFD-EL mit Modbus TCP, Linux-Controller (Intel Celeron, 4 GB RAM, 64 GB SSD, Linux Mint), Python mit pyModbusTCP, sqlite3 und Flask. Das System realisierte einen Sanftanlauf über 20 Sekunden, Produktivitätsstabilisierung auf 500 kg/h ±10 kg/h, Datenerfassung und Fernüberwachung. In zwei Jahren gab es keine steuerungsbedingten Stillstände. Der Energieverbrauch sank um 15% gegenüber Direktstart.</p>
+
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Extrusion and Process Automation: Soft Start of Motor via VFD with Linux Control</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Secondary Polymer Processing</div>
+
+<h2>1. Introduction: Why soft start is needed for extruders</h2>
+<p>Direct starting of an extruder's induction motor creates inrush currents 5-7 times higher than rated. This puts shock loads on the gearbox, screw, and bearings. For a 55 kW extruder, rated current is about 100 A, inrush can reach 500-700 A. Soft start via VFD solves this: frequency ramps from 0 to 50 Hz over set time, inrush current stays at 120-150% of rated.</p>
+
+<h2>2. Main components of a soft start system</h2>
+<p>Three key elements: VFD, induction motor, controller. The VFD rectifies 400 V AC to DC, then IGBTs form three-phase variable voltage and frequency. The Linux-based controller communicates via Modbus TCP or Profinet, setting ramp time, current limit, and startup curve.</p>
+
+<h2>3. VFD selection and parameterization for extruders</h2>
+<p>Oversize by 15-20%. For a 90 kW twin-screw extruder, choose 110 kW VFD with 200 A rated current. Overload capability: 150% for 60 seconds. Minimum frequency 10-15 Hz, maximum 50-60 Hz, ramp time 10-30 seconds. Sensorless vector control (SVC) provides 150% starting torque at 1-3 Hz.</p>
+
+<h2>4. Controlling the VFD via Linux and Modbus TCP</h2>
+<p>Connect via Ethernet, Modbus TCP port 502. Each parameter has a Modbus register. Python with pyModbusTCP reads/writes cyclically. Example ramp code:</p>
+<pre>for f in range(10, 5001, 100):
+    client.write_register(8193, f)
+    time.sleep(0.4)</pre>
+
+<h2>5. Soft start reduces mechanical stress</h2>
+<p>Direct start torque reaches 200-300% of rated, causing micro-cracks in gear teeth, reducing gearbox life from 30,000 to 10,000 hours. Soft start keeps torque at 120-150%, preserving gearbox life and increasing bearing life 2-3 times.</p>
+
+<h2>6. Linux-based extrusion line automation</h2>
+<p>Linux controller can manage entire line: PID temperature control, dosing speed, pressure monitoring, alarming. Data to SQLite/InfluxDB, web interface via Flask/Grafana.</p>
+
+<h2>7. PID controller for throughput stabilization</h2>
+<p>VFD stabilizes extruder throughput using load cell feedback. PID parameters: Kp = 0.1-0.3, Ki = 0.01-0.05, Kd = 0.1-0.5.</p>
+
+<h2>8. Safety and fault modes</h2>
+<p>Implement watchdog timer: if controller loses communication for 1-2 seconds, VFD stops motor. VFD should save parameters to non-volatile memory.</p>
+
+<h2>9. Advantages of Linux control over PLC</h2>
+<p>Industrial PLCs are reliable but expensive. Linux controller (industrial PC or Mini-PC with SSD) offers lower cost, open-source tools, easy ERP/MES integration, flexibility. For 1000-5000 tons/year recycling lines, this is cost-effective.</p>
+
+<div class="info-block">
+<p><strong>Low-frequency keywords (embedded):</strong><br>
+✓ soft start extruder VFD Linux Modbus TCP<br>
+✓ PID control extruder throughput Python programming<br>
+✓ gearbox stress reduction soft start extruder<br>
+✓ extrusion line automation Linux Mint<br>
+✓ vector control induction motor twin-screw extruder<br>
+✓ VFD application secondary polymer recycling</p>
+</div>
+
+<h2>10. Practical implementation example</h2>
+<p>German recycling plant for HDPE: Delta VFD-EL, Linux Mint on Intel Celeron (4 GB RAM, 64 GB SSD), Python with pyModbusTCP, sqlite3, Flask. Achieved 20-second soft start, 500 kg/h ±10 kg/h throughput stability, data logging, remote monitoring. No control-related failures in two years. Energy consumption reduced 15% vs direct start.</p>
+
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Экструзия и автоматизация процессов: плавный пуск двигателя через частотный преобразователь с управлением на Linux</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+<h2>1. Введение: зачем нужен плавный пуск для экструдера</h2>
+<p>При прямом пуске асинхронного двигателя экструдера возникают пусковые токи в 5-7 раз выше номинальных. Это создает ударные нагрузки на редуктор, шнек и подшипники. Для экструдера мощностью 55 кВт номинальный ток составляет около 100 А, а пусковой может достигать 500-700 А. Плавный пуск через частотный преобразователь решает эту проблему: частота нарастает от 0 до 50 Гц за заданное время, пусковой ток не превышает 120-150% от номинала.</p>
+
+<h2>2. Основные компоненты системы плавного пуска</h2>
+<p>Система состоит из трех ключевых элементов: частотный преобразователь, асинхронный двигатель и контроллер. Контроллер на базе Linux управляет преобразователем через Modbus TCP или Profinet, задает время разгона, ограничение тока, форму пусковой характеристики.</p>
+
+<h2>3. Частотный преобразователь для экструдера: выбор и настройка</h2>
+<p>Выбирайте с запасом 15-20%. Для двухшнекового экструдера 75 мм с двигателем 90 кВт нужен преобразователь на 110 кВт с током 200 А. Перегрузочная способность: 150% в течение 60 секунд. Минимальная частота 10-15 Гц, максимальная 50-60 Гц, время разгона 10-30 секунд. Режим управления - векторный без датчика (SVC).</p>
+
+<h2>4. Управление частотным преобразователем через Linux</h2>
+<p>Подключение по Ethernet, протокол Modbus TCP, порт 502. На Linux-контроллере работает программа на Python с библиотекой pyModbusTCP. Пример циклического увеличения частоты:</p>
+<pre>for f in range(10, 5001, 100):
+    client.write_register(8193, f)
+    time.sleep(0.4)</pre>
+
+<h2>5. Плавный пуск и снижение нагрузки на оборудование</h2>
+<p>При прямом пуске момент на валу достигает 200-300% от номинала, вызывая микротрещины в зубьях редуктора и снижая его ресурс с 30 000 до 10 000 моточасов. При плавном пуске момент не превышает 120-150%, ресурс редуктора сохраняется, ресурс подшипников возрастает в 2-3 раза.</p>
+
+<h2>6. Автоматизация экструзионной линии на базе Linux</h2>
+<p>Linux-контроллер может управлять всей линией: ПИД-регулирование температуры зон, скорость дозатора, давление в головке, аварийную сигнализацию. Данные собираются в SQLite или InfluxDB, веб-интерфейс на Flask или Grafana.</p>
+
+<h2>7. Настройка ПИД-регулятора для стабилизации производительности</h2>
+<p>Частотный преобразователь стабилизирует производительность экструдера по сигналу тензодатчика. Типичные коэффициенты ПИД-регулятора: Kp = 0,1-0,3, Ki = 0,01-0,05, Kd = 0,1-0,5.</p>
+
+<h2>8. Безопасность и аварийные режимы</h2>
+<p>Необходим защита от потери связи: watchdog-таймер останавливает двигатель, если команды не поступают. Частотный преобразователь должен сохранять параметры в энергонезависимую память.</p>
+
+<h2>9. Преимущества управления через Linux перед ПЛК</h2>
+<p>Промышленные ПЛК надежны, но дороги. Linux-контроллер (промышленный компьютер или Mini-PC с SSD) дает низкую стоимость, opensource-инструменты (Python, InfluxDB, Grafana), легкую интеграцию с ERP/MES. Для линий 1000-5000 тонн в год - экономически оправдано.</p>
+
+<div class="info-block">
+<p><strong>Низкочастотные ключевые запросы (вплетены в текст):</strong><br>
+✓ плавный пуск экструдера с частотным преобразователем через Linux Modbus TCP<br>
+✓ настройка ПИД-регулятора производительности экструдера на Python<br>
+✓ снижение нагрузки на редуктор при плавном пуске экструдера<br>
+✓ автоматизация экструзионной линии на базе Linux Mint<br>
+✓ векторное управление асинхронным двигателем для двухшнекового экструдера<br>
+✓ применение частотного преобразователя для переработки вторичных полимеров</p>
+</div>
+
+<h2>10. Пример реализации системы на Linux для экструдера с частотным преобразователем</h2>
+<p>На предприятии в Германии внедрена система управления экструдером для переработки вторичного HDPE: частотный преобразователь Delta VFD-EL, Linux-контроллер (Intel Celeron, 4 ГБ ОЗУ, 64 ГБ SSD, Linux Mint), Python с pyModbusTCP, sqlite3 и Flask. Система обеспечила плавный пуск за 20 секунд, стабилизацию производительности 500 кг/ч с точностью ±10 кг/ч, сбор данных и удаленный мониторинг. За два года аварийных остановов по вине системы не было. Энергопотребление снизилось на 15% по сравнению с прямым пуском.</p>
+
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
+</div>
+<script>
+(function() {
+    const buttons = document.querySelectorAll('.lang-btn');
+    const panels = document.querySelectorAll('.lang-panel');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            panels.forEach(panel => panel.classList.remove('active-panel'));
+            const activePanel = document.getElementById(`lang-${lang}`);
+            if (activePanel) activePanel.classList.add('active-panel');
+        });
+    });
+})();
+</script>
+</body>
+</html>

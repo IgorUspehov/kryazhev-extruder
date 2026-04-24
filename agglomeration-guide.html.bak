@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agglomeration von Stretchfolie (LLDPE) - Ihor Kryazhev</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background: #f4f4f4; }
+        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .lang-switcher { position: sticky; top: 0; background: #fff; padding: 10px 0; border-bottom: 2px solid #0056b3; margin-bottom: 20px; display: flex; gap: 10px; z-index: 1000; }
+        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 4px; background: #0056b3; color: white; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #003d80; }
+        button.active { background: #ff9800; }
+        .lang-content { display: none; }
+        h1 { color: #0056b3; border-left: 5px solid #ff9800; padding-left: 15px; }
+        h2 { color: #333; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 30px; }
+        .highlight { background: #fff3e0; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #f8f8f8; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button id="btn-de" onclick="setLang('de')">DE</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-ru" onclick="setLang('ru')">RU</button>
+</div>
+
+<div class="container">
+    <section class="lang-content" lang="de">
+        <h1>Agglomeration von Stretchfolie (LLDPE): Leitfaden</h1>
+        <p><strong>Autor: Ihor Kryazhev</strong>, Experte für Kunststoffrecycling</p>
+        <div class="highlight">Die Agglomeration erhöht die Schüttdichte von LLDPE von 30 kg/m³ auf 500 kg/m³. Ohne diesen Schritt ist eine stabile Granulierung technisch unmöglich.</div>
+        <h2>Technische Parameter</h2>
+        <table>
+            <tr><th>Parameter</th><th>Wert</th></tr>
+            <tr><td>Temperatur</td><td>120°C - 130°C</td></tr>
+            <tr><td>Messerspalt</td><td>0,3 - 0,5 mm</td></tr>
+            <tr><td>Wasserzugabe</td><td>1% - 3%</td></tr>
+        </table>
+        <p><a href="https://wa.me/4915258400610">Beratung anfordern (München/Online)</a></p>
+    </section>
+
+    <section class="lang-content" lang="en">
+        <h1>Stretch Film Agglomeration (LLDPE): Technical Guide</h1>
+        <p><strong>Author: Ihor Kryazhev</strong>, Consultant</p>
+        <div class="highlight">Agglomeration is mandatory to increase bulk density for proper extruder feeding.</div>
+        <h2>Process Values</h2>
+        <table>
+            <tr><th>Parameter</th><th>Value</th></tr>
+            <tr><td>Heating Temp</td><td>120°C - 130°C</td></tr>
+            <tr><td>Knife Gap</td><td>0.3 - 0.5 mm</td></tr>
+        </table>
+    </section>
+
+    <section class="lang-content" lang="ru">
+        <h1>Агломерация стрейч-пленки (LLDPE): Техническое руководство</h1>
+        <p><strong>Автор: Игорь Кряжев</strong>, технолог-консультант</p>
+        <div class="highlight">Агломерация поднимает плотность с 30 до 500 кг/м³, обеспечивая захват сырья шнеком.</div>
+        <h2>Параметры настройки</h2>
+        <table>
+            <tr><th>Параметр</th><th>Значение</th></tr>
+            <tr><td>Температура</td><td>120°C - 130°C</td></tr>
+            <tr><td>Зазор ножей</td><td>0,3 - 0,5 мм</td></tr>
+        </table>
+    </section>
+</div>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll(`[lang="${lang}"]`).forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${lang}`).classList.add('active');
+        localStorage.setItem('preferred_lang', lang);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem('preferred_lang') || 'de';
+        setLang(savedLang);
+    });
+</script>
+</body>
+</html>

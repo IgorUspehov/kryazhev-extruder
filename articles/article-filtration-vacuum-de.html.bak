@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Schmelzefiltration und Vakuumentgasung - Technischer Leitfaden</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0a2e52; border-bottom: 2px solid #ff9800; }
+        h2 { color: #0a2e52; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Schmelzefiltration und Vakuumentgasung in Recycling-Granulierlinien</h1>
+    <p><strong>Autor: Ihor Kryazhev, Technologieberater</strong></p>
+    <h2>1. Einführung</h2>
+    <p>Sekundärrohstoffe enthalten Verunreinigungen wie Sand, Staub, Etiketten und Feuchtigkeit. Ohne Filtration entstehen Defekte im Granulat; ohne Entgasung wird das Granulat porös.</p>
+    <h2>2. Schmelzefiltration</h2>
+    <p>Standard für LLDPE-Recycling: 150 µm Maschenweite. Umschaltung bei 120 bar Druck.</p>
+    <h2>3. Vakuumentgasung</h2>
+    <p>Erforderlicher Vakuumdruck: 50 mbar für LDPE/LLDPE. Ein Gaskondensator ist obligatorisch.</p>
+</body>
+</html>

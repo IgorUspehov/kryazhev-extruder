@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Melt Filtration and Vacuum Degassing - Technical Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0a2e52; border-bottom: 2px solid #ff9800; }
+        h2 { color: #0a2e52; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Melt Filtration and Vacuum Degassing in Polymer Recycling Lines</h1>
+    <p><strong>Author: Ihor Kryazhev, Process Consultant</strong></p>
+    <h2>1. Introduction</h2>
+    <p>Secondary raw materials contain contaminants like sand and moisture. Filtration removes solids, while vacuum degassing eliminates water and odors.</p>
+    <h2>2. Melt Filtration</h2>
+    <p>Standard for LLDPE recycling: 150-micron screen size. Switching pressure: 120 bar.</p>
+    <h2>3. Vacuum Degassing</h2>
+    <p>Target vacuum pressure: 50 mbar. A gas condenser is mandatory to protect the vacuum pump.</p>
+</body>
+</html>

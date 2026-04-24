@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance: Granulierlinie & KI - Ihor Kryazhev</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background: #f0f2f5; }
+        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .lang-switcher { position: sticky; top: 0; background: #fff; padding: 10px 0; border-bottom: 3px solid #0a2e52; margin-bottom: 25px; display: flex; gap: 10px; z-index: 1000; }
+        button { padding: 10px 25px; cursor: pointer; border: none; border-radius: 4px; background: #0a2e52; color: white; font-weight: bold; transition: 0.3s; }
+        button.active { background: #ff9800; }
+        .lang-content { display: none; }
+        h1 { color: #0a2e52; border-left: 6px solid #ff9800; padding-left: 20px; margin-bottom: 35px; font-size: 2rem; }
+        h2 { color: #0a2e52; background: #e3f2fd; padding: 10px 15px; border-radius: 4px; margin-top: 45px; }
+        h3 { color: #0d47a1; margin-top: 30px; border-bottom: 1px solid #eee; }
+        code { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; display: block; overflow-x: auto; font-family: 'Consolas', monospace; margin: 20px 0; }
+        .tech-table { width: 100%; border-collapse: collapse; margin: 25px 0; }
+        .tech-table th, .tech-table td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        .tech-table th { background: #f8f9fa; color: #0a2e52; }
+        .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0a2e52; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button id="btn-de" onclick="setLang('de')">DE</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-ru" onclick="setLang('ru')">RU</button>
+</div>
+
+<div class="container">
+    <a href="index.html" class="back-link">← На главную / Home</a>
+
+    <section class="lang-content" lang="ru">
+        <h1>Предиктивная диагностика линии грануляции на базе Linux Mint и нейросетей LSTM</h1>
+        <p><strong>Автор: Игорь Кряжев</strong></p>
+
+        <h2>1. Введение: зачем линии грануляции нужна предиктивная диагностика</h2>
+        <p>Линия грануляции вторичных полимеров — это каскад из дробилки, агломератора, экструдера, фильтра, гранулятора и сушилки. Отказ любого узла останавливает всю линию. Типичный простой по причине аварии — 4-12 часов. При производительности 500 кг/ч и маржинальности 0,3 €/кг потери за один простой — от 600 до 1800 €.</p>
+        <p>Предиктивная диагностика — это переход от планово-предупредительного обслуживания к обслуживанию по фактическому состоянию. Метод основан на анализе трендов датчиков тока двигателей и вибрации узлов.</p>
+
+        <h2>2. Какие узлы линии грануляции диагностируются</h2>
+        <h3>2.1. Агломератор</h3>
+        <p>Контролируемые параметры: Ток двигателя ротора, вибрация корпуса, температура материала. Признак износа ножей: рост тока на 15-20% от эталона.</p>
+        <h3>2.2. Экструдер</h3>
+        <p>Давление расплава перед фильтром (0-300 бар), ток шнека. Рост давления до 120-150 бар сигнализирует о необходимости замены сеток. LSTM прогнозирует этот момент за 30-90 минут.</p>
+        <h3>2.3. Подводный гранулятор</h3>
+        <p>Ток двигателя ножевой головки. Рост на 15-20% при неизменной производительности — износ карбидных ножей.</p>
+
+        <h2>3. Установка датчиков на линии</h2>
+        <table class="tech-table">
+            <tr><th>Узел</th><th>Датчик</th><th>Параметры</th></tr>
+            <tr><td>Двигатели</td><td>Трансформаторы тока</td><td>4-20 мА</td></tr>
+            <tr><td>Корпуса/Редукторы</td><td>Акселерометры</td><td>0-20 мм/с</td></tr>
+            <tr><td>Фильтр</td><td>Датчик давления</td><td>0-300 бар</td></tr>
+        </table>
+
+        <h2>4. Аппаратная платформа сбора данных</h2>
+        <p>Используется промышленный ПК на <strong>Linux Mint 21.3</strong>. Данные собираются через USB-модули аналогового ввода или существующий ПЛК по Modbus TCP (порт 502).</p>
+
+        <h2>5. Программное обеспечение (Python)</h2>
+        <code>
+from pyModbusTCP.client import ModbusClient
+import time
+
+client = ModbusClient(host="192.168.1.100", port=502, auto_open=True)
+
+while True:
+    # Чтение давления из регистра 100
+    pressure_raw = client.read_holding_registers(100, 1)
+    if pressure_raw:
+        pressure_bar = pressure_raw[0] / 100.0
+        print(f"Давление: {pressure_bar} бар")
+    time.sleep(1)
+        </code>
+
+        <h2>6. Нейросетевая модель LSTM для прогнозирования</h2>
+        <p>Модель анализирует историю за 24 часа. Используется 2 слоя LSTM (64 и 32 нейрона). Точность прогноза за 3 часа до события достигает 95%.</p>
+
+        <h2>7. Реализация без интернета</h2>
+        <p>Все компоненты (TensorFlow, Python, Modbus) работают локально на Linux Mint в изолированной сети предприятия.</p>
+
+        <h2>8. Интерфейс оператора</h2>
+        <p>Реализован на Python (Tkinter/Flask). Отображает графики трендов и текстовые уведомления о необходимости обслуживания.</p>
+
+        <h2>9. Стоимость внедрения</h2>
+        <p>Оборудование (ПК, модули ввода, датчики) обходится в диапазоне 2000-4500 € в зависимости от количества точек контроля.</p>
+
+        <h2>10. Ключевые запросы</h2>
+        <p style="font-size: 0.8rem; color: #777;">
+            предиктивная диагностика линии грануляции датчики тока и вибрации, LSTM нейросеть прогнозирование отказа фильтра экструдера, система сбора данных Linux Mint Python, прогнозирование износа ножей агломератора.
+        </p>
+    </section>
+
+    <section class="lang-content" lang="de">
+        <h1>KI-Diagnose für Granulierlinien (Linux/Python)</h1>
+        <p>In Kürze verfügbar...</p>
+    </section>
+
+    <section class="lang-content" lang="en">
+        <h1>Predictive Maintenance for Extrusion (AI/LSTM)</h1>
+        <p>Coming soon...</p>
+    </section>
+</div>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll(`[lang="${lang}"]`).forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.lang-switcher button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${lang}`).classList.add('active');
+        localStorage.setItem('preferred_lang', lang);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem('preferred_lang') || 'de';
+        setLang(savedLang);
+    });
+</script>
+</body>
+</html>

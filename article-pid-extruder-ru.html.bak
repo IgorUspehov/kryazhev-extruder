@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ПИД-регулирование — Игорь Кряжев</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.8; color: #1a1a1a; max-width: 1000px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
+        h1 { color: #0a2e52; border-bottom: 4px solid #ff9800; padding-bottom: 15px; }
+        h2 { color: #0a2e52; margin-top: 40px; background: #eef4f9; border-left: 6px solid #ff9800; padding: 10px; }
+        .tech-card { border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px; background: #fff; }
+        pre { background: #2b2b2b; color: #f8f8f2; padding: 20px; border-radius: 5px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background: #0a2e52; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Настройка ПИД-регулятора экструдера</h1>
+    <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
+    <h2>1. Стабилизация давления</h2><p>ПИД-регулятор компенсирует инерцию шнека. Настройка Kp, Ki, Kd...</p>
+</body>
+</html>

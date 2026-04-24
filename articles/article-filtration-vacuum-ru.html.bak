@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильтрация и дегазация - Техническое руководство</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0a2e52; border-bottom: 2px solid #ff9800; }
+        h2 { color: #0a2e52; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Фильтрация расплава и вакуумная дегазация в линиях грануляции</h1>
+    <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
+    <h2>1. Введение</h2>
+    <p>Вторичное сырье содержит песок, этикетки и влагу. Без фильтрации расплава загрязнения вызывают дефекты, а без дегазации гранула получается пористой.</p>
+    <h2>2. Фильтрация расплава</h2>
+    <p>Стандарт для вторичного LLDPE — сетка 150 микрон. Переключение при давлении 120 бар.</p>
+    <h2>3. Вакуумная дегазация</h2>
+    <p>Требуемое давление: 50 мбар для LLDPE. Обязательна установка конденсатора.</p>
+</body>
+</html>

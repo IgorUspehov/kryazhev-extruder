@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualitätskontrolle von Recyclaten im Labor | MFI, Aschegehalt, Feuchte</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Qualitätskontrolle von Recyclaten im Labor<br>Messung von MFI, Aschegehalt, Feuchte und weiteren Parametern</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Einleitung: Warum Laborprüfung von Recyclaten notwendig ist</h2>
+        <p>Sekundärkunststoffe sind ein instabiler Rohstoff. Verschiedene Chargen von Stretchfolie haben MFI-Werte zwischen 1,8 und 4,5. Landwirtschaftsfolie kann 0,5 bis 15% Sand und Erde enthalten (Aschegehalt). HDPE-Flaschen haben nach der Wäsche eine Restfeuchte von 0,1 bis 3%. Ohne Laborkontrolle kann keine gleichbleibende Granulatqualität garantiert werden. Eine Betriebslaborausstattung sollte mindestens drei Analysen durchführen: MFI (charakterisiert Fließfähigkeit und Degradation), Aschegehalt (Rückstand nach Veraschung – Sand, Metalle) und Feuchte (Restwasser nach Trocknung).</p>
+
+        <h2>2. MFI-Messung (Schmelzevolumen-/Massefließrate)</h2>
+        <h3>2.1 Geräte und Normen</h3>
+        <p>Extrusionsplastometer nach ISO 1133-1 oder ASTM D1238. Für LLDPE/LDPE/HDPE 190°C, 2,16 kg. Für PP: 230°C, 2,16 kg. Die Messung des MFI für recyceltes LLDPE bei 190°C mit 2,16 kg ist Standard.</p>
+        <h3>2.2 Verfahren für Sekundär-PE</h3>
+        <p>4–8 g Granulat, 7 min Vorheizung, Last 2,16 kg, Sammlung des Extrudats über 2 min, Wägung. MFI = (Masse in g) × (600 / Zeit in s). Beispiel: 0,5 g in 120 s → MFI = 2,5 g/10min.</p>
+        <h3>2.3 Bewertung für Sekundär-LLDPE</h3>
+        <ul><li>MFI 1,8–3,0 – Folienextrusion</li><li>MFI 3,0–5,0 – Fadenextrusion, Spritzguss einfacher Teile</li><li>MFI 5,0–8,0 – Spritzguss komplexer Teile</li><li>MFI &lt;1,5 – zu hohe Viskosität</li><li>MFI &gt;10 – Überhitzung, mehrfache Verarbeitung</li></ul>
+
+        <h2>3. Aschegehaltsbestimmung</h2>
+        <p>Veraschung bei 550–600°C im Muffelofen. Die Bestimmung des Aschegehalts von Polymerabfällen erfolgt bei 550°C für 4 Stunden. Tiegel vorwärmen (600°C, 30 min), Einwaage 5–10 g. Aufheizrampe: 200°C/30 min, dann 550°C/2–4 h. Aschegehalt = (Tiegel+Asche – Tara)/Einwaage ×100%. Bewertung: &lt;0,5% sauber (Folie, Spritzguss); 0,5–2,0% technische Teile; 2,0–5,0% hoher Füllstoffanteil; &gt;5% Ausschuss. Für Granulat unter Folienextrusion ist ein Aschegehalt unter 0,5% erforderlich.</p>
+
+        <h2>4. Feuchtemessung</h2>
+        <p>Trockenschrankmethode: 5–10 g Granulat bei 80°C (LLDPE) 2–4 h bis Massenkonstanz. Die Feuchtebestimmung im Trockenschrank bei 80°C für 2–4 Stunden ist Standard. Feuchte = (Masse vorher – nachher)/Masse vorher ×100%. Karl-Fischer-Titration für Feuchte &lt;0,5%. Bewertung: &lt;0,1% optimal; 0,1–0,3% dickwandige Teile; &gt;0,3% Blasenrisiko.</p>
+
+        <div class="highlight">🔬 Praxisbeispiel: MFI von recyceltem LLDPE typisch 2,5 g/10min. Aschegehalt unter 0,5% für saubere Rezyklate. Feuchte unter 0,1% nach Trocknung 80°C/4 h.</div>
+
+        <h2>5. Zusätzliche Prüfverfahren</h2>
+        <p><strong>Dichte (ISO 1183):</strong> Hydrostatisches Wägen. LLDPE 0,918–0,925 g/cm³ – die Dichte von recyceltem LLDPE liegt im Bereich 0,918–0,925 g/cm³. Abweichung zeigt HDPE oder LDPE an. <strong>Zugfestigkeit (ISO 527):</strong> ≥20–25 MPa, Bruchdehnung 300–600%. <strong>Gelbstichindex (YI):</strong> Normal 10–20, &gt;30 Überhitzung, &lt;5 blaues Pigment. Ein YI von 10–20 ohne blaues Pigment ist typisch für recyceltes PE.</p>
+
+        <h2>6. Prüffrequenz und Laboreinrichtung</h2>
+        <p>MFI alle 2–4 h, Asche und Feuchte 1× pro Schicht. Investition: Plastometer (3–8 k€), Muffelofen (1–2 k€), Analysenwaage (0,5–1 k€), Trockenschrank (0,5 k€). Bei &gt;1000 Proben/Jahr eigenes Labor günstiger als Fremdvergabe.</p>
+
+        <h2>7. Typische Fehler</h2>
+        <ul><li>Falsche Plastometertemperatur (5°C Abweichung → 20–30% MFI-Fehler) → Kalibrierung alle 3–6 Monate</li><li>Verschmutzte Tiegel → Ausglühen bei 600°C vor jeder Messung</li><li>Inhomogene Probe → Probenteiler verwenden</li></ul>
+
+        <h2>8. KI-gestützte Qualitätsvorhersage</h2>
+        <p>Aus Extruderdaten (Temperatur, Druck, Drehmoment) kann MFI mit Genauigkeit ±0,3 für LLDPE vorhergesagt werden. Optische Sensoren + KI erkennen Sand und Metall auf der Zerkleinerungsförderung (Genauigkeit für Aschegehalt &gt;0,5% ca. 80%).</p>
+
+        <h2>9. Fazit</h2>
+        <p>Regelmäßige Laborkontrollen (MFI, Aschegehalt, Feuchte) sind der Schlüssel zu gleichbleibender Granulatqualität bei der Verarbeitung von Sekundärrohstoffen. Die Investition in einfache Prüfgeräte amortisiert sich schnell durch vermiedene Reklamationen.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Recyclate Quality Control in the Laboratory<br>MFI, Ash Content, Moisture and other Parameters</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. Introduction</h2>
+        <p>Recyclates are inconsistent – MFI of stretch film 1.8–4.5, ash 0.5–15%, moisture 0.1–3%. Minimum lab tests: MFI (flow/degradation), ash, moisture.</p>
+        <h2>2. MFI Measurement (ISO 1133)</h2>
+        <p>190°C/2.16 kg for PE. Fill 4–8 g, preheat 7 min, collect extrudate. MFI = (mass g × 600)/time s. Interpretation: 1.8–3.0 film; 3.0–5.0 strapping; 5.0–8.0 injection moulding.</p>
+        <h2>3. Ash Content (550–600°C Muffle Furnace)</h2>
+        <p>Weigh 5–10 g, ash at 200°C/30 min then 550°C/2–4 h. Ash = (crucible+ash – tare)/sample ×100%. Acceptable: &lt;0.5% clean; 0.5–2.0% technical parts; &gt;5% reject.</p>
+        <h2>4. Moisture</h2>
+        <p>Oven method: 80°C/2–4 h. Target &lt;0.1% for film, 0.1–0.3% for thick walls.</p>
+        <div class="highlight">✅ Typical MFI of recycled LLDPE: 2.5 g/10min. Ash &lt;0.5% for clean recyclates. Moisture &lt;0.1% after 80°C/4h drying.</div>
+        <h2>5. Additional Tests</h2>
+        <ul><li>Density (ISO 1183): LLDPE 0.918–0.925 g/cm³</li><li>Tensile strength ≥20 MPa, elongation 300–600%</li><li>Yellowness index 10–20 normal</li></ul>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN (без отдельного блока ключей) -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Контроль качества рециклата в лаборатории<br>Измерение MFI, зольности, влажности и других параметров</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Введение: зачем нужен лабораторный контроль рециклата</h2>
+        <p>Вторичные полимеры – нестабильное сырьё. Разные партии стрейч-плёнки имеют MFI от 1,8 до 4,5. Сельхозплёнка может содержать 0,5–15% песка и земли (зольность). Флаконы HDPE после мойки имеют влажность 0,1–3%. Без лабораторного контроля нельзя гарантировать качество гранулы. Заводская лаборатория должна выполнять минимум три анализа: MFI (текучесть и степень деструкции), зольность (песок, металлы), влажность.</p>
+
+        <h2>2. Измерение MFI (показателя текучести расплава)</h2>
+        <p>Экструзионный пластометр по ISO 1133-1. Для LLDPE/LDPE/HDPE – 190°C, 2,16 кг. Для PP – 230°C, 2,16 кг. Измерение MFI для вторичного LLDPE по ISO 1133 при 190°C и нагрузке 2,16 кг – стандартная процедура. Процедура: 4–8 г гранулы, предварительный нагрев 7 мин, сбор экструдата за 2 мин, взвешивание. MFI = (масса г × 600) / время с. Оценка для вторичного LLDPE: 1,8–3,0 – плёнка; 3,0–5,0 – нити, биг-бэги; 5,0–8,0 – литьё; &lt;1,5 – слишком вязкий; &gt;10 – перегрев. Погрешность для вторичных полимеров ±0,5–1,0 – усреднение по 3–5 измерениям.</p>
+
+        <h2>3. Измерение зольности</h2>
+        <p>Сжигание в муфельной печи при 550–600°C. Определение зольности полимерных отходов проводят в муфельной печи при 550°C в течение 4 часов. Тигель прокаливают (600°C/30 мин), взвешивают. Навеска 5–10 г гранулы, нагрев 200°C/30 мин (размягчение без выброса), затем 550°C/2–4 ч до полного сгорания. Зольность = (масса золы) / (навеска) ×100%. Оценка: &lt;0,5% чистое сырьё (плёнка, флаконы) – допустимая зольность для гранулы под экструзию плёнки менее 0,5 процента; 0,5–2,0% технические изделия; 2,0–5,0% высокое содержание наполнителя; &gt;5% брак, требуется повторная мойка.</p>
+
+        <h2>4. Измерение влажности</h2>
+        <p>Метод потери массы: навеска 5–10 г, сушка при 80°C для LLDPE (2–4 ч до постоянной массы). Контроль влажности гранулы проводят методом потери массы в сушильном шкафу при 80°C в течение 2–4 часов. Влажность = (масса до – после)/масса до ×100%. Кулонометрия по Карлу Фишеру – для влажности &lt;0,5%. Оценка: &lt;0,1% оптимально (плёнка, литьё); 0,1–0,3% допустимо (толстостенные изделия); &gt;0,3% риск брака при экструзии плёнки (пузыри).</p>
+
+        <div class="highlight">🧪 Пример: MFI для вторичного LLDPE 2,5 г/10мин. Зольность менее 0,5% для чистой гранулы. Влажность после сушки 80°C/4 ч – ниже 0,1%.</div>
+
+        <h2>5. Дополнительные методы контроля</h2>
+        <ul><li><strong>Плотность (ISO 1183):</strong> гидростатическое взвешивание. Плотность вторичного LLDPE составляет 0,918–0,925 г/см³ при измерении гидростатическим методом.</li><li><strong>Прочность на разрыв и удлинение (ISO 527):</strong> для LLDPE из стрейч-плёнки прочность ≥20–25 МПа, удлинение 300–600%.</li><li><strong>Индекс желтизны (YI):</strong> норма 10–20 (слегка желтоватый). Индекс желтизны вторичного полиэтилена без добавления синего пигмента составляет YI 10–20.</li></ul>
+
+        <h2>6. Периодичность контроля и организация лаборатории</h2>
+        <p>MFI: каждые 2–4 часа. Зольность: 1 раз в смену. Влажность: 1 раз в смену. Пластометр (3–8 тыс €), муфельная печь (1–2 тыс €), аналитические весы (0,5–1 тыс €), сушильный шкаф (0,5 тыс €). Для малой линии (до 500 кг/ч) возможна передача анализов в аккредитованную лабораторию (50–200 €/образец).</p>
+
+        <h2>7. Типичные ошибки лабораторного контроля</h2>
+        <ul><li>Неправильная температура пластометра: ошибка 5°C даёт погрешность MFI 20–30% → калибровка каждые 3–6 месяцев</li><li>Загрязнение тиглей: остаток предыдущей пробы → прожиг при 600°C перед каждым измерением</li><li>Неравномерная проба гранулы: крупные и мелкие фракции → квартование или пробоотборник</li></ul>
+
+        <h2>8. Автоматизация контроля качества с помощью ИИ</h2>
+        <p>На линии в Польше внедрена система, прогнозирующая MFI по данным экструдера (температура расплава, давление, крутящий момент) – точность ±0,3 для LLDPE без отбора проб. Для контроля зольности используется оптический датчик + нейросеть для детекции песчинок и металла на дроблёнке (точность определения зольности &gt;0,5% – 80%).</p>
+
+        <h2>9. Заключение</h2>
+        <p>Регулярный лабораторный контроль MFI, зольности и влажности – ключ к стабильному качеству гранулы из вторичного сырья. Инвестиции в простое лабораторное оборудование окупаются за счёт снижения брака и рекламаций, особенно при работе с требовательными потребителями плёнки или литьевых изделий.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
+git add recycled-plastic-lab-control.html && git commit -m "🐛 Исправлено: убран видимый блок ключей из контроля качества" && git push origin main

@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <!-- GEO TARGETING FOR GERMANY -->
+    <meta name="geo.region" content="DE" />
+    <meta name="geo.placename" content="Germany" />
+    <meta name="geo.position" content="51.1657;10.4515" />
+    <meta name="ICBM" content="51.1657, 10.4515" />
+    <link rel="alternate" hreflang="x-default" href="https://polymer-consult.github.io/en/$(basename "$file")" />
+    <!-- END GEO TAGS -->
     <meta charset="UTF-8">
     <title>PID-Regler für Extruder in Python - Ihor Kryazhev</title>
     <style>
@@ -27,5 +34,6 @@
     <p>Um eine Sättigung des Integrators zu verhindern, wird <strong>Anti-Windup</strong> implementiert. Messrauschen der Waage wird durch einen <strong>EWMA-Filter</strong> (Exponentially Weighted Moving Average) geglättet.</p>
     <pre># Python EWMA Filter
 filtered = alpha * measured + (1 - alpha) * last_value</pre>
+<!-- Last updated: 2026-04-24 23:10:18 -->
 </body>
 </html>

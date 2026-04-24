@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Переработка ПП-мешков и биг-бэгов: контроль MFI и фильтрация — Игорь Кряжев</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.7; color: #1a1a1a; max-width: 1100px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
+        h1 { color: #0a2e52; border-bottom: 4px solid #ff9800; padding-bottom: 15px; }
+        h2 { color: #0a2e52; margin-top: 35px; border-left: 6px solid #ff9800; padding-left: 15px; background: #eef4f9; padding: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
+        th, td { border: 1px solid #ccc; padding: 12px; text-align: left; }
+        th { background: #0a2e52; color: white; }
+        .warning-box { border: 2px solid #e67e22; color: #d35400; padding: 15px; margin: 20px 0; background: #fff5e6; }
+    </style>
+</head>
+<body>
+    <h1>Переработка ПП-мешков и биг-бэгов: контроль MFI, забивка сеток и грануляция</h1>
+    <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
+
+    <h2>1. Специфика сырья: ориентированные нити</h2>
+    <p>Тканая мешковина состоит из нитей с вытяжкой 1:6–1:10. Высокая степень ориентации молекул требует особых температурных режимов для полного расплавления в экструдере.</p>
+
+    <div class="warning-box">
+        <strong>Проблема забивки сеток:</strong> Неплавящиеся ориентированные волокна забивают фильтр. Решение — повышение температуры в зоне пластикации до 230–250°C и использование гидравлического фильтра.
+    </div>
+
+    <h2>2. Температурный профиль грануляции</h2>
+    <table>
+        <tr><th>Зона экструдера</th><th>Температура (°C)</th><th>Назначение</th></tr>
+        <tr><td>Зона 1 (Загрузка)</td><td>180 – 190</td><td>Предварительный прогрев</td></tr>
+        <tr><td>Зоны 3–4 (Смешение)</td><td>230 – 250</td><td>Плавление ориентированных нитей</td></tr>
+        <tr><td>Зоны 5–6 (Вакуум)</td><td>220 – 240</td><td>Дегазация (удаление влаги)</td></tr>
+        <tr><td>Головка</td><td>200 – 210</td><td>Формование стренг</td></tr>
+    </table>
+
+    <h2>3. Стабилизация MFI (ПТР)</h2>
+    <p>Без антиоксидантов ПТР растет на 100–150%. Добавка 0,4% фенольного антиоксиданта ограничивает рост ПТР до 30–50%, что критично для повторного производства нити.</p>
+
+    <h2>4. Применение гранулы</h2>
+    <ul>
+        <li><strong>ПТР 8–12:</strong> Новые мешки и шпагат (в смеси 50/50 с первичкой).</li>
+        <li><strong>ПТР 6–9:</strong> Литье ящиков и поддонов.</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kühlsysteme für die Flachfolienextrusion | Igor Kryazhev</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#222;background:#f5f5f5;padding:20px}
+.container{max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}
+.lang-tabs{display:flex;background:#2c3e50;flex-wrap:wrap}
+.lang-btn{background:#34495e;border:none;padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;color:#ecf0f1;border-right:1px solid #2c3e50}
+.lang-btn.active{background:#27ae60;color:#fff}
+.lang-panel{display:none;padding:30px 40px;animation:fadeIn .3s ease}
+.lang-panel.active-panel{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.8rem;color:#27ae60;border-left:5px solid #27ae60;padding-left:20px;margin-bottom:15px}
+h2{font-size:1.4rem;color:#2c3e50;margin:25px 0 15px;border-bottom:2px solid #ecf0f1}
+.author{background:#e8f5e9;padding:12px 20px;border-radius:8px;margin:20px 0;font-style:italic;color:#2e7d32}
+ul{margin:15px 0 15px 30px}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ecf0f1;font-size:.85rem;color:#7f8c8d;text-align:center}
+@media (max-width:768px){.lang-panel{padding:20px}.lang-btn{padding:10px 16px;font-size:.85rem}h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
+
+<!-- DEUTSCH -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Kühlsysteme für die Flachfolienextrusion: Kühlwalzen, Chiller und Linux-gesteuerte Regelung</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Sekundärkunststoff-Recycling</div>
+
+<h2>1. Einleitung</h2>
+<p>Die Flachfolienextrusion ist ein kontinuierlicher Prozess, bei dem die Polymerschmelze durch eine Flachdüse geformt wird. Die Qualität der resultierenden Platte oder Folie hängt direkt von der Temperaturstabilität über die Breite der Bahn und der Gleichmäßigkeit der Kühlung ab. Das Kühlsystem in einer Flachfolienextrusionslinie umfasst eine Kalander-Gruppe (Kühlwalzen), Chiller, Pumpstationen und Wassertanks.</p>
+
+<h2>2. Konstruktion der Kühlwalzen</h2>
+<p>Die Kühlwalzen für die Flachfolienextrusion werden aus gehärtetem und verchromtem Stahl mit hochpräziser Oberflächenbearbeitung gefertigt. Die Oberflächenrauheit Ra sollte für eine glatte Plattenoberfläche 0,05-0,1 Mikrometer betragen. Für matte Oberflächen werden Walzen mit einer Rauheit von Ra 0,4-0,8 Mikrometer verwendet. Der Durchmesser der Kühlwalzen für die Flachfolienextrusion beträgt für Platten mit einer Dicke von 1-5 mm 300-500 mm, für dünne Folien (0,1-1 mm) werden Walzen mit einem Durchmesser von 150-300 mm verwendet. Die genaue Berechnung des Kühlwalzendurchmessers erfolgt auf Basis der Linienbreite und der erwarteten Produktionsrate.</p>
+
+<h2>3. Auslegung von Leistung und Kühlung</h2>
+<p>Für eine Flachfolienextrusionslinie mit einer Produktionsrate von 200-400 kg/h (3 mm dicke Platte, 1000 mm Breite) beträgt der Kühlwasserbedarf 5-10 m³/h. Bei der Auslegung des Kühlsystems ist die richtige Berechnung der Chiller-Kälteleistung entscheidend. Für eine Extrusionslinie mit 1000 kg/h Produktion ist ein Chiller mit einer Kälteleistung von 120-150 kW erforderlich. Für Platten mit 5-8 mm Dicke (400-800 kg/h) steigt der Kühlwasserbedarf auf 15-25 m³/h.</p>
+
+<h2>4. Spaltverstellung der Kühlwalzen</h2>
+<p>In Flachfolienextrusionslinien werden hydraulische oder pneumatische Anpressvorrichtungen zur Spaltverstellung der Kühlwalzen verwendet. Die geforderte Genauigkeit der Spaltverstellung beträgt 0,01 mm. Der Anpressdruck der Bahn an die Kühlwalzen sollte 2-5 kg/cm² betragen. Für Platten aus recyceltem HDPE mit niedrigem MFI (0,5-1,5) wird der Anpressdruck auf 5-7 kg/cm² erhöht. Die Einstellung des Walzenspalts mit einer Präzision von 0,01 mm ist kritisch für die gleichmäßige Dicke.</p>
+
+<h2>5. Geschwindigkeitssynchronisation</h2>
+<p>Die Abzugswalzen in der Flachfolienextrusionslinie laufen 0,5-2% schneller als die Kühlwalzen, um die Bahn unter Spannung zu halten. Für LDPE mit geringer Reißfestigkeit beträgt die Geschwindigkeitsdifferenz 0,5-1%, für HDPE 1-2%. Die Synchronisation aller Walzen erfolgt über Frequenzumrichter an einem gemeinsamen Modbus-TCP-Bus. Ein Linux-Controller korrigiert Abweichungen von mehr als 0,5%.</p>
+
+<h2>6. Linux-basierte Steuerung</h2>
+<p>Die Linux-basierte Steuerung der Kühlwasserzirkulation in der Flachfolienextrusionslinie sammelt Daten von Temperatursensoren an jedem Walzenein- und -auslass. Die Wassertemperatur am Austritt darf 30°C nicht überschreiten. Für die Anbindung des Chillers über Modbus TCP an den Linux-Controller wird das Standardprotokoll verwendet. Industriechiller mit Modbus-TCP-Schnittstelle übertragen Betriebsparameter wie Kälteleistung, Wasserdurchfluss, Verdampfertemperatur und Kältemitteldruck.</p>
+
+<h2>7. Zirkulationskühlsysteme</h2>
+<p>Ein Kühlsystem mit Puffertank (2-5 m³) und Chiller reduziert den Frischwasserverbrauch um 90-95%. Die Wassertemperatur im Tank wird im Bereich von 10-15°C gehalten. Der Linux-Controller schaltet den Chiller bei einer Außentemperatur unter 10°C automatisch in den Freikühlmodus (Free Cooling) um und leitet das Kühlmittel zum Kühlturm.</p>
+
+<h2>8. Energieeinsparung</h2>
+<p>Die Energieeinsparung durch Free Cooling beim Chiller ist erheblich. Die Leistungsaufnahme eines Chillers für eine 500-kg/h-Linie beträgt 25-35 kW. Im Free-Cooling-Modus sinkt der Energieverbrauch auf 5-10 kW (nur Pumpen und Kühlturmventilatoren), was einer Energieeinsparung von 60-80% für den Extruder-Kühlkreislauf entspricht.</p>
+
+<h2>9. Typische Fehler</h2>
+<ul>
+<li>Unzureichende Kühlung: Platte am Aufnahmetisch noch weich → Wasserdurchfluss erhöhen, Chiller-Temperatur senken</li>
+<li>Ungleichmäßige Kühlung über die Breite → Gegenstromkühlung prüfen, Ablagerungen in den Walzenkanälen entfernen</li>
+<li>Luftblasen zwischen Platte und Walze: Anpressdruck zu niedrig (<1 kg/cm²) → Druck erhöhen</li>
+<li>Kommunikationsausfall zum Chiller → Modbus-Verbindung prüfen, Watchdog-Timer implementieren</li>
+</ul>
+
+<h2>10. Fazit</h2>
+<p>Die Kühlung ist kritisch in der Flachfolienextrusion. Für Linien unter 400 kg/h ist direkte Wasserkühlung möglich. Für größere Kapazitäten sind Zirkulationssysteme mit Chiller wirtschaftlich. Die Integration eines Linux-Controllers ermöglicht präzise Temperaturregelung (±1°C) und Energieeinsparung von 60-80% durch Freikühlung. Für recycelte Polymere ist stabile Kühlung besonders wichtig.</p>
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Cooling Systems for Flat Die Extrusion: Cooling Rolls, Chillers, Linux Control</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Secondary Polymer Processing</div>
+
+<h2>1. Introduction</h2>
+<p>Flat die extrusion is a continuous process where the polymer melt is shaped through a flat die. Sheet or film quality depends directly on temperature stability across the web and cooling uniformity. The cooling system includes cooling rolls, chillers, pump stations, and water tanks.</p>
+
+<h2>2. Cooling roll design</h2>
+<p>Cooling rolls for flat die extrusion are made of chrome-plated steel with high-precision surface finishing. Surface roughness Ra should be 0.05-0.1 µm for glossy surfaces and 0.4-0.8 µm for matte surfaces. Cooling roll diameter for flat die extrusion is 300-500 mm for 1-5 mm sheets and 150-300 mm for 0.1-1 mm films. Accurate cooling roll diameter calculation is based on line width and expected production rate.</p>
+
+<h2>3. Cooling capacity calculation</h2>
+<p>For a flat die extrusion line producing 200-400 kg/h (3 mm sheet, 1000 mm width), cooling water demand is 5-10 m³/h. Proper chiller capacity calculation for extrusion line is essential. For a 1000 kg/h line, a chiller with 120-150 kW cooling capacity is required. For 5-8 mm sheets (400-800 kg/h), demand rises to 15-25 m³/h.</p>
+
+<h2>4. Roll gap adjustment</h2>
+<p>Roll gap adjustment accuracy of 0.01 mm is required. Nip pressure should be 2-5 kg/cm². For recycled HDPE with low MFI (0.5-1.5), increase to 5-7 kg/cm². Adjusting the roll gap with 0.01 mm precision is critical for uniform thickness.</p>
+
+<h2>5. Speed synchronization</h2>
+<p>Pull rolls run 0.5-2% faster than cooling rolls to maintain web tension. For LDPE: 0.5-1%, for HDPE: 1-2%. All VFDs connected via Modbus TCP to Linux controller. Speed deviation >0.5% triggers correction.</p>
+
+<h2>6. Linux-based control</h2>
+<p>Linux-based cooling water circulation control for flat die line collects data from temperature sensors at each roll inlet/outlet. Outlet water temperature must not exceed 30°C. For chiller connection via Modbus TCP to Linux controller, standard protocol is used. Industrial chillers with Modbus TCP interface report cooling capacity, flow, evaporator temperature, refrigerant pressure.</p>
+
+<h2>7. Recirculating cooling systems</h2>
+<p>A system with buffer tank (2-5 m³) and chiller reduces fresh water consumption by 90-95%. Tank temperature maintained at 10-15°C. The Linux controller enables free cooling mode when outdoor temperature <10°C, directing coolant to cooling tower.</p>
+
+<h2>8. Energy savings</h2>
+<p>Energy savings through free cooling for chiller are significant. Chiller power consumption for a 500 kg/h line: 25-35 kW. In free cooling mode, consumption drops to 5-10 kW (pumps and fans only) — a 60-80% energy saving for the extruder cooling circuit.</p>
+
+<h2>9. Typical errors</h2>
+<ul>
+<li>Inadequate cooling: sheet still soft at take-up → increase water flow, lower chiller temperature</li>
+<li>Uneven cooling across width → check counterflow, clean roll channels</li>
+<li>Air bubbles between sheet and roll: nip pressure too low (<1 kg/cm²) → increase pressure</li>
+<li>Communication loss with chiller → check Modbus connection, implement watchdog timer</li>
+</ul>
+
+<h2>10. Conclusion</h2>
+<p>Cooling is critical in flat die extrusion. For lines under 400 kg/h, direct fresh water cooling is possible. For higher capacities, recirculating systems with chiller are economical. Linux controller integration enables precise temperature control (±1°C) and 60-80% energy savings via free cooling. Stable cooling is especially important for recycled polymers.</p>
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Системы охлаждения для плоскощелевой экструзии: охлаждающие валы, чиллеры, управление на Linux</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+<h2>1. Введение</h2>
+<p>Процесс плоскощелевой экструзии представляет собой непрерывное формирование полимерного расплава через плоскую фильеру. Качество получаемого листа или пленки напрямую зависит от стабильности температуры по ширине полотна и равномерности охлаждения. Система охлаждения включает каландровую группу (охлаждающие валы), чиллеры, насосные станции и резервуары для воды.</p>
+
+<h2>2. Конструкция охлаждающих валов</h2>
+<p>Охлаждающие валы для плоскощелевой экструзии изготавливаются из хромированной стали с высокоточной шлифовкой. Шероховатость Ra для глянцевой поверхности 0,05-0,1 мкм, для матовой 0,4-0,8 мкм. Диаметр охлаждающих валов для плоскощелевой экструзии составляет для листа 1-5 мм - 300-500 мм, для тонких пленок 0,1-1 мм - 150-300 мм. Точный расчёт диаметра охлаждающих валов выполняется на основе ширины линии и ожидаемой производительности.</p>
+
+<h2>3. Расчёт производительности и охлаждения</h2>
+<p>Для линии плоскощелевой экструзии производительностью 200-400 кг/ч (лист 3 мм, ширина 1000 мм) расход воды составляет 5-10 м³/ч. При расчёте системы охлаждения важно правильно определить требуемую холодопроизводительность чиллера. Для экструзионной линии 1000 кг/ч необходим чиллер с холодопроизводительностью 120-150 кВт. Для листа 5-8 мм (400-800 кг/ч) расход воды возрастает до 15-25 м³/ч.</p>
+
+<h2>4. Регулировка зазора валов</h2>
+<p>В линиях плоскощелевой экструзии для регулировки зазора охлаждающих валов используются гидравлические или пневматические прижимные устройства. Требуемая точность регулировки зазора составляет 0,01 мм. Давление прижима полотна к валам - 2-5 кг/см². Для вторичного HDPE с низким ПТР (0,5-1,5) давление повышают до 5-7 кг/см². Настройка зазора с точностью 0,01 мм критична для получения равномерной толщины.</p>
+
+<h2>5. Синхронизация скорости</h2>
+<p>Скорость вытяжных валов должна быть на 0,5-2% выше скорости охлаждающих валов для создания натяжения полотна. Для LDPE разница составляет 0,5-1%, для HDPE - 1-2%. Все частотные преобразователи подключены к шине Modbus TCP. Linux-контроллер корректирует скорость при отклонении более 0,5%.</p>
+
+<h2>6. Управление через Linux</h2>
+<p>Управление циркуляцией охлаждающей воды через Linux для плоскощелевой линии осуществляется сбором данных с термодатчиков на входе и выходе каждого вала. Температура воды на выходе не должна превышать 30°C. Для подключения чиллера по Modbus TCP к Linux контроллеру используется стандартный протокол. Промышленные чиллеры с интерфейсом Modbus TCP передают холодопроизводительность, расход, температуру испарителя, давление хладагента.</p>
+
+<h2>7. Циркуляционные системы охлаждения</h2>
+<p>Система с промежуточной емкостью (2-5 м³) и чиллером снижает расход свежей воды на 90-95%. Температура воды в емкости поддерживается в диапазоне 10-15°C. Linux-контроллер включает режим фрикулинга (free cooling) при температуре наружного воздуха ниже 10°C, направляя теплоноситель в градирню.</p>
+
+<h2>8. Энергосбережение</h2>
+<p>Экономия энергии при использовании фрикулинга чиллера значительна. Потребляемая мощность чиллера для линии 500 кг/ч - 25-35 кВт. В режиме фрикулинга энергопотребление снижается до 5-10 кВт (только насосы и вентиляторы), что соответствует экономии энергии 60-80% для контура охлаждения экструдера.</p>
+
+<h2>9. Типичные ошибки</h2>
+<ul>
+<li>Недостаточное охлаждение: лист деформируется на приемном столе → увеличить расход воды, снизить температуру чиллера</li>
+<li>Неравномерное охлаждение по ширине → проверить противоточную схему, очистить каналы валов</li>
+<li>Пузыри между листом и валом: давление прижима менее 1 кг/см² → повысить давление</li>
+<li>Потеря связи с чиллером → проверить Modbus, внедрить watchdog-таймер</li>
+</ul>
+
+<h2>10. Заключение</h2>
+<p>Охлаждение - критический процесс в плоскощелевой экструзии. Для линий до 400 кг/ч возможно прямое охлаждение проточной водой. Для больших производительностей экономически целесообразны циркуляционные системы с чиллером. Интеграция Linux-контроллера позволяет обеспечить точное поддержание температуры (±1°C) и экономию энергии 60-80% за счет фрикулинга. Стабильное охлаждение особенно важно для вторичных полимеров.</p>
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
+</div>
+<script>
+(function(){
+var b=document.querySelectorAll('.lang-btn'),p=document.querySelectorAll('.lang-panel');
+b.forEach(function(btn){btn.addEventListener('click',function(){
+var l=btn.getAttribute('data-lang');
+b.forEach(function(x){x.classList.remove('active');});
+btn.classList.add('active');
+p.forEach(function(panel){panel.classList.remove('active-panel');});
+document.getElementById('lang-'+l).classList.add('active-panel');
+});});
+})();
+</script>
+</body>
+</html>

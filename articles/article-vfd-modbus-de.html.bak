@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>VFD-Steuerung über Modbus TCP unter Linux - Ihor Kryazhev</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0a2e52; border-bottom: 2px solid #ff9800; }
+        h2 { color: #0a2e52; margin-top: 30px; }
+        pre { background: #f4f4f4; padding: 15px; border-left: 5px solid #0a2e52; overflow-x: auto; font-size: 0.9rem; }
+        .tech-info { background: #e3f2fd; padding: 15px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>VFD-Steuerung über Modbus TCP unter Linux</h1>
+    <p><strong>Autor: Ihor Kryazhev, Technologieberater</strong></p>
+    <h2>1. Einführung</h2>
+    <p>Die Automatisierung einer Extrusionslinie erfordert eine präzise Steuerung der Schneckendrehzahl. Modbus TCP ermöglicht es Linux-Systemen, Frequenzumrichter (VFD) direkt über Ethernet zu steuern.</p>
+    <div class="tech-info">
+        <strong>Vorteile:</strong> Diagnose in Echtzeit (Stromstärke, Temperatur) und PID-Regelung der Ausstoßleistung (kg/h).
+    </div>
+    <h2>2. Modbus-Register (Beispiel Delta VFD)</h2>
+    <ul>
+        <li><strong>Register 2000H:</strong> Steuerwort (Bit 0: Start/Stop).</li>
+        <li><strong>Register 2001H:</strong> Frequenzvorgabe (Skalierung 0,01 Hz).</li>
+    </ul>
+    <h2>3. Python-Integration</h2>
+    <pre>from pyModbusTCP.client import ModbusClient
+client = ModbusClient(host='192.168.1.100', port=502, auto_open=True)
+client.write_single_register(8193, 3000) # Setzt 30,00 Hz</pre>
+</body>
+</html>

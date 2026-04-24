@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperaturprofile im Extruder für LDPE, HDPE, PP | Einstellung & Granulatqualität</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,0.05);}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Temperaturprofile im Extruder für LDPE, HDPE, PP<br>Einstellung und Einfluss auf die Granulatqualität</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Einleitung: Warum das Temperaturprofil entscheidend ist</h2>
+        <p>Das Temperaturprofil des Extruders – die Temperaturverteilung entlang des Zylinders vom Einfülltrichter bis zum Werkzeugkopf – ist bei der Verarbeitung von Sekundärkunststoffen entscheidend für vollständiges Aufschmelzen, Entfernung von Flüchtigen Stoffen und Vermeidung thermischer Zersetzung. LDPE schmilzt bei 105–115°C, HDPE bei 125–135°C, PP bei 160–170°C. Bei der Einstellung des Temperaturprofils für Sekundärrohstoffe sind Verunreinigungen zu berücksichtigen: LDPE aus Agrarfolie kann 5–15% Feuchte enthalten, HDPE aus Flaschen Rückstände von Reinigungsmitteln, PP aus Big Bags Staub und Sand.</p>
+
+        <h2>2. Allgemeine Struktur des Temperaturprofils</h2>
+        <p>Typische Extruder (5–10 Heizzonen plus Kopf und Düse) folgen dem Prinzip eines allmählichen Temperaturanstiegs von der Einzugszone zum Kopf, mit möglicher Absenkung in den letzten Zonen. Zone 1 (Einzug) liegt 10–30°C über dem Schmelzpunkt. Zonen 2–4 (Plastifizierung/Kompression) erreichen die Spitzentemperatur. Zonen 5–7 (Entgasung/Mischen) liegen 10–20°C unter dem Maximum. Zone 8 (Dosierung) und Kopf sind 10–30°C kühler als die Spitze.</p>
+
+        <h2>3. Temperaturprofil für LDPE-Rezyklat</h2>
+        <p>Für Einschneckenextruder 45–65 mm, L/D 30–36: Zone 1 (Einzug) 140–160°C, Zone 2 160–180°C, Zone 3 180–200°C, Zone 4 (Spitze) 200–220°C, Zone 5–6 190–210°C, Zone 7 180–200°C, Kopf 170–190°C. Bei hoher Feuchte (Agrarfolie) wird Zone 4–5 auf 220–230°C erhöht. Das typische Temperaturprofil für LDPE-Rezyklat hat eine Einzugstemperatur von 140–160°C und einen Spitzenwert von 200–220°C.</p>
+
+        <h2>4. Temperaturprofil für HDPE-Rezyklat</h2>
+        <p>HDPE aus Flaschen, Kanistern und Rohren: Zone 1 160–180°C, Zone 2 180–200°C, Zone 3 200–220°C, Zone 4 (Spitze) 220–240°C, Zone 5–6 210–230°C, Zone 7–8 190–210°C, Kopf 200–220°C. Für Spritzgussgranulat benötigt man höhere Spitze (230–240°C), für Rohrextrusion niedrigere (210–220°C). Die Einstellung der Temperaturzonen für HDPE-Rezyklat liegt im Bereich 220–240°C.</p>
+
+        <h2>5. Temperaturprofil für PP-Rezyklat</h2>
+        <p>PP aus Big Bags und Säcken: Zone 1 180–200°C, Zone 2 200–220°C, Zone 3 220–240°C, Zone 4 (Spitze) 230–250°C, Zone 5–6 220–240°C, Zone 7–8 210–230°C, Kopf 200–220°C. Überschreitung von 260°C führt zu starkem MFI-Anstieg (von 5 auf 20–30). Bei sandhaltigem Material (Asche 3–5%) wird Zone 3–4 um 10–20°C abgesenkt. Die Spitzentemperatur für PP bei der Big-Bag-Granulierung liegt bei 230–250°C, um Zersetzung zu vermeiden.</p>
+
+        <div class="highlight">🔧 Praxisbeispiel: HDPE-Rezyklat aus Kanistern, Doppelschneckenextruder 75 mm. Ursprünglich Zone 3 250°C, Zone 4 270°C, Zone 5 260°C → gelbes Granulat, MFI 6,5 (Ziel 2–3). Korrektur: Zone 3 220°C, Zone 4 240°C, Zone 5 230°C → MFI 2,8, natürliche Farbe.</div>
+
+        <h2>6. Besonderheiten bei Doppelschneckenextrudern</h2>
+        <p>Bei gleichläufigen Doppelschneckenextrudern (bis zu 12 Zonen) liegt die Einzugszone 10–20°C höher als beim Einschnecker. Mischzonen mit Scheibenelementen werden 10–20°C unter der Spitze gefahren. Vakuumöffnungen (meist 2–3) befinden sich in Zonen, die 10–20°C unter der Spitze liegen. Ein Doppelschneckenextruder für Sekundärkunststoffe verwendet zwei Vakuumportöfen zur verbesserten Entgasung.</p>
+
+        <h2>7. Messung und Regelung des Temperaturprofils</h2>
+        <p>Thermoelemente Typ K oder J (PID-Regler, Genauigkeit ±1–2°C, für Sekundärkunststoffe ±3–5°C akzeptabel). Kalibrierung alle 6–12 Monate. Infrarotpyrometer zur Schmelzetemperaturmessung im Kopf: LDPE ≤230°C, HDPE ≤250°C, PP ≤260°C – auch zur Überhitzungskontrolle mit dem Infrarotpyrometer.</p>
+
+        <h2>8. Einfluss der Temperatur auf die Granulatqualität</h2>
+        <p><strong>Zu niedrig (30–50°C unter Optimum):</strong> Unaufgeschmolzene Partikel (LDPE unter 160°C), hohes Drehmoment (Strom 20–40% über Nennwert), schlechte Filtration. <strong>Optimal:</strong> Druck stabil (30–80 bar), Granulat gleichmäßig, MFI-Abweichung ±0,5. <strong>Zu hoch (20–40°C über Optimum):</strong> Gelbfärbung, verbrannt riechend, Blasen im Granulat, starker MFI-Anstieg (LDPE 2→5–10, HDPE 1→4–8, PP 5→15–30). Ein Temperaturanstieg führt bei Polyethylen zu einem MFI-Anstieg von 2 auf 5.</p>
+
+        <h2>9. Praktisches Beispiel</h2>
+        <p>HDPE-Kanistergranulierung (500 kg/h, Doppelschnecke 75 mm, L/D 44). Fehlerprofil: Zone 1 180°C, Zone 2 220°C, Zone 3 250°C, Zone 4 270°C, Zone 5 260°C, Kopf 250°C → MFI 6,5 (Ziel 2–3), gelbes Granulat. Korrigiertes Profil: Zone 1 160°C, Zone 2 200°C, Zone 3 220°C, Zone 4 240°C, Zone 5 230°C, Kopf 220°C → MFI 2,8, natürliche Farbe.</p>
+
+        <h2>10. Fazit</h2>
+        <p>Die richtige Profilierung der Extrudertemperaturen ist der Schlüssel zu gleichbleibender Granulatqualität bei Sekundärkunststoffen. LDPE benötigt Spitzen 200–220°C, HDPE 220–240°C, PP 230–250°C. Messung der Schmelzetemperatur im Kopf (Pyrometer) verhindert Überhitzung. Bei Doppelschneckenextrudern sind Vakuumzonen und abgesenkte Mischzonentemperaturen essenziell für eine gute Entgasung und Schonung des Materials.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Extruder Temperature Profiles for LDPE, HDPE, PP<br>Settings & Impact on Pellet Quality</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. Why the Temperature Profile is Critical</h2>
+        <p>The extruder temperature profile controls melting, devolatilization, and prevents degradation. LDPE melts at 105–115°C, HDPE 125–135°C, PP 160–170°C. Recyclates contain moisture, detergents, or dust, requiring adjusted profiles.</p>
+        <h2>2. General Profile Structure</h2>
+        <p>Zone 1 (feed) 10–30°C above melting point. Zones 2–4 peak temperature. Zones 5–7 10–20°C below peak. Zone 8 and head 10–30°C below peak.</p>
+        <h2>3. LDPE Recyclate Profile (45–65mm single screw)</h2>
+        <p>Zone 1 140–160°C, Zone 2 160–180°C, Zone 3 180–200°C, Zone 4 (peak) 200–220°C, Zones 5–6 190–210°C, Zone 7 180–200°C, head 170–190°C.</p>
+        <h2>4. HDPE Recyclate Profile</h2>
+        <p>Zone 1 160–180°C, Zone 2 180–200°C, Zone 3 200–220°C, Zone 4 (peak) 220–240°C, Zones 5–6 210–230°C, Zones 7–8 190–210°C, head 200–220°C.</p>
+        <h2>5. PP Recyclate Profile (Big Bags)</h2>
+        <p>Zone 1 180–200°C, Zone 2 200–220°C, Zone 3 220–240°C, Zone 4 (peak) 230–250°C, Zones 5–6 220–240°C, head 200–220°C. Exceeding 260°C causes severe degradation.</p>
+        <div class="highlight">✅ Case: HDPE canister recycling – original profile 270°C peak → yellow pellets, MFI 6.5. Corrected to 240°C peak → MFI 2.8, natural color.</div>
+        <h2>6. Twin-Screw Extruders</h2>
+        <p>Feed zone 10–20°C higher than single screw. Mixing sections 10–20°C below peak. Two vacuum ports improve devolatilization.</p>
+        <h2>7. Measurement & Control</h2>
+        <p>Thermocouples type K/J, PID control ±1–2°C. Infrared pyrometer for melt temperature at head: LDPE ≤230°C, HDPE ≤250°C, PP ≤260°C.</p>
+        <h2>8. Temperature Effects on Quality</h2>
+        <ul><li>Too low: unmelted particles, high torque.</li><li>Optimal: stable pressure (30–80 bar), uniform pellets, MFI ±0.5.</li><li>Too high: yellow/brown color, burnt smell, bubbles, MFI surge (LDPE 2→5–10).</li></ul>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Температурные профили экструдера для LDPE, HDPE, PP<br>Настройка и влияние на качество гранулы</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Введение: почему температурный профиль критичен</h2>
+        <p>Температурный профиль экструдера – распределение температуры по длине цилиндра от загрузочной воронки до головки. При переработке вторичных полимеров правильная настройка решает три задачи: полное расплавление, удаление летучих и влаги, предотвращение термодеструкции. LDPE плавится при 105–115°C, HDPE 125–135°C, PP 160–170°C. Для вторичного LDPE из сельхозпленки влажностью 5–15% требуется более высокая температура в зоне дегазации. HDPE из флаконов содержит остатки моющих средств, необходим вакуум при 200–220°C. PP из биг-бэгов загрязнён песком, требуется пониженная температура во избежание налипания.</p>
+
+        <h2>2. Общая структура температурного профиля</h2>
+        <p>Экструдер разделён на 5–10 зон нагрева плюс головка и фильера. Принцип плавного повышения температуры от загрузки к головке со снижением на последних зонах. Зона 1 (загрузочная) на 10–30°C выше точки плавления. Зоны 2–4 (пластикации и сжатия) – пик температуры. Зоны 5–7 (дегазация и смешение) на 10–20°C ниже пика. Зона 8 (дозирование) и головка на 10–30°C ниже пика.</p>
+
+        <h2>3. Температурный профиль для вторичного LDPE (плёнка, лист, профиль)</h2>
+        <p>Для одношнекового экструдера 45–65 мм: Зона 1 (загрузка) 140–160°C, Зона 2 160–180°C, Зона 3 180–200°C, Зона 4 (пик) 200–220°C, Зоны 5–6 190–210°C, Зона 7 180–200°C, Головка 170–190°C. Для влажного LDPE пик повышают до 220–230°C. Типовой температурный профиль для вторичного LDPE имеет зону загрузки 140–160°C и пик 200–220°C.</p>
+
+        <h2>4. Температурный профиль для вторичного HDPE (трубы, ящики, канистры)</h2>
+        <p>Для HDPE из флаконов, канистр, труб: Зона 1 160–180°C, Зона 2 180–200°C, Зона 3 200–220°C, Зона 4 (пик) 220–240°C, Зоны 5–6 210–230°C, Зоны 7–8 190–210°C, Головка 200–220°C. Для литья под давлением пик 230–240°C, для экструзии труб 210–220°C. Настройка температурных зон для переработки вторичного HDPE в гранулу – 220–240°C.</p>
+
+        <h2>5. Температурный профиль для вторичного PP (биг-бэги, мешковина)</h2>
+        <p>Для PP из биг-бэгов, мешков: Зона 1 180–200°C, Зона 2 200–220°C, Зона 3 220–240°C, Зона 4 (пик) 230–250°C, Зоны 5–6 220–240°C, Зоны 7–8 210–230°C, Головка 200–220°C. Превышение 260°C ведёт к росту MFI с 5 до 20–30. При содержании песка 3–5% температуру зон 3–4 снижают на 10–20°C. Пиковая температура для PP при грануляции биг-бэгов – 230–250°C во избежание деструкции.</p>
+
+        <div class="highlight">⚙ Пример: вторичный HDPE из канистр (500 кг/ч, двухшнек 75 мм). Было: зона 3 250°C, зона 4 270°C, зона 5 260°C → жёлтая гранула, MFI 6,5 (цель 2–3). После корректировки: зона 3 220°C, зона 4 240°C, зона 5 230°C → MFI 2,8, натуральный цвет.</div>
+
+        <h2>6. Особенности для двухшнековых экструдеров</h2>
+        <p>Двухшнековые (co-rotating, до 12 зон): зона загрузки на 10–20°C выше, чем у одношнека. Зоны смешения (смесительные диски) на 10–20°C ниже пиковой. Вакуумные порты (2–3 штуки) размещаются в зонах на 10–20°C ниже пика. Двухшнековый экструдер для вторичных полимеров имеет температурный профиль с двумя вакуумными портами.</p>
+
+        <h2>7. Измерение и контроль температурного профиля</h2>
+        <p>Термопары типа K или J, ПИД-регулятор, точность ±1–2°C (для вторичных ±3–5°C). Калибровка каждые 6–12 месяцев. Инфракрасные пирометры для измерения температуры расплава в головке: LDPE ≤230°C, HDPE ≤250°C, PP ≤260°C для контроля перегрева. Измерение температуры расплава в головке экструдера инфракрасным пирометром позволяет избежать перегрева.</p>
+
+        <h2>8. Влияние температуры на качество гранулы</h2>
+        <p><strong>Низкая температура (на 30–50°C ниже оптимума):</strong> неплавы (для LDPE при &lt;160°C), высокий крутящий момент (ток на 20–40% выше номинала), плохая фильтрация. <strong>Оптимальная температура:</strong> стабильное давление (30–80 бар), равномерная гранула, отклонение MFI ±0,5. <strong>Высокая температура (на 20–40°C выше оптимума):</strong> жёлтый/коричневый цвет, запах горелого пластика, пузыри в грануле, резкий рост MFI (LDPE 2→5–10, HDPE 1→4–8, PP 5→15–30). Влияние температуры на MFI вторичного полиэтилена – рост с 2 до 5 при перегреве.</p>
+
+        <h2>9. Практический пример настройки</h2>
+        <p>Линия грануляции вторичного HDPE из канистр (500 кг/ч, двухшнек 75 мм, L/D 44). Исходный профиль: зона 1 180°C, зона 2 220°C, зона 3 250°C, зона 4 270°C, зона 5 260°C, головка 250°C → жёлтая гранула, MFI 6,5 (цель 2–3). Коррекция: зона 1 160°C, зона 2 200°C, зона 3 220°C, зона 4 240°C, зона 5 230°C, головка 220°C → MFI снизился до 2,8, цвет натуральный (бежевый).</p>
+
+        <h2>10. Заключение</h2>
+        <p>Правильная настройка температурного профиля – ключ к стабильному качеству гранулы из вторичных полимеров. LDPE требует пика 200–220°C, HDPE 220–240°C, PP 230–250°C. Контроль температуры расплава в головке пирометром предотвращает перегрев. Для двухшнековых экструдеров важны вакуумные порты и пониженные температуры в зонах смешения для щадящей обработки материала.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF

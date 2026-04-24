@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Переработка крышек ПЭТ: разделение HDPE и PP — Игорь Кряжев</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.7; color: #1a1a1a; max-width: 1100px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
+        h1 { color: #0a2e52; border-bottom: 4px solid #ff9800; padding-bottom: 15px; }
+        h2 { color: #0a2e52; margin-top: 35px; border-left: 6px solid #ff9800; padding-left: 15px; background: #eef4f9; padding: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
+        th, td { border: 1px solid #ccc; padding: 12px; text-align: left; }
+        th { background: #0a2e52; color: white; }
+        .tech-note { background: #e8f5e9; border: 1px solid #c8e6c9; padding: 15px; margin: 20px 0; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Переработка крышек от ПЭТ-бутылок: разделение HDPE и PP, грануляция</h1>
+    <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
+    
+    <h2>1. Проблема разделения</h2>
+    <p>Смешение HDPE и PP в одной грануле ведет к расслоению из-за разницы температур плавления (130°C против 170°C). Ключ к качеству — флотационная сепарация по плотности.</p>
+
+    <h2>2. Флотационное разделение</h2>
+    <div class="tech-note">
+        Для эффективного разделения используется солевой раствор (NaCl) для доведения плотности среды до 0,93–0,94 г/см³.
+    </div>
+    <table>
+        <tr><th>Материал</th><th>Плотность (г/см³)</th><th>Поведение в ванне</th></tr>
+        <tr><td>PP (Полипропилен)</td><td>0,90 – 0,91</td><td>Всплывает</td></tr>
+        <tr><td>HDPE (ПНД)</td><td>0,94 – 0,96</td><td>Тонет</td></tr>
+    </table>
+
+    <h2>3. Параметры грануляции и дегазации</h2>
+    <p>Удаление запаха ароматизаторов требует двухступенчатого вакуума (до 20–40 мбар) и горячей мойки со щелочью (NaOH 2%).</p>
+
+    <h2>4. Контроль MFI (ПТР)</h2>
+    <ul>
+        <li><strong>Вторичный HDPE:</strong> 0,8 – 1,5 г/10мин</li>
+        <li><strong>Вторичный PP:</strong> 4,0 – 8,0 г/10мин</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metallseparation aus Polymerabfällen | Ihor Kryazhev</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1f2937;line-height:1.8;font-size:1rem}
+.lang-bar{position:fixed;top:0;right:0;z-index:999;display:flex;gap:4px;padding:8px 14px;background:rgba(15,59,44,.95);border-bottom-left-radius:12px}
+.lang-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 11px;cursor:pointer;border-radius:4px;transition:.2s}
+.lang-btn.active,.lang-btn:hover{background:#e67e22;border-color:#e67e22}
+.hero{background:linear-gradient(120deg,#f0fdf4,#e6f7ef);padding:5rem 2rem 3rem;text-align:center}
+.hero h1{font-size:clamp(1.5rem,3vw,2.3rem);font-weight:700;color:#0f3b2c;margin-bottom:1rem;line-height:1.3}
+.hero p{font-size:1rem;color:#4b5563;max-width:700px;margin:0 auto 1.5rem}
+.btn-wa{display:inline-block;background:#25d366;color:#fff;font-weight:700;text-decoration:none;padding:.75rem 2rem;border-radius:2rem;transition:.2s}
+.btn-wa:hover{background:#1ebe5d;transform:translateY(-2px)}
+.container{max-width:860px;margin:0 auto;padding:3rem 1.5rem}
+h2{font-size:1.4rem;font-weight:700;color:#0f3b2c;margin:2.5rem 0 1rem;border-left:4px solid #e67e22;padding-left:.8rem}
+h3{font-size:1.05rem;font-weight:600;color:#111827;margin:1.5rem 0 .5rem}
+p{margin-bottom:1rem;color:#374151}
+ul{margin:.5rem 0 1rem 1.5rem;color:#374151}
+ul li{margin-bottom:.5rem}
+.data-box{background:#f0fdf4;border:1px solid #86efac;border-radius:1rem;padding:1.5rem;margin:1.5rem 0}
+.data-box table{width:100%;border-collapse:collapse}
+.data-box td,.data-box th{padding:.5rem .8rem;text-align:left;font-size:.9rem}
+.data-box th{color:#0f3b2c;font-weight:700;border-bottom:2px solid #86efac}
+.data-box td{border-bottom:1px solid #d1fae5}
+.warn-box{background:#fff7ed;border-left:4px solid #e67e22;padding:1rem 1.5rem;border-radius:0 .8rem .8rem 0;margin:1.5rem 0}
+.cta-box{background:#0f3b2c;color:#fff;border-radius:1.5rem;padding:2.5rem;text-align:center;margin:3rem 0}
+.cta-box h2{color:#fff;border:none;padding:0;margin:0 0 1rem}
+.cta-box p{color:#d1fae5;margin-bottom:1.5rem}
+.back{display:inline-block;margin:1rem 0 2rem;color:#0f3b2c;text-decoration:none;font-weight:600}
+.back:hover{color:#e67e22}
+.lang-block{display:none}
+.lang-block.active{display:block}
+@media(max-width:600px){.container{padding:2rem 1rem}}
+</style>
+</head>
+<body>
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('de')">DE</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('ru')">RU</button>
+</div>
+
+<div class="hero">
+  <div class="lang-block active" id="hero-de">
+    <h1>Metallseparation aus Polymerabfällen: Magnet- und Wirbelstromabscheider</h1>
+    <p>Vollstandige Anleitung zur Auswahl und Einstellung. Ihor Kryazhev, Technologe-Berater. Munchen.</p>
+  </div>
+  <div class="lang-block" id="hero-en">
+    <h1>Metal Separation from Polymer Waste: Magnetic and Eddy Current Separators</h1>
+    <p>Complete guide to selection and setup. Ihor Kryazhev, Process Consultant. Munich.</p>
+  </div>
+  <div class="lang-block" id="hero-ru">
+    <h1>Сепарация металлов из полимерных отходов: магнитные и вихретоковые сепараторы</h1>
+    <p>Полное руководство по выбору и настройке. Игорь Кряжев, технолог-консультант. Мюнхен.</p>
+  </div>
+  <a href="https://wa.me/4915258400610" class="btn-wa">WhatsApp: +49 152 58400610</a>
+</div>
+
+<div class="container">
+  <a href="index.html" class="back" id="back-link">- Zur Startseite</a>
+
+  <!-- DEUTSCH -->
+  <div class="lang-block active" id="content-de">
+    <h2>1. Einfuhrung: Warum Metalle die grosste Gefahr fur die Granulierlinie sind</h2>
+    <p>Metallische Einschlusse in Polymerabfallen sind Klammern von Big-Bags, Heftklammern von Sacken, Drahtstucke, Nagel, Granulat von alten armierten Rohren. Die Folgen von Metall im Extruder: Beschadigung von Schnecken und Zylindern (Austausch eines Schneckenpaares kostet 10-30 Tsd. Euro), Verstopfung und Riss der Filtersiebe (Notabschaltung), Funkenbildung und Brand (bei Metall-Metall-Reibung im Extruder).</p>
+    <p>An einer Granulierlinie in Polen wurden uber 2 Jahre drei Notabschaltungen durch Metall registriert: zweimal Siebriss, einmal Schneckenschaden. Stillstandszeiten - 18 Stunden, Reparatur - 7 Tsd. Euro. Die Metallseparation ist am Extrudereingang obligatorisch. Zwei Haupttypen: Magnetseparatoren (fur ferromagnetische Metalle - Eisen, Stahl, Gusseisen) und Wirbelstromabscheider (fur Buntmetalle - Aluminium, Kupfer, Messing). Kombinierter Einsatz sichert die Entfernung von 98-99,5% aller Metalle.</p>
+
+    <h2>2. Metallquellen in Polymerabfallen</h2>
+    <h3>Ferromagnetische Metalle (Eisen, Stahl)</h3>
+    <ul>
+      <li>Klammern und Heftklammern von Big-Bags und Sacken</li>
+      <li>Nagel aus Holzpaletten</li>
+      <li>Armierungsstucke und Draht</li>
+      <li>Verschlissene Messer von Zerkleinerern (Splitter)</li>
+      <li>Metallteile von Elektrogeraten (bei der Verarbeitung von Gehausen)</li>
+    </ul>
+    <h3>Buntmetalle (Aluminium, Kupfer, Messing)</h3>
+    <ul>
+      <li>Folie von Verpackungen (Joghurt, Schokolade, Medikamente)</li>
+      <li>Armierungsdraht in Rohren und Schlauchen</li>
+      <li>Radiatoren von Kuhlschranken und Klimaanlagen</li>
+      <li>Kupferdraht-Fragmente</li>
+      <li>Aluminiumeinsatze in Kunststoffteilen (Fenster, Mobel)</li>
+    </ul>
+    <div class="data-box">
+      <table>
+        <tr><th>Materialstrom</th><th>Metallanteil</th></tr>
+        <tr><td>Big-Bags nach Baustelle</td><td>0,5-2% (Klammern)</td></tr>
+        <tr><td>Elektroschrott</td><td>3-10%</td></tr>
+        <tr><td>Gemischter Abfall</td><td>0,1-0,5%</td></tr>
+      </table>
+    </div>
+    <p>Selbst 0,1% Metall im Rohstoff (1 kg pro Tonne) stellt bereits ein Risiko fur den Extruder dar.</p>
+
+    <h2>3. Magnetseparatoren - Aufbau und Parameter</h2>
+    <h3>Magnetstab (Kolonne)</h3>
+    <p>Zylindrischer Magnet 30-80 mm Durchmesser, quer im Materialstrom montiert. Fur Schuttguter (Granulat, Mahlgut). Fangt Partikel ab 1-2 mm. Feldstarke an der Magnetoberflache - 6000-12000 Gauss. Wirkungsgrad 80-95% bei korrekter Montage.</p>
+    <h3>Hangemagnet uber Forderer</h3>
+    <p>Magnet uber dem Band in 50-200 mm Hohe. Fur grobes Material (Sacke, Big-Bags vor dem Schreddern). Fangt Klammern, Nagel, Drahtstucke. Wirkungsgrad 70-90%.</p>
+    <h3>Magnettrommel</h3>
+    <p>Rotierende Trommel mit Permanentmagneten innen. Fur Schuttguter (Mahlgut, Agglomerat). Wirkungsgrad 95-99% fur Partikel ab 0,5 mm. Das Nicht-Magnetische fallt nach Standardtrajektorie, das Magnetische bleibt an der Trommel und wird in separaten Bunker befordert.</p>
+
+    <h2>4. Einstellung von Magnetseparatoren</h2>
+    <h3>Magnetstab</h3>
+    <ul>
+      <li>Spalt zwischen Magnet und Rohrwand - max. 10-15 mm (bei grosserem Spalt passieren kleine Partikel)</li>
+      <li>Montagewinkel - 30-60 Grad zur Horizontalen (vertikal - Material fallt zu schnell)</li>
+      <li>Stromungsgeschwindigkeit im Pneumotransport - 15-25 m/s</li>
+      <li>Reinigungsintervall bei 0,5% Verschmutzung - alle 30-60 Minuten</li>
+    </ul>
+    <h3>Magnettrommel</h3>
+    <ul>
+      <li>Drehzahl - 20-60 U/min (hoher - Metall trennt sich nicht)</li>
+      <li>Schichtdicke auf der Trommel - 10-30 mm</li>
+    </ul>
+
+    <h2>5. Wirbelstromabscheider - Aufbau und Parameter</h2>
+    <p>Der Wirbelstromabscheider erzeugt ein hochfrequentes Wechselmagnetfeld (Spulenfrequenz 400-1000 Hz). Bei Eintritt eines Buntmetalls (Aluminium, Kupfer) entstehen Wirbelstrome, die ein entgegengesetztes Magnetfeld erzeugen - das Metall wird abgestossen und verlasst den Strom. Nichtmetall (Polymere, Holz, Glas) reagiert nicht und folgt der Standardtrajektorie.</p>
+    <div class="data-box">
+      <table>
+        <tr><th>Fraktion</th><th>Wirkungsgrad Al</th><th>Wirkungsgrad Cu</th></tr>
+        <tr><td>10-30 mm</td><td>95-98%</td><td>90-95%</td></tr>
+        <tr><td>5-10 mm</td><td>70-85%</td><td>65-80%</td></tr>
+        <tr><td>unter 3 mm</td><td>unter 50%</td><td>unter 50%</td></tr>
+      </table>
+    </div>
+    <p>Einstellparameter: Rotordrehzahl 3000-5000 U/min (Wirbelstromabscheider fur Polymermahlgut Rotordrehzahl 4000 U/min optimal), Bandgeschwindigkeit 1-1,5 m/s, Spalt zwischen Rotor und Band 3-10 mm.</p>
+
+    <h2>6. Kombiniertes Separationsschema fur Granulierlinie</h2>
+    <p>Typisches Schema fur eine Linie mit 500-1000 kg/h:</p>
+    <ul>
+      <li><strong>Stufe 1.</strong> Hangemagnet vor Schredder - entfernt 80-90% der ferromagnetischen Partikel uber 5 mm</li>
+      <li><strong>Stufe 2.</strong> Schredder (Sieb 20-30 mm) - Metall wird auf 5-20 mm zerkleinert</li>
+      <li><strong>Stufe 3.</strong> Magnettrommel nach Schredder - Wirkungsgrad 95-99%</li>
+      <li><strong>Stufe 4.</strong> Wirbelstromabscheider nach Magnettrommel - Wirkungsgrad 95-98% fur 10-30 mm</li>
+      <li><strong>Stufe 5.</strong> Schmelzefilterung im Extruder (Siebe 150-250 Mikron) - letzte Barriere</li>
+    </ul>
+
+    <h2>7. Wirkungsgradkontrolle</h2>
+    <p>Methodik: Probenentnahme am Ausgang des Wirbelstromabscheiders (10-20 kg Mahlgut). Manuelle Sortierung mit Magnet und Pinzette. Zulassiger Restmetallgehalt - max. 0,01% (0,1 kg pro Tonne). Online-Kontrolle: Metalldetektor am Extrudereingang (Induktionsspule). Bei Fund von Metall uber 1 mm - Notabschaltung oder Ablenkventil.</p>
+
+    <h2>8. Wirtschaftlichkeit der Metallseparation</h2>
+    <p>Investition in zweistufiges System (Magnettrommel + Wirbelstromabscheider) fur 1000 kg/h - ca. 50-80 Tsd. Euro. Ein Notfall-Schneckenwechsel kostet 15-40 Tsd. Euro direkte Kosten plus 3-7 Tage Stillstand. Amortisationszeit bei 4000 Betriebsstunden/Jahr und 0,2-0,5% Metallgehalt im Rohstoff - 6-18 Monate. Kombinierte Separation ferromagnetischer und farbiger Metalle vor dem Extruder spart im Schnitt 2-3 Notfalle pro Jahr auf einer Linie.</p>
+
+    <h2>9. Haufige Fehler und Behebung</h2>
+    <div class="warn-box">
+      <p><strong>Fehler 1.</strong> Nur Magnetstab ohne Wirbelstromabscheider. Buntmetalle (Aluminium, Kupfer) werden nicht entfernt, reissen Filtersiebe. Losung - Wirbelstromabscheider hinzufugen.</p>
+    </div>
+    <div class="warn-box">
+      <p><strong>Fehler 2.</strong> Magnetstab vertikal montiert. Material fallt zu schnell, kleine Klammern werden nicht angezogen. Losung - Winkel 30-60 Grad. Magnetstab fur Big-Bag-Klammern Einbauwinkel 45 Grad Spalt 10 mm.</p>
+    </div>
+    <div class="warn-box">
+      <p><strong>Fehler 3.</strong> Hangemagnet 30-40 cm uber Forderer. Kleine Klammern (1-3 mm) werden nicht angezogen. Losung - Hohe auf 10-20 cm reduzieren.</p>
+    </div>
+    <div class="warn-box">
+      <p><strong>Fehler 4.</strong> Wirbelstromabscheider mit Fraktion unter 5 mm. Wirkungsgrad fallt auf 30-50%. Losung - Sieb vor Abscheider fur Fraktionen unter 5 mm. Restmetallgehalt Mahlgut nach Separation unter 0,01 Prozent Kontrolle.</p>
+    </div>
+
+    <div class="cta-box">
+      <h2>Erstberatung kostenlos</h2>
+      <p>Ich helfe bei der Auswahl und Einstellung der Separation fur Ihre Linie. Online oder vor Ort.</p>
+      <a href="https://wa.me/4915258400610" class="btn-wa">WhatsApp: +49 152 58400610</a>
+    </div>
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="lang-block" id="content-en">
+    <h2>1. Introduction: Why Metals Are the Main Threat to the Granulation Line</h2>
+    <p>Metal inclusions in polymer waste include staples from big-bags, wire pieces, nails, granulate from old reinforced pipes. Consequences of metal entering the extruder: damage to screws and barrels (replacing a screw pair costs 10-30 thousand euros), clogging and rupture of filter screens (emergency shutdown), sparking and fire. At a granulation line in Poland, three emergency shutdowns due to metal were recorded over 2 years: twice screen rupture, once screw damage. Downtime - 18 hours, repair - 7 thousand euros.</p>
+    <p>Metal separation is mandatory at the extruder inlet. Two main types: magnetic separators (for ferromagnetic metals - iron, steel, cast iron) and eddy current separators (for non-ferrous metals - aluminium, copper, brass). Combined use ensures removal of 98-99.5% of all metals.</p>
+
+    <h2>2. Metal Sources in Polymer Waste</h2>
+    <ul>
+      <li>Staples and clips from big-bags and sacks</li>
+      <li>Nails from wooden pallets</li>
+      <li>Reinforcement pieces and wire</li>
+      <li>Worn crusher knives (splinters)</li>
+      <li>Aluminium foil from packaging (yoghurt, chocolate, medicines)</li>
+      <li>Reinforcing wire in pipes and hoses</li>
+      <li>Copper wire fragments</li>
+    </ul>
+    <p>Even 0.1% metal in the raw material (1 kg per tonne) already creates a risk for the extruder.</p>
+
+    <h2>3. Magnetic Separators</h2>
+    <p><strong>Magnetic rod (column):</strong> cylindrical magnet 30-80 mm diameter, mounted across the material flow. For bulk materials. Catches particles from 1-2 mm. Field strength 6000-12000 Gauss. Efficiency 80-95%.</p>
+    <p><strong>Suspended magnet over conveyor:</strong> magnet above the belt at 50-200 mm height. For coarse material. Efficiency 70-90%.</p>
+    <p><strong>Magnetic drum:</strong> rotating drum with permanent magnets inside. Efficiency 95-99% for particles from 0.5 mm.</p>
+
+    <h2>4. Eddy Current Separators</h2>
+    <p>Creates a high-frequency alternating magnetic field (coil frequency 400-1000 Hz). When non-ferrous metal enters the field, eddy currents arise creating an opposing magnetic field - the metal is repelled and ejected from the flow. Non-metal passes along the standard trajectory.</p>
+    <div class="data-box">
+      <table>
+        <tr><th>Fraction</th><th>Al efficiency</th><th>Cu efficiency</th></tr>
+        <tr><td>10-30 mm</td><td>95-98%</td><td>90-95%</td></tr>
+        <tr><td>5-10 mm</td><td>70-85%</td><td>65-80%</td></tr>
+        <tr><td>under 3 mm</td><td>under 50%</td><td>under 50%</td></tr>
+      </table>
+    </div>
+    <p>Settings: rotor speed 3000-5000 rpm (eddy current separator for polymer granulate rotor speed 4000 rpm optimal), belt speed 1-1.5 m/s, gap between rotor and belt 3-10 mm.</p>
+
+    <h2>5. Combined Separation Scheme</h2>
+    <ul>
+      <li><strong>Stage 1.</strong> Suspended magnet before shredder - removes 80-90% of ferromagnetic particles over 5 mm</li>
+      <li><strong>Stage 2.</strong> Shredder (screen 20-30 mm)</li>
+      <li><strong>Stage 3.</strong> Magnetic drum after shredder - efficiency 95-99%</li>
+      <li><strong>Stage 4.</strong> Eddy current separator - efficiency 95-98% for 10-30 mm</li>
+      <li><strong>Stage 5.</strong> Melt filtration in extruder (screens 150-250 microns) - last barrier</li>
+    </ul>
+
+    <h2>6. Economics</h2>
+    <p>Investment in two-stage system (magnetic drum + eddy current separator) for 1000 kg/h - approx. 50-80 thousand euros. One emergency screw replacement costs 15-40 thousand euros direct costs plus 3-7 days downtime. Payback period at 4000 operating hours/year and 0.2-0.5% metal content - 6-18 months. Combined separation of ferromagnetic and non-ferrous metals before extruder saves on average 2-3 emergencies per year on one line.</p>
+
+    <h2>7. Common Mistakes</h2>
+    <div class="warn-box"><p><strong>Mistake 1.</strong> Only magnetic rod without eddy current separator. Non-ferrous metals not removed, rupture filter screens. Solution: add eddy current separator.</p></div>
+    <div class="warn-box"><p><strong>Mistake 2.</strong> Magnetic rod installed vertically. Material falls too fast, small staples not attracted. Solution: angle 30-60 degrees. Magnetic rod for big-bag staples installation angle 45 degrees gap 10 mm.</p></div>
+    <div class="warn-box"><p><strong>Mistake 3.</strong> Suspended magnet 30-40 cm above conveyor. Small staples (1-3 mm) not attracted. Solution: reduce height to 10-20 cm.</p></div>
+    <div class="warn-box"><p><strong>Mistake 4.</strong> Eddy current separator with fraction under 5 mm. Efficiency drops to 30-50%. Solution: screen before separator for fractions under 5 mm. Residual metal content granulate after separation under 0.01 percent control.</p></div>
+
+    <div class="cta-box">
+      <h2>First consultation free</h2>
+      <p>I help with selection and setup of separation for your line. Online or on-site.</p>
+      <a href="https://wa.me/4915258400610" class="btn-wa">WhatsApp: +49 152 58400610</a>
+    </div>
+  </div>
+
+  <!-- RUSSIAN -->
+  <div class="lang-block" id="content-ru">
+    <h2>1. Введение: почему металлы - главная угроза для линии грануляции</h2>
+    <p>Металлические включения в полимерных отходах - это скобы от биг-бэгов, скрепки от мешков, куски проволоки, гвозди, дробленка от старых армированных труб. Последствия попадания металла в экструдер: повреждение шнеков и цилиндров (замена шнековой пары стоит 10-30 тыс. евро), забивание и прорыв сеток фильтра (аварийная остановка), искрение и пожар.</p>
+    <p>На линии грануляции в Польше за 2 года зафиксировано три аварийных останова из-за металла: дважды прорыв сеток, один раз повреждение шнека. Простои - 18 часов, ремонт - 7 тыс. евро. Сепарация металлов обязательна на входе в экструдер. Два основных типа: магнитные (для ферромагнитных металлов - железо, сталь, чугун) и вихретоковые (для цветных металлов - алюминий, медь, латунь). Комбинированное применение обеспечивает удаление 98-99,5% всех металлов.</p>
+
+    <h2>2. Источники металлов в полимерных отходах</h2>
+    <h3>Ферромагнитные металлы</h3>
+    <ul>
+      <li>Скобы и скрепки от биг-бэгов и мешков</li>
+      <li>Гвозди из деревянных поддонов</li>
+      <li>Куски арматуры и проволока</li>
+      <li>Изношенные ножи дробилок (осколки)</li>
+      <li>Металлические детали от бытовой техники</li>
+    </ul>
+    <h3>Цветные металлы</h3>
+    <ul>
+      <li>Фольга от упаковки (йогурты, шоколад, лекарства)</li>
+      <li>Армирующая проволока в трубах и шлангах</li>
+      <li>Медные провода (фрагменты)</li>
+      <li>Алюминиевые вставки в пластиковых деталях (окна, мебель)</li>
+    </ul>
+    <div class="data-box">
+      <table>
+        <tr><th>Поток материала</th><th>Доля металла</th></tr>
+        <tr><td>Биг-бэги после стройки</td><td>0,5-2% (скобы)</td></tr>
+        <tr><td>Бытовая техника</td><td>3-10%</td></tr>
+        <tr><td>Смешанный мусор</td><td>0,1-0,5%</td></tr>
+      </table>
+    </div>
+    <p>Даже 0,1% металла в сырье (1 кг на тонну) уже создает риск для экструдера.</p>
+
+    <h2>3. Магнитные сепараторы</h2>
+    <p><strong>Магнитная колонка (штанга):</strong> цилиндрический магнит диаметром 30-80 мм, установленный поперек потока. Для сыпучих материалов. Улавливает частицы от 1-2 мм. Напряженность поля 6000-12000 Гаусс. Эффективность 80-95%.</p>
+    <p><strong>Подвесной магнит над конвейером:</strong> магнит над лентой на высоте 50-200 мм. Для крупных отходов. Эффективность 70-90%.</p>
+    <p><strong>Магнитный барабан:</strong> вращающийся барабан с постоянными магнитами внутри. Эффективность 95-99% для частиц от 0,5 мм.</p>
+
+    <h2>4. Настройка магнитных сепараторов</h2>
+    <ul>
+      <li>Зазор между магнитной колонкой и стенкой трубы - не более 10-15 мм</li>
+      <li>Угол установки магнитной колонки - 30-60 градусов к горизонту</li>
+      <li>Скорость потока в пневмотранспорте - 15-25 м/с</li>
+      <li>Частота вращения барабана - 20-60 об/мин, толщина слоя 10-30 мм</li>
+      <li>Очистка колонки при загрязненности 0,5% - каждые 30-60 минут</li>
+    </ul>
+
+    <h2>5. Вихретоковые сепараторы</h2>
+    <p>Создают высокочастотное переменное магнитное поле (частота катушки 400-1000 Гц). При попадании цветного металла возникают вихревые токи - металл отталкивается и вылетает из потока. Неметалл проходит по стандартной траектории.</p>
+    <div class="data-box">
+      <table>
+        <tr><th>Фракция</th><th>Эффективность Al</th><th>Эффективность Cu</th></tr>
+        <tr><td>10-30 мм</td><td>95-98%</td><td>90-95%</td></tr>
+        <tr><td>5-10 мм</td><td>70-85%</td><td>65-80%</td></tr>
+        <tr><td>менее 3 мм</td><td>менее 50%</td><td>менее 50%</td></tr>
+      </table>
+    </div>
+    <p>Параметры настройки: частота вращения ротора вихретокового сепаратора для дробленки полимеров 4000 об/мин оптимальная, скорость ленты 1-1,5 м/с, зазор между ротором и лентой 3-10 мм.</p>
+
+    <h2>6. Схема комбинированной сепарации</h2>
+    <ul>
+      <li><strong>Этап 1.</strong> Подвесной магнит перед шредером - удаляет 80-90% ферромагнитных частиц более 5 мм</li>
+      <li><strong>Этап 2.</strong> Шредер (сито 20-30 мм)</li>
+      <li><strong>Этап 3.</strong> Магнитный барабан после дробления - эффективность 95-99%</li>
+      <li><strong>Этап 4.</strong> Вихретоковый сепаратор - эффективность 95-98% для фракции 10-30 мм</li>
+      <li><strong>Этап 5.</strong> Фильтрация расплава в экструдере (сетки 150-250 микрон) - последний барьер</li>
+    </ul>
+
+    <h2>7. Контроль эффективности</h2>
+    <p>Отбор пробы на выходе из вихретокового сепаратора (10-20 кг дробленки). Разборка вручную (магнит и пинцет). Допустимое остаточное содержание металла в дробленке после сепарации - не более 0,01% (0,1 кг на тонну). Онлайн-контроль: металлодетектор на входе в экструдер. При обнаружении металла более 1 мм - аварийный останов или отклоняющий клапан.</p>
+
+    <h2>8. Экономика сепарации металлов</h2>
+    <p>Инвестиции в двухступенчатую систему (магнитный барабан и вихретоковый сепаратор) для линии 1000 кг/ч - около 50-80 тыс. евро. Один аварийный ремонт (замена шнека, повреждение фильеры) обходится в 15-40 тыс. евро плюс 3-7 дней простоя. Окупаемость при 4000 часов работы в год и содержании металла 0,2-0,5% - 6-18 месяцев. Комбинированная сепарация ферромагнитных и цветных металлов перед экструдером экономит в среднем 2-3 аварии в год на одной линии.</p>
+
+    <h2>9. Частые ошибки при сепарации металлов и их устранение</h2>
+    <div class="warn-box"><p><strong>Ошибка 1.</strong> Только магнитная колонка без вихретокового сепаратора. Цветные металлы не удаляются, прорывают сетки. Решение - добавить вихретоковый сепаратор.</p></div>
+    <div class="warn-box"><p><strong>Ошибка 2.</strong> Магнитная колонка установлена вертикально. Материал падает слишком быстро, мелкие скобы не притягиваются. Решение - угол 30-60 градусов. Магнитная колонка для удаления скоб из биг-бэгов угол установки 45 градусов зазор 10 мм.</p></div>
+    <div class="warn-box"><p><strong>Ошибка 3.</strong> Подвесной магнит на высоте 30-40 см. Мелкие скобы (1-3 мм) не притягиваются. Решение - снизить высоту до 10-20 см.</p></div>
+    <div class="warn-box"><p><strong>Ошибка 4.</strong> Вихретоковый сепаратор работает с фракцией менее 5 мм. Эффективность падает до 30-50%. Решение - установить грохот перед сепаратором. Остаточное содержание металла в дробленке после сепарации менее 0,01 процента контроль.</p></div>
+
+    <div class="cta-box">
+      <h2>Первая консультация - бесплатно</h2>
+      <p>Помогу с выбором и настройкой сепарации для вашей линии. Онлайн или с выездом.</p>
+      <a href="https://wa.me/4915258400610" class="btn-wa">WhatsApp: +49 152 58400610</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    if(b.getAttribute('onclick').includes("'"+lang+"'")) b.classList.add('active');
+  });
+  ['de','en','ru'].forEach(l => {
+    const h = document.getElementById('hero-'+l);
+    const c = document.getElementById('content-'+l);
+    if(h) h.classList.toggle('active', l===lang);
+    if(c) c.classList.toggle('active', l===lang);
+  });
+  const labels = {de:'- Zur Startseite', en:'- Back to home', ru:'- На главную'};
+  document.getElementById('back-link').textContent = labels[lang];
+  localStorage.setItem('lang', lang);
+}
+const saved = localStorage.getItem('lang') || 'de';
+setLang(saved);
+</script>
+</body>
+</html>

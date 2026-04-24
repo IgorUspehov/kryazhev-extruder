@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schattennetze aus HDPE-Rezyklat | Technologie mit LLDPE- und LDPE-Zusatz</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,0.05);}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Schattennetze aus HDPE-Rezyklat<br>Herstellungstechnologie mit LLDPE- und LDPE-Zusatz</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Einleitung: Warum Schattennetze aus Rezyklat gefragt sind</h2>
+        <p>Schattennetze werden in der Landwirtschaft zum Schutz vor direkter Sonneneinstrahlung, Hagel und Vögeln eingesetzt, aber auch auf Baustellen als Sichtschutz oder für Terrassen. Anforderungen: hohe Reißfestigkeit, UV-Beständigkeit (5–10 Jahre im Freien), Elastizität und definierte Lichtdurchlässigkeit (30–90%). Recyceltes HDPE aus Kanistern ist wirtschaftlich (Kosten 1,5–2× unter Neuware), hat aber Nachteile: geringer Glanz, zu geringe Fließfähigkeit für die Fadenextrusion, Sprödigkeit nach der Orientierung. Zusatz von Stretchfolien-Granulat (LLDPE) verbessert Glanz und Fließfähigkeit, Zusatz von LDPE erhöht die Elastizität und verhindert Fadenbrüche in der Weberei.</p>
+
+        <h2>2. Rohstoffe für Schattennetze</h2>
+        <h3>2.1 Recyceltes HDPE aus Kanistern als Basis</h3>
+        <p>HDPE aus Kanistern (Öl, Waschmittel) hat typisch MFI 0,8–1,5 g/10min (190°C, 2,16 kg) – zu niedrig für die Fadenextrusion. Dichte 0,95–0,96 g/cm³, Aschegehalt nach guter Wäsche (80–85°C mit 2–3% NaOH) unter 0,5%. Farbe natur (beige) oder blau/rot/grün. Für Schattennetze wird schwarz (1–2% Carbon Black) für maximale UV-Stabilität bevorzugt.</p>
+        <h3>2.2 Stretchfolien-Granulat (LLDPE) für Glanz und Fließfähigkeit</h3>
+        <p>LLDPE-Rezyklat hat MFI 2,5–4,0. Durch Zumischung von 10–20% LLDPE zum HDPE steigt der Gesamt-MFI auf 2–3, der Druck in der Flachdüse sinkt 10–20% und der Fadenglanz verbessert sich um 30–50%.</p>
+        <h3>2.3 LDPE-Zusatz für Elastizität</h3>
+        <p>LDPE-Rezyklat (Folienabfälle, Säcke) hat MFI 2–4, Dichte 0,918–0,925 g/cm³. Ein Zusatz von 5–15% LDPE zur Mischung HDPE+LLDPE macht die Fäden elastisch, verhindert Sprödigkeit nach der Hochgeschwindigkeitsverstreckung. Empfohlene Rezeptur (Gew.-%): 70–80% HDPE-Rezyklat, 10–15% LLDPE (Stretch), 5–10% LDPE, 1–2% UV-Stabilisator (Carbon Black oder HALS), 0,2–0,3% Antioxidans (Irganox 1010), 0,5–1% Gleitmittel (Erucamid).</p>
+
+        <h2>3. Fertigungsprozess</h2>
+        <h3>3.1 Trockenmischung</h3>
+        <p>Alle Komponenten werden im Turbulenzmischer (500–1000 l) 5–15 min gemischt, Temperatur unter 50°C.</p>
+        <h3>3.2 Flachfolienextrusion der Fäden</h3>
+        <p>Einschneckenextruder L/D 30–36, Schneckendurchmesser 45–90 mm. Temperaturprofil: Zone 1 170–190°C, Zone 2 190–210°C, Zone 3 210–230°C, Zone 4 (Kopf) 210–220°C, Flachdüse 200–220°C. Extrudiert wird eine Bahn von 200–300 mm Breite und 0,5–2 mm Dicke, bestehend aus parallelen Stegen (20–60 Fäden).</p>
+        <h3>3.3 Kühlung und Wasserbadverstreckung</h3>
+        <p>Die Bahn läuft durch ein Wasserbad (20–40°C), dann über Abzugswalzen. Verstreckverhältnis 1:6 bis 1:10. Durch die Orientierung steigt die Reißfestigkeit von 15–20 MPa auf 35–50 MPa.</p>
+        <h3>3.4 Schneiden auf dem Tisch und Aufspulen</h3>
+        <p>Nach der Verstreckung wird die Bahn auf einem Tisch auf 50–80°C vorgewärmt (Infrarotlampen oder heiße Walzen), dann in Einzelfäden von 2–5 mm Breite geschnitten. Die Fäden werden auf Spulen gewickelt. Eine Fadenverstreckung für HDPE-Netze mit einem Verhältnis von 1:8 ergibt eine Reißfestigkeit von etwa 35 MPa.</p>
+        <div class="highlight">🔧 Praxisregel: Reißt der Faden auf der Spule → zu wenig LDPE (<5%) oder zu hohe Verstreckung (>1:8). Ist der Faden zu steif → zu wenig LLDPE/LDPE oder Verstreckung >1:10.</div>
+        <h3>3.5 Webstuhl – Herstellung des Netzes</h3>
+        <p>Kettfäden (vertikal) von den Spulen, Schussfäden (horizontal) von zusätzlichen Spulen. Rundwebstühle (Schlauchnetz) oder Flachwebstühle. Webgeschwindigkeit 450–750 U/min, Netzbreite 1,5–4 m, Maschenweite 2–5 mm (für 50–80% Beschattung).</p>
+
+        <h2>4. Qualitätskontrolle</h2>
+        <ul>
+            <li><strong>Fadenspannung:</strong> 50–150 g (über 200 g → Fadenbrüche, unter 30 g → Verwirrung).</li>
+            <li><strong>Reißfestigkeit:</strong> mindestens 25 MPa, Dehnung 15–25%.</li>
+            <li><strong>UV-Stabilisierung:</strong> Carbon Black 1–3% (schwarze Netze halten 10–20 Jahre) oder HALS 0,3–1,0% für farbige Netze (5–10 Jahre).</li>
+        </ul>
+
+        <h2>5. Typische Fehler und Abhilfe</h2>
+        <ul>
+            <li><strong>Fadenbrüche auf der Spule:</strong> zu wenig LDPE (<5%) oder zu hohe Verstreckung → LDPE auf 10% erhöhen, Abzugsgeschwindigkeit 10–20% senken.</li>
+            <li><strong>Faden klebt am Schneidtisch:</strong> Vorwärmtemperatur unter 50°C → Infrarotleistung erhöhen.</li>
+            <li><strong>Netz vergilbt nach 3–6 Monaten im Freien:</strong> unzureichende UV-Stabilisierung → Ruß auf 2% oder HALS auf 1% erhöhen.</li>
+            <li><strong>Matter Fadenglanz:</strong> LLDPE unter 10% → Stretchanteil auf 15–20% erhöhen.</li>
+        </ul>
+
+        <div class="highlight">📌 Rezeptur-Empfehlung: 75% HDPE Rezyklat + 15% LLDPE (Stretch) + 8% LDPE + 2% Carbon Black. Verstreckung 1:8, Webgeschwindigkeit 600 U/min. Masche 4 mm, Netzbreite 3 m – bewährt für landwirtschaftliche Schattennetze.</div>
+
+        <h2>6. Fazit</h2>
+        <p>Schattennetze aus HDPE-Rezyklat mit Zusätzen von LLDPE (10–15%) für Glanz und Fließfähigkeit sowie LDPE (5–10%) für Elastizität erreichen eine hohe Fadenqualität. Die Flachdüsenextrusion bei 200–220°C, das Verstreckverhältnis 1:8 und die Weiterverarbeitung auf Rundwebstühlen ergeben robuste, UV-stabile Netze mit einer Lebensdauer von 5–10 Jahren (mit HALS) bis 20 Jahren (mit Carbon Black).</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Shading Nets from HDPE Recyclate<br>Production Technology with LLDPE and LDPE Addition</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. Why Recycled Shading Nets are in Demand</h2>
+        <p>Shading nets protect crops from sun, hail, birds, and are used on construction sites. Requirements: high tensile strength, UV resistance (5–10 years), elasticity. Recycled HDPE from cans costs 1.5–2× less than virgin, but needs LLDPE for gloss/flow and LDPE for elasticity.</p>
+        <h2>2. Raw Materials</h2>
+        <ul><li>HDPE recyclate (cans): MFI 0.8–1.5, needs upgrading.</li><li>LLDPE recyclate (stretch film): MFI 2.5–4.0 – improves gloss and flow.</li><li>LDPE recyclate (film waste): MFI 2–4 – adds elasticity.</li></ul>
+        <p>Recommended recipe: 70–80% HDPE + 10–15% LLDPE + 5–10% LDPE + 1–2% carbon black + 0.2–0.3% antioxidant + 0.5–1% slip agent.</p>
+        <h2>3. Production Process</h2>
+        <p><strong>Extrusion:</strong> Flat die, 200–220°C, width 200–300 mm. <strong>Water bath & orientation:</strong> Draw ratio 1:6 to 1:10, tensile strength rises from 15–20 to 35–50 MPa. <strong>Slitting & winding:</strong> Preheating to 50–80°C, slit into 2–5 mm tapes. <strong>Weaving:</strong> Circular or flat loom, 450–750 rpm, mesh size 2–5 mm, width up to 4 m.</p>
+        <div class="highlight">✅ Typical draw ratio for HDPE shading net tapes: 1:8, tensile strength ~35 MPa.</div>
+        <h2>4. Quality Control & Troubleshooting</h2>
+        <ul><li>Yarn breakage on spool → too little LDPE (<5%) or excessive draw → increase LDPE to 10%, reduce draw speed.</li><li>Yellowing after 3–6 months outdoors → insufficient UV stabilization → increase carbon black to 2% or HALS to 1%.</li><li>Low yarn gloss → LLDPE <10% → raise to 15–20%.</li></ul>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Сетка притеняющая из HDPE рециклата<br>Технология производства с добавлением LLDPE и LDPE</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Введение: почему притеняющая сетка из рециклата востребована</h2>
+        <p>Притеняющая сетка используется в сельском хозяйстве для защиты растений от солнца, града и птиц, а также на стройплощадках и для беседок. Требования: высокая прочность на разрыв, УФ-стойкость (5–10 лет), эластичность. Вторичный HDPE из канистр в 1,5–2 раза дешевле первичного, но имеет низкий блеск, недостаточную текучесть и хрупкость после ориентации. Добавка стрейч-гранулы (LLDPE) повышает блеск и текучесть, добавка ПВД (LDPE) даёт эластичность.</p>
+
+        <h2>2. Сырьё для притеняющей сетки</h2>
+        <p><strong>Вторичный HDPE из канистр:</strong> MFI 0,8–1,5 – слишком низко. Плотность 0,95–0,96. Зольность после качественной мойки менее 0,5%. <strong>Стрейч-гранула (LLDPE):</strong> MFI 2,5–4,0 – добавка 10–20% повышает общий MFI до 2–3, улучшает блеск на 30–50%. <strong>ПВД (LDPE):</strong> MFI 2–4 – добавка 5–15% придаёт нити эластичность. Рекомендуемая рецептура (мас.%): 70–80% HDPE рециклата, 10–15% стрейча (LLDPE), 5–10% ПВД (LDPE), 1–2% УФ-стабилизатора (сажа или HALS), 0,2–0,3% антиоксиданта, 0,5–1% замасливателя. Притеняющая сетка из HDPE рециклата с добавкой стрейч-гранулы LLDPE для блеска требует дозировки 10–15 процентов.</p>
+
+        <h2>3. Технологический процесс</h2>
+        <p><strong>Смешение:</strong> в турбулентном смесителе 5–15 мин, температура не выше 50°C. <strong>Экструзия полотна:</strong> одношнековый экструдер, плоскощелевая головка 200–220°C, ширина 200–300 мм, толщина 0,5–2 мм. Добавка ПВД LDPE в смесь для эластичности притеняющей сетки составляет 5–10 процентов от массы. <strong>Охлаждение и водная вытяжка:</strong> ванна 20–40°C, затем вытяжные валы. Скорость вытяжки 50–100 м/мин, коэффициент вытяжки 1:6–1:10. Вытяжка нити HDPE для сетки с коэффициентом 1:8 даёт прочность на разрыв около 35 МПа. <strong>Порезка на столе:</strong> нагрев до 50–80°C (ИК-лампы), резка на ленты 2–5 мм. Порезка нити на столе происходит при нагреве 60°C, скорость намотки 80 м/мин. <strong>Ткацкий станок:</strong> круглоплотный или плоский, скорость 450–750 об/мин, ширина сетки 1,5–4 м, ячейка 2–5 мм. Ткацкий станок для притеняющей сетки работает на 600 об/мин при ширине 3 м и ячейке 4 мм.</p>
+
+        <div class="highlight">⚙ Практическое правило: нить рвётся на катушке → мало LDPE (<5%) или слишком высокая вытяжка (>1:8). Нить не режется на столе (липнет) → недостаточный подогрев (ниже 50°C). Сетка желтеет через 3–6 месяцев → недостаточная УФ-стабилизация.</div>
+
+        <h2>4. Контроль качества</h2>
+        <ul><li>Натяжение нити: 50–150 гс (более 200 гс → обрывы, менее 30 гс → спутывание).</li><li>Прочность на разрыв: не менее 25 МПа, удлинение 15–25%.</li><li>УФ-стабилизация: сажа 1–3% (чёрная сетка служит 10–20 лет) или HALS 0,3–1,0% (цветные сетки 5–10 лет).</li></ul>
+
+        <h2>5. Типичные дефекты и их устранение</h2>
+        <ul><li><strong>Нить рвётся при намотке:</strong> недостаток LDPE (менее 5%) или слишком высокая вытяжка (>1:8) → увеличить долю ПВД до 10%, снизить скорость вытяжных валов на 10–20%.</li><li><strong>Нить не режется (липнет к ножам):</strong> недостаточный подогрев (температура ниже 50°C) → повысить мощность ИК-ламп.</li><li><strong>Готовая сетка желтеет через 3–6 месяцев:</strong> недостаточная УФ-стабилизация → увеличить дозировку сажи до 2% или HALS до 1%.</li><li><strong>Нить имеет низкий блеск (матовый):</strong> недостаточно LLDPE (менее 10%) → увеличить долю стрейч-гранулы до 15–20%.</li></ul>
+
+        <h2>6. Заключение</h2>
+        <p>Притеняющая сетка из вторичного HDPE с добавками LLDPE (10–15%) и LDPE (5–10%) достигает высокого качества нити. Экструзия через плоскощелевую головку при 200–220°C, вытяжка 1:8 и переработка на круглоткацких станках дают прочные, УФ-стабильные сетки со сроком службы 5–10 лет (HALS) до 20 лет (сажа).</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>

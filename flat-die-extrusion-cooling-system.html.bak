@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kühlsystem für Flachfolienextrusionslinien | Kühlwalzen, Chiller, Prozesssteuerung</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,0.05);}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Kühlsystem für Flachfolienextrusionslinien<br>Kühlwalzen, Chiller, Linux-Prozesssteuerung</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Grundlagen der Flachfolienextrusion und Kühlung</h2>
+        <p>Bei der Flachfolienextrusion wird die Polymerschmelze durch eine flache Düse zu einer kontinuierlichen Bahn geformt. Die Qualität der erhaltenen Platte oder Folie hängt direkt von der Temperaturstabilität über die Bahnbreite und der Gleichmäßigkeit der Kühlung ab. Das Kühlsystem in einer Flachfolienextrusionslinie umfasst eine Kalanderwalzengruppe (Kühlwalzen), Kaltwassersätze (Chiller), Pumpstationen und Wassertanks.</p>
+
+        <h2>2. Konstruktion der Kühlwalzen</h2>
+        <p>Kühlwalzen werden aus hartverchromtem Stahl mit hochpräzisionsgeschliffener Oberfläche gefertigt. Die Oberflächenrauheit Ra sollte für glatte Oberflächen 0,05–0,1 µm betragen, für matte Oberflächen 0,4–0,8 µm. Das Innere der Walzen besitzt schraubenförmige Kanäle für den Kühlmitteldurchfluss. Walzendurchmesser für Platten von 1–5 mm Dicke liegen bei 300–500 mm, für dünne Folien (0,1–1 mm) werden Walzen mit 150–300 mm Durchmesser eingesetzt.</p>
+
+        <h2>3. Verzug und Abzug</h2>
+        <p>Das Verhältnis der Walzengeschwindigkeit zur Extrusionsgeschwindigkeit wird als Verzug bezeichnet. Für Plattenmaterial liegt der Verzug bei 1,05–1,2:1, für Folien bei 1,5–3:1. Bei zu hohem Verzug (über 3:1) kommt es zur molekularen Orientierung in Längsrichtung, was zu Anisotropie und Verzug der Platte beim Abkühlen führt.</p>
+
+        <h2>4. Auslegung der Kühlleistung</h2>
+        <p>Die Produktionsleistung einer Flachfolienextrusionslinie für 3 mm dicke, 1000 mm breite Platten beträgt 200–400 kg/h. Der Kühlwasserbedarf für solche Parameter sollte 5–10 m³/h betragen. Das Wasser wird normalerweise im Gegenstromprinzip zugeführt: das kälteste Kühlmittel gelangt auf die letzte Walze, wo die Platte bereits teilweise erstarrt ist. Die Wassertemperatur am Eintritt der letzten Walze beträgt 10–15°C.</p>
+        <p>Bei der Extrusion von 5–8 mm dicken Platten (400–800 kg/h) steigt der Kühlwasserbedarf auf 15–25 m³/h. Die Kälteleistung des Chillers für eine Flachfolienextrusionslinie mit 1000 kg/h Plattenausstoß sollte 120–150 kW betragen.</p>
+
+        <div class="highlight">🔧 Beispiel: Für dünne Folien von 0,2–0,5 mm Dicke kann die Extruderleistung 800–1200 kg/h erreichen. Der Kühlwasserbedarf beträgt dann 30–50 m³/h.</div>
+
+        <h2>5. Anpressvorrichtungen und Spaltverstellung</h2>
+        <p>Zum Einstellen des Spalts zwischen den Kühlwalzen werden hydraulische oder pneumatische Anpressvorrichtungen eingesetzt. Der Anpressdruck auf die Bahn sollte 2–5 kg/cm² betragen. Für Platten aus HDPE-Rezyklat mit niedrigem MFI (0,5–1,5) wird der Anpressdruck auf 5–7 kg/cm² erhöht. Ein zu geringer Anpressdruck (unter 1 kg/cm²) führt zur Bildung von Luftblasen zwischen Platte und Walze. Der Spalt muss mit einer Genauigkeit von 0,01 mm einstellbar sein. Die Abweichung des Spalts über die Walzenlänge sollte 0,02 mm pro 1000 mm Länge nicht überschreiten, sonst wird die Platte keilförmig.</p>
+
+        <h2>6. Automatische Spaltregelung mit Linux-Controller</h2>
+        <p>Ein automatisches System zur Spaltregelung der Kühlwalzen auf Basis eines Linux-Controllers nutzt Daten von Ultraschall-Dickenmessgeräten. Bei Abweichung der Dicke vom Sollwert (z. B. 3,0 mm ±0,05 mm) korrigiert der Controller über Schrittmotoren die Position der oberen Walze. Die Positioniergenauigkeit beträgt 0,005 mm. Der Linux-Controller fragt jeden Frequenzumrichter ab und korrigiert die Parameter bei Geschwindigkeitsabweichungen von mehr als 0,5%.</p>
+
+        <h2>7. Abzugs- und Aufwickeleinrichtungen</h2>
+        <p>Die Geschwindigkeit der Abzugswalzen sollte 0,5–2% über der der Kühlwalzen liegen, um die Bahn zu spannen. Für LDPE mit geringer Dehnfestigkeit beträgt die Geschwindigkeitsdifferenz 0,5–1%, für HDPE 1–2%. Zu hohe Spannung (Differenz über 3%) führt zum Bahnriss. Für Linien mit Plattengeschwindigkeiten von 1–5 m/min (2–10 mm Plattendicke) werden häufig Frequenzumrichter über einen gemeinsamen Modbus-TCP-Bus synchronisiert. Für dünne Folien kann die Geschwindigkeit 50–100 m/min erreichen.</p>
+
+        <h2>8. Kühlarten: Durchlaufwasser, Chiller, Kühlturm, Brunnen</h2>
+        <p>Bei Verwendung von Durchlaufwasser für die Walzenkühlung beträgt der Verbrauch 10–50 m³/h. Das Einleiten von erwärmtem Wasser in die Kanalisation ist unwirtschaftlich. Eine Umwälzkühlung mit Kühlturm oder Chiller ist wesentlich effizienter. Die Kälteleistung eines Chillers für einen Extruder mit 100 kg/h sollte 15 kW bei einem Kühlwasserstrom von 2,5 m³/h betragen. Für eine 800-kg/h-Linie sind 126 kW und 20 m³/h erforderlich.</p>
+
+        <p>Eine Kühlanlage mit Pufferspeicher (2–5 m³ Becken) und Chiller reduziert den Frischwasserverbrauch um 90–95%. Das Wasser aus dem Becken wird auf die Walzen gegeben, läuft zurück, wird dann im Chiller gekühlt. Die Wassertemperatur im Becken wird im Bereich 10–15°C gehalten. Der Frischwasserverbrauch beträgt nur 0,5–2 m³/Tag. Bei Außentemperaturen unter 10°C kann der Linux-Controller den Chiller in den Freikühlmodus (gebäselosen Betrieb) schalten und das Kühlmittel über den Kühlturm leiten.</p>
+
+        <h2>9. Regelung der Kühlung mit Linux-Controller</h2>
+        <p>Der Linux-Controller sammelt Daten von Temperatursensoren am Ein- und Austritt jeder Kühlwalze. Die Austrittstemperatur sollte 30°C nicht überschreiten, andernfalls erhöht der Controller den Wasserdurchfluss über ein Regelventil oder schaltet eine zusätzliche Chillerstufe zu. Der Wasserdruck an den Kühlwalzen sollte 3–5 bar betragen; der Controller passt die Pumpendrehzahl über einen Frequenzumrichter an.</p>
+
+        <p>Bei Anschluss des Chillers über Modbus kann der Controller Betriebsdaten auslesen (Kälteleistung, Wasserdurchfluss, Verdampfertemperatur, Kältemitteldruck) und bei Abweichungen Alarm auslösen. Zudem kann der Controller nachts oder bei Teillast Pumpen abschalten, um Energie zu sparen. Die elektrische Leistungsaufnahme eines Chillers für eine 500-kg/h-Linie beträgt 25–35 kW; im Freikühlmodus sinkt sie auf 5–10 kW (nur Pumpen und Kühlturmventilatoren).</p>
+
+        <div class="highlight">📌 Praxisbeispiel: Bei unzureichendem Wasserdurchfluss (unter 5 m³/h für eine 500-kg/h-Linie) erstarrt die Platte nicht rechtzeitig und verformt sich auf dem Auffangtisch. Der Einbau eines Durchflusssensors mit 4–20-mA-Signal und die Überwachung durch den Linux-Controller erkennen verstopfte Filter oder eine defekte Pumpe frühzeitig.</div>
+
+        <h2>10. Zusammenfassung</h2>
+        <p>Ein effizientes Kühlsystem ist das Herzstück jeder Flachfolienextrusionslinie. Durch präzise Temperaturführung über Kühlwalzen, angepasste Verzüge und eine Linux-gestützte Regelung von Chiller, Pumpen und Spaltverstellung wird eine hohe Produktqualität bei minimalem Energie- und Wasserverbrauch erreicht. Besonders in Recyclinganlagen mit schwankenden Rohstoffeigenschaften zahlt sich eine automatisierte Kühlwasserregelung schnell aus.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Cooling System for Flat Die Extrusion Lines<br>Chill Rolls, Chillers, Linux Process Control</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. Basics of Flat Die Extrusion and Cooling</h2>
+        <p>The polymer melt is formed into a continuous web through a flat die. Cooling stability across the web width determines final sheet or film quality.</p>
+        <h2>2. Chill Roll Design</h2>
+        <p>Chrome-plated steel rolls, surface roughness Ra 0.05–0.1 µm (glossy) or 0.4–0.8 µm (matte). Internal helical cooling channels. Diameter 300–500 mm for 1–5 mm sheets, 150–300 mm for 0.1–1 mm films.</p>
+        <h2>3. Draw Ratio</h2>
+        <p>Draw ratio = roll speed / extrusion speed. Sheets: 1.05–1.2:1, films: 1.5–3:1. Above 3:1 causes molecular orientation and warpage.</p>
+        <h2>4. Cooling Capacity Calculation</h2>
+        <p>For 3 mm sheet, 1000 mm width, 200–400 kg/h → cooling water 5–10 m³/h. For 5–8 mm sheet (400–800 kg/h) → 15–25 m³/h. A chiller for 1000 kg/h output must provide 120–150 kW.</p>
+        <div class="highlight">✅ Thin films 0.2–0.5 mm, 800–1200 kg/h → cooling water 30–50 m³/h.</div>
+        <h2>5. Nip Pressure and Gap Adjustment</h2>
+        <p>Hydraulic/pneumatic nip pressure 2–5 kg/cm² (5–7 kg/cm² for HDPE recyclate with low MFI). Gap accuracy 0.01 mm, max deviation 0.02 mm per 1000 mm width.</p>
+        <h2>6. Linux-Based Automatic Gap Control</h2>
+        <p>Ultrasonic thickness sensors → Linux controller → stepper motors adjust roll gap. Positioning accuracy 0.005 mm.</p>
+        <h2>7. Pull Rolls & Winding</h2>
+        <p>Pull roll speed 0.5–2% higher than chill rolls. LDPE 0.5–1%, HDPE 1–2%. Above 3% → web break.</p>
+        <h2>8. Cooling Types: Once‑Through, Chiller, Tower, Well</h2>
+        <p>Once‑through water 10–50 m³/h (uneconomical). Recirculation with chiller or tower saves 90–95% fresh water. Chiller sizing: 100 kg/h → 15 kW / 2.5 m³/h; 800 kg/h → 126 kW / 20 m³/h. Buffer tank (2–5 m³) keeps 10–15°C. Free cooling mode below 10°C ambient.</p>
+        <h2>9. Linux Control of Cooling System</h2>
+        <p>Outlet water temperature <30°C, otherwise controller increases flow or starts extra chiller stage. Water pressure at rolls 3–5 bar. Modbus connection reads chiller data (capacity, flow, evaporator temperature, refrigerant pressure).</p>
+        <h2>10. Summary</h2>
+        <p>Automated cooling control on Linux ensures stable sheet/film quality, lowers energy and water consumption, and prevents defects like bubbles or warpage.</p>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Система охлаждения для линии плоскощелевой экструзии<br>Охлаждающие валы, чиллеры, управление на Linux</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Основы плоскощелевой экструзии и охлаждения</h2>
+        <p>Расплав полимера формируется в непрерывное полотно через плоскую фильеру. Качество листа или пленки напрямую зависит от стабильности температуры по ширине и равномерности охлаждения. Система охлаждения включает каландровую группу (охлаждающие валы), чиллеры, насосные станции и резервуары для воды.</p>
+
+        <h2>2. Конструкция охлаждающих валов</h2>
+        <p>Валы изготавливаются из хромированной стали с высокоточной шлифовкой. Шероховатость Ra 0,05–0,1 мкм для глянцевой поверхности, 0,4–0,8 мкм для матовой. Внутренняя полость имеет винтовые каналы для хладагента. Диаметр 300–500 мм для листов 1–5 мм, 150–300 мм для пленок 0,1–1 мм.</p>
+
+        <h2>3. Вытяжка и синхронизация скорости</h2>
+        <p>Вытяжка = скорость валов / скорость экструзии. Для листов 1,05–1,2:1, для пленок 1,5–3:1. При вытяжке выше 3:1 возникает ориентация молекул и коробление листа.</p>
+
+        <h2>4. Расчет производительности и охлаждения</h2>
+        <p>Для листа 3 мм, ширина 1000 мм, производительность 200–400 кг/ч → расход воды 5–10 м³/ч. Для листа 5–8 мм (400–800 кг/ч) → 15–25 м³/ч. Для тонких пленок 0,2–0,5 мм (800–1200 кг/ч) → 30–50 м³/ч.</p>
+        <div class="highlight">🔧 Требуемая холодопроизводительность чиллера для линии 1000 кг/ч листа составляет 120–150 кВт.</div>
+
+        <h2>5. Прижимные устройства и регулировка зазора</h2>
+        <p>Давление прижима 2–5 кг/см². Для вторичного HDPE с низким ПТР (0,5–1,5) повышают до 5–7 кг/см². Зазор регулируется с точностью 0,01 мм, отклонение по длине вала не более 0,02 мм на 1000 мм.</p>
+
+        <h2>6. Автоматическая система регулировки зазора на Linux</h2>
+        <p>Ультразвуковые датчики толщины → Linux-контроллер → шаговые двигатели корректируют положение верхнего вала. Точность позиционирования 0,005 мм.</p>
+
+        <h2>7. Вытяжные валы и синхронизация скорости</h2>
+        <p>Скорость вытяжных валов должна быть на 0,5–2% выше скорости охлаждающих валов. Для LDPE 0,5–1%, для HDPE 1–2%. Разница более 3% ведет к разрыву полотна.</p>
+
+        <h2>8. Типы охлаждения: проточная вода, чиллер, градирня, скважина</h2>
+        <p>Проточная вода 10–50 м³/ч неэкономична. Циркуляция с чиллером снижает расход свежей воды на 90–95%. Производительность чиллера: для линии 800 кг/ч требуется 126 кВт / 20 м³/ч. Буферная емкость 2–5 м³ поддерживает 10–15°C. При температуре наружного воздуха ниже 10°C возможен режим фрикулинга.</p>
+
+        <h2>9. Управление охлаждением через Linux-контроллер</h2>
+        <p>Температура воды на выходе из валов не должна превышать 30°C. При превышении контроллер увеличивает расход или включает дополнительные секции чиллера. Давление воды 3–5 бар. Чиллер подключается по Modbus для считывания параметров. В ночное время контроллер отключает насосы для экономии энергии.</p>
+
+        <div class="highlight">📌 Типичная проблема: при расходе воды менее 5 м³/ч для линии 500 кг/ч лист не успевает застыть и деформируется. Установка расходомера 4–20 мА и контроль на Linux позволяют своевременно обнаружить забитые фильтры или неисправность насоса.</div>
+
+        <h2>10. Заключение</h2>
+        <p>Эффективная система охлаждения – ключ к стабильному качеству листа и пленки. Прецизионная регулировка зазора, синхронизация скоростей через частотные преобразователи и автоматизированное управление чиллерами на базе Linux-контроллера обеспечивают высокое качество продукции при минимальном энергопотреблении и расходе воды. Особенно это важно для переработчиков вторичных полимеров.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF

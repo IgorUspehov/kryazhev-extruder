@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вибродиагностика и контроль износа ножей — Игорь Кряжев</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.7; color: #1a1a1a; max-width: 1100px; margin: 0 auto; padding: 40px; background: #fdfdfd; }
+        h1 { color: #0a2e52; border-bottom: 4px solid #ff9800; padding-bottom: 15px; }
+        h2 { color: #0a2e52; margin-top: 35px; border-left: 6px solid #ff9800; padding-left: 15px; background: #eef4f9; padding: 10px; }
+        h3 { color: #d35400; margin-top: 25px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ccc; padding: 12px; text-align: left; }
+        th { background: #0a2e52; color: white; }
+        pre { background: #2b2b2b; color: #f8f8f2; padding: 20px; border-radius: 5px; overflow-x: auto; font-size: 14px; line-height: 1.4; }
+        .formula { background: #fffde7; border: 1px dashed #ff9800; padding: 15px; margin: 20px 0; font-family: "Courier New", monospace; text-align: center; font-weight: bold; }
+        .alert-box { border: 2px solid #c0392b; color: #c0392b; padding: 15px; margin: 20px 0; border-radius: 5px; background: #f9ebeb; }
+    </style>
+</head>
+<body>
+    <h1>Вибродиагностика подшипников экструдера и прогнозирование износа ножей агломератора</h1>
+    <p><strong>Автор: Игорь Кряжев, технолог-консультант</strong></p>
+
+    <h2>1. Введение: Критические узлы линии</h2>
+    <p>Выход из строя подшипников экструдера ведет к простою до 14 дней. Прогнозирование износа ножей агломератора по току двигателя позволяет планировать замену за 2-3 дня до падения производительности.</p>
+
+    <h2>2. Вибрационные признаки отказов подшипников</h2>
+    <p>Для обнаружения усталостного выкрашивания (питтинга) используется расчет частот дефектов:</p>
+    <div class="formula">
+        BPFI = 0,6 * N * Z (Частота внутреннего кольца)
+    </div>
+    <p>Где <strong>N</strong> — частота вала (Гц), <strong>Z</strong> — число тел качения.</p>
+
+    <h2>3. Сбор и обработка данных на Linux Mint</h2>
+    <h3>3.1. БПФ-анализ на Python</h3>
+    <pre>
+import numpy as np
+from scipy.fft import fft, fftfreq
+
+# Параметры: sample_rate = 10000 Гц
+fft_vals = fft(vibration_data)
+fft_freqs = fftfreq(samples, 1/sample_rate)
+# Анализ пиков в диапазоне 0-500 Гц
+    </pre>
+
+    <h3>3.2. Пороговые значения виброскорости</h3>
+    <table>
+        <tr><th>Состояние</th><th>RMS виброскорость (мм/с)</th><th>Действие</th></tr>
+        <tr><td>Норма</td><td>0,5 – 1,5</td><td>Мониторинг</td></tr>
+        <tr><td>Начальный дефект</td><td>1,5 – 3,0</td><td>Усиленное наблюдение</td></tr>
+        <tr><td>Предаварийное</td><td>3,0 – 4,5</td><td>Планирование ремонта</td></tr>
+        <tr style="color:red; font-weight:bold;"><td>Критическое</td><td> > 4,5</td><td>Аварийный стоп</td></tr>
+    </table>
+
+    <h2>4. Прогнозирование износа ножей по току</h2>
+    <p>Метод основан на вычислении коэффициента <strong>Kn = max_current / max_current_ref</strong>.</p>
+    <div class="alert-box">
+        <strong>Внимание:</strong> При Kn = 1.2 рекомендуется плановая замена ножей в межсменный перерыв.
+    </div>
+
+    <pre>
+# Алгоритм предиктивного анализа
+def predict_cycles(current_kn, growth_rate, threshold=1.2):
+    return (threshold - current_kn) / growth_rate
+    </pre>
+
+    <h2>5. Технический эффект</h2>
+    <ul>
+        <li>Переход от аварийного ремонта к планово-предупредительному.</li>
+        <li>Исключение работы агломератора на "тупых" ножах (экономия электроэнергии 10-15%).</li>
+    </ul>
+</body>
+</html>
