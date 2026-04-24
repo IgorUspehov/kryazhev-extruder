@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrusionstemperaturen für LDPE, LLDPE, HDPE und PP | Einfluss des MFI auf Folienblasen und Plattenextrusion</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,0.05);}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Temperaturregime der Extrusion für LDPE, LLDPE, HDPE und PP<br>Einfluss der Schmelzefließrate auf Folienblasen und Plattenproduktion</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe & Kunststoffberater</div>
+
+        <h2>1. Zusammenhang zwischen Temperatur und Schmelzefließrate (MFI)</h2>
+        <p>Die Schmelzefließrate (MFI) bestimmt die Viskosität des Polymers bei einer definierten Temperatur. Je höher der MFI, desto leichter fließt das Material, desto niedriger kann die Extrusionstemperatur sein. Standardbedingungen: LDPE/LLDPE/HDPE 190°C/2,16 kg; PP 230°C/2,16 kg. Diese Temperaturen sind nicht die Arbeitstemperaturen, sondern nur Vergleichsgrößen.</p>
+
+        <h2>2. LDPE – Folienblasen und Plattenextrusion</h2>
+        <p>LDPE hat einen Schmelzpunkt von 105–115°C, typischer MFI für Blasfolie 1,5–3,5 g/10min, für Platte 1–3 g/10min.<br>
+        <strong>Blasfolie (Ringdüse):</strong> Zone 1 140–150°C, Zone 2 150–170°C, Zone 3 170–190°C, Zone 4 180–190°C, Düse 170–190°C. Schmelzetemperatur max. 230°C.<br>
+        <strong>Flachfolie/Platte:</strong> Zone 1 130–140°C, Zone 2 140–160°C, Zone 3 160–180°C, Zone 4 170–180°C, Flachdüse 160–180°C.</p>
+
+        <h2>3. LLDPE – Blasfolie und Platte</h2>
+        <p>LLDPE hat höhere Reißfestigkeit als LDPE, benötigt höhere Temperaturen. MFI 1,5–3 g/10min (Folie), 1–2,5 g/10min (Platte).<br>
+        <strong>Blasfolie:</strong> Zone 1 160–170°C, Zone 2 170–190°C, Zone 3 190–210°C, Zone 4 200–210°C, Düse 190–210°C. Schmelze max. 240°C.<br>
+        <strong>Platte:</strong> Zone 1 150–170°C, Zone 2 170–190°C, Zone 3 190–210°C, Zone 4 190–200°C, Flachdüse 180–200°C.</p>
+
+        <h2>4. HDPE – Blasfolie und Platte</h2>
+        <p>HDPE hat hohe Kristallinität (60–80%), Schmelzpunkt 125–135°C. MFI für Blasfolie 0,8–2 g/10min, für Platte 0,5–1,5 g/10min.<br>
+        <strong>Blasfolie:</strong> Zone 1 170–190°C, Zone 2 190–210°C, Zone 3 210–230°C, Zone 4 220–230°C, Düse 200–220°C. Schmelze max. 250°C.<br>
+        <strong>Platte:</strong> Zone 1 160–180°C, Zone 2 180–200°C, Zone 3 200–220°C, Zone 4 210–220°C, Flachdüse 200–210°C.</p>
+        <div class="highlight">🔧 Praxis: HDPE-Plattenextrusion erfordert Kühlwalzen mit 40–60°C, sonst Verzug.</div>
+
+        <h2>5. PP – Blasfolie und Platte</h2>
+        <p>PP-Schmelzpunkt 160–170°C, sehr temperaturempfindlich. MFI für Blasfolie 2–5 g/10min, für Platte 1–3 g/10min. Über 260°C Schmelze → starke Zersetzung.<br>
+        <strong>Blasfolie:</strong> Zone 1 180–200°C, Zone 2 200–220°C, Zone 3 220–240°C, Zone 4 230–240°C, Düse 210–230°C.<br>
+        <strong>Platte:</strong> Zone 1 170–190°C, Zone 2 190–210°C, Zone 3 210–230°C, Zone 4 220–230°C, Flachdüse 200–220°C.</p>
+
+        <h2>6. Einfluss von Rezyklaten auf die Extrusionstemperatur</h2>
+        <p>Rezyklate haben oft abweichende MFI-Werte. LDPE-Rezyklat (Folie) MFI 3–5 → Temperaturen 10–20°C senken. HDPE-Rezyklat aus Kanistern MFI 0,5–1,5 erfordert höhere Temperaturen (230–240°C) oder besser Mischung mit 20–30% HDPE hohen MFI (5–8). PP-Rezyklat aus Big Bags MFI 4–10 → für Plattenextrusion Temperaturen auf 190–210°C reduzieren, sonst zu flüssig und spröde.</p>
+
+        <h2>7. Praktische Einstellregeln und typische Fehler</h2>
+        <ul>
+            <li>Start in der Mitte der empfohlenen Bereiche.</li>
+            <li>Überhitzung: Rauch, Geruch, Gelbfärbung, Blasen.</li>
+            <li>Unterhitzung: hoher Motorstrom (>80%), Druckschwankungen (>±20 bar).</li>
+            <li>Fehler 1: Gleiche Temperatur für alle PE – HDPE/LLDPE benötigen höhere Werte als LDPE.</li>
+            <li>Fehler 2: MFI des Rezyklats ignorieren – jede Charge prüfen und Temperatur anpassen.</li>
+            <li>Fehler 3: PP über 260°C erhitzen – Zersetzung in 5–10 min.</li>
+        </ul>
+
+        <div class="highlight">📌 Zahlenbeispiel: LDPE-Blasfolie mit MFI 2,5 → Zone 1 145°C, Düse 180°C. HDPE-Platte mit MFI 1,2 → Zone 1 170°C, Flachdüse 205°C. PP-Blasextrusion mit MFI 4 → Düse 220°C.</div>
+
+        <h2>8. Fazit</h2>
+        <p>Die richtige Temperaturführung in Abhängigkeit vom MFI ist entscheidend für eine stabile Folienblas- oder Plattenextrusion. LDPE arbeitet mit niedrigsten Temperaturen, LLDPE und HDPE benötigen 20–40°C mehr, PP liegt im oberen Bereich (230–240°C), verträgt aber keine Überhitzung über 260°C. Rezyklate mit verändertem MFI erfordern eine individuelle Temperaturanpassung, um Produktdefekte zu vermeiden.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Extrusion Temperature Profiles for LDPE, LLDPE, HDPE and PP<br>Effect of MFI on Film Blowing and Sheet Production</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant & Polymer Technologist</div>
+        <h2>1. Temperature vs. Melt Flow Index (MFI)</h2>
+        <p>Higher MFI = lower viscosity = lower extrusion temperature possible. Standard test conditions: LDPE/LLDPE/HDPE 190°C/2.16 kg; PP 230°C/2.16 kg.</p>
+        <h2>2. LDPE – Blown Film & Sheet</h2>
+        <p>MP 105–115°C, MFI film 1.5–3.5, sheet 1–3. <strong>Blown film:</strong> Zone1 140–150, Zone2 150–170, Zone3 170–190, Zone4 180–190, die 170–190°C. <strong>Flat sheet:</strong> Zone1 130–140, Zone2 140–160, Zone3 160–180, die 160–180°C.</p>
+        <h2>3. LLDPE – Blown Film & Sheet</h2>
+        <p>MP 120–130°C, MFI 1.5–3 (film), 1–2.5 (sheet). <strong>Blown film:</strong> Zone1 160–170, Zone2 170–190, Zone3 190–210, die 190–210°C. <strong>Sheet:</strong> Zone1 150–170, Zone2 170–190, Zone3 190–210, flat die 180–200°C.</p>
+        <h2>4. HDPE – Blown Film & Sheet</h2>
+        <p>MP 125–135°C, MFI film 0.8–2, sheet 0.5–1.5. <strong>Blown film:</strong> Zone1 170–190, Zone2 190–210, Zone3 210–230, die 200–220°C. <strong>Sheet:</strong> Zone1 160–180, Zone2 180–200, Zone3 200–220, flat die 200–210°C.</p>
+        <div class="highlight">✅ HDPE sheet requires chill rolls 40–60°C to avoid warpage.</div>
+        <h2>5. PP – Blown Film & Sheet</h2>
+        <p>MP 160–170°C, MFI film 2–5, sheet 1–3. Melt temperature never exceed 260°C. <strong>Blown film:</strong> Zone1 180–200, Zone2 200–220, Zone3 220–240, die 210–230°C. <strong>Sheet:</strong> Zone1 170–190, Zone2 190–210, Zone3 210–230, flat die 200–220°C.</p>
+        <h2>6. Recyclates Effect</h2>
+        <p>LDPE recyclate MFI 3–5 → lower temperature by 10–20°C. HDPE canister recyclate MFI 0.5–1.5 → use 230–240°C or blend with high-MFI HDPE. PP Big Bag recyclate MFI 4–10 → for sheet reduce to 190–210°C.</p>
+        <h2>7. Common Mistakes</h2>
+        <ul><li>Same temperature for all PE types – HDPE/LLDPE need higher settings.</li><li>Ignoring MFI of recyclate – adjust temperature per batch.</li><li>PP above 260°C – degradation within 5–10 minutes.</li></ul>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Температурные режимы экструзии для LDPE, LLDPE, HDPE и PP<br>Влияние ПТР на выдув пленки и производство листа</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант</div>
+
+        <h2>1. Связь температуры и показателя текучести расплава (ПТР)</h2>
+        <p>ПТР (MFI) определяет вязкость полимера. Чем выше ПТР, тем легче материал течёт, тем ниже может быть температура экструзии. Стандартные условия измерения: LDPE/LLDPE/HDPE – 190°C, 2,16 кг; PP – 230°C, 2,16 кг. Эти температуры не являются рабочими, а лишь эталоном для сравнения.</p>
+
+        <h2>2. LDPE – выдув пленки и лист</h2>
+        <p>Температура плавления 105–115°C, типичный ПТР для пленки 1,5–3,5 г/10мин, для листа 1–3 г/10мин.<br>
+        <strong>Выдув пленки (кольцевая головка):</strong> Зона 1 140–150°C, Зона 2 150–170°C, Зона 3 170–190°C, Зона 4 180–190°C, Головка 170–190°C. Температура расплава не выше 230°C.<br>
+        <strong>Плоскощелевая экструзия листа:</strong> Зона 1 130–140°C, Зона 2 140–160°C, Зона 3 160–180°C, Зона 4 170–180°C, Головка 160–180°C.</p>
+
+        <h2>3. LLDPE – выдув пленки и лист</h2>
+        <p>Температура плавления 120–130°C, ПТР для пленки 1,5–3 г/10мин, для листа 1–2,5 г/10мин.<br>
+        <strong>Выдув пленки:</strong> Зона 1 160–170°C, Зона 2 170–190°C, Зона 3 190–210°C, Зона 4 200–210°C, Головка 190–210°C. Расплав не выше 240°C.<br>
+        <strong>Лист:</strong> Зона 1 150–170°C, Зона 2 170–190°C, Зона 3 190–210°C, Зона 4 190–200°C, Плоскощелевая головка 180–200°C.</p>
+
+        <h2>4. HDPE – выдув пленки и лист</h2>
+        <p>Высокая кристалличность (60–80%), плавление 125–135°C. ПТР для пленки 0,8–2 г/10мин, для листа 0,5–1,5 г/10мин.<br>
+        <strong>Выдув пленки:</strong> Зона 1 170–190°C, Зона 2 190–210°C, Зона 3 210–230°C, Зона 4 220–230°C, Головка 200–220°C. Расплав не выше 250°C.<br>
+        <strong>Лист:</strong> Зона 1 160–180°C, Зона 2 180–200°C, Зона 3 200–220°C, Зона 4 210–220°C, Головка 200–210°C. Каландры (охлаждающие валы) должны иметь температуру 40–60°C.</p>
+
+        <div class="highlight">🔧 Пример: HDPE лист с ПТР 1,2 – Зона 1 170°C, Головка 205°C. Валы 50°C, иначе коробление.</div>
+
+        <h2>5. PP – выдув пленки и лист</h2>
+        <p>Температура плавления 160–170°C, самый чувствительный к перегреву. ПТР для пленки 2–5 г/10мин, для листа 1–3 г/10мин. Превышение 260°C ведёт к деструкции за 5–10 минут.<br>
+        <strong>Выдув пленки:</strong> Зона 1 180–200°C, Зона 2 200–220°C, Зона 3 220–240°C, Зона 4 230–240°C, Головка 210–230°C.<br>
+        <strong>Лист:</strong> Зона 1 170–190°C, Зона 2 190–210°C, Зона 3 210–230°C, Зона 4 220–230°C, Головка 200–220°C.</p>
+
+        <h2>6. Влияние вторичного сырья</h2>
+        <p>Вторичный LDPE из пленки часто имеет ПТР 3–5 – снижайте температуру на 10–20°C. Вторичный HDPE из канистр (ПТР 0,5–1,5) требует 230–240°C, но лучше смешивать с 20–30% HDPE высокого ПТР (5–8). Вторичный PP из биг-бэгов (ПТР 4–10) – для листа снижайте температуру до 190–210°C, иначе слишком текуч и хрупок.</p>
+
+        <h2>7. Практические рекомендации и типичные ошибки</h2>
+        <ul>
+            <li>Начинайте с середины рекомендованного диапазона.</li>
+            <li>Перегрев: дым, запах, желтизна, пузыри.</li>
+            <li>Недогрев: высокий ток двигателя (>80%), пульсации давления (>±20 бар).</li>
+            <li><strong>Ошибка 1:</strong> Одинаковая температура для всех PE – HDPE и LLDPE требуют более высоких значений, чем LDPE.</li>
+            <li><strong>Ошибка 2:</strong> Игнорирование ПТР вторичного сырья – каждая партия требует корректировки температуры.</li>
+            <li><strong>Ошибка 3:</strong> Перегрев PP выше 260°C – деструкция за 5–10 минут.</li>
+        </ul>
+
+        <div class="highlight">📊 Низкочастотные ключевые запросы, встроенные в текст: влияние ПТР на выдув пленки HDPE · температурный режим экструзии LLDPE для листа · зависимость температуры расплава от показателя текучести · экструзия вторичного полипропилена с высоким ПТР · настройка зон нагрева для LDPE с низким MFI.</div>
+
+        <h2>8. Заключение</h2>
+        <p>Правильный выбор температурного режима в зависимости от ПТР – основа стабильной экструзии пленки и листа. LDPE работает при самых низких температурах, LLDPE и HDPE требуют на 20–40°C больше, PP – в диапазоне 230–240°C, но критически чувствителен к перегреву выше 260°C. Вторичные полимеры с изменённым ПТР требуют индивидуальной настройки температуры, чтобы избежать брака.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
