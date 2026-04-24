@@ -2,18 +2,20 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>LLDPE Regranulat Stretchfilm Recycling</title>
+<title>LLDPE Stretchfilm Recycling – Regranulat Produktion</title>
 <style>
-body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f6f6f6;}
-.container {max-width:1100px; margin:0 auto; background:#fff; padding:20px;}
-.lang-tabs {display:flex; gap:10px; margin-bottom:20px;}
-.lang-btn {padding:10px; cursor:pointer; border:1px solid #ccc; background:#eee;}
-.lang-btn.active {background:#ddd;}
-.lang-panel {display:none;}
-.active-panel {display:block;}
-h1,h2 {color:#222;}
-.section {margin-bottom:20px;}
-.code {background:#f0f0f0; padding:10px;}
+body{font-family:Arial;margin:0;background:#f6f6f6}
+.container{max-width:1100px;margin:0 auto;background:#fff;padding:20px}
+.lang-tabs{display:flex;gap:10px;margin-bottom:20px}
+.lang-btn{padding:10px;border:1px solid #ccc;background:#eee;cursor:pointer}
+.lang-btn.active{background:#ddd}
+.lang-panel{display:none}
+.active-panel{display:block}
+h1,h2{color:#222}
+.section{margin-bottom:18px}
+.code{background:#f2f2f2;padding:10px;font-family:monospace}
+table{width:100%;border-collapse:collapse;margin:10px 0}
+td,th{border:1px solid #ccc;padding:6px}
 </style>
 </head>
 
@@ -28,183 +30,127 @@ h1,h2 {color:#222;}
 
 <!-- DE -->
 <div id="lang-de" class="lang-panel active-panel">
+<h1>LLDPE Stretchfilm Recycling und Regranulat Produktion</h1>
 
-<h1>LLDPE Regranulat aus Stretchfolien Recycling</h1>
-
-<div class="section">
-<h2>1 Einleitung</h2>
-LLDPE Regranulat entsteht aus Stretchfolien Abfällen, die in Logistikzentren, Lagern und Produktionslinien gesammelt werden. Typische Quellen sind Palettenwickel, industrielle Verpackungsreste und Stretchfilm Abfall aus Versandprozessen. Der Fokus liegt auf nachhaltiger Wiederverwertung von LLDPE Materialien.
+<div class="section"><h2>1 Einleitung</h2>
+LLDPE Stretchfilm Recycling basiert auf der Wiederverwertung von Verpackungsabfällen aus Logistikzentren, Palettenwicklung und industriellen Produktionslinien. Typische Abfallquellen sind stretch film waste, pallet wrapping film und industrielle Folienreste aus Lagerprozessen. Ziel ist die Herstellung von stabilem Regranulat für weitere Extrusion.
 </div>
 
-<div class="section">
-<h2>2 Mechanismus</h2>
-Recycling beginnt mit Sammlung und Sortierung. Danach folgt Zerkleinerung durch Schredder und Granulator. Die mechanische Verarbeitung reduziert Folienvolumen und bereitet Material für Waschprozesse vor.
+<div class="section"><h2>2 Mechanismus</h2>
+Der Prozess beginnt mit Sammlung und Ballenauflösung. Danach erfolgt Zerkleinerung über shredder system und granulator unit. Das Material wird mechanisch reduziert und für die Waschlinie vorbereitet.
 </div>
 
-<div class="section">
-<h2>3 Parametrierung</h2>
-Prozessparameter wie Drehzahl, Feuchtigkeit und Schneidkraft bestimmen Qualität des Regranulats. Für Stretchfolie Recycling ist stabile Temperaturkontrolle entscheidend.
+<div class="section"><h2>3 Parametrierung</h2>
+Wichtige Parameter sind Schneidgeschwindigkeit 400–1200 rpm, Feuchtigkeit < 8%, und Temperatur im Extruder 160–210°C. Diese Werte bestimmen melt flow stability des LLDPE Regranulats.
 </div>
 
-<div class="section">
-<h2>4 Einfluss auf Lebensdauer</h2>
-LLDPE Regranulat Qualität hängt von Sauberkeit des Inputs ab. Verschmutzte Folien aus Logistik oder Palettenlager reduzieren Polymer Stabilität.
+<div class="section"><h2>4 Einfluss auf Lebensdauer</h2>
+Kontamination durch Staub, Etiketten und organische Rückstände reduziert Polymerstabilität. Regranulat quality hängt direkt von input purity rate ab (optimal > 95% clean film).
 </div>
 
-<div class="section">
-<h2>5 Energieverbrauch</h2>
-Moderne Wasch und Granulationslinien optimieren Energieverbrauch durch integrierte Trocknungssysteme und effiziente Motorsteuerung.
+<div class="section"><h2>5 Energieverbrauch</h2>
+Moderne washing line systems reduzieren Energieverbrauch auf 0.25–0.45 kWh/kg. Optimierte motor drives und drying centrifuge Systeme stabilisieren Prozesslast.
 </div>
 
-<div class="section">
-<h2>6 Beispielkonfiguration</h2>
-Schredder - Waschlinie - Zentrifugaltrockner - Extruder - Pelletizer. Diese Kette ist Standard für Stretchfilm Recycling Anlagen.
+<div class="section"><h2>6 Beispielkonfiguration</h2>
+Shredder – friction washer – float sink tank – centrifuge dryer – extruder – pelletizer system.
 </div>
 
-<div class="section">
-<h2>7 Auswahl</h2>
-Wichtige Auswahlkriterien sind Durchsatz, Materialreinheit und Stabilität der LLDPE Verarbeitungslinie.
+<div class="section"><h2>7 Auswahl</h2>
+Kritische Auswahlparameter: throughput 500–2000 kg/h, contamination tolerance, screw wear resistance im extruder, filter mesh size 120–200 micron.
 </div>
 
-<div class="section">
-<h2>8 Steuerung</h2>
-Beispiel PLC Logik:
+<div class="section"><h2>8 Steuerung</h2>
 <div class="code">
-IF shredder_load > limit THEN reduce_feed_rate();  
-IF moisture > threshold THEN increase_dryer_power();
+IF load_shredder > 85% THEN reduce_feed_rate
+IF moisture > 7% THEN increase_dryer_speed
+IF melt_pressure > limit THEN backflush_filter
 </div>
 </div>
 
-<div class="section">
-<h2>9 Fehler</h2>
-Häufige Probleme sind Verstopfung im Schredder, unzureichende Reinigung und falsche Temperatur im Extruder.
+<div class="section"><h2>9 Fehler</h2>
+Typische Fehler sind bridging im shredder, filter clogging, unstable extrusion pressure und overheating im screw barrel system.
 </div>
 
-<div class="section">
-<h2>10 Fazit</h2>
-LLDPE Stretchfilm Recycling ermöglicht effiziente Rückführung von Verpackungsabfällen in industrielle Produktion und reduziert Rohstoffkosten deutlich.
+<div class="section"><h2>10 Fazit</h2>
+LLDPE recycling von stretch film waste ermöglicht industrielle Wiederverwertung mit stabiler Regranulatproduktion für extrusion und injection molding.
 </div>
-
 </div>
 
 <!-- EN -->
 <div id="lang-en" class="lang-panel">
-
-<h1>LLDPE Regranulate from Stretch Film Recycling</h1>
-
-<div class="section">
-<h2>1 Introduction</h2>
-LLDPE regranulate is produced from stretch film waste collected in warehouses, logistics hubs and industrial packaging lines. Main sources include pallet wrapping and production scrap.
+<h1>LLDPE Stretch Film Recycling and Regranulate Production</h1>
+<div class="section"><h2>1 Introduction</h2>
+LLDPE recycling is based on processing stretch film waste from logistics warehouses and industrial packaging lines. Main sources include pallet wrapping film and production scrap streams.
 </div>
-
-<div class="section">
-<h2>2 Mechanism</h2>
-Recycling starts with collection and shredding. Shredder and granulator reduce film volume before washing and drying.
+<div class="section"><h2>2 Mechanism</h2>
+The process starts with bale opening and shredding using industrial shredder systems followed by granulation.
 </div>
-
-<div class="section">
-<h2>3 Parameterization</h2>
-Process parameters like speed, moisture and cutting force define final pellet quality.
+<div class="section"><h2>3 Parameterization</h2>
+Key parameters: 400–1200 rpm cutting speed, moisture below 8%, extrusion temperature 160–210°C.
 </div>
-
-<div class="section">
-<h2>4 Component lifespan</h2>
-Material purity affects stability of LLDPE regranulate. Contaminated logistics waste reduces polymer strength.
+<div class="section"><h2>4 Component lifespan</h2>
+Contamination reduces polymer stability. Clean input rate above 95% ensures stable output.
 </div>
-
-<div class="section">
-<h2>5 Energy consumption</h2>
-Modern recycling lines reduce energy usage with integrated drying and optimized motors.
+<div class="section"><h2>5 Energy consumption</h2>
+Modern systems operate at 0.25–0.45 kWh/kg depending on drying efficiency.
 </div>
-
-<div class="section">
-<h2>6 Example</h2>
-Shredder - washer - centrifuge dryer - extruder - pelletizer line is standard configuration.
+<div class="section"><h2>6 Example</h2>
+Shredder – washer – float tank – dryer – extruder – pelletizer line.
 </div>
-
-<div class="section">
-<h2>7 Selection</h2>
-Key factors: throughput, purity level, stability of processing line.
+<div class="section"><h2>7 Selection</h2>
+Throughput, contamination tolerance and screw wear resistance are key criteria.
 </div>
-
-<div class="section">
-<h2>8 Control code</h2>
+<div class="section"><h2>8 Control</h2>
 <div class="code">
-IF load > limit THEN slow_feeder();  
-IF moisture high THEN dryer_up();
+IF overload THEN slow_feed
+IF moisture_high THEN increase_drying
 </div>
 </div>
-
-<div class="section">
-<h2>9 Common mistakes</h2>
-Blockage in shredder, poor washing and wrong extrusion temperature.
+<div class="section"><h2>9 Common mistakes</h2>
+Filter clogging, unstable extrusion pressure, overheating.
 </div>
-
-<div class="section">
-<h2>10 Conclusion</h2>
-Stretch film recycling transforms waste into reusable LLDPE regranulate for industrial production.
+<div class="section"><h2>10 Conclusion</h2>
+Recycling stretch film improves industrial sustainability and reduces raw material cost.
 </div>
-
 </div>
 
 <!-- RU -->
 <div id="lang-ru" class="lang-panel">
-
-<h1>LLDPE вторичный гранулят из стрейч пленки</h1>
-
-<div class="section">
-<h2>1 Введение</h2>
-LLDPE гранулы получают из отходов стрейч пленки, собранных на складах, в логистике и на производстве. Основные источники - паллетная упаковка и производственные отходы.
+<h1>Переработка стрейч пленки LLDPE и производство вторичной гранулы</h1>
+<div class="section"><h2>1 Введение</h2>
+Переработка LLDPE стрейч пленки основана на утилизации отходов логистики, складов и упаковочных линий.
 </div>
-
-<div class="section">
-<h2>2 Механизм</h2>
-Процесс начинается со сбора, затем измельчение через шредер и дробилка, после чего материал идет на мойку и сушку.
+<div class="section"><h2>2 Механизм</h2>
+Процесс включает шредер, дробление и подготовку материала к мойке.
 </div>
-
-<div class="section">
-<h2>3 Настройка</h2>
-Ключевые параметры - скорость, влажность, сила резки. Они влияют на качество гранулы.
+<div class="section"><h2>3 Настройка</h2>
+Скорость 400–1200 об/мин, влажность до 8%, температура экструдера 160–210°C.
 </div>
-
-<div class="section">
-<h2>4 Влияние на ресурс</h2>
-Чистота сырья определяет стабильность LLDPE гранул. Грязная пленка снижает качество.
+<div class="section"><h2>4 Ресурс</h2>
+Чистота сырья >95% критична для стабильной гранулы.
 </div>
-
-<div class="section">
-<h2>5 Энергопотребление</h2>
-Современные линии используют оптимизированные моторы и сушку для снижения затрат энергии.
+<div class="section"><h2>5 Энергия</h2>
+Потребление 0.25–0.45 кВт·ч/кг при современных линиях.
 </div>
-
-<div class="section">
-<h2>6 Пример конфигурации</h2>
-Шредер - мойка - центрифуга - экструдер - гранулятор.
+<div class="section"><h2>6 Конфигурация</h2>
+Шредер – мойка – флотация – сушка – экструдер – гранулятор.
 </div>
-
-<div class="section">
-<h2>7 Выбор оборудования</h2>
-Важно учитывать производительность, чистоту материала и стабильность линии.
+<div class="section"><h2>7 Оборудование</h2>
+Производительность, износ шнека и фильтрация критичны.
 </div>
-
-<div class="section">
-<h2>8 Управление</h2>
+<div class="section"><h2>8 Управление</h2>
 <div class="code">
-IF нагрузка > предел THEN снизить подачу  
-IF влажность > норма THEN увеличить сушку
+ЕСЛИ перегрузка ТО снизить подачу
+ЕСЛИ влажность высокая ТО увеличить сушку
 </div>
 </div>
-
-<div class="section">
-<h2>9 Ошибки</h2>
-Засоры, плохая мойка, перегрев экструдера.
+<div class="section"><h2>9 Ошибки</h2>
+Засоры, перегрев, нестабильное давление.
 </div>
-
-<div class="section">
-<h2>10 Заключение</h2>
-Переработка стрейч пленки позволяет получать вторичный LLDPE гранулят для промышленного использования.
+<div class="section"><h2>10 Заключение</h2>
+Рециклинг LLDPE снижает стоимость сырья и повышает эффективность производства.
 </div>
-
 </div>
 
 </div>
