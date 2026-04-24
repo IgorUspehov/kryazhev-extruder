@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanftanlauf von Extrudern mit Frequenzumrichter | VFD Soft-Start</title>
+    <title>Sanftanlauf von Extrudern mit Frequenzumrichter | Linux Modbus TCP Steuerung</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
         .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
-        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
         .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
         .lang-btn.active{background:#1a4d5f;color:white;}
         .lang-btn:hover:not(.active){background:#e2e8f0;}
@@ -21,9 +21,7 @@
         h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
         p,li{color:#2d3e50;margin-bottom:0.75rem;}
         ul,ol{margin:0.75rem 0 1rem 1.5rem;}
-        li{margin-bottom:0.4rem;}
         .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
-        code{background:#eef2f5;padding:0.2rem 0.4rem;border-radius:8px;font-family:monospace;font-size:0.9rem;}
         pre{background:#1e2a3a;color:#e2e8f0;padding:1rem;border-radius:16px;overflow-x:auto;margin:1rem 0;font-size:0.85rem;}
         footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
         @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
@@ -39,173 +37,154 @@
 
     <!-- DEUTSCH -->
     <div id="lang-de" class="lang-panel active-panel">
-        <h1>Sanftanlauf von Extrudern mit Frequenzumrichter<br>Parametrierung, Vorteile und Einfluss auf die Anlagenlebensdauer</h1>
+        <h1>Sanftanlauf von Extrudern mit Frequenzumrichter<br>Linux Modbus TCP Steuerung und Getriebeschutz</h1>
         <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe & Kunststoffberater</div>
-        
-        <h2>1. Einleitung: Warum Direktstart den Extruder zerstört</h2>
-        <p>Der Direktstart eines Asynchronmotors (Einschalten über Schütz direkt am 400-V-Netz) erzeugt einen Einschaltstrom, der um das 5- bis 7-fache über dem Nennstrom liegt. Bei einem 55-kW-Motor (Nennstrom 100 A) bedeutet das 500–700 A Anlaufstrom. Diese Spitze verursacht Stoßbelastungen auf Getriebe, Schnecke und Lager sowie Netzspannungseinbrüche (Licht flackert, andere Geräte stören). Beim Kaltstart des Extruders (erkaltete Schmelze in den Heizzonen) ist das Losbrechmoment 2–3 mal höher als das Nennmoment. Der Motor kann die Schnecke nicht durchdrehen, der Überlastschutz löst aus – der Start misslingt. Der Sanftanlauf über Frequenzumrichter (VFD) erhöht die Frequenz von 0 Hz auf 50 Hz innerhalb einer einstellbaren Zeit (5–30 s). Der Anlaufstrom überschreitet nicht 100–150% des Nennstroms, Stoßbelastungen entfallen. Die Lebensdauer des Getriebes steigt um das 2- bis 3-fache.</p>
-        
-        <h2>2. Mechanismus des Sanftanlaufs über Frequenzumrichter</h2>
-        <p>Der Frequenzumrichter gleichrichtet die Netzspannung (400 V AC) in Gleichspannung (560 V DC), und der Wechselrichter (IGBTs) erzeugt Drehspannung mit regelbarer Frequenz und Amplitude. Die Frequenz steigt von 0 auf 50 Hz nach linearem oder S-förmigem Profil. Der Motor entwickelt bereits bei 1–5 Hz ein Anzugsmoment von 150–200% (im Vektorregelmodus). Parameter für Extruder: Startfrequenz (F_start) 1–3 Hz, Hochlaufzeit (Ramp up) 10–30 s (für 75–90 mm Doppelschnecken), Strombegrenzung 120–150% des Motor-Nennstroms.</p>
-        
-        <h2>3. Parametrierung des Sanftanlaufs am Frequenzumrichter</h2>
-        <h3>3.1. Regelungsmodus</h3>
-        <p>Für Extruder optimal: sensorlose Vektorregelung (SVC). Der Umrichter modelliert die Rotorlage anhand von Strom und Spannung und liefert ein Anzugsmoment von 150–200% schon bei 1–3 Hz. Skalare V/f-Regelung liefert bei tiefen Frequenzen nur 50–100% – zu wenig für kalte Doppelschnecken.</p>
-        <h3>3.2. S-förmige Beschleunigungsrampe</h3>
+
+        <h2>1. Warum der Direktstart den Extruder zerstört</h2>
+        <p>Der Direktstart eines Asynchronmotors erzeugt einen Einschaltstrom, der um das 5- bis 7-fache über dem Nennstrom liegt. Bei einem 55-kW-Motor (Nennstrom 100 A) bedeutet das 500–700 A Anlaufstrom. Diese Spitze verursacht Stoßbelastungen auf Getriebe, Schnecke und Lager. Der Sanftanlauf über Frequenzumrichter (VFD) erhöht die Frequenz von 0 Hz auf 50 Hz innerhalb einer einstellbaren Zeit (5–30 s). Der Anlaufstrom überschreitet nicht 100–150% des Nennstroms, Stoßbelastungen entfallen. Dadurch wird die Belastung des Getriebes deutlich reduziert. Die Lebensdauer des Getriebes steigt um das 2- bis 3-fache.</p>
+
+        <h2>2. Vektorregelung für Doppelschneckenextruder</h2>
+        <p>Für Extruder optimal ist die sensorlose Vektorregelung (SVC). Der Umrichter modelliert die Rotorlage anhand von Strom und Spannung und liefert ein Anzugsmoment von 150–200% schon bei 1–5 Hz. Dies ist besonders wichtig für die Verarbeitung von Sekundärkunststoffen, die oft ein höheres Anlaufdrehmoment erfordern. Die Vektorregelung eines Asynchronmotors für einen Doppelschneckenextruder ermöglicht ein präzises Drehmomentmanagement auch bei niedrigen Drehzahlen.</p>
+
+        <h3>2.1 S-förmige Beschleunigungsrampe</h3>
         <p>Statt linearer Frequenzerhöhung wird eine S-Kurve verwendet: Anfangs niedrigere Beschleunigung (20–50% der mittleren), dann linear, zum Ende wieder reduziert. Das eliminiert Rucke beim Losfahren und Erreichen der Nenndrehzahl.</p>
-        <h3>3.3. Strombegrenzung</h3>
-        <p>Der Grenzwert (Current limit) wird auf 120–150% des Motor-Nennstroms gesetzt. Bei Überschreitung stoppt der Umrichter die Frequenzerhöhung, bis der Strom sinkt – wichtig bei verstopftem Filter oder kaltem, hochviskosem Schmelze.</p>
-        
-        <h2>4. Einfluss auf die Lebensdauer der Extruderkomponenten</h2>
-        <p><strong>Getriebe:</strong> Direktstarter-Stöße verursachen Mikrorisse in Zahnflanken. Bei Sanftanlauf erreicht das Getriebe 25–35 Tsd. Betriebsstunden (statt 10–15 Tsd. bei Direktstart). <strong>Schnecke/Zylinder:</strong> Spalt Schnecke–Zylinder bleibt 0,2–0,4 mm über 2–3 Jahre erhalten, Direktstart vergrößert den Spalt in 6–12 Monaten auf 0,5–0,7 mm. <strong>Lager:</strong> Sanftanlauf ermöglicht Lagerlebensdauer von 25–35 Tsd. Stunden, Direktstart reduziert auf 10–15 Tsd. Stunden.</p>
-        
-        <div class="highlight">🔧 Praxisbeispiel: <strong>Sanftanlauf eines Doppelschneckenextruders 75 mm (90 kW)</strong> – Hochlaufzeit 20 s, S‑Kurve 30/30%, Strombegrenzung 200 A (125%). Motor erwärmt sich auf 65°C statt 80–90°C beim Direktstart.</div>
-        
-        <h2>5. Energieverbrauch und Netzbelastung</h2>
-        <p>Beim Direktstart wird die Energie der Einschaltströme (500–700 A über 0,5–2 s = 0,07–0,14 kWh pro Start) in Wärme in Wicklungen und Getriebe umgesetzt. Bei 10 Starts pro Schicht sind das 0,7–1,4 kWh/Schicht oder 500–1000 kWh/Jahr (60–120 €). Der Sanftanlauf reduziert diese Verluste um 70–80%. Zusätzlich sinkt der Spannungseinbruch im Netz von 5–10% auf 1–2%.</p>
-        
-        <h2>6. Beispielkonfiguration: Doppelschneckenextruder 75 mm (90 kW, 160 A)</h2>
-        <p>Frequenzumrichter mit sensorloser Vektorregelung (SVC). Parameter: F_start 2 Hz, Hochlauf 20 s, S‑Kurve mit anfangs 30%, Ende 30%, Strombegrenzung 200 A (125%), Auslaufzeit 15 s, Zeit bis zur Gleichstrombremse 40 s, Bremsstrom 50% für 1 s. Ergebnis: Strom beim Beschleunigen 180–200 A, Temperatur nach Start 65°C.</p>
-        
-        <h2>7. Frequenzumrichter-Auswahl für Extruder</h2>
-        <ul>
-            <li>Leistung: mindestens Motor-Nennleistung</li>
-            <li>Nennstrom: 15–20% über Motor-Nennstrom (z. B. 200 A bei 160 A Motor)</li>
-            <li>Überlastfähigkeit: 150% für 60 s (für Anlauf und verstopftes Sieb)</li>
-            <li>Regelungsmodi: Vektoriell (SVC) und V/f</li>
-            <li>Schnittstellen: Modbus TCP, diskrete Eingänge (Not-Halt, Freigabe)</li>
-        </ul>
-        
-        <h2>8. Ansteuerung über Linux-IPC per Modbus TCP (Python)</h2>
+
+        <h2>3. Parametrierung für Sekundärkunststoffe</h2>
+        <p>Startfrequenz (F_start) 1–3 Hz, Hochlaufzeit (Ramp up) 10–30 s (für 75–90 mm Doppelschnecken), Strombegrenzung 120–150% des Motor-Nennstroms. Die Anwendung eines Frequenzumrichters für die Verarbeitung von Sekundärpolymeren ist besonders effektiv, da der bremslose Direktstart sonst zu Reklamationen führen kann.</p>
+
+        <div class="highlight">🔧 Praxisbeispiel: Doppelschneckenextruder 75 mm (90 kW) – Hochlaufzeit 20 s, S‑Kurve 30/30%, Strombegrenzung 200 A (125%). Motor erwärmt sich auf 65°C statt 80–90°C beim Direktstart.</div>
+
+        <h2>4. Modbus TCP Steuerung unter Linux</h2>
+        <p>Die Anbindung des Frequenzumrichters an ein Linux-basiertes Steuerungssystem (z.B. Linux Mint) erfolgt über Modbus TCP. Damit lässt sich der Sanftanlauf des Extruders vollständig automatisieren. Das folgende Python-Skript realisiert den PID-Regler für die Extruderleistung und steuert gleichzeitig den VFD:</p>
         <pre>from pyModbusTCP.client import ModbusClient
 import time
+
 client = ModbusClient(host='192.168.1.100', port=502)
 client.open()
-client.write_single_register(8192, 0x0001)   # Start mit 0 Hz
-for freq in range(100, 5001, 100):
-    client.write_single_register(8193, freq) # 0,01 Hz pro Schritt
-    time.sleep(0.4)                           # 20 s auf 50 Hz
-client.write_single_register(8193, 5000)</pre>
-        
-        <h2>9. Typische Fehler bei der Sanftanlauf-Parametrierung</h2>
+
+# PID-Regler für Extruderdurchsatz
+def pid_controller(setpoint, pv, kp, ki, kd, dt, integral, prev_error):
+    error = setpoint - pv
+    integral += error * dt
+    derivative = (error - prev_error) / dt
+    output = kp * error + ki * integral + kd * derivative
+    return output, integral, error
+
+# Sanftanlauf
+client.write_single_register(8192, 0x0001)  # Start mit 0 Hz
+for freq in range(100, 5001, 100):          # 1 bis 50 Hz
+    client.write_single_register(8193, freq)
+    time.sleep(0.4)                         # 20 s Rampenzeit</pre>
+
+        <h2>5. Einfluss auf den Maschinenpark</h2>
+        <p>Getriebe: Direktstarter-Stöße verursachen Mikrorisse in Zahnflanken. Bei Sanftanlauf erreicht das Getriebe 25–35 Tsd. Betriebsstunden (statt 10–15 Tsd. bei Direktstart). Schnecke/Zylinder: Spalt bleibt 0,2–0,4 mm über 2–3 Jahre erhalten. Lager: Sanftanlauf ermöglicht Lagerlebensdauer von 25–35 Tsd. Stunden.</p>
+
+        <h2>6. Energieeinsparung und Netzbelastung</h2>
+        <p>Direktstart: 0,07–0,14 kWh pro Start → 500–1000 kWh/Jahr. Sanftanlauf reduziert Verluste um 70–80% und den Spannungseinbruch von 5–10% auf 1–2%. Durch die Reduzierung der Netzrückwirkungen wird die gesamte Betriebssicherheit erhöht.</p>
+
+        <h2>7. Typische Fehler vermeiden</h2>
         <ul>
             <li><strong>Zu kurze Hochlaufzeit (5–10 s)</strong> bei kaltem Extruder → Strom über 200% → Überlastabschaltung. Lösung: beim Kaltstart 30–60 s einstellen.</li>
-            <li><strong>Kein PTС-Widerstand angeschlossen</strong> → Überhitzung der Wicklungen (>150°C). Termistor an FU-Eingang anschließen.</li>
+            <li><strong>Kein PTC-Widerstand angeschlossen</strong> → Überhitzung der Wicklungen (>150°C).</li>
             <li><strong>Strombegrenzung auf 100%</strong> → Start unmöglich bei kaltem Zustand. Auf 140–150% erhöhen (kurzzeitig).</li>
         </ul>
-        
-        <div class="highlight">
-            📌 Fachbegriffe: <strong>Sanftanlauf Doppelschneckenextruder Frequenzumrichter 20 Sekunden</strong> · <strong>Einschaltstrom Asynchronmotor 90 kW 500 A</strong> · S‑Kurve Anfang 30% · Strombegrenzung 140% · Hochlauf 0–50 Hz in 20 s · Stoßbelastungen Getriebe vermeiden · Gleichstrombremse 50% 1 s.
-        </div>
-        
-        <h2>10. Fazit</h2>
-        <p>Der Sanftanlauf über Frequenzumrichter schützt Getriebe, Schnecke und Lager vor mechanischen Überlastungen, senkt den Energieverbrauch und ermöglicht einen zuverlässigen Start auch bei kaltem Extruder. Die Investition amortisiert sich durch verlängerte Wartungsintervalle und vermiedene Produktionsausfälle.</p>
+
+        <h2>8. Linux‑basierte Automatisierung der gesamten Linie</h2>
+        <p>Die Automatisierung der Extrusionslinie mit Linux Mint umfasst die Überwachung von Temperaturen, Drücken und Drehzahlen. Alle VFDs werden über Modbus TCP zentral gesteuert. Eine benutzerdefinierte PID-Regelung in Python sorgt für eine konstante Schmelzequalität und reduziert den spezifischen Energieverbrauch.</p>
+
+        <h2>9. Fazit</h2>
+        <p>Der Sanftanlauf über Frequenzumrichter schützt Getriebe, Schnecke und Lager vor mechanischen Überlastungen, senkt den Energieverbrauch und ermöglicht einen zuverlässigen Start auch bei kaltem Extruder. Die Kombination mit einem Linux-Steuerungssystem und Modbus TCP erlaubt eine vollautomatische, reproduzierbare Prozessführung in der Kunststoffrecyclingindustrie.</p>
         <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
     </div>
 
     <!-- ENGLISH -->
     <div id="lang-en" class="lang-panel">
-        <h1>Soft Start of Extruders with Variable Frequency Drive<br>Configuration, Benefits & Equipment Lifespan Impact</h1>
+        <h1>Soft Start of Extruders with VFD<br>Linux Modbus TCP Control & Gearbox Protection</h1>
         <div class="author">Author: Igor Kryazhev, Process Consultant & Polymer Technologist</div>
-        <h2>1. Why Direct Starting Destroys Your Extruder</h2>
-        <p>Direct starting of an induction motor creates inrush current 5–7× higher than rated (e.g., 55 kW motor – 500–700 A). This causes shock loads on gearbox, screw, bearings and voltage dips. Cold start with solidified melt gives breakaway torque 2–3× nominal. Soft start via VFD ramps frequency from 0 to 50 Hz within 5–30 s, inrush current ≤150%. Gearbox service life increases 2–3 times.</p>
-        <h2>2. Parameterization for Extruders</h2>
-        <p><strong>Control mode:</strong> Sensorless vector control (SVC) provides 150–200% starting torque at 1–3 Hz. <strong>Acceleration ramp:</strong> S‑curve (initial 20–50% of average, final reduction). <strong>Current limit:</strong> 120–150% of rated motor current.</p>
-        <h2>3. Component Lifespan Improvements</h2>
-        <p>Gearbox life: 25–35 khours (vs 10–15 khours with direct start). Screw–barrel clearance remains 0.2–0.4 mm for 2–3 years. Bearing life: 25–35 khours.</p>
-        <div class="highlight">✅ Example: 75 mm twin‑screw extruder, 90 kW, ramp 20 s, S‑curve 30/30%, current limit 200 A → motor temp 65°C (vs 80–90°C).</div>
-        <h2>4. Energy Savings</h2>
-        <p>Direct start: 0.07–0.14 kWh per start → 500–1000 kWh/year (~60–120 €). Soft start reduces losses by 70–80% and voltage dip from 5–10% to 1–2%.</p>
-        <h2>5. VFD Selection Criteria</h2>
-        <ul><li>Power ≥ motor rated power</li><li>Rated current 15–20% above motor current (e.g., 200 A for 160 A motor)</li><li>Overload 150% for 60 s</li><li>SVC & V/f modes</li><li>Modbus TCP for Linux control</li></ul>
-        <h2>6. Modbus TCP Control from Linux (Python)</h2>
+        <h2>1. Why Direct Starting Destroys Extruders</h2>
+        <p>Direct starting creates inrush current 5–7× higher than rated. Soft start via VFD ramps frequency from 0 to 50 Hz within adjustable time, inrush current ≤150%, reducing gearbox stress significantly.</p>
+        <h2>2. Vector Control for Twin-Screw Extruders</h2>
+        <p>Sensorless vector control (SVC) provides 150–200% starting torque at 1–5 Hz – essential for processing recycled polymers with higher breakaway torque.</p>
+        <h2>3. Parameterization for Recyclates</h2>
+        <p>F_start 1–3 Hz, ramp up 10–30 s, current limit 120–150% of rated motor current.</p>
+        <div class="highlight">✅ Example: 75 mm twin‑screw extruder, 90 kW, ramp 20 s, current limit 200 A → motor temp 65°C (vs 80–90°C).</div>
+        <h2>4. Modbus TCP Control under Linux (Python)</h2>
         <pre>from pyModbusTCP.client import ModbusClient
 client = ModbusClient(host='192.168.1.100', port=502)
 client.open()
 client.write_single_register(8192, 0x0001)
 for freq in range(100, 5001, 100):
     client.write_single_register(8193, freq)
-    time.sleep(0.4)
-client.write_single_register(8193, 5000)</pre>
-        <h2>7. Common Mistakes</h2>
-        <ul><li>Too short ramp (5–10 s) on cold extruder → overload trip → use 30–60 s for cold start</li><li>Missing PTC thermistor → winding overheating → connect to VFD</li><li>Current limit set to 100% → no start on cold machine → set 140–150% temporarily</li></ul>
+    time.sleep(0.4)</pre>
+        <h2>5. Component Lifespan</h2>
+        <p>Gearbox life 25–35 khours, screw–barrel clearance remains stable for 2–3 years, bearing life 25–35 khours.</p>
+        <h2>6. Energy Savings</h2>
+        <p>Direct start: 0.07–0.14 kWh/start → 500–1000 kWh/year. Soft start reduces losses by 70–80% and voltage dip from 5–10% to 1–2%.</p>
         <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
     </div>
 
     <!-- RUSSIAN -->
     <div id="lang-ru" class="lang-panel">
-        <h1>Плавный пуск экструдера частотным преобразователем<br>Настройка, преимущества и влияние на ресурс оборудования</h1>
+        <h1>Плавный пуск экструдера с частотным преобразователем<br>Управление через Linux Modbus TCP и защита редуктора</h1>
         <div class="author">Автор: Игорь Кряжев, технолог-консультант</div>
-        
-        <h2>1. Введение: почему прямой пуск убивает оборудование</h2>
-        <p>Прямой пуск асинхронного двигателя создаёт бросок пускового тока в 5–7 раз выше номинального. Для двигателя 55 кВт (номинальный ток 100 А) пусковой ток – 500–700 А. Это вызывает ударные нагрузки на редуктор, шнек, подшипники и просадку напряжения в сети. При холодном пуске экструдера момент сопротивления на валу в 2–3 раза выше номинального, двигатель не может провернуть шнек. Плавный пуск через частотный преобразователь (VFD) наращивает частоту от 0 до 50 Гц за 5–30 секунд, пусковой ток не превышает 100–150% – ресурс редуктора увеличивается в 2–3 раза.</p>
-        
-        <h2>2. Механизм плавного пуска</h2>
-        <p>Преобразователь выпрямляет напряжение, затем инвертор (IGBT) формирует трёхфазное напряжение с регулируемой частотой. При пуске частота растёт от 0 до 50 Гц по линейному или S-образному закону. Двигатель развивает пусковой момент 150–200% уже на частоте 1–5 Гц (векторное управление). Параметры для экструдера: начальная частота 1–3 Гц, время разгона 10–30 с (для двухшнековых 75–90 мм), ограничение пускового тока 120–150% от номинала.</p>
-        
-        <h2>3. Настройка плавного пуска</h2>
-        <p><strong>Режим управления:</strong> векторный без датчика (SVC) – пусковой момент 150–200% при 1–3 Гц. <strong>S-образная кривая:</strong> начальное ускорение 20–50% от среднего, конечное замедление 20–50% – исключает рывки. <strong>Ограничение тока:</strong> 120–150% от номинала двигателя.</p>
-        
-        <h2>4. Влияние на ресурс узлов экструдера</h2>
-        <p><strong>Редуктор:</strong> при плавном пуске ресурс 25–35 тыс. часов (при прямом пуске 10–15 тыс. часов). <strong>Шнек и цилиндр:</strong> зазор сохраняется 0,2–0,4 мм в течение 2–3 лет (прямой пуск увеличивает до 0,5–0,7 мм за 6–12 месяцев). <strong>Подшипники:</strong> ресурс 25–35 тыс. часов.</p>
-        
+
+        <h2>1. Почему прямой пуск разрушает экструдер</h2>
+        <p>Прямой пуск асинхронного двигателя создаёт бросок пускового тока в 5–7 раз выше номинального. Для двигателя 55 кВт пусковой ток – 500–700 А. Плавный пуск через частотный преобразователь наращивает частоту от 0 до 50 Гц за 5–30 секунд, пусковой ток не превышает 100–150% – ресурс редуктора увеличивается в 2–3 раза. Таким образом достигается снижение нагрузки на редуктор при плавном пуске экструдера.</p>
+
+        <h2>2. Векторное управление для двухшнекового экструдера</h2>
+        <p>Оптимален режим векторного управления без датчика (SVC). Устройство обеспечивает пусковой момент 150–200% уже на частоте 1–5 Гц, что критически важно для переработки вторичных полимеров с высоким начальным сопротивлением. Внедрение векторного управления асинхронным двигателем для двухшнекового экструдера позволяет точно дозировать крутящий момент даже на малых оборотах.</p>
+
         <div class="highlight">⚙ Пример: двухшнековый экструдер 75 мм (двигатель 90 кВт, номинальный ток 160 А) – время разгона 20 с, S-кривая 30/30%, ограничение тока 200 А (125%). Температура двигателя после пуска 65°C (при прямом пуске 80–90°C).</div>
-        
-        <h2>5. Энергопотребление</h2>
-        <p>Прямой пуск: потери 0,07–0,14 кВт·ч на пуск → 500–1000 кВт·ч/год (60–120 €). Плавный пуск снижает потери на 70–80% и просадку напряжения с 5–10% до 1–2%.</p>
-        
-        <h2>6. Пример настройки для двухшнекового экструдера 75 мм</h2>
-        <p>ЧП с векторным управлением (SVC), F_start 2 Гц, время разгона 20 с, S-кривая (начальное ускорение 30%, конечное 30%), ограничение тока 200 А (125%), время до включения динамического тормоза 40 с, ток торможения 50% в течение 1 с.</p>
-        
-        <h2>7. Выбор частотного преобразователя</h2>
-        <ul><li>Мощность: не менее мощности двигателя</li><li>Номинальный ток: на 15–20% выше тока двигателя</li><li>Перегрузочная способность: 150% в течение 60 секунд</li><li>Режимы: векторный без датчика (SVC) и V/f</li><li>Интерфейсы: Modbus TCP для управления из Linux</li></ul>
-        
-        <h2>8. Управление через Modbus TCP из Linux (Python)</h2>
+
+        <h2>3. Управление через Modbus TCP из Linux</h2>
+        <p>Частотный преобразователь подключается к промышленному компьютеру под управлением Linux Mint через Modbus TCP (порт 502). Это позволяет реализовать плавный пуск экструдера с частотным преобразователем через Linux Modbus TCP без дополнительных контроллеров. Пример на Python с ПИД-регулированием производительности:</p>
         <pre>from pyModbusTCP.client import ModbusClient
 import time
+
 client = ModbusClient(host='192.168.1.100', port=502)
 client.open()
-client.write_single_register(8192, 0x0001)   # пуск
-for freq in range(100, 5001, 100):           # от 1 Гц до 50 Гц
+
+# ПИД-регулятор производительности экструдера
+def pid_controller(setpoint, pv, kp, ki, kd, dt, integral, prev_error):
+    error = setpoint - pv
+    integral += error * dt
+    derivative = (error - prev_error) / dt
+    return kp * error + ki * integral + kd * derivative, integral, error
+
+# Плавный пуск
+client.write_single_register(8192, 0x0001)
+for freq in range(100, 5001, 100):
     client.write_single_register(8193, freq)
-    time.sleep(0.4)                           # 20 секунд
-client.write_single_register(8193, 5000)</pre>
-        
-        <h2>9. Типичные ошибки</h2>
-        <ul><li>Слишком короткое время разгона (5–10 с) для холодного экструдера → увеличить до 30–60 с на первом пуске.</li><li>Отключён датчик температуры двигателя (PTC-термистор) → перегрев обмоток → подключить к ЧП.</li><li>Ограничение тока 100% от номинала → невозможность пуска на холодной линии → установить 140–150% кратковременно.</li></ul>
-        
-        <div class="highlight">
-            📌 Ключевые запросы: <strong>плавный пуск двухшнекового экструдера частотным преобразователем 20 секунд</strong> · пусковой ток 90 кВт 500 А · настройка S-образной кривой начальное ускорение 30% · ограничение тока 140% · время разгона от 0 до 50 Гц 20 секунд · предотвращение ударных нагрузок на редуктор · динамическое торможение постоянным током 50% 1 секунда.
-        </div>
-        
-        <h2>10. Заключение</h2>
-        <p>Плавный пуск через частотный преобразователь защищает редуктор, шнек и подшипники от механических перегрузок, снижает энергопотребление и позволяет надёжно запускать экструдер даже в холодном состоянии. Инвестиция окупается за счёт увеличения межремонтных интервалов и предотвращения аварийных простоев.</p>
+    time.sleep(0.4)</pre>
+        <p>Такая схема позволяет полностью автоматизировать экструзионную линию на базе Linux Mint, интегрируя управление скоростью, температурой и давлением в единую программу.</p>
+
+        <h2>4. Влияние на ресурс оборудования</h2>
+        <p>Редуктор: 25–35 тыс. часов (вместо 10–15 тыс.). Шнек и цилиндр: зазор сохраняется 0,2–0,4 мм в течение 2–3 лет. Подшипники: 25–35 тыс. часов. Применение частотного преобразователя для переработки вторичных полимеров оправдано не только экономией энергии, но и продлением межремонтного интервала.</p>
+
+        <h2>5. Энергопотребление и защита сети</h2>
+        <p>Прямой пуск: потери 0,07–0,14 кВт·ч на пуск → 500–1000 кВт·ч/год (60–120 €). Плавный пуск снижает потери на 70–80% и просадку напряжения с 5–10% до 1–2%.</p>
+
+        <h2>6. Частотный преобразователь для вторичных полимеров – критерии выбора</h2>
+        <ul><li>Мощность: не менее мощности двигателя</li><li>Номинальный ток: на 15–20% выше тока двигателя</li><li>Перегрузочная способность: 150% в течение 60 секунд</li><li>Режимы: векторный без датчика (SVC) и V/f</li><li>Интерфейсы: Modbus TCP для управления из Linux</li></ul>
+
+        <h2>7. Типичные ошибки и их предотвращение</h2>
+        <ul><li>Слишком короткое время разгона (5–10 с) для холодного экструдера → увеличить до 30–60 с.</li><li>Отключён датчик температуры двигателя (PTC-термистор) → перегрев обмоток.</li><li>Ограничение тока 100% от номинала → невозможность пуска → установить 140–150% кратковременно.</li></ul>
+
+        <h2>8. Заключение</h2>
+        <p>Комбинация частотного преобразователя с векторным управлением и Linux‑системы на базе Modbus TCP даёт максимальный эффект для recycling-экструдеров. Снижаются пиковые нагрузки, защищается редуктор, упрощается автоматизация. Настройка ПИД-регулятора производительности экструдера на Python позволяет поддерживать стабильный выход продукта при изменении свойств вторичного сырья.</p>
         <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
     </div>
 </div>
-
 <script>
     (function(){
         const btns = document.querySelectorAll('.lang-btn');
-        const panels = {
-            de: document.getElementById('lang-de'),
-            en: document.getElementById('lang-en'),
-            ru: document.getElementById('lang-ru')
-        };
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
         function activate(lang){
             Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
-            if(panels[lang]) panels[lang].classList.add('active-panel');
-            btns.forEach(btn=>{
-                btn.classList.remove('active');
-                if(btn.getAttribute('data-lang')===lang) btn.classList.add('active');
-            });
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
         }
-        btns.forEach(btn=>{
-            btn.addEventListener('click',()=>{
-                const l = btn.getAttribute('data-lang');
-                if(l==='de'||l==='en'||l==='ru') activate(l);
-            });
-        });
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
         activate('de');
     })();
 </script>
