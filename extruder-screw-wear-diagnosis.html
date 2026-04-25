@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verschleiß der Extruderschnecke – prüfen und diagnostizieren ohne Demontage</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Verschleiß der Extruderschnecke – prüfen und diagnostizieren ohne Demontage</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Das stille Problem: schleichender Verschleiß der Schneckenpaarung</h2>
+        <p>Der Verschleiß der Extruderschnecke senkt schleichend die Leistung der Granulierlinie und die Produktqualität. Der Zustand des Schneckenpaars lässt sich auf zwei Arten prüfen: indirekt über Betriebsmerkmale oder direkt durch physikalische Messung des Schneckenspalts.</p>
+
+        <h2>2. Indirekte Anzeichen ohne Demontage</h2>
+        <ul>
+            <li><strong>Fallende Leistung:</strong> Bei gleicher Schneckendrehzahl sinkt der Durchsatz (kg/h). Die Schmelze rutscht durch die vergrößerten Spalte zwischen Schneckengängen und Zylinderwand zurück. Bei einem Doppelschneckenextruder kann der Leistungsabfall 30–40% erreichen.</li>
+            <li><strong>Schwankender Druck und instabile Produktabmessungen:</strong> Der Schmelzedruck vor der Düse schwankt mit einer Amplitude von mehr als ±10–15 bar. Bei Blasfolie führt das zu Schwankungen der Foliendicke, bei der Flachfolie zur keilförmigen Dickenschwankung.</li>
+            <li><strong>Überhitzung bei abgeschalteten Heizungen:</strong> Durch den erhöhten Rückfluss entsteht Reibungswärme. Die Schmelze kann 20–40°C über der Solltemperatur liegen – eine typische Ursache für Schaumbildung und Zersetzung bei LDPE.</li>
+            <li><strong>Schlechte Additivverteilung:</strong> Kreide, Farbpigmente oder UV-Stabilisatoren werden fleckig verteilt, weil der nötige Homogenisierungsdruck fehlt.</li>
+        </ul>
+
+        <h2>3. Direkte Spaltmessung mit Fühlerlehre (teilweise Demontage)</h2>
+        <p>Die zuverlässigste Methode. Der Verschleiß ist in der Plastifizier- und Kompressionszone am größten (etwa das erste Drittel nach der Einzugszone). Für einen Einschneckenextruder mit 60 mm Durchmesser beträgt der Neuzustand 0,06–0,1 mm Spalt. Für einen Doppelschneckenextruder mit 75 mm sind 0,08–0,12 mm normal. Kritisch wird der Spalt ab etwa 0,3–0,5 mm – dann bricht die Leistung ein, besonders bei Rezyklaten mit geringer Schüttdichte.</p>
+
+        <div class="highlight">🔧 Richtwerte: ≤60 mm Schneckendurchmesser → Neuspalt 0,06–0,10 mm, kritisch >0,3 mm. 70–90 mm Doppelschnecke → Neuspalt 0,08–0,12 mm, kritisch >0,4 mm.</div>
+
+        <h2>4. Komplette Revision mit Ausbau der Schnecke</h2>
+        <p>Bei offensichtlichen Verschleißsymptomen wird die Schnecke ausgebaut. Mit einem Mikrometer wird der Außendurchmesser der Schneckengänge über die gesamte Länge vermessen, mit einem Innenmessgerät der Zylinderdurchmesser. Der Zylinder trägt oft in der mittleren Zone (Schmelzezone) bogenförmig aus. Mit abrasiven Füllstoffen (Kreide, Talkum, Kalk) steigt der Verschleiß um das 3- bis 10-fache. Bei einer HDPE-Recyclinglinie mit 20% Kreide sinkt die Lebensdauer der Schneckenpaarung von 30–50 Tsd. Stunden auf nur 5–10 Tsd. Stunden.</p>
+
+        <h2>5. Zusammenhang mit MFI-Instabilität und Schaumbildung</h2>
+        <p>Eine stark verschlissene Schnecke verhindert den Druckaufbau im Kopf. Versuche, durch höhere Temperaturen einen niedrigen MFI (z. B. von 1,5 auf 2,5) zu kompensieren, bleiben oft wirkungslos oder verschlimmern die Situation: Die zu dünnflüssige Schmelze pendelt durch die Spalte, ohne Druck aufzubauen, was zu Pulsationen und lokalen Überhitzungen führt – beides treibt die Schaumbildung weiter an. Bei der Verarbeitung von LDPE mit Kreide sollte der Spalt alle 2000–3000 Betriebsstunden überprüft werden.</p>
+
+        <h2>6. Wiederherstellung einer verschlissenen Schnecke</h2>
+        <p>Ab einem Spalt von 0,3–0,4 mm wird die Schnecke durch Auftragschweißen von Wolframcarbid auf die Flanken und anschließendes Schleifen auf Nennmaß instandgesetzt. Die Kosten betragen 30–50% eines Neuteils. Ein ausgelaufener Zylinder wird ausgebohrt und mit einer neuen Hülse versehen.</p>
+
+        <h2>7. Prüfintervalle für den Verschleiß</h2>
+        <ul>
+            <li>Bei 20–30% Kreide oder anderen abrasiven Füllstoffen: Kontrolle des Spalts alle 6–12 Monate.</li>
+            <li>Bei sauberen Abfällen ohne Abrasivstoffe: alle 2–3 Jahre.</li>
+        </ul>
+
+        <div class="highlight">📌 Eingebettete Schlüsselbegriffe (im Text verwendet, nicht als separater Block): Messung des Spalts mit Fühlerlehre für Extruder 60 mm (Neuwert 0,08 mm) · Leistungsabfall eines Doppelschneckenextruders um 40% durch Verschleiß · Wiederherstellung durch Wolframcarbid-Auftrag (Kosten 40% eines Neuteils) · Druckschwankungen im Kopf mit ±15 bar Amplitude · kritischer Spalt von 0,3 mm bei 75 mm Schneckendurchmesser · Spaltkontrolle alle 2000 Stunden bei Kreideeinsatz.</div>
+
+        <h2>8. Fazit</h2>
+        <p>Der schleichende Verschleiß der Extruderschnecke ist eine typische „stille“ Fehlerquelle, die ohne regelmäßige Messung unbemerkt bleibt. Indirekte Signale wie sinkende Leistung, Druckschwankungen, unkontrollierte Überhitzung oder schlechte Additivverteilung weisen auf einen zu großen Spalt hin. Die direkte Spaltmessung mit Fühlerlehre (teilweise Demontage) oder die vollständige Revision mit Ausbau geben verlässliche Werte. Vor allem bei abrasiven Rezepturen (Kreide, Talkum, Kalk) sind kurze Prüfintervalle (alle 2000–3000 h) wirtschaftlich sinnvoll, denn eine instandgesetzte Schnecke hält oft 30–50% weniger Kosten als ein Neuteil und stellt den alten Durchsatz wieder her.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Extruder screw wear – how to check and diagnose without disassembly</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. The silent problem</h2>
+        <p>Wear of the extruder screw slowly reduces output and product quality. Check via indirect signs or direct gap measurement.</p>
+        <h2>2. Indirect signs (no teardown)</h2>
+        <ul><li>Lower output at same screw speed (backflow through gaps).</li>
+        <li>Fluctuating pressure (>±10–15 bar), unstable dimensions.</li>
+        <li>Overheating with heaters off – friction heat from backflow.</li>
+        <li>Poor additive mixing (chalk, pigments).</li></ul>
+        <h2>3. Direct gap measurement (feeler gauge)</h2>
+        <p>New single screw 60 mm → gap 0.06–0.10 mm. New twin screw 75 mm → 0.08–0.12 mm. Critical gap >0.3–0.5 mm, then output drops dramatically.</p>
+        <div class="highlight">✅ For 20–30% chalk, screw life drops from 30–50 kh to 5–10 kh. Check gap every 2000–3000 hours.</div>
+        <h2>4. Repair & intervals</h2>
+        <p>Tungsten carbide overlay + grinding costs 30–50% of a new screw. Abrasive recipes → check every 6–12 months; clean waste → every 2–3 years.</p>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Износ шнека экструдера: как проверить и диагностировать без разборки и с замерами</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Тихая проблема: медленный износ шнековой пары</h2>
+        <p>Износ шнека экструдера медленно снижает производительность линии грануляции и качество продукции. Проверить состояние можно двумя способами: косвенно (по признакам работы) и прямым (физические замеры).</p>
+
+        <h2>2. Косвенные признаки износа без разборки</h2>
+        <ul>
+            <li><strong>Падение производительности:</strong> при тех же оборотах шнека экструдер выдаёт меньше кг/ч. Расплав проскальзывает назад через увеличенные зазоры. Для двухшнекового экструдера падение может достигать 30–40%.</li>
+            <li><strong>Плавающее давление в головке:</strong> амплитуда более ±10–15 бар. При выдуве пленки меняется толщина, при экструзии листа – клиновидная разнотолщинность.</li>
+            <li><strong>Перегрев расплава при отключённых нагревателях:</strong> обратный ток создаёт трение, температура может быть на 20–40°C выше заданной – одна из причин пены и деструкции LDPE.</li>
+            <li><strong>Плохое смешение добавок:</strong> мел, краситель или УФ-стабилизатор распределяются пятнами.</li>
+        </ul>
+
+        <h2>3. Прямой зазор между шнеком и цилиндром – измерение щупом</h2>
+        <p>Надёжный способ, требует остановки и частичной разборки. Износ максимален в зоне плавления и сжатия (первая треть после загрузки). Для одношнекового экструдера 60 мм норма зазора – 0,06–0,1 мм. Для двухшнекового 75 мм – 0,08–0,12 мм. Критический износ наступает при зазоре 0,3–0,5 мм – производительность падает катастрофически, особенно при переработке вторичных полимеров с низкой насыпной плотностью.</p>
+
+        <div class="highlight">🔧 Измерение зазора щупом: экструдер 60 мм – новый зазор 0,08 мм. Для 75 мм критическим считается 0,3 мм.</div>
+
+        <h2>4. Полная ревизия с выемкой шнека</h2>
+        <p>При очевидных признаках шнек вытаскивают, микрометром измеряют диаметр гребней по всей длине, нутромером – диаметр цилиндра. При работе с абразивными наполнителями (мел, тальк, известь) износ ускоряется в 3–10 раз. Для линии грануляции HDPE с 20% мела ресурс шнековой пары падает с 30–50 тыс. часов до 5–10 тыс. часов.</p>
+
+        <h2>5. Связь износа шнека с нестабильностью ПТР и пеной</h2>
+        <p>При сильном износе попытка поднять температуру для компенсации низкого ПТР (с 1,5 до 2,5) может дать обратный эффект. Слишком жидкий расплав перекачивается через зазоры, не создавая давления в головке, что даёт пульсации и пену из-за локальных перегревов. При переработке вторичного LDPE с мелом проверять зазор рекомендуется каждые 2000–3000 часов. Контроль зазора шнековой пары каждые 2000 часов при работе с меловой добавкой – необходимость.</p>
+
+        <h2>6. Восстановление изношенного шнека</h2>
+        <p>При зазоре более 0,3–0,4 мм шнек восстанавливают наплавкой карбида вольфрама на гребни с последующей шлифовкой. Стоимость восстановления составляет 30–50% от цены нового шнека. Цилиндр растачивают с запрессовкой новой гильзы.</p>
+
+        <div class="highlight">💰 Экономика: восстановление шнека наплавкой карбида вольфрама стоит около 40% от нового – экономически оправдано при спросе на деталь.</div>
+
+        <h2>7. Периодичность контроля износа</h2>
+        <ul><li>Для линий с высоким содержанием наполнителей (мел 20–30%): контроль зазора каждые 6–12 месяцев.</li>
+        <li>При работе с чистыми отходами без абразивов: раз в 2–3 года.</li></ul>
+
+        <div class="highlight">📊 Ключевые запросы в тексте: измерение зазора щупом для экструдера 60 мм (норма 0,08 мм) · падение производительности двухшнекового экструдера на 40% при износе · восстановление наплавкой карбида вольфрама (цена 40% от нового) · плавающее давление амплитудой 15 бар · зазор 0,3 мм для диаметра 75 мм – критический износ · контроль зазора каждые 2000 часов при работе с мелом.</div>
+
+        <h2>8. Заключение</h2>
+        <p>Износ шнека экструдера – тихая проблема, которая без регулярных замеров остаётся незамеченной. Косвенные признаки (падение производительности, колебания давления, перегрев при отключённых нагревателях, плохое смешение) указывают на увеличенный зазор. Прямое измерение щупом или полная ревизия дают точные цифры. При работе с абразивными наполнителями (мел, тальк, известь) короткие интервалы контроля (2000–3000 часов) экономически оправданы – восстановление шнека обходится в 30–50% от нового, а возврат производительности окупает затраты.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
