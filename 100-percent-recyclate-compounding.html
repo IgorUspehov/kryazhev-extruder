@@ -1,140 +1,177 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100% Rezyklat-Technologie | Compoundgranulate ohne Primärmaterial</title>
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
-        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
-        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
-        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
-        .lang-btn.active{background:#1a4d5f;color:white;}
-        .lang-btn:hover:not(.active){background:#e2e8f0;}
-        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
-        .lang-panel.active-panel{display:block;}
-        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
-        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
-        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
-        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
-        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
-        p,li{color:#2d3e50;margin-bottom:0.75rem;}
-        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
-        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
-        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
-        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100% Rezyklat in der Kunststoffverarbeitung: Compoundierung ohne Primärmaterial | Igor Kryazhev</title>
+<meta name="description" content="Technologie für 100% Rezyklat aus LDPE, HDPE, PP. Kompositionsgranulat aus Sekundärrohstoffen, Handsortierung, Vermeidung von Primärkunststoffen in der Extrusion.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#222;background:#f5f5f5;padding:20px}
+.container{max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}
+.lang-tabs{display:flex;background:#2c3e50;flex-wrap:wrap}
+.lang-btn{background:#34495e;border:none;padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;color:#ecf0f1;border-right:1px solid #2c3e50}
+.lang-btn.active{background:#27ae60;color:#fff}
+.lang-panel{display:none;padding:30px 40px;animation:fadeIn .3s ease}
+.lang-panel.active-panel{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.8rem;color:#27ae60;border-left:5px solid #27ae60;padding-left:20px;margin-bottom:15px}
+h2{font-size:1.4rem;color:#2c3e50;margin:25px 0 15px;border-bottom:2px solid #ecf0f1}
+.author{background:#e8f5e9;padding:12px 20px;border-radius:8px;margin:20px 0;font-style:italic;color:#2e7d32}
+ul{margin:15px 0 15px 30px}
+li{margin:8px 0}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ecf0f1;font-size:.85rem;color:#7f8c8d;text-align:center}
+@media (max-width:768px){.lang-panel{padding:20px}.lang-btn{padding:10px 16px;font-size:.85rem}h1{font-size:1.4rem}}
+</style>
 </head>
 <body>
 <div class="container">
-    <div class="lang-tabs">
-        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
-        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
-        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
-    </div>
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
 
-    <!-- DEUTSCH -->
-    <div id="lang-de" class="lang-panel active-panel">
-        <h1>100% Rezyklat-Technologie und Compoundgranulate<br>Kein Primärmaterial – reine Sekundärrohstoff-Formulierung</h1>
-        <div class="author">Autor: Igor Uspekhov, Verfahrenstechnologe für Kunststoffrecycling, 25+ Jahre Erfahrung</div>
+<!-- DEUTSCH - Hauptsprache -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Verarbeitung von Sekundärkunststoffen: Technologie für 100% Rezyklat und Compoundierlösungen</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Kunststoffrecycling mit 25 Jahren Erfahrung</div>
 
-        <h2>1. Keine Zugabe von Neuware – 100% Rezyklat als Geschäftsmodell</h2>
-        <p>In der Recyclingbranche gibt es einen gefährlichen Irrglauben: Ohne die Zugabe von Primärgranulat sei kein qualitativ hochwertiges Produkt möglich. Meine Erfahrung beweist das Gegenteil. Primärrohstoff ist ein wirtschaftliches Gift. Er erzeugt ein falsches Gefühl von Stabilität, vernichtet aber die Marge. Ich entwickle 100% Rezyklatgranulate mit präzisen Rezepturen, die in ihren Gebrauchseigenschaften problemlos Primärkunststoffe ersetzen.</p>
+<h2>1. Einleitung: Der Irrglaube von der Notwendigkeit des Primärmaterials</h2>
+<p>In der Recyclingindustrie hat sich ein gefährliches Stereotyp etabliert: die Annahme, dass ohne Zugabe von Primärmaterial kein qualitativ hochwertiges Produkt hergestellt werden kann. Ich behaupte das Gegenteil. Das Mischen von Primär- und Sekundärrohstoffen ist eine wirtschaftliche Sackgasse. Primärmaterial frisst die Marge auf und verwandelt ein profitables Geschäft in ein Projekt mit niedriger Rentabilität. Mein Ansatz basiert auf der Entwicklung von 100% Rezyklatgranulat mit definierten physikalisch-mechanischen Eigenschaften. Dieses Granulat konkurriert qualitativ mit Produkten aus Neumaterial bei minimalen Herstellungskosten.</p>
 
-        <h2>2. Ursache der Degradation – Vielfalt der Polymere und fehlende Handsortierung</h2>
-        <p>Der Hauptgrund für die Zersetzung von Polymeren bei der Mehrfachverarbeitung ist die katastrophale Inhomogenität des Eingangsmaterials. Ein großer Fehler vieler Betriebe ist der übertriebene Glaube an die "Maschine". Keine Vakuumentgasung, keine mehrstufige Schmelzefiltration und keine modernen Reinigungssysteme können die Anwesenheit artfremder Polymere in der Masse kompensieren. Im Sekundärstrom sind fast immer verschiedene Kunststofftypen gemischt: LDPE, LLDPE, HDPE, PP und sogar PA. Das Problem liegt in den grundlegenden Unterschieden ihrer physikalischen Eigenschaften:</p>
-        <ul>
-            <li><strong>Unterschiedliche Schmelztemperaturen:</strong> Während eine Komponente bereits thermisch zersetzt wird, ist eine andere noch nicht in den viskosen Fließzustand übergegangen.</li>
-            <li><strong>Viskositätssprünge:</strong> Der MFI von LLDPE kann bei einem Verarbeitungsdurchgang von 2 auf 6 ansteigen – das führt zu Druckschwankungen in der Düse.</li>
-            <li><strong>Molekulare Inkompatibilität:</strong> Polyamid verbindet sich nicht mit Polyethylen. Äußerlich sieht das Granulat normal aus, aber bei der Folien- oder Spritzgussproduktion treten kritische Defekte auf.</li>
-        </ul>
-        <div class="highlight">🔧 Primärzugabe heilt diese Probleme nicht, sie kaschiert sie nur temporär und treibt gleichzeitig die Kosten in die Höhe.</div>
+<h2>2. Mechanismus der Degradation: Warum der Extruder kein Allheilmittel ist</h2>
+<p>Die Hauptursache für den Eigenschaftsverlust von Polymeren bei der mehrfachen Verarbeitung liegt nicht im Erhitzungsprozess selbst, sondern in der kritischen Inhomogenität des Eingangsmaterials. Weder Vakuumentgasung noch Feinfiltration der Schmelze (selbst mit 0,1 mm Sieben) können die Situation korrigieren, wenn am Eingang ein "Mischmasch" verschiedener Typen ankommt. Im Standardabfallstrom von LDPE sind oft LLDPE, HDPE, PP und PA vermischt – PA ist der gefährlichste "Gast" für PE-Folie. Jedes dieser Materialien hat seine eigene Schmelztemperatur und Viskosität. Bei 190-210°C beginnen einige Komponenten bereits thermisch zu degradieren, während andere noch fest oder hochviskos sind. Der MFI von LLDPE kann innerhalb eines einzigen Recyclingdurchgangs von 2 auf 6 g/10min ansteigen. Wenn PA in die Masse gelangt, bildet es harte Einschlüsse in der PE-Struktur – die Folie reißt bei 40 Mikrometern Dauer.</p>
 
-        <h2>3. Lösungen: Compoundierrezepturen und tiefgehende Sortierung</h2>
-        <p>Der Ausweg liegt in der Qualitätskontrolle des Inputs und der Entwicklung maßgeschneiderter Compoundierrezepturen. Die beste Vorbereitung ist eine gründliche Separation – ein erfahrener Handsortierer kann über 95% der Fremdstoffe entfernen. Das schafft die Basis, dass im Extruder möglichst einheitliches Material läuft.</p>
-        <p><strong>Das 100% Sekundär-Compound</strong> wird gezielt für die gewünschte Endanwendung formuliert:</p>
-        <ul>
-            <li>Stabilisierung des MFI durch Kombination von Komponenten mit unterschiedlicher Molmasse</li>
-            <li>Zugabe von Additiven, die thermooxidative Zersetzung verhindern</li>
-            <li>Entwicklung von Mischungen, in denen die Rezyklatkomponenten synergistisch wirken</li>
-        </ul>
+<h2>3. Handsortierung als Fundament der Wirtschaftlichkeit</h2>
+<p>Viele setzen auf Farbsortierer und automatische Waschlinien. Ich bestehe darauf: Handsortierung ist der einzige Weg, 95% Reinheit des Materials vor dem Zerkleinern zu erreichen. Ein menschlicher Sortierer sieht Unterschiede in Textur, Farbe und Steifigkeit dort, wo ein Sensor aufgrund von Verschmutzung versagen kann. Eine richtig organisierte Handsorterung ermöglicht: den Ausschluss von PET und PA aus der Polyethylenfraktion, die Trennung von Folien nach Typ (Schrumpffolie, Stretchfolie, Tragetasche) und die Entfernung von organischen und metallischen Einschlüssen vor Beschädigung der Schneckenpaare. Die Rohmaterialreinheit beeinflusst direkt den MFI des fertigen Granulats. Entfernen von Störstoffen in der Sortierung verlangsamt die Polymerketten-Degradation und erhält die Schmelzeviskosität.</p>
 
-        <h2>4. Wirtschaftlichkeit der reinen Rezyklat-Strategie</h2>
-        <p>Die Verarbeitung von Sekundärkunststoffen muss profitabel sein – nicht nur Müll um des Prozesses willen verwerten. 100% Rezyklat erlaubt es, in Märkten zu bestehen, in denen der Preis wettbewerbsentscheidend ist. Bei einer durchdachten Prozesskette (Sammlung, strenge Handsortierung, Granulierung) bleibt die Qualität über Chargen stabil.</p>
+<h2>4. Parametrierung der Aufbereitung für 100% Rezyklat</h2>
+<p>Für LDPE aus Agrarfolien mit Feuchtigkeit 5-15% ist eine Entgasungszone bei 180-190°C erforderlich. Bei Temperaturen unter 160°C in der Düse steigt der Druck über 250 bar, was zu Filtermembranrissen führt. Die Zugabe von 1-2% Ruß erhöht die Wärmeleitfähigkeit und senkt die erforderlichen Temperaturen um 5-10°C. Ein optimiertes Temperaturprofil für HDPE-Flaschenrecycling: Zone 1 160-180°C, Zone 2 200-210°C mit Vakuumentgasung, Zone 3 210-220°C, Kopf 200-210°C – dies reduziert den MFI von 8-10 auf 2-3 und beseitigt Gerüche. Für PP aus Big Bags mit MFI 8-10 werden die Temperaturen auf 190-210°C gesenkt, Überschreitung von 260°C führt zu MFI-Anstieg auf 20-30.</p>
 
-        <div class="highlight">📊 Die Branche lebt von Fachleuten, die wissen, dass Qualität nicht durch eine neue Maschine entsteht, sondern durch Sauberkeit des Inputs und Polymerchemie. Sekundär-Compoundieren ist der einzige Weg zu hohen Margen und Unabhängigkeit von den Primärrohstoffpreisen.</div>
+<h2>5. Einfluss auf die Lebensdauer der Maschinenkomponenten</h2>
+<p>Die Reinheit des Einsatzmaterials hat direkten Einfluss auf die Lebensdauer von Schnecken und Zylindern. Sand- und Glasfaserrückstände (häufig bei Agrokunstoffen) wirken wie Schleifmittel. Die Installation von Magnetabscheidern vor dem Einzug verlängert die Schneckenlebensdauer um 30-50%. Bei Verarbeitung von big bags mit 3-5% Sandverunreinigung sinkt die Schneckenstandzeit von 8000 auf 3000 Betriebsstunden. Vakuumentgasung bei 200-220°C entfernt Tenside und Duftstoffe aus Waschmittelflaschen – oberhalb von 230°C beginnt Zersetzung mit Gelbfärbung.</p>
 
-        <h2>5. Praxisbeispiele und Kennwerte</h2>
-        <p>Die Umstellung auf Rezepturen mit 100% Rezyklat senkt die Materialkosten um bis zu 40%. Bei der Auslegung eines Compounds für Spritzguss ist der Einfluss von Polyamid auf das LDPE-Rezyklat zu berücksichtigen, um Ausschuss zu vermeiden. Probleme der Degradation durch Mehrfachrecycling löst man nicht durch Verdünnung, sondern durch gezielte Thermostabilisatoren. Eine saubere Prozesskette erfordert strenge Regeln für die Handsortierung – das ist keine Belastung, sondern eine Investition.</p>
-        <p>Die Wirtschaftlichkeit einer Produktion von Granulat aus Post-Industrial-Stretchfolie steht und fällt mit der Transparenz der Kosten. Die Stabilisierung von HDPE-Rezyklat gelingt durch das Wissen, wie man den MFI bei der Extrusion absenkt. Compoundier-Additive für Sekundärkunststoffe sind heute leichter verfügbar als der Versuch, mit minderwertigem Regranulat zu überleben.</p>
+<h2>6. Energieverbrauch bei der Verarbeitung von 100% Rezyklat</h2>
+<p>Die spezifische Energieaufnahme für die Extrusion von Rezyklat ist 10-20% niedriger als für Neumaterial aufgrund des vorab erfolgten thermischen Abbaus. Für einen Doppelschneckenextruder mit 500 kg/h beträgt der Energieverbrauch 180-220 kWh pro Tonne. Durch Optimierung des Temperaturprofils (Absenkung um 15-20°C bei MFI-Erhöhung um 2 Einheiten) können weitere 5-10% Energie eingespart werden. Das entspricht bei 5000 Jahrestonnen einer Einsparung von 50.000-100.000 kWh.</p>
 
-        <h2>6. Fazit</h2>
-        <p>Die Zukunft des Recyclings gehört 100% Sekundärrohstoffen. Wir erzeugen keinen Abfall – wir schaffen eine neue industrielle Ressource, die in ihren Eigenschaften dem Original nicht nachsteht, sie aber wirtschaftlich übertrifft. Das Verständnis von Degradationsmechanismen und der Fokus auf einen sauberen Input sind die einzigen Voraussetzungen für ein tragfähiges Geschäft in dieser Nische.</p>
-        <footer>© Igor Uspekhov – Technologieberatung für Kunststoffrecycling</footer>
-    </div>
+<h2>7. Praxisbeispiel: Compoundiergranulat aus 100% Rezyklat</h2>
+<p>Statt schlechtes Material mit teurem Primärgranulat zu verdünnen, wird ein Compoundiergranulat entwickelt – eine Rezeptur entwickelt für das konkrete Endprodukt (Bewässerungsschlauch, technische Folie, Geogitter). Arbeitsschritte: Analyse des Eingangsmaterials (Basisschmelzindex und Dichte), Eigenschaftskorrektur durch Spezialadditive (Haftvermittler, Elastomere), Thermostabilisierung durch Antioxidantien. Sekundär-PE senkt die Rohstoffkosten um den Faktor 1,5-2 gegenüber Primärgranulat. Richtig formulierte Compounds erhalten Bruchdehnung und Zugfestigkeit für anspruchsvolle Anwendungen.</p>
 
-    <!-- ENGLISH -->
-    <div id="lang-en" class="lang-panel">
-        <h1>100% Recyclate Technology & Compounded Pellets<br>No Virgin Material – Pure Secondary Formulation</h1>
-        <div class="author">Author: Igor Uspekhov, Process Consultant for Polymer Recycling, 25+ years experience</div>
-        <h2>1. No Virgin Addition – 100% Recyclate as a Business</h2>
-        <p>A dangerous misconception exists: without virgin resin, no quality product is possible. My experience proves the opposite. Virgin material is an economic poison. It creates a false sense of stability but destroys margins. I formulate 100% recyclate compounds that match virgin performance.</p>
-        <h2>2. Root Cause of Degradation – Polymer Diversity & Lack of Hand Sorting</h2>
-        <p>The main cause of degradation during multiple reprocessing is the catastrophic inhomogeneity of the feed. No degassing, no melt filtration, no modern cleaning replaces the removal of foreign polymers by hand. LDPE, LLDPE, HDPE, PP, PA – all have different melting points, viscosities and MFI values. When LLDPE is reprocessed, its MFI can jump from 2 to 6 in a single pass, causing pressure fluctuations in the die. Polyamide does not mix with polyethylene at all – it creates hidden defects.</p>
-        <div class="highlight">✅ Virgin addition only masks these problems temporarily while driving up costs.</div>
-        <h2>3. Solutions: Compounding Recipes & Deep Sorting</h2>
-        <p>The solution lies in feedstock quality control and customized compounding recipes. A skilled hand sorter can remove >95% of contaminants. The pure 100% recyclate compound is designed for the target application: MFI stabilization via blending of different molecular weights, addition of thermo-oxidative stabilizers, and formulation of synergistic recyclate mixtures.</p>
-        <h2>4. Economics of Pure Recyclate Strategy</h2>
-        <p>Secondary plastic processing must be profitable. 100% recyclate opens price‑competitive markets. With a well‑designed process chain (collection, strict hand sorting, granulation) quality remains stable across batches.</p>
-        <h2>5. Practical Data</h2>
-        <p>Switching to 100% recyclate recipes cuts material costs by up to 40%. When designing a compound for injection moulding, the influence of polyamide on LDPE recyclate must be considered. Degradation from multiple recycling is solved by targeted thermal stabilizers, not by dilution. Hand sorting is an investment, not a burden.</p>
-        <h2>6. Conclusion</h2>
-        <p>The future of recycling is 100% secondary raw materials. We are not creating waste – we are creating a new industrial resource that matches virgin properties and surpasses them economically. Understanding degradation and focusing on clean input are the only prerequisites for a viable business in this niche.</p>
-        <footer>© Igor Uspekhov – Polymer Recycling Consulting</footer>
-    </div>
+<h2>8. Auswahl der Ausrüstung für 100% Rezyklat</h2>
+<p>Für Sortierstationen mit 500 kg/h sind 2-3 Handsortierplätze mit Absaugung und Magnettrommel erforderlich. Für Waschlinien wird Heißwäsche bei 80-90°C mit 3-5% NaOH empfohlen. Die Granulation erfordert einen Doppelschneckenextruder (L/D 36-44) mit mindestens zwei Vakuumentgasungszonen. Die Filtration sollte mit Siebwechsler 150-250 Mikron arbeiten; bei stark verunreinigten Fraktionen sind 300-400 Mikron ausreichend. Linux-Controller überwachen MFI online über Schmelzedruck und Temperatur.</p>
 
-    <!-- RUSSIAN -->
-    <div id="lang-ru" class="lang-panel">
-        <h1>Переработка вторичных полимеров: технология 100% рециклата и композиционные решения</h1>
-        <div class="author">Автор: Игорь Успехов, технолог-консультант по переработке вторичных полимеров, 25+ лет опыта</div>
+<h2>9. Typische Fehler bei der 100% Rezyklat-Verarbeitung</h2>
+<ul>
+<li>Unzureichende Handsortierung (PA/PET im PE-Strom) → Folienrisse, "Fischeier" in der Folie. Lösung: Sortierpersonal schulen, zweite Sortierstufe einrichten.</li>
+<li>Keine Vakuumentgasung bei feuchtem Material (LDPE aus Agrarfolien 5-15% Feuchte) → Schaumbildung im Extruder. Lösung: Entgasungszone bei 180-190°C einrichten.</li>
+<li>Überhöhte Temperaturen (>260°C bei PP) → MFI steigt von 5 auf 20-30. Lösung: Temperaturen auf 190-210°C senken, PID-Parameter optimieren.</li>
+<li>Fehlende Magnetabscheider → metallischer Abrieb in Schnecken. Lösung: Magnete vor Extrudereinzug installieren.</li>
+</ul>
 
-        <h2>1. Никакой первички – 100% рециклат как бизнес-модель</h2>
-        <p>В индустрии переработки полимеров существует опасное заблуждение: якобы без добавления первичной гранулы невозможно получить качественный продукт. Мой опыт доказывает обратное. Первичное сырье в составе вторички – это экономический яд. Оно даёт ложное ощущение стабильности, но при этом безвозвратно уничтожает маржинальность бизнеса. Я создаю 100% вторичную гранулу по чётким рецептурам, которая по своим характеристикам полностью заменяет первичные составы.</p>
+<h2>10. Fazit: Ökonomie und Zukunft des Recyclings</h2>
+<p>Der Umstieg auf 100% Rezyklat ist kein Ökotrend, sondern die einzige Überlebenschance unabhängiger Recycler bei Ölpreisschwankungen. Investitionen in qualifizierte Handsortierung und Compoundierrezepturen amortisieren sich schneller als teure "intelligente" Maschinen, die Eingangsfehler nicht korrigieren können. Schlüsselfaktoren: strenge Qualitätskontrolle bei der Anlieferung, personalisierte Rezepturen für jeden Kunden, Verzicht auf Primärpolymere als Krücke. Die Qualität von Rezyklat beginnt in den Händen des Sortierers und endet im Kopf des Technologen, der Abfall in hochliquide Industriewerte verwandelt.</p>
 
-        <h2>2. Физика деградации – разнородность полимеров и отсутствие ручной сортировки</h2>
-        <p>Главная причина деструкции при многократной переработке – катастрофическая разнородность входного сырья. Ошибка многих производств – избыточная вера в «железо». Никакая вакуумная дегазация, многоступенчатая фильтрация или современные системы очистки не компенсируют наличие посторонних полимеров в массе. LDPE, LLDPE, HDPE, PP и даже PA – у каждого разные температуры плавления, вязкость и ПТР. Показатель текучести LLDPE может вырасти с 2 до 6 за один цикл, вызывая нестабильность давления. Полиамид вообще не смешивается с полиэтиленом – гранула внешне однородна, но при переработке даёт критические дефекты.</p>
-        <div class="highlight">⚙ Добавка первички не лечит эти проблемы – она лишь временно их маскирует, увеличивая себестоимость.</div>
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
 
-        <h2>3. Решение: композиционные рецептуры и глубокая сепарация</h2>
-        <p>Выход – в качестве входного потока и создании композиционных гранул. Лучшая подготовка сырья – глубокая ручная сепарация, которая отсекает до 95% включений. Это база. Композиционная гранула из 100% вторички создаётся под конкретное ТЗ: стабилизация ПТР смешением компонентов с разной молекулярной массой, введение аддитивов против термоокисления, подбор синергичных смесей.</p>
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Recycled Polymer Processing: 100% Recyclate Technology and Compounding Solutions</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Polymer Recycling with 25 years of experience</div>
 
-        <h2>4. Экономический эффект</h2>
-        <p>Переработка вторичных полимеров должна приносить прибыль, а не просто перерабатывать мусор ради процесса. 100% рециклат выводит на ценовые рынки. При правильной организации (сбор, жёсткая ручная сортировка, грануляция) качество стабильно от партии к партии.</p>
+<h2>1. Introduction: The myth of needing virgin material</h2>
+<p>A dangerous stereotype has emerged in the recycling industry: that without adding virgin material, quality products cannot be made. I argue the opposite. Mixing virgin and recycled feedstocks is an economic dead end. Virgin material eats margins, turning profitable operations into low-return projects. My approach is based on 100% recycled granulate with defined physical-mechanical properties that competes with virgin at minimal cost.</p>
 
-        <div class="highlight">📊 Отрасль держится на специалистах, которые понимают: качество закладывается не покупкой нового экструдера, а чистотой сырья и химией полимеров. Композиционные рецептуры из вторички – единственный путь к высокой марже и независимости от цен на первичку.</div>
+<h2>2. Degradation mechanism: Why extruders aren't a cure-all</h2>
+<p>Property loss during multiple processing cycles comes not from heating itself, but from feedstock inhomogeneity. Neither vacuum degassing nor fine melt filtration (even at 0.1 mm screens) fixes this if the input is a mix of different grades. LDPE waste streams often contain LLDPE, HDPE, PP, and PA – PA is the most dangerous "guest" for PE film. At 190-210°C, some components degrade while others remain solid or highly viscous. LLDPE melt index can rise from 2 to 6 g/10min in a single pass. PA forms hard inclusions in the PE structure – film tears at 40 microns.</p>
 
-        <h2>5. Практическое применение и показатели</h2>
-        <p>Переход на 100% вторичные рецептуры снижает затраты на сырьё до 40%. При расчёте состава для литья под давлением необходимо учитывать влияние полиамида на ПВД-рециклат. Деструкция при многократном рециклинге решается термостабилизаторами. Ручная сортировка – это инвестиция, а не обуза. Экономика производства гранулы из стрейч-пленки требует прозрачной себестоимости. Стабилизация свойств вторичного ПНД – это знание того, как снизить ПТР при экструзии.</p>
+<h2>3. Manual sorting as the economic foundation</h2>
+<p>Many rely on optical sorters and automatic washing lines. I insist: manual sorting is the only way to achieve 95% pre-shredding purity. A human sorter sees differences in texture, color, and stiffness where sensors fail. Proper manual sorting excludes PET and PA from the PE fraction, separates films by type (shrink, stretch, bag), and removes organics and metals before screw damage. Feedstock purity directly affects final granulate MFI. Removing contaminants at sorting slows chain degradation and maintains viscosity.</p>
 
-        <h2>6. Заключение</h2>
-        <p>Будущее рециклинга – за 100% вторичным сырьём. Мы не просто перерабатываем пластик – мы создаём новый промышленный ресурс, который по свойствам не уступает оригиналу, но превосходит его по экономической эффективности. Понимание деструкции и упор на чистоту входного потока – единственные условия для работающего бизнеса в этой нише.</p>
-        <footer>© Игорь Успехов – технологическое консультирование по переработке полимеров</footer>
-    </div>
+<h2>4. Parameterization for 100% recyclate</h2>
+<p>For LDPE from agricultural film with 5-15% moisture, a degassing zone at 180-190°C is required. Below 160°C in the die, pressure exceeds 250 bar, causing filter screen rupture. Adding 1-2% carbon black increases thermal conductivity, reducing required temperatures by 5-10°C. Optimized HDPE bottle recycling profile: Zone 1 160-180°C, Zone 2 200-210°C with vacuum degassing, Zone 3 210-220°C, die head 200-210°C – reduces MFI from 8-10 to 2-3. For PP from big bags with MFI 8-10, reduce temperatures to 190-210°C; exceeding 260°C raises MFI to 20-30.</p>
+
+<h2>5. Impact on machine component lifespan</h2>
+<p>Feedstock purity directly affects screw and barrel life. Sand and glass fiber residues (common in agricultural plastics) act as abrasives. Magnetic separators before the feed extend screw life by 30-50%. Processing big bags with 3-5% sand reduces screw life from 8000 to 3000 hours. Vacuum degassing at 200-220°C removes surfactants and fragrances from detergent bottles – above 230°C, degradation begins with yellowing.</p>
+
+<h2>6. Energy consumption for 100% recyclate processing</h2>
+<p>Specific energy for recyclate extrusion is 10-20% lower than for virgin due to prior thermal degradation. For a 500 kg/h twin-screw extruder, energy consumption is 180-220 kWh per ton. Optimizing temperature profiles (reducing 15-20°C when MFI increases by 2 units) saves another 5-10% energy – 50,000-100,000 kWh annually at 5000 tons/year.</p>
+
+<h2>7. Example: Compounded granulate from 100% recyclate</h2>
+<p>Compounded granulate uses formulations for specific products (irrigation hose, technical film, geogrid). Steps: input analysis (baseline MFI and density), property correction via special additives (adhesion promoters, elastomers), thermostabilization with antioxidants. Secondary PE reduces material costs 1.5-2x versus virgin. Properly formulated compounds maintain elongation and tensile strength for demanding applications.</p>
+
+<h2>8. Equipment selection for 100% recyclate</h2>
+<p>Sorting stations at 500 kg/h need 2-3 manual stations with aspiration and magnetic drum. Washing lines require hot wash at 80-90°C with 3-5% NaOH. Granulation requires twin-screw extruder (L/D 36-44) with at least two vacuum degassing zones. Filtration with screen changers at 150-250 microns; for heavily contaminated fractions, 300-400 microns suffice. Linux controllers monitor MFI online via melt pressure and temperature.</p>
+
+<h2>9. Typical errors in 100% recyclate processing</h2>
+<ul>
+<li>Insufficient manual sorting (PA/PET in PE stream) → film tears, "fish eyes". Solution: train sorters, add second sorting stage.</li>
+<li>No vacuum degassing for wet material (LDPE from agricultural film with 5-15% moisture) → foaming in extruder. Solution: install degassing zone at 180-190°C.</li>
+<li>Excessive temperatures (>260°C for PP) → MFI rises from 5 to 20-30. Solution: reduce to 190-210°C, optimize PID parameters.</li>
+<li>Missing magnetic separators → metallic wear particles in screws. Solution: install magnets before extruder feed.</li>
+</ul>
+
+<h2>10. Conclusion: Economics and future of recycling</h2>
+<p>Transitioning to 100% recyclate isn't an eco-trend – it's the only survival strategy for independent recyclers amid oil price volatility. Investments in qualified manual sorting and compound formulations pay back faster than expensive "smart" machines that can't fix input errors. Key success factors: strict quality control at inbound, personalized formulations for each client, eliminating virgin polymers as a crutch. Recyclate quality begins in the sorter's hands and ends in the technologist's mind, turning waste into high-liquidity industrial resources.</p>
+
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Переработка вторичных полимеров: технология 100% рециклата и композиционные решения</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке полимеров, 25-летний стаж</div>
+
+<h2>1. Введение: ошибочное мнение о необходимости первичного сырья</h2>
+<p>В индустрии рециклинга сложился опасный стереотип: якобы без добавления первичного сырья невозможно получить качественное изделие. Я утверждаю обратное. Смешивание первичного и вторичного сырья - это экономический тупик. Первичка съедает маржу, превращая прибыльное производство в проект с низкой рентабельностью. Мой подход базируется на создании 100% вторичной гранулы по рецептуре с заданными физико-механическими свойствами.</p>
+
+<h2>2. Механизм деградации: почему экструдер не панацея</h2>
+<p>Основная причина потери свойств полимера при многократной переработке кроется не в самом процессе нагрева, а в критической разнородности входного потока. В стандартном потоке отходов LDPE часто перемешаны LLDPE, HDPE, PP и полиамид. У каждого из этих материалов своя температура плавления и вязкость. При температуре 190-210°C одни компоненты уже начинают термическую деструкцию, а другие еще находятся в твердом состоянии. ПТР LLDPE может вырасти с 2 до 6 г/10 мин за один цикл. Если в массу попал полиамид, он образует в структуре ПЭ жесткие включения - пленка рвется при толщине 40 микрон.</p>
+
+<h2>3. Ручная сортировка как фундамент экономики</h2>
+<p>Многие надеются на фотосепараторы и автоматические линии мойки. Но я настаиваю: ручная сортировка - единственный способ добиться 95% чистоты сырья перед дроблением. Человек-сортировщик видит разницу в фактуре, цвете и жесткости материала там, где датчик может ошибиться. Правильно организованная ручная сортировка позволяет исключить попадание ПЭТ и полиамида в полиэтиленовую фракцию, разделить пленку по типам, удалить органические и металлические включения. Чистота сырья напрямую влияет на ПТР готовой гранулы.</p>
+
+<h2>4. Настройка процесса для 100% рециклата</h2>
+<p>Для LDPE из сельхозпленки влажностью 5-15% требуется зона дегазации при 180-190°C. При температуре в головке ниже 160°C давление поднимается выше 250 бар, что приводит к разрыву фильтрующих сеток. Добавка 1-2% сажи увеличивает теплопроводность и позволяет снизить температуры на 5-10°C. Оптимизированный профиль для переработки HDPE из флаконов: зона 1 160-180°C, зона 2 200-210°C с вакуумной дегазацией, зона 3 210-220°C, головка 200-210°C - это снижает ПТР с 8-10 до 2-3. Для PP из биг-бэгов с ПТР 8-10 температуру снижают до 190-210°C, превышение 260°C ведет к росту ПТР до 20-30.</p>
+
+<h2>5. Влияние на ресурс оборудования</h2>
+<p>Чистота поступающего сырья напрямую влияет на ресурс шнеков и цилиндров. Остатки песка и стекловолокна действуют как абразив. Установка магнитных сепараторов перед загрузкой увеличивает ресурс шнеков на 30-50%. При переработке биг-бэгов с 3-5% песка ресурс шнека снижается с 8000 до 3000 часов. Вакуумная дегазация при 200-220°C удаляет остатки ПАВ и отдушек из флаконов из-под моющих средств - выше 230°C начинается разложение с пожелтением.</p>
+
+<h2>6. Энергопотребление при переработке 100% рециклата</h2>
+<p>Удельное энергопотребление при экструзии рециклата на 10-20% ниже, чем у первичного сырья, за счет предшествующей термодеструкции. Для двухшнекового экструдера 500 кг/ч расход энергии составляет 180-220 кВт·ч на тонну. Оптимизация температурного профиля позволяет сэкономить еще 5-10% энергии. При 5000 тоннах в год это экономия 50 000-100 000 кВт·ч.</p>
+
+<h2>7. Пример: композиционная гранула из 100% рециклата</h2>
+<p>Вместо того чтобы разбавлять плохое сырье дорогой первичкой, создается композиционная гранула под конкретное изделие. Этапы: анализ входного сырья (базовый ПТР и плотность), корректировка свойств специальными добавками (адгезивами, эластомерами), термостабилизация антиоксидантами. Вторичный ПЭ снижает стоимость сырья в 1,5-2 раза по сравнению с первичным. Правильно сбалансированный композит сохраняет относительное удлинение при разрыве и прочность на растяжение.</p>
+
+<h2>8. Выбор оборудования для 100% рециклата</h2>
+<p>Для сортировочной станции 500 кг/ч требуется 2-3 ручных поста с аспирацией и магнитным барабаном. Для мойки - горячая вода 80-90°C с добавкой щелочи NaOH 3-5%. Для грануляции - двухшнековый экструдер (L/D 36-44) с минимум двумя зонами вакуумной дегазации. Фильтрация - сетки 150-250 микрон, для сильно загрязненных фракций достаточно 300-400 микрон. Linux-контроллеры отслеживают ПТР онлайн по давлению расплава и температуре.</p>
+
+<h2>9. Типичные ошибки при переработке 100% рециклата</h2>
+<ul>
+<li>Недостаточная ручная сортировка (полиамид/ПЭТ в потоке ПЭ) → разрывы пленки, "рыбьи глаза". Решение: обучить сортировщиков, добавить вторую стадию сортировки.</li>
+<li>Отсутствие вакуумной дегазации для влажного материала (LDPE из сельхозпленки) → вспенивание в экструдере. Решение: установить зону дегазации при 180-190°C.</li>
+<li>Завышенные температуры (>260°C для PP) → рост ПТР с 5 до 20-30. Решение: снизить до 190-210°C, оптимизировать ПИД-параметры.</li>
+<li>Отсутствие магнитных сепараторов → металлический абразив в шнеках. Решение: установить магниты перед загрузкой экструдера.</li>
+</ul>
+
+<h2>10. Заключение: экономика и рынок рециклинга</h2>
+<p>Переход на 100% вторичный рециклат - это не просто экологический тренд, это единственный способ выживания независимых переработчиков в условиях волатильности цен на нефть. Инвестиции в качественную ручную сортировку и разработку композиционных рецептур окупаются значительно быстрее, чем закупка дорогостоящих «умных» машин, которые не могут исправить ошибки на входе. Ключевые факторы успеха: жесткий контроль качества на приемке, персонализированная рецептура для каждого клиента, отказ от использования первичных полимеров в качестве «костыля». Качество вторички начинается в руках сортировщика и заканчивается в голове технолога, знающего, как превратить отходы в высоколиквидный промышленный ресурс.</p>
+
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
 </div>
 <script>
-    (function(){
-        const btns = document.querySelectorAll('.lang-btn');
-        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
-        function activate(lang){
-            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
-            if(panels[lang])panels[lang].classList.add('active-panel');
-            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
-        }
-        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
-        activate('de');
-    })();
+(function(){
+var b=document.querySelectorAll('.lang-btn'),p=document.querySelectorAll('.lang-panel');
+b.forEach(function(btn){btn.addEventListener('click',function(){
+var l=btn.getAttribute('data-lang');
+b.forEach(function(x){x.classList.remove('active');});
+btn.classList.add('active');
+p.forEach(function(panel){panel.classList.remove('active-panel');});
+document.getElementById('lang-'+l).classList.add('active-panel');
+});});
+})();
 </script>
 </body>
 </html>
-EOF
