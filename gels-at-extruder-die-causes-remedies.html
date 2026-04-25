@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gele am Extruderaustritt – Ursachen und Beseitigung</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Gele am Extruderaustritt – Ursachen und Beseitigung</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Was sind Gele und warum sind sie problematisch?</h2>
+        <p>Gele am Extruderaustritt sind unaufgeschmolzene oder teilweise zersetzte Polymerpartikel, die das Aussehen von Folie, Platte oder Granulat beeinträchtigen und Schwachstellen im Material erzeugen. Besonders kritisch sind Gele bei dünnen Folien aus HDPE/LLDPE-Mischungen (z. B. Schrumpffolie) sowie bei der Verarbeitung von Rezyklaten mit Kreide.</p>
+
+        <h2>2. Hauptursachen und Abhilfemaßnahmen</h2>
+        <h3>2.1 Nicht aufgeschmolzene Komponenten in Mischungen mit unterschiedlichem MFI</h3>
+        <p>Werden HDPE (niedriger MFI, 0,8–1,5) und LLDPE (höherer MFI, 2,5–4,0) gemischt, können HDPE-Partikel bei unzureichender Temperatur ungeschmolzen bleiben. Der Schmelzpunkt von HDPE liegt bei 125–135°C, für vollständige Homogenisierung sind jedoch 200–220°C erforderlich. Erhöhen Sie die Temperatur in den Kompressions- und Dosierzonen des Doppelschneckenextruders um 10–15°C. Prüfen Sie die Heizbänder an Adapter und Flachdüse – die Differenz zwischen Soll- und Ist-Temperatur sollte 5°C nicht überschreiten.</p>
+
+        <h3>2.2 Vernetztes Polymer durch Überhitzung oder lange Verweilzeit</h3>
+        <p>Bei längerem Verbleib in heißen Zonen (>230–240°C für LLDPE) können Polymerketten vernetzen und harte, unschmelzbare Klümpchen (0,5–2 mm) bilden. Dies betrifft besonders recyceltes LLDPE aus Stretchfolie. Senken Sie die Temperatur in den letzten Zonen und im Werkzeug um 5–15°C. Entfernen Sie bei einer Überholung der Linie Totzonen in den Verteilkanälen – scharfe Ecken durch fließende Übergänge ersetzen.</p>
+
+        <h3>2.3 Kreideagglomerate als Gel-Quelle</h3>
+        <p>Billige Kreidemasterbatches mit schlechter Dispergierung bilden CaCO₃-Agglomerate (50–200 µm), die als harte, weiße Einschlüsse aus der Düse treten. Bei 20–30% Kreide in HDPE/LLDPE-Mischungen können Gele 5–10% der Folienoberfläche bedecken. Wechseln Sie zu einem hochwertigen Konzentrat mit einer Kreidefraktion von 1–3 µm. Setzen Sie ein feineres Siebpack ein (zusätzlich ein Sieb mit 120–150 µm Maschenweite). Eine zweistufige Filtration (200–250 µm + 150 µm) ist empfehlenswert.</p>
+
+        <div class="highlight">🔧 Diagnosehilfe: Gele mit weißem Punkt → Kreideagglomerat oder Sand → Filterung verbessern oder Masterbatch wechseln. Gele mit dunklem Kern → verbranntes Polymer aus Totzonen → Kopf und Adapter reinigen.</div>
+
+        <h3>2.4 Restfeuchte führt zu Mikrobläschen</h3>
+        <p>Bei einer Granulatfeuchte über 0,3–0,5% verdampft das Wasser im Extruder; der Dampf erzeugt feine Bläschen, die nach dem Austritt aus der Düse aufplatzen und gelartige Defekte hinterlassen. Trocknen Sie das Material 2–4 h bei 75–85°C im Bunkertrockner auf 0,1–0,2% Restfeuchte. Bei gewaschenem LLDPE aus Stretchfolie ist vor jedem Chargenwechsel eine Feuchtemessung zwingend.</p>
+
+        <h3>2.5 Durchbrochene oder verschobene Siebwechselsiebe</h3>
+        <p>Bei Drücken über 150–200 bar können die Siebe durchbrechen oder sich verschieben; Schmutz, Klebstoffreste und angesengte Partikel gelangen dann ins Produkt. Bei Rezyklaten mit Kreide und Verunreinigungen sollten die Siebe alle 2–6 Stunden gewechselt werden (je nach Verschmutzungsgrad). Ein hydraulischer Siebwechsler mit automatischem Wechsel bei 120–150 bar verbessert die Prozesssicherheit.</p>
+
+        <h2>3. Unterscheidung der Gel-Typen</h2>
+        <ul>
+            <li><strong>Transparentes Gel, kein Kern:</strong> unaufgeschmolzenes/vernetztes Polymer → Temperatur erhöhen, Verweilzeit prüfen.</li>
+            <li><strong>Gel mit weißem Punkt:</strong> Kreideagglomerat oder Sand → Filterung verbessern, Masterbatch wechseln.</li>
+            <li><strong>Gel, das wie eine Blase platzt:</strong> Restfeuchte → Material trocknen.</li>
+            <li><strong>Gel mit dunklem/ schwarzem Kern:</strong> verbranntes Polymer aus Totzonen → Kopf/Adapter reinigen.</li>
+        </ul>
+        <p>Zur genauen Diagnose von Gelen in HDPE/LLDPE-Folien empfiehlt sich ein Mikroskop mit 20–50facher Vergrößerung.</p>
+
+        <div class="highlight">📌 Kurzübersicht: Probel mit trockenem Material → ändert die Gel-Anzahl? Ja → Feuchtigkeitsproblem. Nein → meist Temperatur, Mischung oder Totzonen.</div>
+
+        <h2>4. Fazit</h2>
+        <p>Gele am Extruderaustritt haben vielfältige Ursachen: unterschiedliche MFI-Werte in Mischungen, Vernetzung durch Überhitzung, Kreideagglomerate, Restfeuchte oder durchbrochene Siebe. Eine systematische Diagnose (Sichtprüfung der Gele, Mikroskop, Trocknungstest) führt schnell zur richtigen Gegenmaßnahme. Die Kombination aus guter Trocknung, angepasster Temperatur, feiner Filtration und sauberer Strömungsführung im Werkzeug reduziert Gele auf ein Minimum und verbessert die Produktqualität erheblich.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Gels at the extruder die – causes and remedies</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>Common causes:</strong> unmelted high‑MFI components in blends (HDPE/LLDPE), crosslinked polymer from overheating (>230–240°C), chalk agglomerates (poor masterbatch), residual moisture (>0.3–0.5%), broken or shifted screen packs.</p>
+        <p><strong>Remedies:</strong> Increase melt temperature by 10–15°C (check heater bands). Lower temperature by 5–15°C if crosslinking occurs. Use high‑quality CaCO₃ masterbatch (particle size 1–3 µm) and finer screens (add 120–150 µm). Dry material to 0.1–0.2% moisture. Use hydraulic screen changer with automatic change at 120–150 bar.</p>
+        <div class="highlight">✅ Gel identification: transparent – unmelted; white dot – chalk/sand; bursts like a bubble – moisture; dark core – degraded polymer from dead zones.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Гель на выходе из фильеры экструдера: причины образования и методы устранения</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Что такое гели и почему они опасны</h2>
+        <p>Гели на выходе из фильеры – нерасплавленные или частично разрушенные частицы полимера, которые портят внешний вид плёнки, листа или гранулы и создают слабые точки. Особенно критичны гели при производстве тонких плёнок из смеси HDPE/LLDPE (термоусадочная упаковка) и при переработке вторичных полимеров с меловой добавкой.</p>
+
+        <h2>2. Основные причины и способы устранения</h2>
+        <h3>2.1 Непроплав тугоплавких компонентов в смеси с разным ПТР</h3>
+        <p>При смешении HDPE (низкий ПТР 0,8–1,5) и LLDPE (ПТР 2,5–4,0) частицы HDPE могут не успеть расплавиться. Температура плавления HDPE 125–135°C, но для полной гомогенизации требуется 200–220°C. Повысьте температуру в зоне сжатия и дозирования двухшнекового экструдера на 10–15°C. Проверьте исправность ТЭНов на адаптере и головке – разница заданной и фактической температуры не должна превышать 5°C.</p>
+
+        <h3>2.2 Сшитый полимер (перегрев или длительная выдержка)</h3>
+        <p>При длительном нахождении материала в зонах экструдера с высокой температурой (>230–240°C для LLDPE) молекулы сшиваются, образуя твёрдые неплавящиеся комочки (0,5–2 мм). Это особенно характерно для вторичного LLDPE из стрейч-плёнки. Снизьте температуру в последних зонах экструдера и в головке на 5–15°C. При реконструкции линии устраните мёртвые зоны в распределительных каналах – исключите острые углы.</p>
+
+        <h3>2.3 Агломераты меловой добавки</h3>
+        <p>Дешёвый меловой мастербатч с плохой дисперсией CaCO₃ образует агломераты (50–200 мкм), которые выходят из фильеры как твёрдые белые включения. При содержании мела 20–30% в смеси HDPE/LLDPE гели могут занимать до 5–10% поверхности плёнки. Смените поставщика на качественный концентрат с фракцией мела 1–3 мкм. Установите более плотный пакет сеток (добавьте промежуточную сетку 120–150 мкм). Рекомендуется двухступенчатая фильтрация: 200–250 мкм + 150 мкм.</p>
+
+        <div class="highlight">🔧 Диагностика: прозрачный гель без ядра – непроплав или сшитый полимер (менять температуру). Гель с белой точкой – агломерат мела или песок (улучшить фильтрацию). Гель, который хлопает как пузырь при нажатии – влага (сушить сырьё). Гель с тёмной/чёрной точкой – подгоревший полимер из застойных зон (чистить головку).</div>
+
+        <h3>2.4 Влага в сырье – микровспенивание расплава</h3>
+        <p>При влажности гранулы выше 0,3–0,5% вода превращается в пар, создавая мелкие пузыри внутри полимера. Такой гель легко хлопает при нажатии иглой. Тщательная сушка сырья в бункере-осушителе при 75–85°C в течение 2–4 часов снижает влажность до 0,1–0,2%. Для вторичного LLDPE из стрейч-плёнки после мойки контроль влажности обязателен перед каждой сменой партии.</p>
+
+        <h3>2.5 Прорыв или смещение фильтровальных сеток</h3>
+        <p>При давлении выше 150–200 бар сетки могут прорваться или сместиться – скопившаяся грязь, остатки клея и подгоревшие частицы летят в изделие. При переработке вторичных полимеров с мелом сетки меняют каждые 2–6 часов (в зависимости от загрязнённости). Для стабильной работы используйте гидравлический сменный фильтр (шибер) с автоматической заменой сеток по давлению. Давление переключения – 120–150 бар.</p>
+
+        <h2>3. Диагностика типов гелей</h2>
+        <ul>
+            <li><strong>Прозрачный гель без ядра</strong> – непроплав или сшитый полимер → повысить температуру или сократить время пребывания.</li>
+            <li><strong>Гель с белой точкой внутри</strong> – агломерат мела или песок → улучшить фильтрацию, сменить поставщика концентрата.</li>
+            <li><strong>Гель, который хлопает как пузырь</strong> – влага → сушить сырьё.</li>
+            <li><strong>Гель тёмного цвета с чёрной точкой</strong> – подгоревший полимер из застойных зон → чистить головку и адаптер.</li>
+        </ul>
+        <p>Для точной диагностики гелей на плёнке из смеси HDPE/LLDPE используйте микроскоп с увеличением 20–50 крат.</p>
+
+        <div class="highlight">📌 Проверьте сушкой: возьмите пробу сырья, высушите 4 часа при 80°C – если гели исчезли, причина во влаге. Если остались – проблема в температурах, фильтрации или застойных зонах.</div>
+
+        <h2>4. Заключение</h2>
+        <p>Гели на выходе из фильеры имеют разные причины: разница ПТР в смеси, сшивание при перегреве, агломераты мела, влажность или прорыв сеток. Систематическая диагностика (визуальный осмотр гелей, микроскопия, сушильный тест) позволяет быстро выбрать правильное решение. Комбинация хорошей сушки, точной температуры, тонкой фильтрации и чистой геометрии каналов сводит количество гелей к минимуму и повышает качество продукции.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
