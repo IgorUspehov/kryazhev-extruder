@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recycling von gemischtem LDPE/LLDPE – Schmelzestabilisierung beim Rohstoffwechsel im laufenden Betrieb: Realistische Methoden | Igor Kryazhev</title>
+<meta name="description" content="Praktische Methoden zur Stabilisierung der Schmelze beim Wechsel von LDPE- zu LLDPE-reichen Chargen. Echtzeit-MFI-Überwachung, PID-Anpassung, Antioxidantien und zweistufige Trichterführung.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#222;background:#f5f5f5;padding:20px}
+.container{max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}
+.lang-tabs{display:flex;background:#2c3e50;flex-wrap:wrap}
+.lang-btn{background:#34495e;border:none;padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;color:#ecf0f1;border-right:1px solid #2c3e50}
+.lang-btn.active{background:#27ae60;color:#fff}
+.lang-panel{display:none;padding:30px 40px;animation:fadeIn .3s ease}
+.lang-panel.active-panel{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.8rem;color:#27ae60;border-left:5px solid #27ae60;padding-left:20px;margin-bottom:15px}
+h2{font-size:1.4rem;color:#2c3e50;margin:25px 0 15px;border-bottom:2px solid #ecf0f1}
+h3{font-size:1.2rem;color:#34495e;margin:20px 0 10px}
+.author{background:#e8f5e9;padding:12px 20px;border-radius:8px;margin:20px 0;font-style:italic;color:#2e7d32}
+ul{margin:15px 0 15px 30px}
+li{margin:8px 0}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ecf0f1;font-size:.85rem;color:#7f8c8d;text-align:center}
+@media (max-width:768px){.lang-panel{padding:20px}h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
+
+<!-- DEUTSCH - Hauptsprache -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Recycling von gemischtem LDPE/LLDPE – Schmelzestabilisierung beim Rohstoffwechsel im laufenden Betrieb: Realistische Methoden</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Sekundärkunststoff-Recycling</div>
+
+<h2>1. Einleitung: Das Problem des Rohstoffwechsels</h2>
+<p>Keine Recyclinganlage hat das Privileg, über Monate das gleiche Rohmaterial zu verarbeiten. Der Wechsel von einer LDPE-reichen Charge zu einer LLDPE-reichen Charge ist Alltag. LDPE und LLDPE haben unterschiedliche Viskositäten, Schmelztemperaturen und MFI-Werte. Ein direkter Wechsel im laufenden Betrieb führt zu Druckspitzen, MFI-Schwankungen, Folienrissen und Ausschuss. Realistische Methoden zur Schmelzestabilisierung ohne Produktionsstopp werden hier beschrieben.</p>
+
+<h2>2. Mechanismus: Was passiert beim Rohstoffwechsel</h2>
+<p>Eine Charge mit 90% LDPE (MFI 2.0) und 10% LLDPE läuft stabil. Die nächste Charge mit 60% LDPE und 40% LLDPE hat einen niedrigeren MFI (1.2) und höhere Viskosität. Beim Mischungswechsel im Trichter passiert: Der Extruder zieht ein Gemisch aus alter und neuer Charge. Für 5-15 Minuten läuft er mit einem Übergangsgemisch. Während dieser Zeit schwanken Druck (50-180 bar) und MFI (1.5-3.5). Der Siebwechsler wird durch LLDPE-Gele belastet. Ziel ist es, diese Übergangsphase zu verkürzen.</p>
+
+<h2>3. Methode 1: Echtzeit-MFI-Überwachung im Einzug</h2>
+<p>Die wichtigste Methode ist die MFI-Messung jeder Charge vor dem Einzug. Ein Nahinfrarot-Sensor am Förderband gibt den aktuellen MFI-Wert. Ein Linux-Controller berechnet daraus die voraussichtliche Schmelzeviskosität. Regel: Bei MFI-Abfall um 0.5 werden die Zonentemperaturen um 5-10°C erhöht. Bei MFI-Anstieg um 0.5 werden die Temperaturen um 5-10°C gesenkt. Die Reaktionszeit des Extruders auf Temperaturänderungen beträgt 5-10 Minuten. Systeme von KTR oder Optek arbeiten mit Genauigkeiten von ±0.1 MFI. Investition 15.000-25.000 € amortisiert sich durch weniger Ausschuss in 6-12 Monaten.</p>
+
+<h2>4. Methode 2: Automatische PID-Parameteranpassung</h2>
+<p>Der PID-Regler des Extruders ist für eine bestimmte Viskosität optimiert. Beim Rohstoffwechsel muss das PID-Verhalten angepasst werden. Ein Linux-Controller kann die Regelparameter online ändern. Für LDPE-reiche Chargen (niedrige Viskosität): Kp=0.1-0.15, Ki=0.01-0.02, Kd=0.1-0.2. Für LLDPE-reiche Chargen (höhere Viskosität): Kp=0.2-0.3, Ki=0.03-0.05, Kd=0.3-0.5. Beim Erkennen einer neuen Charge (Sprung im MFI um mehr als 0.5) schaltet der Controller innerhalb von 2 Sekunden auf den Parametersatz der neuen Charge.</p>
+
+<h2>5. Methode 3: Viskositätsmodifikatoren</h2>
+<p>Viskositätsmodifikatoren gleichen Schwankungen aus. Ein universelles Additiv wird dem Mahlgut vor dem Trichter zudosiert. Bei niedrigem MFI (viskoses Material) reichen 0.3-0.5% Additiv. Bei hohem MFI (flüssiges Material) werden 0.1-0.3% gegeben. Die Additive wirken innerhalb von 2-3 Minuten. Kosten: 5-15 € pro kg. Bei 0.3% Dosierung und 500 kg/h sind das 7.5-22.5 € pro Stunde zusätzlich.</p>
+
+<h2>6. Methode 4: Zweistufige Trichterführung</h2>
+<p>Zwei separate Trichter für alte und neue Charge. Während der Extruder aus Trichter A zieht, wird Trichter B vorbereitet. Die Umschaltung erfolgt schlagartig durch ein Wechselventil. Keine Mischung, keine Übergangsphase. Die Druck- und MFI-Schwankungen sinken um 70-90%. Investition ca. 10.000-20.000 € amortisiert sich durch weniger Ausschuss.</p>
+
+<h2>7. Methode 5: Rezepturpuffer durch Masterbatch</h2>
+<p>70% Mischcharge (LDPE/LLDPE variabel) + 30% Standard-Masterbatch (definierter MFI von 2.0). Der Masterbatch überdeckt die Viskositätsschwankungen der Mischcharge. Der MFI des Endprodukts schwankt nur um ±0.3 statt ±1.5. Das Masterbatch kostet ca. 1.20-1.80 €/kg. Bei 30% Zugabe erhöht das die Materialkosten um 0.36-0.54 €/kg. Das lohnt sich für hochpreisige Produkte.</p>
+
+<h2>8. Praktische Umsetzung mit Linux-Controller</h2>
+<p>Ein Linux-Controller kann die Stabilisierung automatisieren. Hardware: NIR-Sensor für MFI-Messung, Temperatursensoren in der Schmelze, Drucksensoren, Dosiereinrichtung für Viskositätsmodifikatoren. Das Python-Programm führt aus: Erkennen des MFI der neu eintreffenden Charge, Berechnung der Zieltemperatur und Ziel-Dosiermenge, Anpassung der PID-Parameter, Ausgabe von Stellsignalen. Die Umschaltzeit beträgt weniger als 10 Sekunden. Der Produktionsausfall durch Rohstoffwechsel sinkt von 10-15% auf 2-3%.</p>
+
+<h2>9. Typische Fehler bei der Rohstoffumstellung</h2>
+<ul>
+<li><strong>Keine Vorwarnung:</strong> Die neue Charge wird einfach in den Trichter gekippt. Lösung: Trichter fast leerfahren, dann schlagartig umschalten.</li>
+<li><strong>Temperatur erst bei Druckspitzen erhöhen:</strong> Die Reaktion kommt zu spät. Lösung: Temperatur bereits beim Erkennen der Charge anpassen.</li>
+<li><strong>Falsche PID-Parameter:</strong> Der Regler ist für LDPE optimiert, die neue Charge ist LLDPE-reich. Lösung: PID-Presets hinterlegen.</li>
+<li><strong>Zu späte Zugabe von Viskositätsmodifikatoren:</strong> Das Additiv wirkt erst nach 2-3 Minuten. Lösung: Additiv bereits beim Erkennen der neuen Charge zudosieren.</li>
+<li><strong>Ausschuss nicht messen:</strong> Das Problem wird nicht quantifiziert. Lösung: Druck- und MFI-Daten während des Wechsels aufzeichnen.</li>
+</ul>
+
+<h2>10. Fazit und Handlungsempfehlungen</h2>
+<p>Der Wechsel von LDPE- zu LLDPE-reichen Chargen ist beherrschbar. Die wichtigste Methode ist die Echtzeit-MFI-Überwachung mit NIR-Sensor, gekoppelt mit einem Linux-Controller, der Temperaturen und PID-Parameter anpasst. Die zweitbeste Methode ist die zweistufige Trichterführung. Die robusteste, aber teuerste Methode sind Viskositätsmodifikatoren (0.1-0.5%). Für die meisten Betriebe reicht die Kombination aus MFI-Messung und automatischer PID-Anpassung. Die Ausschussrate durch Rohstoffwechsel sinkt von 10-15% auf 2-5%. Keine Methode verhindert Schwankungen komplett, aber alle zusammen machen den Rohstoffwechsel im laufenden Betrieb wirtschaftlich tragbar.</p>
+
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Recycling Mixed LDPE/LLDPE – Melt Stabilization During Raw Material Changeover on the Fly: Realistic Methods</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Secondary Polymer Processing</div>
+
+<h2>1. Introduction</h2>
+<p>Switching from LDPE-rich to LLDPE-rich batches causes pressure spikes, MFI fluctuations, film tears. This article describes realistic methods for melt stabilization without production stop.</p>
+
+<h2>2. Mechanism</h2>
+<p>During changeover, the extruder draws a mixture of old and new batch for 5-15 minutes. Pressure fluctuates (50-180 bar) and MFI varies (1.5-3.5). Goal: shorten transition phase.</p>
+
+<h2>3. Method 1: Real-time MFI monitoring</h2>
+<p>An NIR sensor measures MFI of incoming material. If MFI drops 0.5, increase temperature 5-10°C. If MFI rises 0.5, decrease temperature 5-10°C.</p>
+
+<h2>4. Method 2: Automatic PID parameter adjustment</h2>
+<p>LDPE-rich: Kp=0.1-0.15, Ki=0.01-0.02, Kd=0.1-0.2. LLDPE-rich: Kp=0.2-0.3, Ki=0.03-0.05, Kd=0.3-0.5.</p>
+
+<h2>5. Method 3: Viscosity modifiers</h2>
+<p>Add 0.1-0.5% flow modifier. Effective within 2-3 minutes. Cost 5-15 €/kg.</p>
+
+<h2>6. Method 4: Two-stage hopper system</h2>
+<p>Two separate hoppers with switching valve. No mixing, no transition phase. Investment 10,000-20,000 €.</p>
+
+<h2>7. Method 5: Masterbatch buffer</h2>
+<p>70% mixed batch + 30% standard masterbatch (MFI 2.0). Final MFI fluctuates only ±0.3.</p>
+
+<h2>8. Linux controller implementation</h2>
+<p>NIR sensor + temperature control + dosing unit. Python program adjusts parameters within 10 seconds.</p>
+
+<h2>9. Common errors</h2>
+<ul><li>No advance warning – just dumping new material</li>
+<li>Temperature increase only after pressure spike – too late</li>
+<li>Wrong PID parameters for new material</li>
+<li>Adding viscosity modifiers too late</li></ul>
+
+<h2>10. Conclusion</h2>
+<p>Real-time MFI monitoring + automatic PID adjustment is most effective. Two-stage hopper eliminates mixing. Viscosity modifiers are expensive but effective. Waste rate drops from 10-15% to 2-5%.</p>
+
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Переработка смешанного LDPE/LLDPE – стабилизация расплава при смене сырья на ходу: реальные методы</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+<h2>1. Введение</h2>
+<p>Переход от LDPE-богатой партии к LLDPE-богатой вызывает скачки давления, колебания ПТР, разрывы пленки. Описаны реальные методы стабилизации расплава без остановки производства.</p>
+
+<h2>2. Механизм</h2>
+<p>При смене сырья экструдер 5-15 минут тянет смесь старой и новой партии. Давление колеблется (50-180 бар), ПТР меняется (1.5-3.5). Цель: сократить переходную фазу.</p>
+
+<h2>3. Метод 1: Контроль ПТР в реальном времени</h2>
+<p>NIR-сенсор измеряет ПТР поступающего материала. При падении ПТР на 0.5 повысить температуру на 5-10°C. При росте ПТР на 0.5 снизить температуру на 5-10°C.</p>
+
+<h2>4. Метод 2: Автоматическая настройка ПИД-параметров</h2>
+<p>Для LDPE-богатых партий: Kp=0.1-0.15, Ki=0.01-0.02, Kd=0.1-0.2. Для LLDPE-богатых: Kp=0.2-0.3, Ki=0.03-0.05, Kd=0.3-0.5.</p>
+
+<h2>5. Метод 3: Модификаторы вязкости</h2>
+<p>Добавка 0.1-0.5% модификатора текучести. Эффект через 2-3 минуты. Стоимость 5-15 €/кг.</p>
+
+<h2>6. Метод 4: Двухбункерная система</h2>
+<p>Два раздельных бункера с переключающим клапаном. Никакого смешивания. Инвестиции 10.000-20.000 €.</p>
+
+<h2>7. Метод 5: Буферный мастербатч</h2>
+<p>70% смесовой партии + 30% стандартного мастербатча (ПТР 2.0). Конечный ПТР колеблется всего ±0.3.</p>
+
+<h2>8. Реализация на Linux-контроллере</h2>
+<p>NIR-сенсор + регулировка температуры + дозирующее устройство. Python программа корректирует параметры за 10 секунд.</p>
+
+<h2>9. Типичные ошибки</h2>
+<ul><li>Нет предупреждения – новое сырьё просто высыпают</li>
+<li>Повышение температуры только после скачка давления – поздно</li>
+<li>Неверные ПИД-параметры для нового материала</li>
+<li>Добавка модификаторов вязкости слишком поздно</li></ul>
+
+<h2>10. Заключение</h2>
+<p>Контроль ПТР в реальном времени + автоматическая настройка ПИД наиболее эффективны. Двухбункерная система исключает смешивание. Брак снижается с 10-15% до 2-5%.</p>
+
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
+</div>
+<script>
+(function(){
+var b=document.querySelectorAll('.lang-btn'),p=document.querySelectorAll('.lang-panel');
+b.forEach(function(btn){btn.addEventListener('click',function(){
+var l=btn.getAttribute('data-lang');
+b.forEach(function(x){x.classList.remove('active');});
+btn.classList.add('active');
+p.forEach(function(panel){panel.classList.remove('active-panel');});
+document.getElementById('lang-'+l).classList.add('active-panel');
+});});
+})();
+</script>
+</body>
+</html>
