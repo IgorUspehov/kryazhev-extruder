@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling von Post-Consumer LDPE/LLDPE – Warum der Druck im Kopf von Charge zu Charge schwankt</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Recycling von Post-Consumer LDPE/LLDPE – Warum der Druck im Kopf von Charge zu Charge schwankt</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Das Hauptproblem – unkontrollierte Druckschwankungen</h2>
+        <p>Beim Recycling von gemischten Post-Consumer-Abfällen (LDPE/LLDPE) aus Haushalts- und Gewerbesammlungen ist die größte technologische Herausforderung die stark schwankende Schmelzeviskosität. Der Druck im Extruderkopf kann innerhalb einer Schicht drastisch ansteigen oder abfallen, was zu Folienabrissen, Dickenabweichungen und Produktionsstillständen führt.</p>
+
+        <h2>2. Ursache: schwankendes Mischungsverhältnis LDPE / LLDPE</h2>
+        <p>Eine Charge besteht oft aus dünnen Tragetaschen (hoher MFI, viel LDPE), die nächste aus dicker Schrumpffolie (niedriger MFI, viel LLDPE). Beide Typen haben unterschiedliche Fließeigenschaften. Gelangen sie nicht homogen in den Extruder, ändert sich die Viskosität kontinuierlich – der Druck beginnt zu „sägen“. In den Niederlanden werden Online‑Rheometer eingesetzt, um die Viskosität in Echtzeit zu messen und die Temperatur nachzuregeln.</p>
+
+        <h2>3. Einfluss von PP-Etiketten und Fremdstoffen</h2>
+        <p>Selbst nach einer mehrstufigen Wäsche mit Flotation verbleiben oft Polypropylen Etikettenreste im LDPE/LLDPE-Strom (PP schmilzt nicht bei 190°C). Diese Partikel verstopfen die Siebe: Der Druck steigt sprunghaft an, bis die Partikel mit Gewalt durch das Sieb gedrückt werden – dann fällt der Druck schlagartig ab. In Dänemark setzt man daher selbstreinigende Rückspülfilter ein, die bereits bei einer Druckänderung von nur 15 bar automatisch einen Reinigungszyklus starten.</p>
+
+        <div class="highlight">🔧 Die Lösung: Ein online‑Rheometer (Viskositätsmessung vor dem Sieb) kombiniert mit automatischer Siebrückspülung stabilisiert den Druck erheblich.</div>
+
+        <h2>4. Restfeuchte nach der Wäsche – Dampfschläge</h2>
+        <p>Post‑Consumer Material hat nach der Wäsche oft noch 1–2% Restfeuchte. Im Extruder verdampft das Wasser schlagartig, die Dampfblasen erzeugen „Dampfschläge“, die den Druck zum Schwanken bringen. In Rumänien setzt man daher Bunkertrockner ein, die die Feuchte auf <0,05% senken. Die Druckstabilität verbessert sich dadurch um 30–40%. Zweistufige Vakuumentgasung (zwei Ports) ist in den Niederlanden Standard, um auch gelöste Feuchte zu entfernen.</p>
+
+        <h2>5. Verschleiß der Schnecke – erhöhte Reibung und Druckpulsation</h2>
+        <p>Durch die abrasiven Verunreinigungen in Post‑Consumer‑Material verschleißt die Schnecke etwa 2,5× schneller als bei Neuware. Ein zu großer Schneckenspalt (>0,3–0,5 mm) führt zu starkem Rückfluss, die Druckregelung wird instabil. In Polen verwendet man Drehmomentsensoren an der Motorwelle, die mit dem Frequenzumrichter gekoppelt sind – steigt der Druck, reduziert der VFD automatisch die Drehzahl, um einen Folienabriss zu vermeiden.</p>
+
+        <h2>6. Strategien zur Glättung der Druckschwankungen</h2>
+        <ul>
+            <li><strong>Große Misch‑/Puffersilos (50 m³):</strong> In Polen wird das Material aus mehreren LKW‑Lieferungen im Silo vorgemischt, um den MFI über eine gesamte Produktionscharge zu mitteln.</li>
+            <li><strong>Nachdosierung von Primär‑LLDPE:</strong> In den Niederlanden regelt eine Dosiereinheit bei drohendem Druckabfall automatisch Primär‑LLDPE bei (erhöht die Fließfähigkeit).</li>
+            <li><strong>Zweistufige Extrusion (Kaskade):</strong> Im ersten Extruder wird nur aufgeschmolzen und entgast, im zweiten (gekoppelten) Extruder wird die Schmelze homogenisiert und der Druck geglättet.</li>
+            <li><strong>Selbstlernende PID‑Regelung:</strong> In Dänemark werden Druckverläufe analysiert und das Temperaturprofil automatisch für die nächste Charge angepasst.</li>
+        </ul>
+
+        <div class="highlight">📌 Praxis in den Niederlanden: Kombination aus Bunkertrocknung (<0,05% Feuchte), Online‑Rheometer und automatischem Siebrückspüler. Damit ist Post‑Consumer LDPE/LLDPE mit konstantem Druck verarbeitbar.</div>
+
+        <h2>7. Wartungsregime für stabile Drücke</h2>
+        <p>Wegen des schnelleren Verschleißes ist bei Post‑Consumer Material eine wöchentliche Kontrolle des Schneckenspiels notwendig. In Polen werden die Schneckengänge mit Hartmetall (Wolframcarbid) auftraggeschweißt, um die Standzeit auf 12–15 Monate zu verlängern. Auch eine regelmäßige Reinigung der Siebwechslerdichtungen ist entscheidend – abrasive Partikel zerstören die Dichtflächen und verursachen Leckagen, die den Druck zusätzlich schwanken lassen.</p>
+
+        <h2>8. Fazit</h2>
+        <p>Das Recycling von Post-Consumer LDPE/LLDPE ist aufgrund schwankender Einfallsqualität eine große Herausforderung. Die Druckschwankungen lassen sich jedoch durch eine Kombination aus homogener Vormischung (Silo), gründlicher Trocknung (<0,05% Feuchte), Online‑Viskositätsmessung, automatischer Siebrückspülung und verschleißangepasster Schneckenwartung deutlich reduzieren. Betriebe, die in diese Messtechnik investieren, erreichen eine stabile Produktion mit Ausschussraten unter 5% – und bleiben damit auf dem anspruchsvollen EU‑Recyclingmarkt wettbewerbsfähig.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Post-consumer LDPE/LLDPE recycling – why head pressure fluctuates from batch to batch</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>Main causes:</strong> varying LDPE/LLDPE ratio between batches (thin carrier bags vs. thick shrink film), PP label residues (hard at 190°C), residual moisture (1–2% → steam shocks), worn screw (>0.3–0.5 mm gap adds pulsation).</p>
+        <p><strong>Solutions proven in EU:</strong> online rheometer + automatic backflush screen changer (reacts already at Δ15 bar). Dry to <0.05% moisture using bunker dryers. Blend batches in large silos (50 m³) to average MFI. Use cascade extrusion (two extruders in series) for homogenisation. Weekly screw gap check (re‑build with tungsten carbide every 12–15 months).</p>
+        <div class="highlight">✅ In the Netherlands, the combination of online rheometer, backflush filter and deep drying keeps pressure variations below ±5 bar for hours, even with highly variable post‑consumer feedstock.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Recycling von Post-Consumer LDPE/LLDPE – почему давление в головке скачет от партии к партии?</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Главная проблема: неконтролируемые скачки давления</h2>
+        <p>При переработке смешанных Post-Consumer отходов LDPE/LLDPE (пакеты, стрейч, термоусадочная пленка) давление в головке экструдера может нестабильно меняться даже в течение одной смены. Это приводит к обрывам рукава, разнотолщинности и браку.</p>
+
+        <h2>2. Причина: разное соотношение LDPE и LLDPE от партии к партии</h2>
+        <p>Тонкие пакеты (магазинные «майки») – высокий ПТР, много LDPE. Толстая термоусадочная пленка – низкий ПТР, много LLDPE. Без усреднения в силосе вязкость расплава постоянно меняется – давление идёт «пилой». В Нидерландах используют потоковые реометры для непрерывного контроля вязкости.</p>
+
+        <h2>3. Влияние остатков PP-этикеток и посторонних включений</h2>
+        <p>Даже после флотации в массе остаются частицы PP (температура плавления выше 190°C). Они забивают сетки: давление резко растёт, затем через продавленные частицы падает. В Дании устанавливают самоочищающиеся фильтры обратной промывки, которые реагируют уже на скачок давления 15 бар.</p>
+
+        <div class="highlight">🔧 Ключевое решение: онлайн-реометр + автоматический фильтр обратной промывки. Комбинация гасит большинство пульсаций.</div>
+
+        <h2>4. Остаточная влага и паровые удары</h2>
+        <p>После мойки влажность Post-Consumer сырья составляет 1–2%. При экструзии вода резко превращается в пар, создавая «паровые удары», которые бросают давление. В Румынии перед экструдером ставят бункерные осушители, снижая влажность до <0,05%. Стабильность давления улучшается на 30–40%.</p>
+
+        <h2>5. Износ шнека – дополнительный фактор нестабильности</h2>
+        <p>Абразивные частицы в Post-Consumer сырье ускоряют износ шнека в 2,5 раза. При зазоре >0,3–0,5 мм давление начинает пульсировать. В Польше на валу двигателя установили датчики крутящего момента, связанные с частотником – при росте давления VFD автоматически снижает обороты, предотвращая обрыв рукава.</p>
+
+        <h2>6. Методы стабилизации давления в странах ЕС</h2>
+        <ul>
+            <li><strong>Большие усреднительные силосы (50 м³):</strong> перемешивают сырьё от разных поставщиков, получая средний ПТР по всей партии.</li>
+            <li><strong>Дозировка первичного LLDPE:</strong> в Нидерландах при падении давления ниже критической отметки автоматически подмешивают первичный полимер.</li>
+            <li><strong>Двухкаскадные экструдеры:</strong> первый каскад плавит и дегазирует, второй гомогенизирует массу и стабилизирует давление.</li>
+            <li><strong>Самонастраивающийся ПИД-регулятор:</strong> анализирует историю давления и корректирует температурный профиль для следующей партии.</li>
+        </ul>
+
+        <div class="highlight">📌 Опыт Нидерландов: глубокая сушка (<0,05% влаги) + онлайн-реометр + автоматический фильтр обратной промывки – это стандарт для стабильной переработки Post-Consumer LDPE/LLDPE.</div>
+
+        <h2>7. Регламент обслуживания оборудования</h2>
+        <p>Из-за повышенного абразивного износа при переработке Post-Consumer сырья необходимо еженедельно проверять зазор шнек-цилиндр. В Польше гребни шнека восстанавливают наплавкой карбида вольфрама – это даёт 12–15 месяцев стабильной работы. Также важно следить за уплотнениями шиберного фильтра: абразивные частицы быстро изнашивают скользящие поверхности, нарушая герметичность.</p>
+
+        <h2>8. Заключение</h2>
+        <p>Переработка Post-Consumer LDPE/LLDPE требует значительно более высоких инвестиций в контрольно-измерительные приборы, чем работа с чистыми отходами. Стабильность давления достигается комплексом мер: усреднение партий в больших силосах, бункерная сушка до <0,05% влаги, онлайн-реометр, автоматическая фильтрация (обратная промывка), поддержание зазора шнека и, при необходимости, двухкаскадная экструзия. Только такой подход позволяет получить вторичную гранулу, конкурентоспособную на рынке ЕС, с браком менее 5%.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
