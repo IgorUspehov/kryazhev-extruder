@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unterwassergranulation vs. Heißabschlag an der Düse für Rezyklate</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Vergleich: Unterwassergranulation vs. Heißabschlag an der Düse für Rezyklate</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Einleitung – Wahl der Granuliermethode</h2>
+        <p>Die Wahl zwischen Unterwassergranulation (UWG) und Heißabschlag (Hot‑Die‑Face) mit Wasserring- oder Luftkühlung hängt vom MFI, der gewünschten Leistung und dem Abrasivitätsgrad des Materials ab. Bei der Verarbeitung von PE-Rezyklaten (LDPE, HDPE, LLDPE) sowie kreidegefüllten Compounds sind Verschleiß, Kornform und Produktivität die Hauptkriterien.</p>
+
+        <h2>2. Heißabschlag mit Wasserring- oder Luftkühlung</h2>
+        <p>Bei der Heißabschlag-Granulation rotieren die Messer direkt auf der Düsenplatte des Extruders; die geschnittenen Partikel werden im Wasserring oder durch Luftgebläse abgeschreckt. Vorteile: niedrige Investitionskosten (3–5× günstiger als UWG), einfache Wartung, geringer Platzbedarf. Ideal für stark gefüllte Rezepturen mit 70–80% Kreide, denn der kurze Weg vom Schneidmesser zur Kühlung minimiert das Verkleben der Düse. Nachteil: Bei sehr niedrigviskosen Materialien (MFI &gt;10–15) verkleben die Granulate noch auf dem Messer – die Kornform ist oft linsenförmig, nicht perfekt gleichmäßig. Typische Leistung: 500–800 kg/h.</p>
+
+        <h2>3. Unterwassergranulation (UWG) mit Druckkühlung</h2>
+        <p>Bei der UWG läuft der Schneidprozess in einer wassergefüllten Kammer (3–5 bar) ab. Die Granulate werden sofort gekühlt und hydraulisch abtransportiert. Sie erhalten perfekte, kugelförmige Körner – essenziell für den Weiterverkauf oder gravimetrische Dosierer. Die UWG bewältigt MFI‑Werte von 0,1 bis &gt;100 g/10min ohne Verkleben. Für Hochleistungslinien ab 1000 kg/h ist sie die erste Wahl. Der geschlossene Prozess verhindert die Freisetzung von Kreidestaub. Nachteile: Höhere Investition (3–5× teurer), anspruchsvolle Einstellung (Wassertemperatur &gt;10–15°C sonst Erstarrung in den Düsen), wartungsintensiver.</p>
+
+        <div class="highlight">🔧 Vor allem für Polypropylen mit MFI 8 empfiehlt sich die Unterwassergranulation mit einem Wasserdruck von etwa 4 bar, um eine runde, freifließende Granulatform zu erhalten.</div>
+
+        <h2>4. Verschleiß bei Kreidefüllung</h2>
+        <p>Kreide ist abrasiv. In der UWG laufen Messer und Düsenplatte direkt im Wasser, was den Verschleiß beschleunigt. Für kreidegefüllte Compounds werden Messer aus Wolframcarbid eingesetzt; ihre Standmenge liegt bei 200–500 t (abhängig vom Kreidegehalt). Der Austausch von Carbidmessern und Düsenplatten ist teuer. Bei &gt;20% Kreide kann die UWG unwirtschaftlich werden. Bei der Heißabschneidung ist der abrasive Verschleiß geringer, die Messer aus Schnellarbeitsstahl halten 50–150 t – und sind preiswerter zu ersetzen.</p>
+
+        <h2>5. Entscheidungshilfe für konkrete Anwendungen</h2>
+        <ul>
+            <li><strong>Mischung HDPE/LLDPE + 10–30% Kreide (Gartenbaunetze, Spritzguss):</strong> Beide Verfahren möglich. Bei &lt;500 kg/h und Eigenverbrauch → Heißabschlag günstiger. Bei &gt;1000 kg/h oder Verkauf der Ware → UWG wegen perfekter Rundkörner.</li>
+            <li><strong>Thermoschrumpffolie:</strong> Granulatform spielt keine Rolle, daher Heißabschlag bevorzugt (Investitionskosten).</li>
+            <li><strong>Kreidegehalt &gt;30%:</strong> Wasserring-Heißabschlag robuster (kurzer Weg, weniger Verstopfungen). UWG würde extrem hohen Messerverschleiß (100–200 t pro Wechsel) verursachen.</li>
+            <li><strong>Starke MFI-Unterschiede in der Mischung (Faktor &gt;2):</strong> UWG sorgt für gleichmäßigere Granulatform.</li>
+        </ul>
+
+        <div class="highlight">📌 Praxiswerte: Eine Wasserringgranulation für LDPE mit 400 kg/h benötigt einen Nadelmesserwechsel etwa alle 40 Stunden. Eine UWG für HDPE aus Kanistern mit 10% Kreide erreicht 1200 kg/h.</div>
+
+        <h2>6. Zusammenhang mit Schneckenverschleiß</h2>
+        <p>Unabhängig vom Granulierverfahren: Der Abrieb von Schnecke und Zylinder durch Kreide bleibt gleich, denn die Schnecke arbeitet vor dem Düsenkopf. Der Spalt Schnecke / Zylinder wächst bei Kreidefüllung etwa 1,5× schneller. Eine Spaltkontrolle alle 2000–3000 Betriebsstunden ist unerlässlich; die Art der Granulation spielt dabei keine Rolle.</p>
+
+        <h2>7. Zusammenfassende Tabelle</h2>
+        <table>
+            <tr><th>Merkmal</th><th>Heißabschlag (Wasserring)</th><th>Unterwassergranulation</th></tr>
+            <tr><td>Investitionskosten</td><td>niedrig (1×)</td><td>3–5× höher</td></tr>
+            <tr><td>Max. Leistung (Standard)</td><td>500–800 kg/h</td><td>1000–3000 kg/h</td></tr>
+            <tr><td>MFI-Bereich</td><td>optimal bis ~10–15</td><td>0,1–100+</td></tr>
+            <tr><td>Granulatform</td><td>linsenförmig</td><td>ideal rund</td></tr>
+            <tr><td>Kreideverträglichkeit</td><td>sehr gut (auch &gt;70%)</td><td>gut, aber höherer Messerverschleiß</td></tr>
+            <tr><td>Messerwechselintervall (20% Kreide)</td><td>ca. 150 t</td><td>ca. 200–500 t (Wolframcarbid)</td></tr>
+        </table>
+
+        <h2>8. Fazit</h2>
+        <p>Die Wahl der Granuliertechnologie für Rezyklate ist eine wirtschaftliche Entscheidung. Für kleine bis mittlere Leistungen (&lt;500–800 kg/h), stark gefüllte Compounds (Kreide &gt;30%) oder wenn die Granulatform nicht kritisch ist, ist der Heißabschlag mit Wasserringkühlung das kosteneffiziente Verfahren. Bei hohen Durchsätzen (&gt;1000 kg/h), sehr niedrigen oder sehr hohen MFI‑Werten oder dem Verkauf von Handelsware mit anspruchsvoller Rundkornqualität führt kein Weg an der Unterwassergranulation vorbei. Der erhöhte Verschleiß bei Kreide ist immer zu berücksichtigen, kann aber durch Hartmetallwerkzeuge und regelmäßige Wartung gemanagt werden.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH (compact) -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Underwater vs. hot die face pelletizing for recycled polymers</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>Hot‑die‑face (water ring):</strong> low cost, easy maintenance, accepts high chalk loads (70–80%), limited to MFI &lt;10–15, output 500–800 kg/h, lens‑shaped pellets. Ideal for &lt;500 kg/h, in‑house use, or small budgets.<br>
+        <strong>Underwater (UWG):</strong> high cost (3–5×), perfect spherical pellets, handles MFI 0.1–100+, output &gt;1000 kg/h. Preferred for commercial resin sales, gravimetric dosing, or high throughput.<br>
+        <strong>Chalk content &gt;20–30%:</strong> water‑ring is more robust (shorter melt path, less die blockage). UWG requires tungsten carbide knives (200–500 t life) – expensive.</p>
+        <div class="highlight">✅ For HDPE/LLDPE + 30% chalk, water‑ring knives last ~150 t. UWG reaches 1200 kg/h for HDPE with 10% chalk.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Сравнение подводной грануляции и грануляции горячей резкой на голове для переработки вторичных полимеров</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Основной критерий выбора</h2>
+        <p>Выбор между подводной грануляцией и горячей резкой на голове (с водокольцевым или воздушным охлаждением) зависит от показателя текучести расплава (ПТР), требуемой производительности и содержания мела. Для вторичных полиэтиленов (LDPE, HDPE, LLDPE) и меловых добавок важны износ оборудования и форма гранулы.</p>
+
+        <h2>2. Горячая резка на голове (водокольцевая)</h2>
+        <p>Ножи вращаются непосредственно по фильере, срезанные гранулы отбрасываются в поток воды или обдуваются воздухом. Преимущества: низкая стоимость оборудования, простота обслуживания, малая занимаемая площадь. Идеальна для составов с мелом 70–80% – короткий путь от ножа до охлаждения минимизирует забивание фильеры. Ограничения: при ПТР выше 10–15 гранулы могут слипаться на ножах, форма – чечевица, не всегда одинаковый размер. Типичная производительность 500–800 кг/ч.</p>
+
+        <h2>3. Подводная грануляция (под давлением)</h2>
+        <p>Резка и охлаждение происходят в герметичной водяной камере (3–5 бар). Гранулы мгновенно охлаждаются, уносятся потоком воды в центрифугу. Даёт идеальные шарики одинакового размера – критично при продаже гранулы на сторону. Справляется с ПТР от 0,1 до 100 и более без слипания. Оптимальна для линий от 1000 кг/ч и выше, закрытый процесс не выделяет меловую пыль. Сложность: баланс температур воды и фильеры – вода холоднее 10–15°C замораживает расплав в отверстиях. Стоимость системы в 3–5 раз выше горячей резки.</p>
+
+        <div class="highlight">🔧 Для вторичного полипропилена с ПТР 8 подводная грануляция при давлении воды 4 бар даёт идеальную шарообразную гранулу.</div>
+
+        <h2>4. Износ при работе с мелом</h2>
+        <p>Мел – абразив. В подводной грануляции ножи и матрица изнашиваются быстрее, так как работают непосредственно в воде. Для мелованных композитов используют ножи из карбида вольфрама, их ресурс 200–500 тонн в зависимости от содержания мела. Замена карбидных ножей стоит дорого. При содержании мела более 20% подводная грануляция может быть экономически неоправданной. Для горячей резки абразивный износ ниже – ножи из быстрорежущей стали служат на мелованных смесях 50–150 тонн, и замена дешевле.</p>
+
+        <h2>5. Рекомендации по выбору</h2>
+        <ul><li>Смесь HDPE/LLDPE с мелом 10–30% (садовые сетки, литьевые гранулы): при производительности до 500 кг/ч и для собственного потребления – горячая резка. При продаже гранулы на сторону или производительности свыше 1000 кг/ч – подводная грануляция.</li>
+        <li>Для термоусадочной пленки форма гранулы не имеет значения – горячая резка дешевле.</li>
+        <li>При содержании мела более 30% водокольцевая горячая резка надёжнее (короткий путь гранулы снижает риск забивания фильеры). Подводная грануляция потребует замены карбидных ножей каждые 100–200 тонн, что удорожает процесс.</li>
+        <li>При разнице ПТР компонентов смеси HDPE/LLDPE более чем в 2 раза подводная грануляция обеспечит более стабильную форму гранулы.</li></ul>
+
+        <div class="highlight">📌 Практические данные: водокольцевая грануляция для LDPE производительностью 400 кг/ч требует замены ножей каждые 40 часов. Фильера подводной грануляции из карбида вольфрама для мелованной композиции выдерживает 500 тонн. Подводная грануляция HDPE из канистр с 10% мела достигает 1200 кг/ч.</div>
+
+        <h2>6. Связь с износом шнека экструдера</h2>
+        <p>Износ шнека экструдера при переработке мелованных композитов одинаков для обоих методов, так как шнек находится до головки. Зазор шнек-цилиндр при работе с мелом увеличивается в 1,5 раза быстрее, чем при чистом полимере. Контроль зазора каждые 2000–3000 часов обязателен независимо от типа грануляции.</p>
+
+        <h2>7. Заключение</h2>
+        <p>Выбор технологии грануляции – это экономическое решение. Для средних производительностей (до 500–800 кг/ч), сильно наполненных составов (мел >30%) или когда форма гранулы не важна – предпочтительна горячая резка на голове с водокольцевым охлаждением. Для высоких производительностей (>1000 кг/ч), очень низких или очень высоких ПТР, а также при продаже гранулы как товарной продукции с идеальной сферической формой – лучший выбор подводная грануляция. Повышенный износ от мела всегда нужно учитывать, но его можно компенсировать правильным выбором инструмента (карбид вольфрама) и регулярным обслуживанием.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
