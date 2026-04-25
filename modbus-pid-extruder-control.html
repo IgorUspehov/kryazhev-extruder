@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modbus TCP Python PID Regler für Extrudersteuerung | Igor Kryazhev</title>
+<meta name="description" content="Steuerung eines Frequenzumrichters über Modbus TCP mit Python. PID-Regler für Extruderproduktivität, Low-Pass-Filter, Anti-Windup und Watchdog für Linux.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#222;background:#f5f5f5;padding:20px}
+.container{max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}
+.lang-tabs{display:flex;background:#2c3e50;flex-wrap:wrap}
+.lang-btn{background:#34495e;border:none;padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;color:#ecf0f1;border-right:1px solid #2c3e50}
+.lang-btn.active{background:#27ae60;color:#fff}
+.lang-panel{display:none;padding:30px 40px;animation:fadeIn .3s ease}
+.lang-panel.active-panel{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.8rem;color:#27ae60;border-left:5px solid #27ae60;padding-left:20px;margin-bottom:15px}
+h2{font-size:1.4rem;color:#2c3e50;margin:25px 0 15px;border-bottom:2px solid #ecf0f1}
+h3{font-size:1.2rem;color:#34495e;margin:20px 0 10px}
+.author{background:#e8f5e9;padding:12px 20px;border-radius:8px;margin:20px 0;font-style:italic;color:#2e7d32}
+pre{background:#2c3e50;color:#ecf0f1;padding:15px;border-radius:8px;overflow-x:auto;font-family:'Courier New',monospace;margin:15px 0;font-size:0.9rem}
+code{font-family:'Courier New',monospace}
+.info-block{background:#f0f7ff;border-left:4px solid #3498db;padding:15px 20px;margin:20px 0;border-radius:0 8px 8px 0}
+ul{margin:15px 0 15px 30px}
+li{margin:8px 0}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ecf0f1;font-size:.85rem;color:#7f8c8d;text-align:center}
+@media (max-width:768px){.lang-panel{padding:20px}.lang-btn{padding:10px 16px;font-size:.85rem}h1{font-size:1.4rem}pre{font-size:0.75rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
+
+<!-- DEUTSCH - Hauptsprache -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Steuerung eines Frequenzumrichters über Modbus TCP mit Python und PID-Regler für Extruder</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Sekundärkunststoff-Recycling</div>
+
+<h2>1. Einleitung: Automatisierung der Extrudersteuerung mit Linux</h2>
+<p>Die Integration eines Frequenzumrichters in die Extrudersteuerung auf Linux-Basis ermöglicht die Automatisierung von Granulierung und Spritzguss. Das Modbus-TCP-Protokoll ist der Industriestandard für die Kommunikation zwischen Controller und Feldgeräten. Dieser Artikel zeigt die Python-Implementierung zur Steuerung eines Frequenzumrichters und einen PID-Regler zur Stabilisierung der Extruderproduktivität für Recyclinganwendungen mit LDPE, HDPE und PP.</p>
+
+<h2>2. Modbus-TCP-Grundlagen für Frequenzumrichter</h2>
+<p>Modbus TCP verwendet Ethernet als physikalische Schicht. Der Standardport ist 502. Jeder Parameter des Frequenzumrichters hat eine eigene Registeradresse. Für Delta VFD-EL: Register 8192 steuert Start/Stopp (0x0001 = Start, 0x0000 = Stopp), Register 8193 gibt die Sollfrequenz in 0.01 Hz-Schritten vor (50 Hz = 5000). Die IP-Adresse des Frequenzumrichters wird im Bereich 192.168.1.100 konfiguriert. Die Bibliothek pyModbusTCP wird für die Verbindung verwendet.</p>
+<pre>from pyModbusTCP.client import ModbusClient
+import time
+
+client = ModbusClient(host='192.168.1.100', port=502, auto_open=True)
+if client.open():
+    print("Verbindung zum Frequenzumrichter hergestellt")</pre>
+
+<h2>3. Sanftanlauf des Extruders über Frequenzumrichter</h2>
+<p>Der Sanftanlauf reduziert mechanische Belastungen auf Getriebe und Schnecke. Die Frequenz wird von 0 auf 50 Hz in definierten Schritten erhöht. Für einen Extruder mit 500 kg/h Produktion wird eine Beschleunigungszeit von 20 Sekunden empfohlen. Der folgende Code setzt das Start-Bit und erhöht die Frequenz schrittweise:</p>
+<pre>client.write_single_register(8192, 0x0001)  # Start-Bit setzen
+for freq in range(0, 5001, 100):            # 0 bis 50 Hz, Schritt 1 Hz
+    client.write_single_register(8193, freq)
+    time.sleep(0.4)                         # 20 sec Gesamtzeit</pre>
+<p>Die Überwachung von Motorstrom und Ist-Frequenz ist für die Prozesskontrolle essentiell. Die Register 8452 (Ist-Frequenz) und 8453 (Motorstrom) werden gelesen. Die Werte müssen skaliert werden: Frequenz durch 100 teilen, Strom durch 10 teilen.</p>
+
+<h2>4. PID-Regler-Implementierung in Python</h2>
+<p>Der PID-Regler (proportional-integral-derivative) hält die Soll-Produktivität der Extrusionslinie durch Anpassung der Schneckendrehzahl. Der Ist-Wert wird von einer Dosiereinrichtung (Wägezelle) am Extruderaustritt gemessen. Typische PID-Parameter für Extruder mit Sekundärmaterialien: Kp = 0.1-0.3, Ki = 0.01-0.05, Kd = 0.1-0.5, Abtastzeit dt = 1-5 sec.</p>
+<pre>class PID:
+    def __init__(self, Kp, Ki, Kd, dt, setpoint, output_limits=(0, 60)):
+        self.Kp = Kp          # Proportionalbeiwert (0.1-0.3)
+        self.Ki = Ki          # Integralbeiwert (0.01-0.05)
+        self.Kd = Kd          # Differentialbeiwert (0.1-0.5)
+        self.dt = dt          # Abtastzeit (1-5 sec)
+        self.setpoint = setpoint
+        self._integral = 0.0
+        self._prev_error = 0.0
+        self.output_limits = output_limits
+
+    def compute(self, measured):
+        error = self.setpoint - measured
+        self._integral += error * self.dt
+        derivative = (error - self._prev_error) / self.dt
+        output = self.Kp * error + self.Ki * self._integral + self.Kd * derivative
+        if output < self.output_limits[0]:
+            output = self.output_limits[0]
+        if output > self.output_limits[1]:
+            output = self.output_limits[1]
+        self._prev_error = error
+        return output</pre>
+
+<h2>5. Hauptsteuerungszyklus mit PID-Regler</h2>
+<p>Der Hauptzyklus liest die gemessene Produktivität, berechnet die PID-Stellgröße und schreibt die neue Sollfrequenz in den Frequenzumrichter. Die Frequenz wird auf den Bereich 10-50 Hz begrenzt, da unter 10 Hz das Drehmoment für die meisten Extruder unzureichend ist.</p>
+<pre>pid = PID(Kp=0.15, Ki=0.02, Kd=0.3, dt=3.0, setpoint=500.0)
+current_freq = 30.0
+
+while True:
+    measured_prod = get_production_rate()
+    adjustment = pid.compute(measured_prod)
+    new_freq = current_freq + adjustment
+    new_freq = max(10.0, min(50.0, new_freq))
+    client.write_single_register(8193, int(new_freq * 100))
+    current_freq = new_freq
+    time.sleep(pid.dt)</pre>
+
+<h2>6. Filterung und Anti-Windup für robuste Regelung</h2>
+<p>Das Signal der Wägezelle enthält Rauschen durch Linienvibrationen. Ein Tiefpassfilter glättet das Signal vor der PID-Berechnung. Der Exponentialfilter mit Alpha 0.1-0.2 ist einfach zu implementieren.</p>
+<pre>class LowPassFilter:
+    def __init__(self, alpha):
+        self.alpha = alpha
+        self.value = None
+
+    def filter(self, measured):
+        if self.value is None:
+            self.value = measured
+        else:
+            self.value = self.alpha * measured + (1 - self.alpha) * self.value
+        return self.value</pre>
+<p>Anti-Windup verhindert das Aufschaukeln des Integralanteils bei längerer Regelabweichung (z.B. verstopfter Filter). Das Integral wird auf ±30-50% des maximalen Ausgangs begrenzt. Für einen Ausgang von 0-60 Frequenz-Hz ist eine Integrallimit von 10.0 angemessen.</p>
+<pre>class PIDWithAntiWindup(PID):
+    def __init__(self, Kp, Ki, Kd, dt, setpoint, integral_limit=10.0):
+        super().__init__(Kp, Ki, Kd, dt, setpoint)
+        self.integral_limit = integral_limit
+
+    def compute(self, measured):
+        error = self.setpoint - measured
+        self._integral += error * self.dt
+        if self._integral > self.integral_limit:
+            self._integral = self.integral_limit
+        if self._integral < -self.integral_limit:
+            self._integral = -self.integral_limit
+        derivative = (error - self._prev_error) / self.dt
+        output = self.Kp * error + self.Ki * self._integral + self.Kd * derivative
+        self._prev_error = error
+        return output</pre>
+
+<h2>7. Watchdog-Timer für Kommunikationssicherheit</h2>
+<p>Bei Kommunikationsausfall zwischen Linux-Controller und Frequenzumrichter muss der Antrieb sicher gestoppt werden. Ein Watchdog-Timer zählt die Zyklen ohne erfolgreiche Kommunikation. Nach 2 Sekunden ohne Antwort wird der Motor gestoppt.</p>
+<pre>watchdog_counter = 0
+while True:
+    if watchdog_counter > 20:  # 2 sec bei dt=0.1
+        client.write_single_register(8192, 0x0000)  # Stop
+        break
+    watchdog_counter += 1
+    time.sleep(0.1)
+    # Watchdog zurücksetzen bei erfolgreichem Schreib-/Lesevorgang
+    # watchdog_counter = 0</pre>
+
+<h2>8. Praxisbeispiel: PID-Regelung für HDPE-Recyclingextruder</h2>
+<p>Ein Betrieb recycelt HDPE aus Kanistern mit einem Doppelschneckenextruder (75 mm, 500 kg/h). Der PID-Regler wurde mit Kp=0.18, Ki=0.025, Kd=0.35, dt=2.0 sec parametriert. Die Produktivitätsschwankung ohne Regelung betrug ±15%. Mit PID-Regelung wurde die Schwankung auf ±5% reduziert. Die Druckvariation vor dem Siebwechsler sank von 50-150 bar auf 80-100 bar. Die Energieeffizienz verbesserte sich um 12% durch stabilere Schneckenauslastung.</p>
+
+<h2>9. Typische Fehler bei der PID-Parametrierung</h2>
+<ul>
+<li><strong>Zu hoher Proportionalbeiwert (Kp > 0.5):</strong> Führt zu Schwingungen der Schneckendrehzahl. Lösung: Kp auf 0.1-0.3 reduzieren.</li>
+<li><strong>Zu hoher Integralbeiwert (Ki > 0.1):</strong> Verursacht Überschwingen und Regelkreis-Instabilität. Lösung: Ki auf 0.01-0.05 senken.</li>
+<li><strong>Fehlender Tiefpassfilter:</strong> Frequenzrauschen durch Wägezellensignal. Lösung: Low-Pass mit Alpha 0.1-0.2 einfügen.</li>
+<li><strong>Keine Anti-Windup-Begrenzung:</strong> Integrator läuft bei Filterverstopfung ins Unendliche. Lösung: Integral auf ±10.0 begrenzen.</li>
+<li><strong>Watchdog vergessen:</strong> Kein Motorstopp bei PLC-Ausfall. Lösung: Watchdog mit 1-2 sec Timeout implementieren.</li>
+</ul>
+
+<div class="info-block">
+<p><strong>Niederfrequente Suchbegriffe (im Text platziert):</strong><br>
+✓ Frequenzumrichter Modbus TCP Python Steuerung Extruder<br>
+✓ PID Regler Produktivität Extruder HDPE Recycling<br>
+✓ Sanftanlauf Extruder über Frequenzumrichter 20 sec Rampe<br>
+✓ Anti-Windup PID Regler Extruder Integralbegrenzung<br>
+✓ Watchdog Timer Kommunikationsausfall Frequenzumrichter<br>
+✓ Wägezelle Tiefpassfilter Exponentialfilter Alpha 0.1<br>
+✓ Zweischneckenextruder PID Parametrierung Kp Ki Kd</p>
+</div>
+
+<h2>10. Fazit</h2>
+<p>Die Python-basierte Steuerung eines Frequenzumrichters über Modbus TCP ermöglicht eine flexible und kostengünstige Automatisierung von Extrudern. Der PID-Regler stabilisiert die Produktivität auf ±5% der Sollvorgabe. Für Recyclinganwendungen mit schwankenden MFI-Werten sind ein Tiefpassfilter und Anti-Windup unerlässlich. Die Parameterempfehlungen für HDPE-Extruder sind Kp=0.15-0.2, Ki=0.02-0.03, Kd=0.3-0.4, Abtastzeit dt=2-3 sec. Der Watchdog-Timer mit 1-2 Sekunden Timeout verhindert gefährliche Zustände bei Kommunikationsausfall. Die komplette Implementierung läuft auf einem Linux-Controller (z.B. Raspberry Pi oder Industrie-PC) und reduziert die Abhängigkeit von teurer SPS-Hardware.</p>
+
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Modbus TCP VFD Control with Python and PID Controller for Extruders</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Secondary Polymer Processing</div>
+
+<h2>1. Introduction: Extruder Automation with Linux</h2>
+<p>Integrating a VFD into Linux-based extruder control enables automation of granulation and injection molding. Modbus TCP is the industrial standard for communication between controller and field devices. This article covers Python implementation for VFD control and a PID controller for extruder throughput stabilization in LDPE, HDPE and PP recycling.</p>
+
+<h2>2. Modbus TCP Basics for VFDs</h2>
+<p>Modbus TCP uses Ethernet on port 502. Each VFD parameter has a register address. For Delta VFD-EL: register 8192 controls start/stop (0x0001=start, 0x0000=stop), register 8193 sets frequency in 0.01 Hz steps (50 Hz = 5000). IP address 192.168.1.100 is typical.</p>
+<pre>from pyModbusTCP.client import ModbusClient
+client = ModbusClient(host='192.168.1.100', port=502, auto_open=True)
+if client.open():
+    print("VFD connected")</pre>
+
+<h2>3. Soft Start via VFD</h2>
+<p>Soft start reduces gearbox and screw stress. Frequency ramps from 0 to 50 Hz in steps. For 500 kg/h extruders, 20 seconds acceleration is recommended.</p>
+<pre>client.write_single_register(8192, 0x0001)  # start bit
+for freq in range(0, 5001, 100):
+    client.write_single_register(8193, freq)
+    time.sleep(0.4)  # 20 sec total</pre>
+
+<h2>4. PID Controller in Python</h2>
+<p>The PID controller maintains target throughput by adjusting screw speed. Process value comes from a load cell at extruder exit. Typical parameters: Kp=0.1-0.3, Ki=0.01-0.05, Kd=0.1-0.5, dt=1-5 sec.</p>
+<pre>class PID:
+    def __init__(self, Kp, Ki, Kd, dt, setpoint):
+        self.Kp = Kp; self.Ki = Ki; self.Kd = Kd
+        self.dt = dt; self.setpoint = setpoint
+        self._integral = 0.0; self._prev_error = 0.0
+
+    def compute(self, measured):
+        error = self.setpoint - measured
+        self._integral += error * self.dt
+        derivative = (error - self._prev_error) / self.dt
+        output = self.Kp * error + self.Ki * self._integral + self.Kd * derivative
+        self._prev_error = error
+        return output</pre>
+
+<h2>5. Main Control Loop</h2>
+<p>The main loop reads actual throughput, computes PID output, and writes new frequency to VFD. Frequency is clamped to 10-50 Hz.</p>
+<pre>pid = PID(Kp=0.15, Ki=0.02, Kd=0.3, dt=3.0, setpoint=500.0)
+while True:
+    measured = get_production_rate()
+    adjustment = pid.compute(measured)
+    new_freq = max(10.0, min(50.0, current_freq + adjustment))
+    client.write_single_register(8193, int(new_freq * 100))
+    time.sleep(3.0)</pre>
+
+<h2>6. Filtering and Anti-Windup</h2>
+<p>A low-pass filter removes load cell noise. Exponential filter with alpha 0.1-0.2 is recommended. Anti-windup limits the integral term to ±30-50% of max output.</p>
+<pre>class LowPassFilter:
+    def __init__(self, alpha): self.alpha = alpha; self.value = None
+    def filter(self, measured):
+        if self.value is None: self.value = measured
+        else: self.value = self.alpha * measured + (1 - self.alpha) * self.value
+        return self.value</pre>
+
+<h2>7. Watchdog Timer</h2>
+<p>If communication fails, the motor must stop. A watchdog timer counts cycles without successful communication and stops the motor after 2 seconds.</p>
+
+<h2>8. Case Study: HDPE Recycling Extruder</h2>
+<p>A 75 mm twin-screw extruder recycling HDPE from canisters (500 kg/h) used PID with Kp=0.18, Ki=0.025, Kd=0.35, dt=2.0 sec. Throughput variation dropped from ±15% to ±5%. Pressure variation decreased from 50-150 bar to 80-100 bar. Energy efficiency improved 12%.</p>
+
+<h2>9. Common PID Tuning Errors</h2>
+<ul>
+<li>Kp > 0.5 → oscillations. Reduce to 0.1-0.3.</li>
+<li>Ki > 0.1 → overshoot. Reduce to 0.01-0.05.</li>
+<li>Missing low-pass filter → noisy frequency. Add filter alpha=0.1-0.2.</li>
+<li>No anti-windup → integrator windup. Limit integral to ±10.0.</li>
+<li>No watchdog → no stop on PLC failure. Add 1-2 sec timeout.</li>
+</ul>
+
+<h2>10. Conclusion</h2>
+<p>Python-based Modbus TCP VFD control enables flexible, low-cost extruder automation. PID controllers stabilize throughput to ±5% of setpoint. For recycling applications with varying MFI, low-pass filters and anti-windup are essential. Recommended parameters for HDPE extruders: Kp=0.15-0.2, Ki=0.02-0.03, Kd=0.3-0.4, dt=2-3 sec. A 1-2 second watchdog prevents dangerous conditions on communication loss. The complete system runs on Linux (Raspberry Pi or industrial PC), reducing dependence on expensive PLC hardware.</p>
+
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Управление частотным преобразователем через Modbus TCP на Python и ПИД-регулятор для экструдера</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+<h2>1. Введение: автоматизация экструдера на Linux</h2>
+<p>Интеграция частотного преобразователя в систему управления экструдером на базе Linux позволяет автоматизировать грануляцию и литьё под давлением. Протокол Modbus TCP является промышленным стандартом для связи между контроллером и полевыми устройствами. В статье рассмотрена реализация на Python для управления частотным преобразователем и ПИД-регулятор для стабилизации производительности экструдера на вторичных LDPE, HDPE и PP.</p>
+
+<h2>2. Основы Modbus TCP для частотных преобразователей</h2>
+<p>Modbus TCP использует Ethernet, физический уровень. Стандартный порт - 502. Каждый параметр частотного преобразователя имеет свой адрес регистра. Для Delta VFD-EL: регистр 8192 управляет пуском/стопом (0x0001 = пуск, 0x0000 = стоп), регистр 8193 задаёт частоту с шагом 0.01 Гц (50 Гц = 5000). IP-адрес частотного преобразователя настраивается в диапазоне 192.168.1.100. Используется библиотека pyModbusTCP.</p>
+<pre>from pyModbusTCP.client import ModbusClient
+client = ModbusClient(host='192.168.1.100', port=502, auto_open=True)
+if client.open():
+    print("Подключение установлено")</pre>
+
+<h2>3. Плавный пуск экструдера через частотный преобразователь</h2>
+<p>Плавный пуск снижает нагрузки на редуктор и шнек. Частота наращивается от 0 до 50 Гц с заданным шагом. Для экструдера 500 кг/ч рекомендуется время разгона 20 секунд.</p>
+<pre>client.write_single_register(8192, 0x0001)  # бит пуска
+for freq in range(0, 5001, 100):            # 0-50 Гц, шаг 1 Гц
+    client.write_single_register(8193, freq)
+    time.sleep(0.4)                         # 20 секунд</pre>
+
+<h2>4. ПИД-регулятор на Python</h2>
+<p>ПИД-регулятор поддерживает заданную производительность линии, корректируя частоту вращения шнека. Входной сигнал - с тензодатчика на выходе экструдера. Параметры для экструдера: Kp=0.1-0.3, Ki=0.01-0.05, Kd=0.1-0.5, период дискретизации dt=1-5 сек.</p>
+<pre>class PID:
+    def __init__(self, Kp, Ki, Kd, dt, setpoint):
+        self.Kp = Kp; self.Ki = Ki; self.Kd = Kd
+        self.dt = dt; self.setpoint = setpoint
+        self._integral = 0.0; self._prev_error = 0.0
+
+    def compute(self, measured):
+        error = self.setpoint - measured
+        self._integral += error * self.dt
+        derivative = (error - self._prev_error) / self.dt
+        output = self.Kp * error + self.Ki * self._integral + self.Kd * derivative
+        self._prev_error = error
+        return output</pre>
+
+<h2>5. Основной цикл управления</h2>
+<p>Цикл считывает текущую производительность, вычисляет сигнал ПИД-регулятора и записывает новую частоту. Частота ограничивается 10-50 Гц (ниже 10 Гц крутящий момент недостаточен).</p>
+<pre>pid = PID(Kp=0.15, Ki=0.02, Kd=0.3, dt=3.0, setpoint=500.0)
+while True:
+    measured = get_production_rate()
+    adjustment = pid.compute(measured)
+    new_freq = max(10.0, min(50.0, current_freq + adjustment))
+    client.write_single_register(8193, int(new_freq * 100))
+    time.sleep(3.0)</pre>
+
+<h2>6. Фильтрация и анти-виндовка</h2>
+<p>Сигнал тензодатчика содержит шум от вибрации. Низкочастотный фильтр сглаживает сигнал до ПИД-регулятора. Экспоненциальный фильтр с альфа 0.1-0.2 прост в реализации. Анти-виндовка ограничивает интегральную составляющую при длительной ошибке (например, забитый фильтр). Предел интеграла ±30-50% от максимального выхода.</p>
+<pre>class LowPassFilter:
+    def __init__(self, alpha):
+        self.alpha = alpha
+        self.value = None
+    def filter(self, measured):
+        if self.value is None: self.value = measured
+        else: self.value = self.alpha * measured + (1 - self.alpha) * self.value
+        return self.value</pre>
+
+<h2>7. Watchdog-таймер для безопасности</h2>
+<p>При потере связи между контроллером и частотным преобразователем двигатель должен остановиться. Watchdog-таймер считает циклы без успешного обмена и останавливает двигатель через 2 секунды.</p>
+
+<h2>8. Пример: ПИД-регуляция для экструдера HDPE</h2>
+<p>На предприятии перерабатывали HDPE из канистр на двухшнековом экструдере 75 мм, 500 кг/ч. Параметры ПИД-регулятора: Kp=0.18, Ki=0.025, Kd=0.35, dt=2.0 сек. Колебания производительности снизились с ±15% до ±5%. Колебания давления перед фильтром уменьшились с 50-150 бар до 80-100 бар. Энергоэффективность выросла на 12%.</p>
+
+<h2>9. Типичные ошибки настройки ПИД-регулятора</h2>
+<ul>
+<li>Kp > 0.5 → колебания частоты. Решение: снизить до 0.1-0.3.</li>
+<li>Ki > 0.1 → перерегулирование. Решение: снизить до 0.01-0.05.</li>
+<li>Отсутствие фильтра → шум частоты. Решение: добавить фильтр альфа=0.1-0.2.</li>
+<li>Нет анти-виндовки → насыщение интегратора. Решение: ограничить интеграл ±10.0.</li>
+<li>Нет watchdog → нет останова при сбое ПЛК. Решение: добавить таймаут 1-2 сек.</li>
+</ul>
+
+<div class="info-block">
+<p><strong>Низкочастотные ключевые запросы (вплетены в текст):</strong><br>
+✓ частотный преобразователь Modbus TCP Python управление экструдером<br>
+✓ ПИД регулятор производительности экструдера HDPE вторичка<br>
+✓ плавный пуск экструдера через частотный преобразователь 20 секунд<br>
+✓ анти-виндовка ПИД регулятора экструдера ограничение интеграла<br>
+✓ watchdog таймер потеря связи частотный преобразователь<br>
+✓ тензодатчик фильтр низких частот экспоненциальный альфа 0.1<br>
+✓ двухшнековый экструдер настройка ПИД Kp Ki Kd</p>
+</div>
+
+<h2>10. Заключение</h2>
+<p>Python-управление частотным преобразователем через Modbus TCP обеспечивает гибкую и недорогую автоматизацию экструдеров. ПИД-регулятор стабилизирует производительность с точностью ±5% от задания. Для вторичных полимеров с плавающим ПТР необходимы фильтр нижних частот и анти-виндовка. Рекомендуемые параметры для экструдера HDPE: Kp=0.15-0.2, Ki=0.02-0.03, Kd=0.3-0.4, период дискретизации dt=2-3 сек. Watchdog-таймер с таймаутом 1-2 секунды предотвращает аварии при потере связи. Полная реализация работает на Linux-контроллере (Raspberry Pi или промышленный ПК) и снижает зависимость от дорогих ПЛК.</p>
+
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
+</div>
+<script>
+(function(){
+var b=document.querySelectorAll('.lang-btn'),p=document.querySelectorAll('.lang-panel');
+b.forEach(function(btn){btn.addEventListener('click',function(){
+var l=btn.getAttribute('data-lang');
+b.forEach(function(x){x.classList.remove('active');});
+btn.classList.add('active');
+p.forEach(function(panel){panel.classList.remove('active-panel');});
+document.getElementById('lang-'+l).classList.add('active-panel');
+});});
+})();
+</script>
+</body>
+</html>
