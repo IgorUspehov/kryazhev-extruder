@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDPE Blaseninstabilität beim Folienblasen – Ursachen und Stabilisierung</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>HDPE Blaseninstabilität beim Folienblasen – Ursachen und Stabilisierung</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Grundlagen der Blaseninstabilität bei HDPE</h2>
+        <p>Beim Blasen einer Folie aus HDPE kommt es häufig zu Instabilitäten: die Blase wandert, reißt an der Siegelnaht oder neigt sich in Richtung des schwächeren Kühlluftstroms. HDPE hat im Vergleich zu LDPE eine geringere Schmelzefestigkeit. Wird die Schmelze durch eine zu hohe Temperatur (um einen höheren MFI zu erreichen) zu dünnflüssig, hält sie nicht die Form. Senken Sie die Temperatur an der Ringdüse um 5–10°C.</p>
+
+        <h2>2. Ursachen und sofortige Gegenmaßnahmen</h2>
+        <ul>
+            <li><strong>Ungleichmäßige Kühlung:</strong> Prüfen Sie den Kühlring auf verstopfte Düsen oder ungleiche Ringspalte. Reinigen Sie den Ring mit Druckluft.</li>
+            <li><strong>Zu hohe Schmelzetemperatur:</strong> HDPE hat eine geringere Schmelzefestigkeit als LDPE. Reduzieren Sie die Massetemperatur um 5–10°C.</li>
+            <li><strong>Zu hoher LLDPE‑Anteil (&gt;20%):</strong> Die Blase wird klebriger und schwerer, was die Stabilität bei hohen Abzugsgeschwindigkeiten beeinträchtigt.</li>
+            <li><strong>Zugluft im Werk:</strong> Eine zu lange „Giraffe“ (Blasenhals) kann empfindlich auf Zugluft reagieren. Umstellen auf kürzeren Hals (6–8 Düsendurchmesser) oder provisorische Windschutzwände.</li>
+        </ul>
+
+        <div class="highlight">🔧 Für Mischungen aus HDPE/LLDPE mit mehr als 20% LLDPE wird die Blase klebriger – eine zusätzliche Innenaeration (IBC) ist fast obligatorisch.</div>
+
+        <h2>3. Ungleiche Dehnung (Dickenstreifen)</h2>
+        <ul>
+            <li><strong>Verschlissene Schnecke:</strong> Bei Spalten über 0,3–0,5 mm (60-mm-Schnecke) pulsiert der Druck mit ±15–20 bar – das erzeugt Dickenwellen. Messen Sie den Spalt und erneuern Sie die Schnecke rechtzeitig.</li>
+            <li><strong>Verschmutzte Düse / Ablagerungen an der Düsenlippe:</strong> Schon 0,1 mm Ablagerungen erzeugen lokale Dünnstellen. Reinigen Sie die Düsenlippe mit einem Messingschaber oder feinem Schleifpapier (400–600).</li>
+            <li><strong>Ungleiche Kreideverteilung:</strong> In HDPE/LLDPE-Mischungen führt ungenügende Mischung zu Zonen mit unterschiedlichem Kreidegehalt. Kreide macht den Bereich steifer – weniger Kreide dehnt sich leichter. Erhöhen Sie die Trockenmischzeit im Turbulenzmischer von 5 auf 10 Minuten.</li>
+            <li><strong>Ungleiche Walzentemperatur (Flachfolie/Abzug):</strong> Unterschiede von 10–15°C über die Breite führen zu unterschiedlicher Kristallisationsgeschwindigkeit. Prüfen Sie mit einem Pyrometer oder einer Wärmebildkamera.</li>
+        </ul>
+
+        <h2>4. Selbstbau einer Blaseninnenaeration (IBC)</h2>
+        <p>Eine Innenaeration erhöht die Produktionsleistung um 15–30%, da sie die Wärme im Blaseninneren effektiver abführt. Die einfachste Konstruktion besteht aus einem Aluminium‑ oder PTFE‑Gestell mit Rollen, das von innen an der Blase anliegt.</p>
+        <ul>
+            <li><strong>Luftzuführung:</strong> Rohr Ø20–40 mm durch den Dorn der Düse (bei Extrudern ohne Zentralkanal ein externes Rohr von unten).</li>
+            <li><strong>Gestell („Tannenbaum“):</strong> Aluminiumrohre Ø8–12 mm. Leicht, nicht kratzend.</li>
+            <li><strong>Rollen:</strong> PTFE oder Polyamid (hitzeunempfindlich bis 150°C, kein Ankleben). Abstand zwischen den Rollen 15–25 cm. Für eine 2–3 m hohe Blase genügen 8–12 Rollen, im Schachbrettmuster.</li>
+            <li><strong>Verstellung:</strong> Teleskopstreben oder Gewindestangen, um Durchmesser von 200–800 mm abzudecken.</li>
+            <li><strong>Luftabfuhr:</strong> Zweites Rohr (Flexschlauch) 30–50 cm oberhalb der Zufuhr, Durchmesser 20–30% größer (um die Ausdehnung der erwärmten Luft zu kompensieren). Regeln Sie den Innendruck auf 5–20 mm WS (Mikromanometer).</li>
+        </ul>
+
+        <div class="highlight">📌 Bei Kreidegehalten >15% (Dichte 1,1–1,3 g/cm³) wird die Blase schwerer – verwenden Sie ein verstärktes Aluminiumgestell (Ø15 mm) und 16–20 Rollen.</div>
+
+        <h2>5. Spezifische Tipps für Kreide und HDPE/LLDPE‑Mischungen</h2>
+        <ul>
+            <li>Bei hohem Kreideanteil (>15%) ist ein IBC‑Gestell aus stärkeren Rohren (Ø15 mm) und 16–20 Rollen erforderlich.</li>
+            <li>Mischungen aus HDPE (MFI 0,8–1,5) und LLDPE (MFI 2,5–4,5) neigen wegen unterschiedlicher Kristallisationsgeschwindigkeit zur Instabilität. Ein Zusatz von 0,2–0,3% Calciumstearat verbessert die Homogenisierung der Schmelze.</li>
+            <li>Verwenden Sie für die IBC Luft mit 30–40°C, um Kondenswasserbildung auf der Blaseninnenseite zu vermeiden.</li>
+        </ul>
+
+        <h2>6. Zusammenhang mit Schneckenverschleiß und Filtration</h2>
+        <p>Verschleißbedingt zu große Schmelzespalte (Schnecke/Zylinder) verursachen Druckpulsationen, die eine IBC nicht ausgleichen kann. Vor einem IBC‑Einbau muss die Schnecke instandgesetzt sein. Bei Kreidefüllung ist eine Filtration mit 150–200 µm zwingend, um Verstopfungen des Luftspalts an der Ringdüse zu vermeiden.</p>
+
+        <h2>7. Fazit</h2>
+        <p>Die Stabilisierung einer HDPE‑Blase beginnt mit gleichmäßiger Kühlung, optimaler Schmelzetemperatur (nicht zu hoch) und einer sauberen Düse. Bei schwierigen Materialien (LLDPE‑reiche Mischungen, Kreide) bringt eine selbstgebaute Innenaeration (IBC) deutliche Verbesserungen. Die richtige Konstruktion (PTFE‑Rollen, Aluminiumgestell, ausgewogene Luftzufuhr/-abfuhr) ist auch ohne teure Spezialausrüstung realisierbar. Beachten Sie jedoch, dass ein verschlissener Extruder (Druckpulsationen) zuerst instandgesetzt werden muss, bevor die IBC ihre volle Wirkung entfalten kann.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH (compact) -->
+    <div id="lang-en" class="lang-panel">
+        <h1>HDPE bubble instability during blown film extrusion – causes and stabilization</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>Immediate checks:</strong> Uneven cooling → clean air ring. melt temperature too high (HDPE has low melt strength) → lower by 5–10°C. Too long neck → reduce to 6–8 die diameters. Drafts → shield the bubble.<br>
+        <strong>Uneven draw / thickness bands:</strong> Worn screw (gap >0.3–0.5 mm for 60 mm screw) → pressure pulsation (±15–20 bar). Dirty die lip → clean with brass scraper. Uneven chalk distribution → increase dry blend time to 10 min. Uneven roll temperature → check with pyrometer.<br>
+        <strong>DIY internal bubble cooling (IBC):</strong> Aluminium frame + PTFE rollers. Increase output 15–30%. For >15% chalk use stronger frame (15 mm tubes) and 16–20 rollers. Air supply tube Ø20–40 mm, air exhaust tube 20–30% larger diameter. Control internal pressure to 5–20 mm WC.<br>
+        <strong>For HDPE/LLDPE blends (MFI 0.8–1.5 / 2.5–4.5):</strong> add 0.2–0.3% calcium stearate to homogenize melt. Use IBC air at 30–40°C to avoid condensation.</p>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Нестабильность рукава пленки ПНД при выдуве – причины и методы стабилизации</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Почему рукав ПНД ведет себя нестабильно</h2>
+        <p>При выдуве рукава из ПНД часто возникает нестабильность пузыря. Он гуляет из стороны в сторону, рвется по линии спая или его ведет в направлении слабого обдува. ПНД имеет более низкую прочность расплава по сравнению с ПВД. Если расплав слишком жидкий (из-за попытки разогреть материал до более высокого ПТР), он не держит форму. Снизьте температуру на кольцевой головке на 5–10°C.</p>
+
+        <h2>2. Причины нестабильности и меры</h2>
+        <ul>
+            <li><strong>Неравномерный обдув кольца охлаждения:</strong> забитые отверстия, неравномерный зазор. Очистите кольцо сжатым воздухом.</li>
+            <li><strong>Слишком высокая температура расплава:</strong> ПНД менее термостоек, чем ПВД – снизьте температуру на головке на 5–10°C.</li>
+            <li><strong>Слишком длинная горловина:</strong> пузырь становится чувствительным к сквознякам. Укоротите горловину (до 6–10 диаметров головки) или поставьте временные ширмы.</li>
+            <li><strong>Высокое содержание LLDPE (&gt;20%):</strong> смесь HDPE/LLDPE становится липкой и тяжёлой – требуется внутренняя аэрация (IBC).</li>
+        </ul>
+
+        <div class="highlight">🔧 Для смесей HDPE/LLDPE с добавкой мела рекомендуется 0,2–0,3% стеарата кальция для гомогенизации расплава.</div>
+
+        <h2>3. Неравномерное растяжение (разнотолщинность)</h2>
+        <ul>
+            <li><strong>Износ шнека экструдера:</strong> при зазоре &gt;0,3–0,5 мм (для шнека 60 мм) давление пульсирует с амплитудой 15–20 бар – волны по толщине. Проверьте зазор щупом.</li>
+            <li><strong>Грязная фильера или нагар на губках:</strong> даже 0,1 мм дефекта даёт локальное утонение. Очистите губки медным скребком или наждачной бумагой 400–600.</li>
+            <li><strong>Плохое смешивание меловой добавки:</strong> неравномерное распределение мела в смеси HDPE/LLDPE создаёт зоны разной жёсткости. Увеличьте время сухого смешения в турбулентном смесителе до 10 минут.</li>
+            <li><strong>Неравномерный прогрев охлаждающих валов:</strong> перепад 10–15°C по ширине вала даёт разную скорость кристаллизации. Проверьте тепловизором.</li>
+        </ul>
+
+        <h2>4. Устройство плеча для аэрации пленки своими руками (IBC)</h2>
+        <p>Аэрация изнутри рукава стабилизирует пузырь и повышает производительность на 15–30%. Самодельная конструкция:</p>
+        <ul>
+            <li><strong>Подача воздуха:</strong> труба Ø20–40 мм через дорн головки или внешняя труба снизу.</li>
+            <li><strong>Каркас («ёлочка»):</strong> алюминиевые трубки Ø8–12 мм, лёгкие, не царапают рукав.</li>
+            <li><strong>Ролики:</strong> фторопласт или капролон (не боятся 150°C, не липнут). Расстояние между роликами 15–25 см. Для пузыря 2–3 м достаточно 8–12 роликов в шахматном порядке.</li>
+            <li><strong>Регулировка вылета:</strong> телескопические трубки или резьбовые шпильки – для диаметра рукава 200–800 мм.</li>
+            <li><strong>Отвод воздуха:</strong> второй шланг на 30–50 см выше подающего, диаметром на 20–30% больше. Давление внутри пузыря 5–20 мм вод. ст. (микроманометр).</li>
+        </ul>
+
+        <div class="highlight">📌 При содержании мела &gt;15% (плотность композита 1,1–1,3 г/см³) используйте усиленный каркас (Ø15 мм) и 16–20 роликов.</div>
+
+        <h2>5. Рекомендации для смесей HDPE/LLDPE и мелованных компаундов</h2>
+        <ul><li>При высоком содержании мела (&gt;15%) плечо должно быть мощнее – алюминиевый каркас из трубок Ø15 мм, количество роликов 16–20.</li>
+        <li>Для смеси HDPE (ПТР 0,8–1,5) и LLDPE (ПТР 2,5–4,5) добавка 0,2–0,3% стеарата кальция улучшает гомогенизацию расплава и стабилизирует пузырь.</li>
+        <li>Для внутренней аэрации используйте воздух с температурой 30–40°C – это снижает риск конденсации влаги внутри рукава.</li></ul>
+
+        <h2>6. Связь с износом шнека и фильтрацией</h2>
+        <p>При износе шнека (зазор &gt;0,3–0,5 мм) пульсация давления усиливается – IBC не может компенсировать периодическое изменение толщины. Перед установкой системы IBC восстановите шнек (наплавка карбида вольфрама). Фильтрация расплава сетками 150–200 мкм обязательна при использовании меловой добавки – чтобы предотвратить забивание воздушного зазора кольцевой головки.</p>
+
+        <h2>7. Заключение</h2>
+        <p>Стабилизация рукава ПНД при выдуве требует комплексного подхода: контроль температуры расплава, равномерный обдув, чистоту головки. Для сложных материалов (смеси HDPE/LLDPE с мелом) самодельное устройство внутренней аэрации (IBC) из алюминиевых трубок и фторопластовых роликов – реальный и эффективный способ повысить стабильность и производительность. При этом важно сначала устранить износ шнека и организовать фильтрацию расплава, иначе IBC не сможет работать в полную силу.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
