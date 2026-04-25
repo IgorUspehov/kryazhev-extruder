@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berechnung des MFI von HDPE/LLDPE-Mischungen | Kompatibilität und Eigenschaften</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        .formula{background:#e9f0f3;padding:0.75rem 1rem;border-radius:12px;font-family:monospace;font-size:1rem;margin:1rem 0;text-align:center;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Berechnung des Schmelzefließindex von HDPE/LLDPE-Mischungen<br>Kompatibilität und Einfluss auf die Produkteigenschaften</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Grundlagen der Mischung von HDPE und LLDPE</h2>
+        <p>Die Kombination von HDPE und LLDPE ist eine klassische „Goldmischung“ für Folien und Spritzgussprodukte aus Rezyklat. Beide Materialien sind vollständig kompatibel (gleiche chemische Basis – Polyolefine), besitzen aber unterschiedliche Kettenstrukturen. Durch das Mischen von HDPE aus Kanistern mit LLDPE aus Stretchfolie entsteht ein Compound mit verbesserten Eigenschaften.</p>
+
+        <h2>2. Berechnung des MFI einer Mischung nach Arrhenius</h2>
+        <p>Der MFI einer Mischung ist nicht das arithmetische Mittel der Einzel-MFIs. Die Viskosität folgt einer logarithmischen Abhängigkeit. Die Arrhenius-Formel lautet:</p>
+        <div class="formula">lg MFI<sub>Mischung</sub> = w<sub>1</sub> · lg MFI<sub>1</sub> + w<sub>2</sub> · lg MFI<sub>2</sub></div>
+        <p>wobei MFI in g/10min (190°C, 2,16 kg) und w die Massenanteile (0…1) sind.</p>
+
+        <div class="highlight">🔧 Beispiel: 70% HDPE (MFI 1,0) + 30% LLDPE (MFI 2,0). lg(1,0)=0, lg(2,0)=0,301 → lg MFI = 0,7·0 + 0,3·0,301 = 0,0903 → MFI = 10^0,0903 = 1,23 g/10min. Das arithmetische Mittel wäre 1,3 – die Abweichung ist hier gering, wird aber bei größeren MFI-Unterschieden deutlich.</div>
+
+        <h2>3. Warum HDPE und LLDPE mischen?</h2>
+        <ul>
+            <li><strong>LLDPE zu HDPE (10–30%):</strong> HDPE ist steif aber spröde. LLDPE macht die Folie elastisch, reißfest und verbessert die Schweißnahtfestigkeit. Ideal für Schrumpffolien.</li>
+            <li><strong>HDPE zu LLDPE (20–40%):</strong> Reines LLDPE ist sehr zäh und schwer zu verarbeiten (instabile Blase). HDPE verleiht der Schmelze Stabilität und steigert die Steifigkeit des Endprodukts.</li>
+        </ul>
+
+        <h2>4. Technologische Hinweise zur Verarbeitung</h2>
+        <p>HDPE schmilzt bei 125–135°C, LLDPE bei 120–130°C. Die Temperaturextrusion muss nach dem höher schmelzenden HDPE ausgerichtet werden (190–210°C für eine 50/50-Mischung). Bei unzureichender Homogenisierung (L/D < 30) können Längsstreifen auf der Folie entstehen. Ein Antioxidans (0,2%) stabilisiert den MFI während der Mischung.</p>
+
+        <h2>5. Einfluss von Kreide auf die HDPE/LLDPE-Mischung</h2>
+        <p>Kreide verteilt sich besser in der LLDPE-Phase als in HDPE. Bei 20% Kreide in einer HDPE/LLDPE-Mischung kann der MFI um zusätzliche 10–15% stärker fallen als bei reinem LLDPE. Ausgleich durch Zugabe von 5–10% LLDPE mit hohem MFI oder mehr Gleitmittel.</p>
+
+        <div class="highlight">📊 Beispiel mit Kreide: 60% HDPE (MFI 0,8) + 40% LLDPE (MFI 2,5) ohne Füllstoff → berechneter MFI ≈ 1,26. Mit 20% Kreide verhält sich die Mischung wie ein Material mit MFI 1,1–1,2 (scheinbare Absenkung durch erhöhten Druck im Extruder).</div>
+
+        <h2>6. Anwendungen von HDPE/LLDPE-Mischungen im Recycling</h2>
+        <ul>
+            <li><strong>Gartennetze und -gitter:</strong> 70% HDPE + 30% LLDPE – steif, aber dennoch elastisch, bricht nicht unter Zug.</li>
+            <li><strong>Schrumpffolie:</strong> Außenschichten aus LDPE, Innenschicht aus HDPE mit 10% LLDPE für Steifigkeit und Elastizität.</li>
+            <li><strong>Spritzguss (Kisten, Paletten):</strong> HDPE mit LLDPE-Anteil verbessert die Schlagzähigkeit, die Schwindung steigt leicht auf etwa 1,5%.</li>
+            <li><strong>UV-Stabilisierung:</strong> 0,5–1,0% HALS oder 1–2% Ruß für schwarze Teile.</li>
+        </ul>
+
+        <h2>7. Zusammenfassung</h2>
+        <p>Die Mischung von HDPE und LLDPE ist ein leistungsfähiges Werkzeug, um die Eigenschaften von Rezyklaten gezielt einzustellen. Der MFI der Mischung wird mit der Arrhenius-Formel berechnet (nicht arithmetisch!). Bei Kreidezusatz ist mit einer zusätzlichen Absenkung des effektiven MFI zu rechnen. Die richtige Temperaturführung (nach HDPE ausgerichtet) und ausreichende Homogenisierung sind entscheidend für eine gleichbleibende Produktqualität.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Calculating the melt flow index of HDPE/LLDPE blends – compatibility and property effects</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. Basics</h2>
+        <p>HDPE and LLDPE are fully compatible polyolefins. Blending recyclates (HDPE from cans, LLDPE from stretch film) improves final properties.</p>
+        <h2>2. Arrhenius mixing rule (logarithmic)</h2>
+        <div class="formula">log MFI<sub>blend</sub> = w<sub>1</sub>·log MFI<sub>1</sub> + w<sub>2</sub>·log MFI<sub>2</sub></div>
+        <div class="highlight">✅ Example: 70% HDPE (MFI 1.0) + 30% LLDPE (MFI 2.0) → log MFI = 0.7·0 + 0.3·0.301 = 0.0903 → MFI = 1.23 g/10min (arithmetic would be 1.3).</div>
+        <h2>3. Why blend?</h2>
+        <ul><li>LLDPE into HDPE (10–30%): adds elasticity, puncture resistance, better weld seam.</li>
+        <li>HDPE into LLDPE (20–40%): stabilizes the bubble, increases stiffness.</li></ul>
+        <h2>4. Processing notes</h2>
+        <p>Set temperatures according to HDPE (190–210°C). Use antioxidant (0.2%) to stabilise MFI.</p>
+        <h2>5. Chalk effect</h2>
+        <p>Chalk distributes better in LLDPE. With 20% chalk, the effective MFI may drop an extra 10–15%. Compensate with 5–10% high-MFI LLDPE.</p>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Расчет показателя текучести расплава смеси HDPE и LLDPE. Совместимость компонентов и влияние на свойства готовой продукции.</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Введение: почему HDPE и LLDPE совместимы</h2>
+        <p>Сочетание HDPE и LLDPE — классическая золотая комбинация в производстве пленок и литьевых изделий из вторичного сырья. Оба материала имеют одинаковую химическую природу (полиолефины), но разную структуру цепей. Смешение вторичного HDPE из канистр и вторичного LLDPE из стрейч-пленки даёт композиционную гранулу с улучшенными свойствами.</p>
+
+        <h2>2. Расчёт ПТР смеси по формуле Аррениуса</h2>
+        <p>Показатель текучести расплава (ПТР, MFI) смеси — не среднее арифметическое. Вязкость изменяется по логарифмическому закону. Формула Аррениуса:</p>
+        <div class="formula">lg MFI<sub>см</sub> = w<sub>1</sub> · lg MFI<sub>1</sub> + w<sub>2</sub> · lg MFI<sub>2</sub></div>
+        <p>где MFI в г/10мин (190°C, 2,16 кг), w — массовые доли компонентов.</p>
+
+        <div class="highlight">🔧 Пример: 70% HDPE (ПТР 1,0) + 30% LLDPE (ПТР 2,0). lg(1,0)=0, lg(2,0)=0,301 → lg MFI_см = 0,7·0 + 0,3·0,301 = 0,0903 → MFI_см = 1,23 г/10мин. Среднее арифметическое дало бы 1,3.</div>
+
+        <h2>3. Зачем смешивают HDPE и LLDPE</h2>
+        <ul><li><strong>LLDPE в HDPE (10–30%):</strong> HDPE жёсткий, но хрупкий. LLDPE делает пленку эластичной, стойкой к проколу, увеличивает прочность сварного шва.</li>
+        <li><strong>HDPE в LLDPE (20–40%):</strong> чистый LLDPE тягучий, пузырь пленки нестабилен. HDPE придаёт расплаву каркасность, повышает жёсткость.</li></ul>
+
+        <h2>4. Технологические нюансы</h2>
+        <p>HDPE плавится при 125–135°C, LLDPE – при 120–130°C. Температуру экструзии настраивают по более тугоплавкому HDPE (190–210°C для смеси 50/50). При недостаточном смешении (L/D < 30) возможны продольные полосы. Антиоксидант 0,2% стабилизирует ПТР.</p>
+
+        <h2>5. Влияние меловой добавки</h2>
+        <p>Мел лучше распределяется в фазе LLDPE. При введении 20% мела в смесь HDPE/LLDPE ПТР может дополнительно упасть на 10–15% сильнее, чем в чистом LLDPE. Для компенсации добавляют 5–10% первичного LLDPE с высоким ПТР или увеличивают дозировку смазки.</p>
+
+        <div class="highlight">📊 Пример с мелом: смесь 60% HDPE (ПТР 0,8) и 40% LLDPE (ПТР 2,5) без наполнителя даёт расчётный ПТР ≈ 1,26. При добавлении 20% мела смесь ведёт себя как материал с ПТР 1,1–1,2 (кажущееся снижение из-за роста давления в экструдере).</div>
+
+        <h2>6. Применение смесей HDPE/LLDPE в готовых изделиях</h2>
+        <ul><li><strong>Садовые сетки и решётки:</strong> 70% HDPE + 30% LLDPE – одновременно жёсткие и эластичные, не ломаются при натяжении.</li>
+        <li><strong>Термоусадочная пленка:</strong> наружные слои из LDPE, внутренний – HDPE с 10% LLDPE для баланса жёсткости и эластичности.</li>
+        <li><strong>Ящики и поддоны:</strong> HDPE с LLDPE улучшает ударную вязкость, усадка возрастает до ~1,5%.</li>
+        <li><strong>УФ-стабилизация:</strong> 0,5–1,0% HALS или 1–2% сажи для чёрных изделий.</li></ul>
+
+        <h2>7. Заключение</h2>
+        <p>Смешение HDPE и LLDPE – мощный инструмент для целенаправленного изменения свойств рециклатов. ПТР смеси рассчитывают по формуле Аррениуса (логарифмическое правило), а не как среднее арифметическое. При добавлении мела следует ожидать дополнительного снижения эффективного ПТР. Правильный температурный режим (ориентация на HDPE) и достаточная гомогенизация – залог стабильного качества продукции.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
