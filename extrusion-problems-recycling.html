@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typische Probleme bei der Extrusion von LDPE- und HDPE-Recyclingmaterial | Igor Kryazhev</title>
+<meta name="description" content="Lösungen für LDPE schäumt im Extruder, Filtergewebe reißt, vergilbte Pellets, Vakuumdruckabfall und Freikühlung Einsparung. Technische Analyse für Recycler.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#222;background:#f5f5f5;padding:20px}
+.container{max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}
+.lang-tabs{display:flex;background:#2c3e50;flex-wrap:wrap}
+.lang-btn{background:#34495e;border:none;padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;color:#ecf0f1;border-right:1px solid #2c3e50}
+.lang-btn.active{background:#27ae60;color:#fff}
+.lang-panel{display:none;padding:30px 40px;animation:fadeIn .3s ease}
+.lang-panel.active-panel{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.8rem;color:#27ae60;border-left:5px solid #27ae60;padding-left:20px;margin-bottom:15px}
+h2{font-size:1.4rem;color:#2c3e50;margin:25px 0 15px;border-bottom:2px solid #ecf0f1}
+h3{font-size:1.2rem;color:#34495e;margin:20px 0 10px}
+.author{background:#e8f5e9;padding:12px 20px;border-radius:8px;margin:20px 0;font-style:italic;color:#2e7d32}
+.info-block{background:#f0f7ff;border-left:4px solid #3498db;padding:15px 20px;margin:20px 0;border-radius:0 8px 8px 0}
+ul{margin:15px 0 15px 30px}
+li{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{border:1px solid #ddd;padding:10px 12px;text-align:left}
+th{background:#2c3e50;color:#fff}
+tr:nth-child(even){background:#f9f9f9}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ecf0f1;font-size:.85rem;color:#7f8c8d;text-align:center}
+@media (max-width:768px){.lang-panel{padding:20px}.lang-btn{padding:10px 16px;font-size:.85rem}h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
+
+<!-- DEUTSCH - Hauptsprache -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Typische Probleme bei der Extrusion von LDPE- und HDPE-Recyclingmaterial</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Sekundärkunststoff-Recycling</div>
+
+<h2>1. Einleitung: Warum Recycling-Extrusion besonders anspruchsvoll ist</h2>
+<p>Die Extrusion von Recyclingmaterialien unterscheidet sich grundlegend von der Verarbeitung von Primärkunststoffen. Sekundärrohstoffe weisen Schwankungen im Schmelzefließindex (MFI), Restfeuchte, Verunreinigungen und Vorschädigungen auf. Fünf typische Probleme treten in der Praxis immer wieder auf: LDPE schäumt im Extruder, Filtergewebe reißt häufig, Pellets werden gelb, der Vakuumdruck fällt ab und die Kühlung verbraucht zu viel Energie. In diesem Artikel analysiere ich die Ursachen jeder Störung und gebe konkrete Lösungen für die Praxis.</p>
+
+<h2>2. Mechanismus der Störungen bei der Recycling-Extrusion</h2>
+<p>Die physikalisch-chemischen Grundlagen der fünf Hauptprobleme sind unterschiedlich, haben aber eine gemeinsame Wurzel: die Inhomogenität des Einsatzmaterials. LDPE schäumt im Extruder durch schlagartige Verdampfung von Wasserresten auf der Oberfläche von Regranulat oder Kreide-Additiven. Beim Überschreiten von 220-230°C setzt das Polymer Spaltgase frei – thermischer Abbau verschärft das Schäumen. Filtergewebe reißt durch Drucküberschreitung, wenn Sand oder Etikettenreste das Sieb verstopfen. Die Gelbfärbung von Pellets ist das erste Anzeichen oxidativer Schädigung durch Überhitzung oder zu lange Verweilzeit in toten Zonen. Vakuumdruckabfall entsteht durch verstopfte Entgasungsöffnungen oder volle Kondensatabscheider. Die Freikühlung nutzt kalte Außenluft zur Entlastung des Chillers im Winter.</p>
+
+<h2>3. LDPE schäumt im Extruder – Ursachen und Abhilfe</h2>
+<p>Das Schäumen am Düsenaustritt ist fast immer ein Zeichen für Gaseinschlüsse oder Zersetzung. Feuchtigkeit auf der Oberfläche von Regranulat oder Kreide-Additiven verdampft im Zylinder schlagartig. Bei eingestellten Temperaturen über 220-230°C verbrennt das Polymer und setzt Spaltgase frei. Auch eingeschlossene Luft durch schlechte Zuführung von feinem Mahlgut führt zum Schäumen.</p>
+<p>Die Lösungsansätze umfassen: Vortrocknung von Kreide-Additiven bei 80°C für 2-4 Stunden, Absenkung der Temperaturen in Zone 3-4 auf 180-200°C bei MFI-Erhöhung von 1.5 auf 2, Installation einer Vakuumentgasungszone bei 180-190°C für feuchtes Material aus Agrarfolien. Wenn LDPE aus landwirtschaftlichen Folien mit 5-15% Feuchte verarbeitet wird, ist eine Entgasungszone zwingend erforderlich.</p>
+
+<h2>4. Filtergewebe reißt häufig – Analyse der Siebbrüche</h2>
+<p>Wenn das Filtergewebe alle 20 Minuten reißt, ist die Druckdifferenz vor und nach dem Sieb zu hoch. Die Hauptursachen sind ein falscher Siebpaket-Aufbau ohne Stützsiebe, Verstopfung durch Sand oder Etikettenreste im Recyclingmaterial sowie eine zu niedrige Temperatur am Filterkopf. Ohne grobe Stützsiebe (20 Mesh) drückt der Schmelzedruck das feine Gewebe durch die Löcher der Brecherplatte.</p>
+<p>Die Lösung ist ein abgestuftes Siebpaket: Brecherplatte, dann 20 Mesh, 80 Mesh, 120 Mesh, 20 Mesh. Die Temperatur am Filterkopf sollte mindestens 180-200°C betragen. Für stark verunreinigtes Material (Agrokanistern mit 5-10% Restverschmutzung) ist ein Siebwechsel mit 150-200 Mikron ausreichend – feinere Siebe reißen zu schnell. Die Installation eines Schmelzedrucksensors mit Alarmgrenze bei 250 bar verhindert Siebbrüche durch rechtzeitigen Wechsel.</p>
+
+<h2>5. Pellets gelb (HDPE recycelt) – Oxidative Schädigung erkennen</h2>
+<p>Gelbfärbung von recyceltem HDPE-Granulat ist das erste Anzeichen für oxidative Schädigung. Ursachen: Überhitzung des Materials durch zu hohe Temperaturen in den Zonen 3-4 (über 230-240°C), zu lange Verweilzeit in toten Zonen durch Schneckenverschleiß, fehlende oder verbrauchte Antioxidantien im Material.</p>
+<p>Die Gegenmaßnahmen umfassen: Absenkung der Temperatur in den letzten Zonen auf 200-210°C, Zugabe von 0.2-0.3% Irganox 1010 als Antioxidans, Einsatz von optischen Aufhellern (minimale Menge blaue Farbbasis) zur Neutralisierung des Gelbstichs. Bei einem Praxisbeispiel mit HDPE aus Waschmittelflaschen wurde die Temperatur von Zone 3 von 250°C auf 220°C gesenkt – der MFI sank von 6.5 auf 2.8 und die Farbe änderte sich von gelb zu natur.</p>
+
+<h2>6. Vakuum-Entgasung: Druck fällt ab – Ursachen und Behebung</h2>
+<p>Wenn das Vakuum nicht mehr zieht, hat das meist mechanische Gründe. Schmelze steigt in die Entgasungsöffnung auf und wird fest – das passiert oft bei zu hohem MFI oder wenn die Schnecke in dieser Zone nicht genug Freiraum bietet. Der Kondensatabscheider für Wachse und Monomere ist voll oder verklebt. Bei Wasserringpumpen reduziert zu heißes Wasser das Vakuum drastisch.</p>
+<p>Die Lösungen: Reinigung der Entgasungsöffnung mit Messingwerkzeug, Überprüfung des Schneckendesigns (größerer Freiraum in der Entgasungszone), Leeren und Reinigen des Kondensatabscheiders wöchentlich, Kühlung des Betriebswassers für Wasserringpumpen auf unter 20°C. Ein optimiertes Profil für HDPE-Flaschenrecycling mit Vakuumentgasung: Zone 1 160-180°C, Zone 2 200-210°C mit Vakuum, Zone 3 210-220°C, Kopf 200-210°C.</p>
+
+<h2>7. Freikühlung (Free Cooling) – Energieeinsparung im Winter</h2>
+<p>Im Winter ist Freikühlung die effizienteste Methode, um den Chiller zu entlasten. Ein Glykol-Wasser-Gemisch wird über einen Außen-Wärmetauscher (Tischkühler) durch die kalte Außenluft gekühlt – der stromfressende Kompressor bleibt aus. Bei Außentemperaturen unter 5°C können bis zu 80% der Energiekosten für die Kühlung gespart werden.</p>
+<p>Die Wirtschaftlichkeitsrechnung für einen Extruder mit 500 kg/h Produktion (benötigt ca. 60 kW Kühlleistung): Chiller-Betrieb kostet 25-35 kW elektrische Leistung, Freikühlung nur 5-10 kW für Pumpen und Ventilatoren. Bei 3000 Betriebsstunden im Winter und 0.15 €/kWh ergibt das eine Einsparung von 9.000-13.500 € pro Jahr. Die Amortisation eines Freikühlers liegt oft bei zwei Wintern. Voraussetzung ist ein Glykol-Wasser-Gemisch mit mindestens 30% Glykolanteil.</p>
+
+<h2>8. Praxisbeispiele für Problembehebungen</h2>
+<p><strong>Beispiel 1 – LDPE schäumt:</strong> Ein Betrieb verarbeitete LDPE aus Agrarfolien mit 8% Restfeuchte. Die Temperatur in Zone 3 stand auf 210°C. Das LDPE schäumte an der Düse stark. Nach Absenkung von Zone 3 auf 185°C und Installation einer Vakuumentgasung trat kein Schäumen mehr auf. Die Produktionsrate stieg von 150 auf 220 kg/h.</p>
+<p><strong>Beispiel 2 – Filter reißt:</strong> Ein HDPE-Recycler verwendete nur ein feines Sieb (120 Mesh) ohne Stützsiebe. Die Siebe rissen alle 20 Minuten. Nach Umstellung auf das Paket 20/80/120/20 Mesh hielten die Siebe 6-8 Stunden. Der spezifische Energieverbrauch sank um 12% durch niedrigeren Gegendruck.</p>
+<p><strong>Beispiel 3 – Gelbe Pellets:</strong> Ein Betrieb produzierte HDPE-Granulat aus Kanistern mit MFI 0.5-1. Bei Zone-3-Temperatur 250°C war das Granulat gelb. Nach Absenkung auf 220°C wurde das Granulat naturfarben bei MFI 2.8.</p>
+<p><strong>Beispiel 4 – Vakuumabfall:</strong> Die Vakuumpumpe zog nur noch -0.3 bar statt -0.9 bar. Ursache war ein voller Kondensatabscheider mit 5 Litern Wachs. Nach Leerung und Reinigung war das Vakuum sofort wiederhergestellt.</p>
+
+<h2>9. Typische Fehler bei der Fehlersuche und deren Folgen</h2>
+<ul>
+<li><strong>Temperatur erhöhen bei Schäumen:</strong> Falsche Reaktion – höhere Temperatur verstärkt das Schäumen durch mehr Gasentwicklung. Richtig: Temperatur senken auf 180-200°C, Feuchte reduzieren.</li>
+<li><strong>Nur feinere Siebe einbauen bei Rissen:</strong> Verschlimmert das Problem – feinere Siebe reißen noch schneller. Richtig: Abgestuftes Paket mit Stützsieben verwenden.</li>
+<li><strong>Optische Aufheller überdosieren bei Gelbfärbung:</strong> Führt zu blaustichigen oder grauen Pellets. Richtig: Maximale Dosierung 0.01-0.05%.</li>
+<li><strong>Vakuum durch Drehzahlerhöhung der Pumpe verbessern wollen:</strong> Bei verstopften Abscheidern wirkungslos. Richtig: Abscheider reinigen, Leckage prüfen.</li>
+<li><strong>Freikühlung ohne Frostschutz betreiben:</strong> Führt zu eingefrorenen Wärmetauschern im Winter. Richtig: Glykol-Anteil mindestens 30%.</li>
+</ul>
+
+<h2>10. Fazit und Handlungsempfehlungen</h2>
+<p>Die fünf typischen Probleme bei der Extrusion von LDPE- und HDPE-Recyclingmaterial haben klare Ursachen und ebenso klare Lösungen. LDPE schäumt durch Feuchtigkeit oder Überhitzung – Abhilfe schafft Trocknung und Temperaturabsenkung auf 180-200°C. Filterrisse entstehen durch falschen Siebaufbau – ein abgestuftes Paket 20/80/120/20 Mesh verlängert die Standzeit auf 6-8 Stunden. Gelbe Pellets sind ein Zeichen oxidativer Schädigung – Temperaturabsenkung auf 200-210°C und Zugabe von 0.2-0.3% Antioxidans helfen. Vakuumdruckabfall wird meist durch volle Kondensatabscheider verursacht – wöchentliche Reinigung verhindert Ausfälle. Die Freikühlung nutzt kalte Außenluft unter 5°C und spart 60-80% der Kühlenergie. Für jeden Betrieb lohnt sich die Investition in einen Freikühler – Amortisation oft innerhalb von zwei Wintern. Die Umstellung von Chiller- auf Freikühlbetrieb reduziert die Betriebskosten erheblich.</p>
+
+<div class="info-block">
+<p><strong>Niederfrequente Suchbegriffe (im Text enthalten):</strong><br>
+✓ LDPE schäumt im Extruder Ursachen Feuchtigkeit Temperatur 220°C<br>
+✓ Filtergewebe reißt häufig Extruder Siebpaket 20/80/120 Mesh<br>
+✓ Pellets gelb HDPE recycelt oxidative Schädigung Antioxidans Irganox<br>
+✓ Vakuum Entgasung Extruder Druck fällt ab Kondensatabscheider Wachs<br>
+✓ Freikühlung Chiller Extruder Energieeinsparung Glykol Winter</p>
+</div>
+
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Typical Problems in LDPE and HDPE Recycling Extrusion</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Secondary Polymer Processing</div>
+
+<h2>1. Introduction</h2>
+<p>Recycling extrusion differs fundamentally from virgin material processing. Secondary feedstocks have variations in MFI, residual moisture, contaminants, and pre-damage. Five typical problems occur repeatedly: LDPE foaming in extruder, frequent screen pack ruptures, yellow pellets, vacuum pressure drop, and excessive cooling energy consumption.</p>
+
+<h2>2. Problem Mechanisms</h2>
+<p>LDPE foaming occurs from sudden water evaporation on pellet surfaces or chalk additives. Temperatures above 220-230°C cause polymer degradation and gas release. Screen ruptures happen from pressure spikes when sand or label residues block the screen. Yellow pellets indicate oxidative damage from overheating or long residence time. Vacuum pressure drops from clogged degassing ports or full condensate separators. Free cooling uses cold outside air for chiller relief in winter.</p>
+
+<h2>3. LDPE Foaming – Causes and Solutions</h2>
+<p>Solutions include: pre-drying chalk additives at 80°C for 2-4 hours, reducing zone 3-4 temperatures to 180-200°C when increasing MFI from 1.5 to 2, installing vacuum degassing at 180-190°C for wet agricultural film with 5-15% moisture.</p>
+
+<h2>4. Frequent Screen Ruptures</h2>
+<p>A stepped screen pack is required: breaker plate, then 20 mesh, 80 mesh, 120 mesh, 20 mesh. Filter head temperature should be at least 180-200°C. For heavily contaminated material (agro-canisters with 5-10% residues), 150-200 micron screens suffice.</p>
+
+<h2>5. Yellow Pellets from Recycled HDPE</h2>
+<p>Countermeasures: reduce last zone temperatures to 200-210°C, add 0.2-0.3% Irganox 1010 antioxidant, use minimal blue colorant to neutralize yellowing. Case study: Zone 3 reduced from 250°C to 220°C – MFI dropped from 6.5 to 2.8, color changed from yellow to natural.</p>
+
+<h2>6. Vacuum Degassing Pressure Drop</h2>
+<p>Solutions: clean degassing port with brass tool weekly, empty condensate separator, cool operating water for water-ring pumps below 20°C. Optimized HDPE bottle recycling profile with vacuum: Zone 1 160-180°C, Zone 2 200-210°C with vacuum, Zone 3 210-220°C, head 200-210°C.</p>
+
+<h2>7. Free Cooling Energy Savings</h2>
+<p>At outside temperatures below 5°C, 60-80% of cooling energy costs can be saved. For a 500 kg/h extruder (requires 60 kW cooling), chiller consumes 25-35 kW electrical, free cooling only 5-10 kW. At 3000 winter hours and 0.15 €/kWh, savings are 9,000-13,500 € per year.</p>
+
+<h2>8. Case Studies</h2>
+<p><strong>LDPE foaming:</strong> Agricultural LDPE with 8% moisture at 210°C foamed badly. After reducing to 185°C and installing vacuum degassing, foaming stopped. Production increased from 150 to 220 kg/h.</p>
+<p><strong>Screen ruptures:</strong> 120 mesh alone ruptured every 20 minutes. After switching to 20/80/120/20 mesh pack, screens lasted 6-8 hours. Energy consumption dropped 12%.</p>
+<p><strong>Yellow pellets:</strong> HDPE from canisters at 250°C was yellow. After reduction to 220°C, pellets became natural color with MFI 2.8.</p>
+
+<h2>9. Common Troubleshooting Errors</h2>
+<ul>
+<li>Increasing temperature when foaming – makes it worse. Correct: reduce to 180-200°C.</li>
+<li>Using only finer screens – rupture faster. Correct: use stepped pack with support screens.</li>
+<li>Overdosing optical brighteners – blue/gray pellets. Correct: max 0.01-0.05%.</li>
+<li>Free cooling without antifreeze – frozen heat exchangers. Correct: minimum 30% glycol.</li>
+</ul>
+
+<h2>10. Conclusion</h2>
+<p>LDPE foaming requires drying and temperature reduction to 180-200°C. Screen ruptures need stepped pack 20/80/120/20 mesh for 6-8 hour life. Yellow pellets need temperature reduction to 200-210°C and 0.2-0.3% antioxidant. Vacuum drops need weekly condensate separator cleaning. Free cooling saves 60-80% energy at outside temperatures below 5°C. Payback for free cooler is within two winters.</p>
+
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Типичные проблемы при экструзии вторичных LDPE и HDPE</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+<h2>1. Введение</h2>
+<p>Экструзия вторичных материалов принципиально отличается от переработки первичных полимеров. Вторичное сырье имеет разброс по ПТР, остаточной влажности, загрязнениям и предварительной деструкции. Пять типичных проблем возникают постоянно: LDPE вспенивается в экструдере, часто рвутся фильтрующие сетки, гранула желтеет, падает вакуум и система охлаждения потребляет слишком много энергии.</p>
+
+<h2>2. Механизмы возникновения проблем</h2>
+<p>LDPE вспенивается из-за резкого испарения остатков воды на поверхности гранулы или меловых добавок. При температурах выше 220-230°C полимер разлагается с выделением газа. Разрыв сеток происходит при скачках давления, когда песок или остатки этикеток забивают фильтр. Пожелтение гранулы — признак окислительной деструкции от перегрева или долгого времени пребывания. Падение вакуума — из-за забитых дегазационных портов или полных конденсатоотделителей. Фрикулинг использует холодный наружный воздух для охлаждения чиллера зимой.</p>
+
+<h2>3. LDPE вспенивается в экструдере</h2>
+<p>Решения: предварительная сушка меловых добавок при 80°C в течение 2-4 часов, снижение температуры в зонах 3-4 до 180-200°C при повышении ПТР с 1.5 до 2, установка вакуумной дегазации при 180-190°C для влажного материала из агропленки с влажностью 5-15%.</p>
+
+<h2>4. Частый разрыв фильтрующих сеток</h2>
+<p>Требуется ступенчатый пакет сеток: дробильная плита, затем 20 mesh, 80 mesh, 120 mesh, 20 mesh. Температура в фильерной головке должна быть не ниже 180-200°C. Для сильнозагрязненного материала (агроканистры с 5-10% остаточных загрязнений) достаточно сеток 150-200 микрон.</p>
+
+<h2>5. Желтая гранула из вторичного HDPE</h2>
+<p>Меры: снижение температуры в последних зонах до 200-210°C, добавка 0.2-0.3% антиоксиданта Irganox 1010, использование минимального количества синего красителя для нейтрализации желтизны. Пример: снижение температуры зоны 3 с 250°C до 220°C снизило ПТР с 6.5 до 2.8, цвет изменился с желтого на натуральный.</p>
+
+<h2>6. Падение давления в вакуумной дегазации</h2>
+<p>Решения: еженедельная очистка дегазационного порта латунным инструментом, опорожнение конденсатоотделителя, охлаждение рабочей воды для водокольцевых насосов ниже 20°C. Оптимизированный профиль для переработки HDPE-флаконов с вакуумом: зона 1 160-180°C, зона 2 200-210°C с вакуумом, зона 3 210-220°C, головка 200-210°C.</p>
+
+<h2>7. Фрикулинг — энергосбережение зимой</h2>
+<p>При температуре наружного воздуха ниже 5°C можно сэкономить 60-80% затрат на охлаждение. Для экструдера 500 кг/ч (требуется 60 кВт охлаждения) чиллер потребляет 25-35 кВт электроэнергии, фрикулинг — только 5-10 кВт. При 3000 зимних часах и 0.15 €/кВт·ч экономия составляет 9 000-13 500 € в год.</p>
+
+<h2>8. Практические примеры</h2>
+<p><strong>Вспенивание LDPE:</strong> Агропленка LDPE с влажностью 8% при 210°C сильно вспенивалась. После снижения до 185°C и установки вакуумной дегазации вспенивание прекратилось. Производительность выросла со 150 до 220 кг/ч.</p>
+<p><strong>Разрыв сеток:</strong> Сетка 120 mesh одна рвалась каждые 20 минут. После перехода на пакет 20/80/120/20 mesh сетки стали работать 6-8 часов. Энергопотребление снизилось на 12%.</p>
+
+<h2>9. Типичные ошибки при поиске неисправностей</h2>
+<ul>
+<li>Повышение температуры при вспенивании — усиливает проблему. Правильно: снизить до 180-200°C.</li>
+<li>Установка только более тонких сеток — рвутся быстрее. Правильно: ступенчатый пакет с поддерживающими сетками.</li>
+<li>Передозировка оптических отбеливателей — синие/серые гранулы. Правильно: максимум 0.01-0.05%.</li>
+<li>Фрикулинг без антифриза — замерзание теплообменников. Правильно: минимум 30% гликоля.</li>
+</ul>
+
+<h2>10. Заключение</h2>
+<p>LDPE вспенивается — нужна сушка и снижение температуры до 180-200°C. Разрыв сеток — нужен ступенчатый пакет 20/80/120/20 mesh для ресурса 6-8 часов. Желтая гранула — нужны снижение температуры до 200-210°C и добавка 0.2-0.3% антиоксиданта. Падение вакуума — нужна еженедельная очистка конденсатоотделителя. Фрикулинг экономит 60-80% энергии при температуре ниже 5°C. Окупаемость фрикулера — два зимних сезона.</p>
+
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
+</div>
+<script>
+(function(){
+var b=document.querySelectorAll('.lang-btn'),p=document.querySelectorAll('.lang-panel');
+b.forEach(function(btn){btn.addEventListener('click',function(){
+var l=btn.getAttribute('data-lang');
+b.forEach(function(x){x.classList.remove('active');});
+btn.classList.add('active');
+p.forEach(function(panel){panel.classList.remove('active-panel');});
+document.getElementById('lang-'+l).classList.add('active-panel');
+});});
+})();
+</script>
+</body>
+</html>
