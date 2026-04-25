@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling von HDPE – Kreide verstopft die Siebe: Wie wählt man die Maschenweite?</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Recycling von HDPE – Kreide verstopft die Siebe: Wie wählt man die Maschenweite?</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Problem: Kreide als „Feind“ der Filtration</h2>
+        <p>Beim Recycling von HDPE mit hohem Kreideanteil (10–30% CaCO₃) tritt typischerweise ein drastischer Druckanstieg am Siebwechsler auf. Die Maschenweite wird oft falsch gewählt: zu fein → die Partikel verstopfen sofort, zu grob → Verunreinigungen gelangen ins Produkt. Die eigentliche Ursache des Verstopfens sind aber nicht die Primärteilchen der Kreide (meist 2–3 µm), sondern deren Agglomerate, die sich im Extruder durch unzureichende Dispergierung oder Verschleiß der Schnecke bilden.</p>
+
+        <h2>2. Mechanik der Verstopfung</h2>
+        <p>Bei einer verschlissenen Schnecke (Spalt >0,3–0,5 mm) schwankt der Druck, der Mischprozess ist ungleichmäßig. Dadurch verklumpen die CaCO₃‑Partikel zu harten Konglomeraten, die die nutzbare Siebfläche schlagartig blockieren. Der Druck steigt, die Motorlast nimmt zu, und der Frequenzumrichter meldet eine Überlast (OL). Das Material sucht sich einen Weg durch den schwächsten Punkt – oft durch die Dichtungen des Schiebers, was Leckagen und Zersetzung verursacht.</p>
+
+        <div class="highlight">🔧 Die Lösung liegt nicht immer in noch feineren Sieben, sondern in einer besseren Dispergierung der Kreide im HDPE (z. B. durch intensivere Mischelemente) und der richtigen Kombination von groben und feinen Sieblagen.</div>
+
+        <h2>3. Wahl der Maschenweite für unterschiedliche Anwendungen</h2>
+        <ul>
+            <li><strong>Drucklose Rohre, Kabelkanäle (Polen, Rumänien):</strong> Grobe Filtration mit einem Pack 20/40/20 mesh reicht aus. Es werden nur große Fremdteile (Holz, Alu) abgeschieden, der Kreidedurchsatz bleibt erhalten, der Druck niedrig.</li>
+            <li><strong>Spritzguss für dünnwandige Artikel (Niederlande, Deutschland):</strong> Hier sind 100–120 mesh als feinste Lage nötig, um Gele zu vermeiden. Voraussetzung: hydrophobierte Kreide (mit Stearinsäure beschichtet), sonst müssen die Siebe alle 15–20 min gewechselt werden.</li>
+            <li><strong>Extrusionsblasformen von Kanistern:</strong> Oft genügt eine mittlere Filtration (60–80 mesh), weil geringere optische Anforderungen bestehen.</li>
+        </ul>
+
+        <h2>4. Kaskadenfiltration – der Standard in skandinavischen Werken</h2>
+        <p>In Dänemark setzt man für das Recycling von HDPE mit Kreide auf eine zweistufige Filtration:</p>
+        <ul>
+            <li>Stufe 1 (grob): 20 mesh + 40 mesh – entfernt Fremdkörper und grobe Agglomerate.</li>
+            <li>Stufe 2 (fein): 80–120 mesh – poliert die Schmelze. Durch die Vorfiltration in Stufe 1 wird die Feinsieblage nicht durch große Partikel zerstört; ihre Standzeit steigt um den Faktor 3–4.</li>
+        </ul>
+
+        <div class="highlight">📌 Empfehlung für hohe Kreidegehalte (>20%): Verwenden Sie einen Kaskadenfilter. Der Druckverlust bleibt niedrig, die Siebwechselintervalle werden deutlich länger.</div>
+
+        <h2>5. Praktische Hilfen – Hydraulischer Schieber & Druckkontrolle</h2>
+        <p>Ein hydraulischer Siebwechsler mit automatischem Wechsel bei einem einstellbaren Grenzdruck (z. B. 120–150 bar) ist bei Kreide unverzichtbar. Manueller Wechsel ist zu langsam und führt zu Produktionsunterbrechungen. Zusätzlich reduziert eine hydrophobierte (stearinbehandelte) Kreide das Blähen und Anhaften an den Sieben erheblich.</p>
+
+        <h2>6. Wartungsaspekte – abriebbedingte Dichtungslecks</h2>
+        <p>Die abriebwirkung der Kreide zerstört mit der Zeit die Dichtungen des Siebwechslers. Insbesondere in älteren Extrudern in Rumänien werden Leckagen an den Schieberdichtungen beobachtet, die durch mikroskopische Riefen auf den Gleitflächen entstehen. Abhilfe: regelmäßiger Austausch der Dichtungsplatten und Verwendung von gehärteten Stählen (Verschleißschutzplatten).</p>
+
+        <h2>7. Fazit</h2>
+        <p>Das Recycling von HDPE mit Kreidefüllung stellt hohe Anforderungen an die Filtration. Die Wahl der Maschenweite hängt stark vom Endprodukt ab: <strong>20/40/20 mesh</strong> für Rohre, <strong>100–120 mesh</strong> für sichtflächige Spritzgussteile – dann aber nur mit hydrophobierter Kreide und idealerweise einer Kaskadenfiltration. Der Schlüssel zum druckstabilen Betrieb liegt in einer guten Dispergierung der Kreide im Extruder (vermeiden von Agglomeraten) und in einer zweistufigen Siebanordnung. Hydraulische Siebwechsler mit automatischer Drucküberwachung sind bei Kreide unerlässlich.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>HDPE recycling – chalk clogs screens: how to choose the mesh size</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>Problem:</strong> Chalk agglomerates form in the extruder (especially with worn screws) and block screens rapidly. The cause is often not the primary CaCO₃ particles (2–3 µm) but their clumps.</p>
+        <p><strong>Mesh size recommendations:</strong></p>
+        <ul><li>Pressure pipes, cable ducts (coarse filtration): 20/40/20 mesh – removes only large contaminants, keeps chalk throughput high.</li>
+        <li>Injection moulding thin‑walled parts (100–120 mesh): requires hydrophobized (stearate‑coated) chalk; otherwise screen life 15–20 min.</li>
+        <li>Blow moulding cans (60–80 mesh): good compromise between cleanliness and throughput.</li></ul>
+        <p><strong>Best practice (Scandinavian recyclers):</strong> Cascade filtration (coarse stage 20/40 mesh, fine stage 80–120 mesh). Coarse stage protects fine screens, increases service life 3–4×. Use hydraulic screen changers with automatic pressure‑based change (120–150 bar).</p>
+        <div class="highlight">✅ For chalk contents >20%, always prefer hydrophobized chalk and cascade filtration – otherwise frequent screen changes become inevitable.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Recycling von HDPE – мел забивает сетки: как выбрать размер ячейки?</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Проблема: мел – враг фильтрации</h2>
+        <p>При переработке вторичного HDPE с высоким содержанием мела (карбоната кальция) возникает резкий рост давления на фильтре. Ключевая ошибка – неправильный выбор плотности сетки. Если частицы мела имеют D50 = 2–3 мкм, а сетка стоит 100 меш (150 мкм), забивание происходит не отдельными частицами, а их агломератами, образующимися в экструдере при износе шнека или плохом смешении.</p>
+
+        <h2>2. Механика забивания</h2>
+        <p>При изношенном шнеке (зазор >0,3–0,5 мм) давление пульсирует, смешение неравномерно. Частицы мела слипаются в твёрдые конгломераты, которые мгновенно перекрывают площадь фильтра. Давление растёт, частотник выдаёт ошибку перегрузки (OL). Расплав может прорваться через уплотнения шиберного фильтра, вызывая течь и деструкцию полимера.</p>
+
+        <div class="highlight">🔧 Решение – не всегда в установке более частой сетки, а в лучшей диспергации мела в HDPE (интенсивные смесительные элементы) и правильной комбинации грубых и тонких слоёв.</div>
+
+        <h2>3. Выбор размера ячейки под конкретную задачу</h2>
+        <ul>
+            <li><strong>Безнапорные трубы, кабель-каналы (Польша, Румыния):</strong> достаточно грубой фильтрации пакетом 20/40/20 mesh. Отделяются только крупные включения (щепа, алюминий), мел проходит, давление низкое.</li>
+            <li><strong>Литьё под давлением тонкостенных изделий (Нидерланды, Германия):</strong> требуется 100–120 mesh. Обязательное условие: мел должен быть гидрофобизирован (покрыт стеариновой кислотой). Иначе сетки будут забиваться каждые 15–20 минут.</li>
+            <li><strong>Экструзионно-выдувное формование канистр:</strong> достаточно средней фильтрации 60–80 mesh, так как оптические требования ниже.</li>
+        </ul>
+
+        <h2>4. Каскадная фильтрация – стандарт в Дании</h2>
+        <p>Для переработки HDPE с мелом датчане применяют двухступенчатую фильтрацию:</p>
+        <ul>
+            <li>1-я ступень (грубая): 20 mesh + 40 mesh – удаляет крупные агломераты и посторонние предметы.</li>
+            <li>2-я ступень (тонкая): 80–120 mesh – полирует расплав. Благодаря предварительной очистке тонкая сетка не перегружается, её ресурс вырастает в 3–4 раза.</li>
+        </ul>
+
+        <div class="highlight">📌 При содержании мела >20% каскадная фильтрация становится обязательной. Гидравлический сменный фильтр с автоматическим переключением по давлению (120–150 бар) также необходим – ручная замена слишком медленная.</div>
+
+        <h2>5. Износ оборудования при фильтрации наполненного HDPE</h2>
+        <p>Абразивная природа мела ускоряет износ кромок шиберного фильтра. В старых экструдерах (например, в Румынии) часто наблюдается течь расплава через уплотнения из-за микроцарапин на скользящих поверхностях. Регулярная замена уплотнительных пластин и использование твердосплавных накладок (карбид вольфрама) обязательны.</p>
+
+        <h2>6. Практические рекомендации</h2>
+        <ul>
+            <li>Для тонкостенного литья используйте гидрофобизированный мел (0,5–1,5% стеарата).</li>
+            <li>Внедрите двухступенчатую фильтрацию (каскад) – это окупается снижением частоты замен сеток.</li>
+            <li>Установите гидравлический шибер с автоматической заменой по давлению (предел 120–150 бар).</li>
+            <li>Контролируйте износ шнека – увеличенный зазор способствует агломерации мела и росту давления.</li>
+        </ul>
+
+        <h2>7. Заключение</h2>
+        <p>Правильный выбор размера ячейки сетки при переработке вторичного HDPE с мелом зависит от конечного применения. Для безнапорных труб достаточно грубого пакета 20/40/20 mesh. Для ответственного литья (тонкостенные изделия) нужна тонкая фильтрация 100–120 mesh, но только при использовании гидрофобизированного мела и желательно каскадной схемы (грубый + тонкий фильтр). Главное правило: избегайте агломерации мела в экструдере (следите за зазором шнек-цилиндр и используйте интенсивные смесительные зоны). При соблюдении этих условий наполненный HDPE можно перерабатывать с приемлемыми интервалами замены сеток (часы, а не минуты).</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
