@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperaturerhöhung bei LDPE mit niedrigem MFI | Strategien, Risiken, Alternativen</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Temperaturerhöhung bei LDPE mit niedrigem MFI<br>Strategien, Risiken und Alternativen</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Grundproblem: LDPE mit zu niedrigem MFI für den Prozess</h2>
+        <p>Wenn LDPE mit einem MFI von nur 1,5 g/10min vorliegt, der Prozess (z. B. Spritzguss oder dünne Folie) aber ein flüssigeres Material mit höherem MFI erfordert, muss die Extrusionstemperatur angehoben werden, um die Viskosität der Schmelze zu senken. Polyethylen ist thermisch stabil, reagiert aber empfindlich auf falsche Einstellungen.</p>
+
+        <h2>2. Strategie zur Temperaturerhöhung bei niedrigem MFI</h2>
+        <p>Für LDPE mit MFI 1,5 liegt der Standard-Verarbeitungsbereich bei 160–190°C. Um die Fließfähigkeit zu erhöhen und ein höheres MFI zu simulieren, wird die Temperatur schrittweise angehoben:</p>
+        <ul>
+            <li>Beginnen Sie mit einem Schritt von 5–10°C in den letzten Zylinderzonen und am Kopf.</li>
+            <li>Die Einzugszone bleibt relativ kühl bei 140–150°C, um vorzeitiges Aufschmelzen und Brückenbildung zu vermeiden.</li>
+            <li>Kompressions- und Dosierzonen können auf 200–210°C erhöht werden.</li>
+            <li>Kopf und Düse sind kritisch: +5–7°C erhöhen die Fließfähigkeit spürbar, können aber bei Blasfolie die Blase destabilisieren.</li>
+        </ul>
+
+        <h2>3. Besonderheiten bei LDPE-Rezyklat</h2>
+        <p>Recyceltes LDPE (z. B. aus Stretch- oder Agrarfolie) hat durch frühere Thermozyklen bereits einen erhöhten MFI (typisch 2,5–4,5). Wollen Sie den MFI von 2,5 auf 4–5 anheben, genügt eine Temperaturerhöhung von 10–15°C. Für Primär-LDPE mit MFI 1,5 ist ein aggressiverer Ansatz mit Temperaturen bis 210–220°C nötig.</p>
+
+        <div class="highlight">🔧 Richtwert: Für eine MFI-Steigerung von 1,5 auf ca. 4–5 wird eine Temperaturerhöhung von 170°C auf 200–210°C benötigt – das senkt die Viskosität um etwa den Faktor 2–2,5.</div>
+
+        <h2>4. Risiken der Überhitzung und Zusammenhang mit Schaumbildung</h2>
+        <ul>
+            <li><strong>Schaumbildung:</strong> Oberhalb 230–240°C beginnt thermische Zersetzung mit Gasentwicklung. Bei 240°C steigt die Abbaurate um das 3- bis 5-fache im Vergleich zu 200°C – erkennbar an aktivem Bläschen am Düsenaustritt.</li>
+            <li><strong>Gele und Fischaugen:</strong> Überhitztes Material kann an Zylinderwänden anbacken und schwarze Punkte oder unaufgeschmolzene Agglomerate bilden.</li>
+            <li><strong>Festigkeitsverlust:</strong> Zu niedrigviskose Schmelze durch Zersetzung liefert schwache Folie oder spröde Spritzgussteile. Bei Rezyklat kann die Reißfestigkeit von 25 auf 15 MPa fallen.</li>
+        </ul>
+        <p>Die Risiken wurden im separaten Artikel über LDPE-Schaumbildung ausführlich behandelt.</p>
+
+        <h2>5. Alternativen zur reinen Temperaturerhöhung</h2>
+        <p>Wenn die Temperatur bereits am Limit ist und die Fließfähigkeit immer noch nicht ausreicht, gibt es drei technologische Lösungen:</p>
+        <ul>
+            <li><strong>Kreidezusatz (CaCO₃):</strong> Erhöht den inneren Druck (20–30% mehr Druck an der Düse bei 15–20% Kreide). Der MFI steigt nicht, aber die Schmelze wirkt „flüssiger“. Nachteil: Höhere Viskosität und Abrieb.</li>
+            <li><strong>Prozesshilfsmittel (PPA) auf Fluorkautschuk-Basis:</strong> Bildet einen Schmierfilm zwischen Metall und Schmelze. Der MFI ändert sich nicht, aber der Austritt wird erleichtert – bei 0,03–0,1% PPA. Wirkung hält 5–20 Betriebsstunden.</li>
+            <li><strong>Vergrößerung des Düsenspalts:</strong> Bei Blasfolie kann eine geringfügige Spaltvergrößerung (0,1–0,2 mm) den Widerstand senken und den Fluss verbessern.</li>
+        </ul>
+
+        <div class="highlight">✅ Empfehlung: Zuerst PPA versuchen (0,05%) – das ist oft die schonendste Methode. Reicht das nicht, Kreide zusetzen oder Temperatur moderat erhöhen. Direkte Überhitzung über 220°C sollte vermieden werden.</div>
+
+        <h2>6. Stabilisierung des MFI bei Mehrfacherhitzung</h2>
+        <p>Wenn Sie regelmäßig niedrigviskoses LDPE verarbeiten und die Temperatur zur Viskositätssenkung anheben müssen, setzen Sie zwingend Antioxidans (Irganox 1010) mit 0,2–0,3% zu. Ohne Stabilisierung steigt der MFI pro Zyklus um 30–50%, mit Stabilisierung nur um 10–15%.</p>
+
+        <h2>7. Prozesskontrolle bei erhöhter Temperatur</h2>
+        <ul>
+            <li>Messen Sie die Schmelzetemperatur im Kopf mit einem Infrarotpyrometer – die Differenz zu den Zylindersollwerten kann 20–30°C betragen.</li>
+            <li>Überwachen Sie den Druck im Kopf: Ein zu starker Abfall (>30%) deutet auf beginnende Zersetzung hin.</li>
+            <li>Für Spritzguss senkt eine Temperaturerhöhung um 10–15°C die Viskosität um 15–25% – das verbessert die Formfüllung.</li>
+            <li>Für Blasfolie kann der gleiche Schritt die Blase destabilisieren. Testen Sie immer mit kleinen Schritten.</li>
+        </ul>
+
+        <h2>8. Beispielrechnung – LDPE mit MFI 1,5</h2>
+        <p>Ziel-MFI 4–5 (Spritzguss). Ausgangsmaterial MFI 1,5. Die Temperaturerhöhung von 170°C auf 200–210°C senkt die Viskosität um etwa den Faktor 2–2,5. Das Zersetzungsrisiko bei 210°C ist minimal, bei 220–230°C steigt es deutlich, bei 240°C ist Zersetzung unvermeidlich. Für einen Extruder mit L/D 30–36 und der Verarbeitung von Rezyklat liegt der optimale Temperaturbereich bei 160–190°C. Überschreitungen von 200°C sind nur kurzzeitig zulässig.</p>
+
+        <h2>9. Fazit</h2>
+        <p>Die Temperaturerhöhung bei LDPE mit niedrigem MFI ist ein wirksames Mittel, um die Schmelzeviskosität zu senken und eine höhere Fließfähigkeit zu simulieren. Erfolgt sie schrittweise (max. 200–210°C für Primärware, 190–200°C für Rezyklat) und wird durch Antioxidantien sowie ggf. PPA oder Kreide ergänzt, lassen sich Qualität und Prozessstabilität erhalten. Vermeiden Sie Temperaturen über 230°C, da sonst thermische Zersetzung, Schaumbildung und Festigkeitsverlust drohen.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Increasing temperature for low-MFI LDPE | Strategies, risks, alternatives</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. The Problem</h2>
+        <p>LDPE with MFI 1.5 is too viscous for some processes (thin film, injection moulding). Raising the temperature lowers viscosity.</p>
+        <h2>2. Strategy</h2>
+        <ul><li>Increase rear zones 5–10°C, feed zone 140–150°C.</li>
+        <li>Compression and metering zones up to 200–210°C.</li>
+        <li>Die +5–7°C – watch bubble stability.</li></ul>
+        <div class="highlight">✅ Virgin LDPE MFI 1.5 → heat to 200–210°C to reach MFI 4–5 effect. Recycled LDPE needs only +10–15°C.</div>
+        <h2>3. Risks of Overheating</h2>
+        <ul><li>Foaming above 230–240°C (degradation increases 3–5×).</li>
+        <li>Gels, black spots, fish eyes.</li>
+        <li>Tensile strength drop (25 → 15 MPa for recyclate).</li></ul>
+        <h2>4. Alternatives to pure temperature increase</h2>
+        <ul><li>Chalk (15–20%): increases die pressure, simulates better flow.</li>
+        <li>PPA (0.03–0.1%): lubricates the melt, easier extrusion without raising temperature.</li>
+        <li>Wider die gap (by 0.1–0.2 mm): reduces resistance.</li></ul>
+        <h2>5. Stabilization & Control</h2>
+        <p>Add Irganox 1010 (0.2–0.3%) to limit MFI rise. Measure real melt temperature with pyrometer. Pressure drop >30% indicates degradation.</p>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Повышение температуры при экструзии LDPE с низким ПТР<br>Стратегия, риски и альтернативы</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Введение: проблема низкого ПТР и необходимость повышения температуры</h2>
+        <p>Если у вас ПВД (LDPE) с показателем текучести расплава 1,5 г/10мин, а для литья под давлением или тонкой пленки требуется более текучий материал, нужно повысить температуру экструзии, чтобы снизить вязкость расплава. Полиэтилен термически стабилен, но чувствителен к настройкам.</p>
+
+        <h2>2. Стратегия повышения температуры</h2>
+        <p>Для LDPE с ПТР 1,5 стандартный диапазон переработки 160–190°C. Чтобы имитировать более высокий ПТР, температуру поднимают ступенчато:</p>
+        <ul><li>Начать с шага 5–10°C на последних зонах цилиндра и на головке.</li>
+        <li>Зону загрузки оставить холодной (140–150°C), чтобы избежать преждевременного плавления.</li>
+        <li>Зоны сжатия и дозирования поднимать до 200–210°C.</li>
+        <li>Головка и фильера – критическая точка: +5–7°C заметно увеличивают текучесть, но могут привести к нестабильности рукава при выдуве пленки.</li></ul>
+        <div class="highlight">🔧 Для вторичного LDPE (ПТР 2,5) достаточно поднять температуру на 10–15°C, чтобы достичь ПТР 4–5. Для первичного LDPE с ПТР 1,5 потребуется более агрессивный нагрев до 210–220°C.</div>
+
+        <h2>3. Риски перегрева и связь с образованием пены</h2>
+        <ul><li><strong>Пена:</strong> Выше 230–240°C начинается термодеструкция. При 240°C скорость деструкции в 3–5 раз выше, чем при 200°C – активное пузырение на выходе.</li>
+        <li><strong>Гели и рыбий глаз:</strong> Перегрев вызывает подгорание на стенках цилиндра – чёрные точки, нерасплавленные сгустки.</li>
+        <li><strong>Потеря прочности:</strong> Слишком жидкий расплав даёт слабую плёнку или ломкую деталь. Для вторичного LDPE прочность на разрыв может упасть с 25 до 15 МПа.</li></ul>
+
+        <h2>4. Альтернативы повышению температуры</h2>
+        <p>Если температуры уже на пределе, а текучести не хватает, есть три решения:</p>
+        <ul><li><strong>Меловая добавка (15–20%):</strong> повышает давление в головке на 20–30%, имитируя лучшую текучесть – но материал становится вязче.</li>
+        <li><strong>Процессинговые добавки (PPA) на основе фторкаучуков:</strong> создают смазочный слой – материал выходит легче, ПТР физически не меняется. Дозировка 0,03–0,1%. Эффект на 5–20 часов.</li>
+        <li><strong>Увеличение зазора в головке:</strong> на 0,1–0,2 мм снижает сопротивление и улучшает течение (особенно для выдува пленки).</li></ul>
+        <div class="highlight">✅ Рекомендация: сначала попробовать PPA (0,05%). Если не помогает – добавить мел или умеренно поднять температуру. Прямого перегрева выше 220°C избегать.</div>
+
+        <h2>5. Стабилизация ПТР при многократном нагреве</h2>
+        <p>При регулярной работе с низкотекучим LDPE и повышении температуры обязательно добавляйте антиоксидант Irganox 1010 (0,2–0,3%). Без стабилизации ПТР после каждого цикла растёт на 30–50%, со стабилизацией – на 10–15%.</p>
+
+        <h2>6. Контроль температуры в экструдере</h2>
+        <ul><li>Контролировать фактическую температуру расплава в головке инфракрасным пирометром – разница с заданными зонами может достигать 20–30°C.</li>
+        <li>Следить за давлением в головке: падение более чем на 30% указывает на деструкцию.</li>
+        <li>Для литья под давлением повышение на 10–15°C снижает вязкость на 15–25%, улучшая заполнение формы.</li>
+        <li>Для выдува пленки тот же шаг может привести к нестабильности пузыря – тестировать малыми шагами.</li></ul>
+
+        <h2>7. Пример расчёта для LDPE с ПТР 1,5</h2>
+        <p>Целевой ПТР 4–5, исходный 1,5. Повышение с 170°C до 200–210°C снизит вязкость примерно в 2–2,5 раза. Риск деструкции при 210°C минимален, при 220–230°C растёт, при 240°C деструкция неизбежна. Для экструдера с L/D 30–36 и переработкой вторичного LDPE оптимальный диапазон – 160–190°C. Превышение 200°C допустимо кратковременно.</p>
+
+        <h2>8. Заключение</h2>
+        <p>Повышение температуры при экструзии LDPE с низким ПТР – эффективный способ снизить вязкость и имитировать более высокую текучесть. При ступенчатом подъёме (до 200–210°C для первичного, 190–200°C для вторичного сырья), добавлении антиоксидантов и, при необходимости, PPA или мела, можно сохранить качество и стабильность процесса. Избегайте температур выше 230°C – иначе термодеструкция, пена и потеря прочности неизбежны.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
