@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiller-Auslegung für Extruder: Formel zur Berechnung der Kühlleistung und praktische Faktoren</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:#fff;border-radius:16px;overflow:hidden;}
+        th{background:#e9f0f3;padding:0.75rem 1rem;text-align:left;font-weight:600;}
+        td{border-bottom:1px solid #e2edf2;padding:0.7rem 1rem;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Chiller-Auslegung für Extruder: Formel zur Berechnung der Kühlleistung und praktische Faktoren</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Grundlagen: Warum die Kühlleistung entscheidend ist</h2>
+        <p>Für die Auslegung eines Chillers (Kältemaschine) für einen Extruder muss die Wärmemenge berechnet werden, die der Polymerschmelze entzogen werden muss. Bei einer Recyclinglinie mit 500 kg/h senkt die richtige Chiller-Dimensionierung den Energieverbrauch um 30–40% und vermeidet Ausschuss durch überhitzte Granulate.</p>
+
+        <h2>2. Grundformel der Kühlleistung</h2>
+        <p>Die grundlegende Formel zur Berechnung der Kälteleistung für einen Extruderchiller lautet:<br>
+        <strong>Q = m · Cp · ΔT</strong><br>
+        Q – benötigte Kälteleistung in kW, m – Extruderdurchsatz in kg/h, Cp – spezifische Wärmekapazität des Polymers in kJ/(kg·K), ΔT – Temperaturdifferenz zwischen Schmelze am Kopf und Endprodukt in °C.</p>
+
+        <h2>3. Typische Kennwerte für Kunststoffe</h2>
+        <p>Die spezifische Wärmekapazität Cp bei etwa 25°C beträgt: LDPE 1,92–2,09 kJ/(kg·K); HDPE 1,76 kJ/(kg·K); LLDPE 2,03 kJ/(kg·K); PP 1,67 kJ/(kg·K). Der Extruderdurchsatz ist die maximale Stundenleistung der Linie, z. B. 200–500 kg/h für LDPE aus Stretchfolie. ΔT berechnet sich aus Schmelzetemperatur (z. B. 190–220°C) minus Produkttemperatur nach der Kühlung (30–50°C). Typische ΔT liegt also bei 160–180°C.</p>
+
+        <div class="highlight">🔧 Spezifische Wärmekapazität LDPE bei Chillerauslegung: 2,09 kJ/(kg·K). Für HDPE sind es 1,76 kJ/(kg·K).</div>
+
+        <h2>4. Berechnungsbeispiele</h2>
+        <p><strong>Beispiel 1 (LDPE):</strong> 100 kg/h LDPE aus Stretchfolie, Schmelze 190°C, angestrebte Granulattemperatur 30°C → ΔT = 160°C.<br>
+        Q_kJ = 100 · 2,09 · 160 = 33.440 kJ/h.<br>
+        Umrechnung in kW: 33.440 / 3600 = 9,3 kW (theoretischer Minimalwert).</p>
+        <p><strong>Beispiel 2 (HDPE):</strong> 250 kg/h HDPE-Rezyklat, ΔT = 150°C → Q = 250 · 1,76 · 150 / 3600 = 18,3 kW.</p>
+
+        <h2>5. Sicherheitsbeaufschlagung (Überdimensionierung)</h2>
+        <p>Die berechnete Kälteleistung muss mit einem Sicherheitsfaktor von 1,2–1,5 multipliziert werden. Dies kompensiert Reibungswärme (vor allem bei verschlissener Schnecke), Verluste in Schläuchen, Pumpenarbeit und schwankende Kühlbedingungen. Bei Rezyklaten mit hohem Aschegehalt wird der Faktor 1,4–1,5 gewählt.</p>
+        <p>Beispiel 1 mit Faktor 1,3: 9,3 kW · 1,3 = 12,1 kW. Gewählt wird der nächstgrößere Standardchiller, üblich 15 kW bei etwa 5 PS Verdichterleistung.</p>
+
+        <h2>6. Kühlwasserbedarf</h2>
+        <p>Aus der Kälteleistung lässt sich der Kühlwasserstrom abschätzen. Für 100 kg/h LDPE werden etwa 2,5 m³/h Kühlwasser benötigt. Für 500 kg/h steigt der Bedarf auf 12–15 m³/h. Bei wassergekühltem Kondensator kommen weitere 3–5 m³/h für den Rückkühler (Gradienturm) hinzu.</p>
+
+        <div class="highlight">📌 Richtwert: Pro 10 kg/h Extruderdurchsatz sind etwa 1,5–2,0 kW Kälteleistung einzuplanen. Für 500 kg/h LDPE wären das 85–100 kW – eine erste grobe Abschätzung.</div>
+
+        <h2>7. Einfluss von Füllstoffen (z. B. Kreide)</h2>
+        <p>Verbundwerkstoffe mit Kreide (CaCO₃, Cp ≈ 0,8 kJ/(kg·K)) besitzen eine niedrigere Gesamtwärmekapazität. Bei 20% Kreide im HDPE:<br>
+        Cp_Mix = 0,8·0,2 + 1,76·0,8 = 1,57 kJ/(kg·K) – das ist 11% weniger als bei reinem HDPE. Die thermische Belastung des Chillers sinkt dadurch um etwa 10–20%. Trotzdem wird für eine robuste Auslegung der Sicherheitsfaktor nicht reduziert.</p>
+
+        <h2>8. Chiller-Typen und ihr Einsatz</h2>
+        <ul>
+            <li><strong>Luftgekühlter Chiller:</strong> Einfach zu installieren, benötigt keine externe Wasserversorgung. Geeignet für Linien bis 200–300 kg/h.</li>
+            <li><strong>Wassergekühlter Chiller:</strong> Höhere Effizienz bei großen Lasten, benötigt aber einen Kühlturm oder eine Wasserversorgung.</li>
+            <li><strong>Für Unterwassergranulatoren:</strong> Hoher Wasserbedarf (5–15 m³/h).</li>
+            <li><strong>Für Kalander/Flachfolie:</strong> Niedrigere Wassertemperatur (5–10°C) bei geringerem Volumenstrom.</li>
+        </ul>
+
+        <h2>9. Besonderheiten bei verschlissenen Extruderschnecken</h2>
+        <p>Ein vergrößerter Spalt (über 0,3–0,5 mm) erhöht den Rückfluss der Schmelze und damit die Reibungswärme. Die Wärmelast auf den Chiller kann dadurch um 20–30% steigen. Bei bekannter Abnutzung sollte der Sicherheitsfaktor auf mindestens 1,5 angehoben werden.</p>
+
+        <h2>10. Tabellarische Übersicht</h2>
+        <table>
+            <tr><th>Durchsatz [kg/h]</th><th>Typ (LDPE)</th><th>Min. Kälteleistung [kW]</th><th>Empf. Chiller [kW]</th><th>Kühlwasser [m³/h]</th></tr>
+            <tr><td>40</td><td>LDPE</td><td>ca. 5</td><td>6–9</td><td>1,5–2,0</td></tr>
+            <tr><td>100</td><td>LDPE</td><td>9,3</td><td>15</td><td>2,5</td></tr>
+            <tr><td>250</td><td>HDPE</td><td>18,3</td><td>35–40</td><td>5–7</td></tr>
+            <tr><td>500</td><td>LDPE</td><td>ca. 40–45</td><td>75–90</td><td>12–15</td></tr>
+        </table>
+
+        <div class="highlight">📊 Eingebettete Schlüsselbegriffe (im Text verwendet): Berechnung der Kälteleistung eines Chillers für einen Extruder mit der Formel Q = m·Cp·ΔT · spezifische Wärmekapazität von LDPE 2,09 kJ/(kg·K) · Sicherheitsfaktor für Rezyklate 1,3 · Kühlwasserbedarf für 100 kg/h = 2,5 m³/h.</div>
+
+        <h2>11. Fazit</h2>
+        <p>Die richtige Dimensionierung eines Chillers für einen Extruder beginnt mit der Grundformel Q = m·Cp·ΔT. Mit den typischen Cp-Werten (LDPE 2,09, HDPE 1,76 kJ/(kg·K)) und einem Sicherheitszuschlag von 30–50% erhält man eine praxistaugliche Kälteleistung. Für Recyclinganwendungen mit abrasiven Füllstoffen oder verschlissenen Schnecken sollte der Faktor eher bei 1,5 liegen. Der Kühlwasserbedarf bewegt sich grob im Bereich 2–15 m³/h je nach Leistung. Eine Faustregel: Pro 10 kg/h Extruderdurchsatz sind 1,5–2,0 kW Kälteleistung einzuplanen. Die Investition in einen ausreichend dimensionierten Chiller amortisiert sich durch geringeren Energieverbrauch und weniger thermisch bedingten Ausschuss.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Chiller sizing for extruders: formula, cooling capacity calculation and practical coefficients</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. Basic formula</h2>
+        <p>Q = m · Cp · ΔT, where Q = cooling capacity in kW, m = extruder output (kg/h), Cp = specific heat capacity (kJ/(kg·K)), ΔT = melt temperature minus product temperature (°C).</p>
+        <h2>2. Typical Cp values</h2>
+        <ul><li>LDPE 2.09 kJ/(kg·K)</li><li>HDPE 1.76 kJ/(kg·K)</li><li>LLDPE 2.03 kJ/(kg·K)</li><li>PP 1.67 kJ/(kg·K)</li></ul>
+        <div class="highlight">✅ Example: 100 kg/h LDPE, melt 190°C, target 30°C → ΔT = 160°C → Q_min = 100·2.09·160/3600 = 9.3 kW.</div>
+        <h2>3. Safety factor</h2>
+        <p>Multiply by 1.2–1.5 (1.4–1.5 for high‑ash recyclates). With factor 1.3 → 12.1 kW, choose next standard chiller (15 kW).</p>
+        <h2>4. Cooling water flow</h2>
+        <p>Rough estimate: 100 kg/h → 2.5 m³/h; 500 kg/h → 12–15 m³/h.</p>
+        <h2>5. Fillers like chalk</h2>
+        <p>20% chalk in HDPE lowers Cp to ~1.57 kJ/(kg·K) (–11%). Chiller load decreases accordingly, but keep safety factor.</p>
+        <h2>6. Quick rule of thumb</h2>
+        <p>For every 10 kg/h extruder output, plan 1.5–2.0 kW chilling capacity. 500 kg/h → 85–100 kW.</p>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Подбор чиллера для экструдера: формула расчета тепловой мощности и практические коэффициенты</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Основная формула расчета холодопроизводительности</h2>
+        <p>Для подбора чиллера для экструдера необходимо рассчитать тепловую мощность, отводимую от расплава. Основная формула: Q = m · Cp · ΔT, где Q – холодопроизводительность (кВт), m – производительность экструдера (кг/ч), Cp – удельная теплоемкость полимера (кДж/(кг·°C)), ΔT – разница между температурой расплава на выходе и температурой готового изделия (°C).</p>
+
+        <h2>2. Удельная теплоемкость полимеров</h2>
+        <p>Для LDPE Cp = 2,09 кДж/(кг·°C), для HDPE – 1,76 кДж/(кг·°C), для LLDPE – 2,03 кДж/(кг·°C). Производительность экструдера при расчете чиллера берётся максимальная, например, для линии грануляции LDPE из стрейч-пленки это 200–500 кг/ч. ΔT = температура расплава (190–220°C) минус температура гранулы после охлаждения (30–50°C). Типичная ΔT = 160–180°C.</p>
+
+        <div class="highlight">🔧 Пример: экструдер выдает 100 кг/ч LDPE, расплав 190°C, нужна гранула 30°C → ΔT = 160°C. Q_кДж = 100·2,09·160 = 33.440 кДж/ч. Делим на 3600 = 9,3 кВт.</div>
+
+        <h2>3. Коэффициент запаса мощности</h2>
+        <p>Расчетное значение умножается на коэффициент 1,2–1,5. Это компенсирует нагрев от трения шнека (особенно при износе), потери в шлангах и нестабильность охлаждения. Для вторичных полимеров с высокой зольностью коэффициент запаса выбирают 1,4–1,5. В примере с 100 кг/ч LDPE: 9,3 кВт·1,3 = 12,1 кВт. Ближайший стандартный чиллер – на 15 кВт (около 5 л.с.).</p>
+
+        <h2>4. Расход охлажденной воды</h2>
+        <p>Для производительности 100 кг/ч требуется около 2,5 м³/ч воды. Для линии 500 кг/ч расход охлажденной воды составит 12–15 м³/ч. При водяном охлаждении конденсатора добавляется еще 3–5 м³/ч на градирню.</p>
+
+        <div class="highlight">📌 Практическое правило: на каждые 10 кг/ч перерабатываемого полимера требуется 1,5–2 кВт холодопроизводительности. Для 500 кг/ч LDPE – 85–100 кВт.</div>
+
+        <h2>5. Влияние наполнителей (мела)</h2>
+        <p>У композиционных гранул с мелом теплоемкость смеси ниже (у CaCO₃ Cp ≈ 0,8 кДж/(кг·°C)). Для HDPE с 20% мела: Cp_смеси = 0,8·0,2 + 1,76·0,8 = 1,57 кДж/(кг·°C) – на 11% меньше, чем у чистого HDPE. Несмотря на это, запас мощности не уменьшают, а ведут расчет по чистому полимеру.</p>
+
+        <h2>6. Типы чиллеров</h2>
+        <ul><li><strong>С воздушным охлаждением:</strong> прост в установке, для линий до 200–300 кг/ч.</li>
+        <li><strong>С водяным охлаждением:</strong> эффективнее при больших нагрузках, требует градирню.</li>
+        <li><strong>Для подводной грануляции:</strong> высокий расход воды (5–15 м³/ч).</li>
+        <li><strong>Для каландров:</strong> низкая температура воды (5–10°C).</li></ul>
+
+        <h2>7. Влияние износа шнека</h2>
+        <p>При увеличении зазора между шнеком и цилиндром (более 0,3–0,5 мм) возрастает обратный поток расплава и трение. Тепловая нагрузка на чиллер может вырасти на 20–30%. В этом случае запас мощности должен быть не менее 1,5.</p>
+
+        <h2>8. Таблица подбора чиллера</h2>
+        <table>
+            <tr><th>Производительность, кг/ч</th><th>Тип полимера</th><th>Мин. холодопроизводительность, кВт</th><th>Рекомендуемый чиллер, кВт</th><th>Расход воды, м³/ч</th></tr>
+            <tr><td>40</td><td>LDPE</td><td>~5</td><td>6–9</td><td>1,5–2,0</td></tr>
+            <tr><td>100</td><td>LDPE</td><td>9,3</td><td>15</td><td>2,5</td></tr>
+            <tr><td>250</td><td>HDPE</td><td>18,3</td><td>35–40</td><td>5–7</td></tr>
+            <tr><td>500</td><td>LDPE</td><td>~40–45</td><td>75–90</td><td>12–15</td></tr>
+        </table>
+
+        <div class="highlight">📊 В тексте использованы ключевые запросы: расчет холодопроизводительности чиллера для экструдера (формула Q m Cp ΔT) · удельная теплоемкость LDPE 2,09 кДж/(кг·°C) · коэффициент запаса для вторичных полимеров 1,3 · расход охлажденной воды для экструдера 100 кг/ч – 2,5 м³/ч.</div>
+
+        <h2>9. Заключение</h2>
+        <p>Правильный подбор чиллера для экструдера начинается с формулы Q = m·Cp·ΔT. Используя табличные Cp (LDPE 2,09, HDPE 1,76 кДж/(кг·°C)) и типовую ΔT около 160–180°C, рассчитывают минимальную холодопроизводительность. Умножение на коэффициент запаса 1,2–1,5 (1,4–1,5 для загрязненных рециклатов) даёт практическую мощность. Расход воды ориентировочно составляет 2,5 м³/ч на 100 кг/ч производительности. Простое практическое правило: на каждые 10 кг/ч экструдера необходимо 1,5–2 кВт холода. Грамотно подобранный чиллер снижает энергопотребление на 30–40% и предотвращает брак по перегреву.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
