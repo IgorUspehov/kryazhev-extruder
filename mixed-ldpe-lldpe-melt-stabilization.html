@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling von gemischtem LDPE/LLDPE – Stabilisierung der Schmelze bei wechselndem Rohstoff im laufenden Betrieb</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Recycling von gemischtem LDPE/LLDPE – Stabilisierung der Schmelze bei wechselndem Rohstoff im laufenden Betrieb</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Die Herausforderung – Chargenwechsel ohne Stillstand</h2>
+        <p>Beim Recycling von gemischtem LDPE/LLDPE aus flexiblen Verpackungen (z. B. Logistikabfälle) ändert sich die Zusammensetzung oft sprunghaft – der LLDPE-Anteil kann von 10% auf 40% steigen. Ein Produktionsstopp zur Neueinstellung der Extruderparameter ist wirtschaftlich nicht tragbar. Gefragt sind Systeme, die die Schmelze „on the fly“ stabilisieren.</p>
+
+        <h2>2. Physikalisch-chemische Barrieren</h2>
+        <p>LDPE und LLDPE haben unterschiedliche Schmelz‑ und Kristallisationsverhalten. LLDPE benötigt mehr spezifische Energie (Scherung), um vollständig zu schmelzen. In den Niederlanden setzt man einstellbare Mischelemente in der Dosierzone ein – bei steigendem LLDPE-Anteil wird die Mischintensität erhöht. In Dänemark werden Online‑Viskosimeter (direkt vor dem Kopf) verwendet; sie erfassen Änderungen der Viskosität innerhalb weniger Sekunden. Die Regelung passt dann automatisch die Schneckendrehzahl an, um eine Überlast des Frequenzumrichters zu vermeiden.</p>
+
+        <div class="highlight">🔧 Erfolgsfaktor: Ein Online‑Rheometer in Kombination mit einer adaptiven Drehzahlregelung. In Rumänien wird die Drehzahl bei niedrigerem MFI der neuen Charge sofort reduziert, um den Motor zu schonen.</div>
+
+        <h2>3. „Sanfter Übergang“ – Puffersilos und Wechselcompounds</h2>
+        <p>In den Niederlanden werden die Chargen in großen Silos mit Abzug am Boden gemischt („first‑in‑first‑out“). Dadurch vermischt sich die neue Charge langsam mit der alten, und der MFI ändert sich graduell. In Polen setzt man zusätzliche „Übergangscompounds“ (LDPE mit MFI 4–7) ein, die während des Materialwechsels für einige Minuten dosiert werden. Sie spülen den Extruder und erlauben eine langsame Anpassung des Temperaturprofils.</p>
+
+        <h2>4. Prozessüberwachung – Infrarot und Schmelzepumpen</h2>
+        <p>In Dänemark werden Infrarotkameras eingesetzt, die die Schmelzetemperatur direkt nach der Schnecke messen. Änderungen der Viskosität führen zu mehr oder weniger Reibungswärme (dissipative Erwärmung), was die IR‑Sensoren früher erkennen als Thermoelemente im Zylinder. In den Niederlanden verwendet man Schmelzepumpen (Melt pumps) hinter dem Extruder. Sie entkoppeln den Druckaufbau von der Schneckendrehzahl – der Druck bleibt konstant, auch wenn die Viskosität schwankt.</p>
+
+        <h2>5. Adaptive Entgasung und Filtration</h2>
+        <p>Wechselt die Charge zu einem höheren LLDPE-Anteil (z. B. aus Stretchfolie mit Klebstoffresten), steigt die Menge an flüchtigen Bestandteilen. In Rumänien werden Vakuumpumpen mit drehzahlgeregelten Antrieben eingesetzt – sie erhöhen bei Bedarf die Saugleistung. Dänische Anlagen nutzen Doppelkammer‑Siebwechsler: eine Kammer arbeitet, während die andere gewartet wird. So können Siebe auch bei Rezepturwechseln ohne Unterbrechung getauscht werden.</p>
+
+        <div class="highlight">📌 In Polen sind Siebpacks mit abgestufter Maschenweite (z. B. 80/120/150 mesh) im Einsatz, die einen breiten Viskositätsbereich abdecken – sie verhindern „Durchschüsse“ bei plötzlichem Druckanstieg.</div>
+
+        <h2>6. Stabilisierung der Blasgeometrie</h2>
+        <p>Ein sich ändernder MFI beeinflusst die Kristallisationshöhe der Folie („Frost line“) und damit die Dicke. In Dänemark sind automatische Kühlringe mit elektrischen Klappen installiert, die innerhalb von Sekunden die Luftmenge umverteilen können. Weitere Sicherheit bietet die Coextrusion: eine Außenschicht aus reinem LDPE stabilisiert den Blasfuß, während die innere Schicht aus wechselndem LDPE/LLDPE besteht. In den Niederlanden sinkt die Zahl der Blasenrisse mit dieser Technik um 70%.</p>
+
+        <h2>7. Industrie‑4.0‑Lösungen für die EU</h2>
+        <p>Die besten Ergebnisse werden mit Systemen erzielt, die Chargendaten speichern. Beim nächsten Einsatz eines ähnlichen Materials wird das Temperaturprofil automatisch geladen („Rezeptur‑Assistent“). In den Niederlanden werden so Rüstzeiten nahe Null erreicht. In Polen zeigt die Praxis: Eine vollautomatische Regelung von Drehzahl, Vakuum und Kühlung senkt den Ausschuss bei Chargenwechseln von 15% auf unter 3%.</p>
+
+        <h2>8. Fazit</h2>
+        <p>Das Recycling von gemischtem LDPE/LLDPE mit wechselndem Rohstoffeinsatz erfordert eine automatisierte Prozessführung. Entscheidende Komponenten sind Online‑Viskosimeter (oder Rheometer), drehzahlgeregelte Vakuumpumpen, Doppelkammer‑Siebwechsler sowie schnelle Kühlregelungen (IBC, segmentierte Kühlringe). Puffersilos und Übergangscompounds sorgen für einen sanften MFI‑Übergang. Mit dieser Technik wird der Chargenwechsel zum nahtlosen Vorgang – ohne Produktionsunterbrechung und ohne erhöhten Ausschuss.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Recycling of mixed LDPE/LLDPE – melt stabilisation during raw material changes on the fly</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>Challenge:</strong> LLDPE content can jump from 10% to 40% between batches. Stopping the line for re‑adjustment is not economical.</p>
+        <p><strong>Solutions used in the EU:</strong></p>
+        <ul><li>Online viscometer/rheometer + adaptive screw speed control (protects against motor overload).</li>
+        <li>Buffering silos (gradual mixing of new and old batch) + transition compounds (LDPE MFI 4–7) to flush the extruder.</li>
+        <li>Melt pump after the extruder – decouples pressure from screw speed.</li>
+        <li>Variable‑speed vacuum pumps (adapt to higher volatiles when LLDPE content rises).</li>
+        <li>Dual‑chamber screen changers (continuous filtration during recipe changes).</li>
+        <li>Automatic cooling rings (adjust air distribution within seconds) + coextrusion (pure LDPE skin stabilises the bubble).</li></ul>
+        <div class="highlight">✅ With Industry‑4.0 recipe assistants, changeover scrap can be reduced from 15% to below 3% – proven in Polish recycling lines.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Recycling von gemischtem LDPE/LLDPE – стабилизация расплава при смене сырья на ходу</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Проблема: смена партии без остановки линии</h2>
+        <p>При переработке смешанных потоков LDPE/LLDPE (логистическая упаковка, термоусадочная пленка) доля LLDPE может скачкообразно вырасти с 10% до 40%. Останавливать линию для перенастройки невыгодно. Нужны системы, стабилизирующие расплав «на ходу».</p>
+
+        <h2>2. Физико-химические барьеры</h2>
+        <p>LDPE и LLDPE имеют разные кривые плавления. LLDPE требует большего сдвига. В Нидерландах применяют регулируемые смесительные элементы в зоне дозирования – при росте LLDPE интенсивность смешения увеличивается. В Дании установлены онлайн-вискозиметры: изменение вязкости фиксируется за секунды, и система автоматически корректирует обороты шнека, чтобы не перегрузить двигатель.</p>
+
+        <div class="highlight">🔧 Ключевое решение: онлайн-вискозиметр + адаптивное управление оборотами шнека. В Румынии при снижении ПТР новой партии обороты плавно уменьшают, предотвращая перегрузку частотника.</div>
+
+        <h2>3. Технология мягкого перехода</h2>
+        <p>В Нидерландах используют буферные силосы с тензодатчиками – новая партия подмешивается к остаткам старой, ПТР меняется постепенно. В Польше в момент смены сырья дозируют «переходные» компаунды (LDPE с ПТР 4–7) – они промывают цилиндр и дают время адаптировать температуру. В Дании применяют инфракрасный контроль расплава: датчики фиксируют диссипативный нагрев (трение) раньше, чем термопары цилиндра.</p>
+
+        <h2>4. Адаптивная дегазация и фильтрация</h2>
+        <p>При увеличении доли LLDPE (особенно стрейч-плёнки с клеем) растёт объём летучих. В Румынии используют вакуумные насосы с регулируемой скоростью – они автоматически увеличивают глубину вакуума. В Дании – двухкамерные фильтры: одна камера работает, другая обслуживается, что позволяет менять сетки без остановки потока при смене рецептуры.</p>
+
+        <div class="highlight">📌 В Польше применяют пакеты сеток с переменной структурой (например, 80/120/150 mesh), которые работают в широком диапазоне ПТР и предотвращают «прострелы» фильтра при резком росте вязкости.</div>
+
+        <h2>5. Стабилизация геометрии рукава и листа</h2>
+        <p>Изменение ПТР меняет высоту линии кристаллизации. В Дании используют быстродействующие кольца обдува с электроприводом заслонок – они за доли секунды перераспределяют поток воздуха, удерживая пузырь от схлопывания. В Нидерландах применяют соэкструзию: внешние слои из чистого LDPE служат каркасом, а внутренний слой – из меняющейся смеси LDPE/LLDPE. Это снижает число обрывов на 70%.</p>
+
+        <h2>6. Практические выводы для операторов ЕС</h2>
+        <p>Успех переработки смешанных LDPE/LLDPE в Польше и Румынии доказал: без автоматизации контроля вязкости стабильность невозможна. В Нидерландах внедрили системы Industry 4.0, которые запоминают параметры каждой партии и при повторном использовании автоматически загружают оптимальный температурный профиль. Брак при смене сырья снизился с 15% до менее 3%.</p>
+
+        <h2>7. Заключение</h2>
+        <p>Стабилизация расплава «на ходу» при переработке смешанных потоков LDPE/LLDPE требует комплекса мер: онлайн‑вискозиметрия (или реометр), буферные силосы для плавного смешения переходных компаундов, адаптивные вакуумные насосы, двухкамерные фильтры и быстрые системы охлаждения (IBC + автоматические кольца). При таком оснащении смена сырья становится незаметной, линия продолжает работать с минимальным браком и без простоев.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
