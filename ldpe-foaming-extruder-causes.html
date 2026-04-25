@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warum schäumt LDPE im Extruder? Ursachen, Diagnose und Behebung</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Warum schäumt LDPE im Extruder?<br>Ursachen, Diagnose und Behebung</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Grundlagen: Schaumbildung als Warnsignal</h2>
+        <p>Schaum oder aktives Bläschenbildung von LDPE am Extruderaustritt deutet in der Regel auf Gase oder Feuchtigkeit in der Schmelze oder auf eine Zersetzung des Polymers selbst hin.</p>
+
+        <h2>2. Hauptursachen für Schaumbildung bei LDPE</h2>
+        <h3>2.1 Feuchtigkeit im Rohstoff</h3>
+        <p>Obwohl LDPE nicht hygroskopisch ist, kann sich bei falscher Lagerung oder plötzlichen Temperaturschwankungen Kondenswasser auf der Granulatoberfläche bilden. Im heißen Zylinder wird das Wasser schlagartig zu Dampf, was zu Aufschäumen führt. Bei der Herstellung von Schrumpffolie oder Müllbeuteln darf die Granulatfeuchte 0,2% nicht überschreiten. Oberhalb von 0,5% ist das Bläschenbildung mit bloßem Auge sichtbar.</p>
+        <h3>2.2 Überhitzung des Materials</h3>
+        <p>Wenn die Zonentemperaturen deutlich über dem Arbeitsbereich liegen (für LDPE sind das 160–190°C), beginnt das Polymer unter Gasentwicklung zu zerfallen. Bei der Einstellung von Doppelschneckenextrudern für Rezyklate ist besondere Vorsicht geboten – für LDPE aus Stretchfolie sollte die Spitzentemperatur 220°C nicht überschreiten. Bei 230–240°C setzt aktiver Abbau ein.</p>
+        <h3>2.3 Entgasungsprobleme</h3>
+        <p>Ist der Extruder mit einer Vakuumentgasung ausgestattet, können verstopfte Filter oder ein defektes Vakuumsystem die Ursache sein. Die Vakuumentgasung beim Recycling muss einen Druck von 40–60 mbar sicherstellen. Bei Drücken über 100 mbar werden flüchtige Bestandteile nicht aus der Schmelze entfernt und treten am Kopf aus.</p>
+        <h3>2.4 Lufteinschluss bei der Förderung</h3>
+        <p>Bei Verwendung zu feiner Mahlgutfraktionen (<3 mm) wird viel Luft mitgefördert, die sich in der Schmelze verdichtet. Bei der Verarbeitung von Fraktionen unter 3 mm kann das eingeschlossene Luftvolumen 15–20% erreichen.</p>
+        <h3>2.5 Additive und Masterbatche</h3>
+        <p>Minderwertige Farbmasterbatche können flüchtige Bestandteile oder Füllstoffe enthalten, die Gasbildung provozieren. Billige Rußkonzentrate mit einer Feuchte über 0,3% führen garantiert zu Schaum.</p>
+
+        <div class="highlight">🔧 Praxisregel: Tritt Schaum auf, sofort Temperatur, Feuchte und Entgasung prüfen. Weiterbetrieb kann die Schnecken durch Kavitation schädigen.</div>
+
+        <h2>3. Erste Maßnahmen bei Schaumbildung</h2>
+        <ul>
+            <li><strong>Temperatur prüfen:</strong> Tatsächliche Werte mit Sollwerten vergleichen. Für Flachfolie sollte die Schmelze 200°C nicht überschreiten, für Blasfolie sind 190–210°C zulässig. Bei Doppelschneckenextrudern ist die Schmelzetemperatur im Kopf mit einem Infrarotpyrometer zu messen.</li>
+            <li><strong>Trocknung:</strong> Rohstoff 2–4 h bei 70–80°C trocknen. Insbesondere Stretchfolien-Rezyklat ist oft feucht. Die Restfeuchte muss unter 0,2% liegen.</li>
+            <li><strong>Filterwechselsieb:</strong> Ein verstopftes Sieb erhöht Druck und Scherung, was lokale Überhitzung begünstigt. Der Druck vor dem Sieb sollte 120–150 bar nicht überschreiten.</li>
+            <li><strong>Schneckendrehzahl:</strong> Bei überhöhter Drehzahl steigt die Schererwärmung. Ein 45-mm-Extruder sollte für LDPE mit 40–80 U/min fahren; über 120 U/min verdreifacht sich das Zersetzungsrisiko.</li>
+            <li><strong>Einzugszone:</strong> Bei Schüttgut mit geringer Schüttdichte (100–200 kg/m³ nach Agglomeration) kann der Trichter blockieren und ungleichmäßig fördern.</li>
+        </ul>
+
+        <h2>4. Unterschiede zwischen Primär- und Sekundär-LDPE</h2>
+        <p>Bei Primär-LDPE ist Schaum meist auf Feuchtigkeit oder Überhitzung zurückzuführen. Beim Rezyklat kommen mehrere Faktoren hinzu:</p>
+        <ul>
+            <li><strong>Vorzerfall durch frühere Zyklen:</strong> Recyceltes LDPE hat einen höheren MFI (3–6 statt 1,5–2,5). Seine kritische Zersetzungstemperatur liegt 20–30°C niedriger.</li>
+            <li><strong>Verunreinigungen:</strong> Öl-, Fett- oder Waschmittelreste verdampfen beim Erhitzen. Für Kanister- und Flaschenrezyklat ist eine Heißwäsche bei 80–85°C mit Lauge zwingend, sonst ist Schaum vorprogrammiert.</li>
+            <li><strong>Mischung verschiedener Typen:</strong> Gelangt HDPE oder PP in die LDPE-Charge, sind die Phasen inkompatibel – an den Grenzflächen entstehen Hohlräume und Gasblasen.</li>
+        </ul>
+
+        <h2>5. Schritt-für-Schritt-Diagnose</h2>
+        <ol>
+            <li>Ist die Temperatur in einer Zone ungewöhnlich hoch (z. B. Zone 3 zeigt 250°C bei 190°C Soll)? → Defektes Thermoelement oder Heizung.</li>
+            <li>Probe des Rohstoffs entnehmen, Feuchte messen (Soll <0,2%). Bei Überschreitung 4 h bei 70–80°C trocknen.</li>
+            <li>Schneckendrehzahl um 20–30% reduzieren – nimmt der Schaum ab, war die Scherung zu hoch.</li>
+            <li>Frequenz des Siebwechsels verdoppeln. Bei hydraulischem Siebwechsler den Umschaltdruck auf maximal 120 bar einstellen.</li>
+            <li>Bei Vakuumentgasung: Druck im Entgasungsstutzen prüfen (40–60 mbar), Vakuumpumpenöl wechseln, Kondensator reinigen.</li>
+            <li>Hilft nichts, die gesamte Charge austauschen – mögliche Ursache: billiger Füllstoff oder Verunreinigung mit PA.</li>
+        </ol>
+
+        <div class="highlight">📌 Wann wird Schaum gefährlich? Bei der Herstellung von Spritzgussgranulat sind Poren im Granulat nicht erlaubt – sie führen zu Lunkern. Bei Blasfolie reißen die Schmelzeblasen die Folie. Im Flachfolienextruder verschlechtert Schaum die Optik und Festigkeit. Bei aktiver Bläschenbildung muss der Extruder gestoppt werden.</div>
+
+        <h2>6. Fazit</h2>
+        <p>Schaumbildung bei der LDPE-Extrusion ist ein klares Alarmsignal. Meist liegt die Ursache in zu hoher Feuchte, Überhitzung, mangelhafter Entgasung oder verunreinigtem Rezyklat. Mit einer systematischen Prüfung von Temperaturen, Materialfeuchte, Siebdruck, Drehzahl und Vakuum lässt sich das Problem eingrenzen und beheben. Die Investition in eine kontrollierte Trocknung und regelmäßige Wartung der Entgasung zahlt sich durch störungsfreien Betrieb und konstante Produktqualität aus.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Why does LDPE foam in the extruder? Causes, diagnosis and elimination</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <h2>1. Main Causes of Foaming</h2>
+        <ul><li><strong>Moisture:</strong> Condensation on granule surface → steam → bubbles. Limit <0.2%.</li>
+        <li><strong>Overheating:</strong> Above 220°C for recycled LDPE causes thermal degradation and gas release.</li>
+        <li><strong>Poor degassing:</strong> Vacuum >100 mbar leaves volatiles in the melt.</li>
+        <li><strong>Air entrapment:</strong> Too fine regrind (<3 mm) traps 15–20% air.</li>
+        <li><strong>Additives:</strong> Cheap masterbatches with moisture >0.3% promote foaming.</li></ul>
+        <h2>2. Immediate Checks</h2>
+        <ul><li>Verify actual temperatures – do not exceed 200°C for sheet, 210°C for blown film.</li>
+        <li>Dry material 2–4 h at 70–80°C, target moisture <0.2%.</li>
+        <li>Check screen pack pressure – if >150 bar, change screens.</li>
+        <li>Reduce screw speed – 40–80 rpm for a 45 mm extruder.</li>
+        <li>For vented extruders: ensure vacuum level 40–60 mbar.</li></ul>
+        <div class="highlight">✅ Recycled LDPE is more sensitive: its critical degradation temperature is 20–30°C lower than virgin material.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Почему пенится LDPE на экструдере? Причины, диагностика и устранение</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Основные причины появления пены на экструдере LDPE</h2>
+        <p><strong>Влага в сырье.</strong> Хотя ПВД негигроскопичен, влага конденсируется на поверхности гранул при неправильном хранении. При производстве термоусадочной пленки или выдуве пленки для мусорных мешков влажность гранулы не должна превышать 0,2 процента. Если влажность выше 0,5 процента, пузырение становится видимым.</p>
+        <p><strong>Перегрев материала.</strong> Если температура в зонах превышает рабочую (для LDPE 160–190°C), полимер разлагается с выделением газа. При настройке двухшнекового экструдера для вторичных полимеров для LDPE из стрейч-пленки пиковая температура не должна превышать 220°C. При 230–240°C начинается активная деструкция.</p>
+        <p><strong>Проблемы с дегазацией.</strong> Вакуумная дегазация при переработке рециклата должна обеспечивать давление 40–60 мбар. Если давление выше 100 мбар, летучие вещества не удаляются из расплава.</p>
+        <p><strong>Завоздушивание.</strong> При переработке дробленки фракцией менее 3 мм объём захваченного воздуха может достигать 15–20 процентов от объёма материала.</p>
+        <p><strong>Добавки и концентраты.</strong> Дешёвые мастербатчи с влажностью более 0,3 процента гарантированно вызовут пену.</p>
+
+        <div class="highlight">🔧 Практическое правило: при появлении пены немедленно проверить температуру, влажность и дегазацию. Дальнейшая работа в режиме активного пузырения может привести к повреждению шнеков из-за кавитации.</div>
+
+        <h2>2. Что проверить в первую очередь</h2>
+        <ul><li><strong>Температура:</strong> Для плоскощелевой экструзии листа из LDPE температура расплава не должна превышать 200°C. При выдуве пленки допустимо 190–210°C. На двухшнековом экструдере рекомендуется измерять температуру расплава в головке инфракрасным пирометром.</li>
+        <li><strong>Сушка:</strong> Просушить сырьё 2–4 часа при 70–80°C. Для вторичного LDPE из стрейч-пленки сушка обязательна. Влажность после сушки должна быть менее 0,2 процента.</li>
+        <li><strong>Сетка фильтра:</strong> Давление перед сеткой не должно превышать 120–150 бар. Рекомендуемый размер ячеек для LDPE – 150–250 микрон.</li>
+        <li><strong>Скорость шнека:</strong> Для экструдера 45 мм оптимальная частота вращения 40–80 об/мин. При частоте выше 120 об/мин риск деструкции возрастает в 2–3 раза.</li>
+        <li><strong>Профиль загрузки:</strong> При переработке вторичного LDPE с низкой насыпной плотностью (100–200 кг/м³ после агломерации) загрузочная воронка может забиваться.</li></ul>
+
+        <h2>3. Вторичное сырьё vs первичка: разница в причинах пены</h2>
+        <p>У первичного LDPE основная причина – влага или перегрев. У вторичного добавляются факторы: деструкция от предыдущих циклов (критическая температура на 20–30°C ниже), загрязнения маслами и остатками моющих средств, несовместимость при смешении с HDPE или PP. Для вторичного LDPE из канистр и флаконов обязательна горячая мойка при 80–85°C с добавкой щелочи – без мойки пена неизбежна.</p>
+
+        <h2>4. Пошаговый алгоритм диагностики</h2>
+        <ol><li>Проверить и записать фактическую температуру в каждой зоне. Если какая-то зона показывает аномалию (зона 3 250°C при заданных 190°C) – неисправна термопара или нагреватель.</li>
+        <li>Отобрать пробу сырья, проверить влажность (норма менее 0,2%). При превышении – сушить 4 часа при 70–80°C.</li>
+        <li>Снизить частоту вращения шнека на 20–30%. Если пена уменьшилась – причина в перегреве из-за сдвига.</li>
+        <li>Увеличить частоту смены сеток фильтра вдвое. При гидравлическом сменном фильтре давление переключения должно быть не выше 120 бар.</li>
+        <li>Для экструдера с вакуумной дегазацией проверить давление (должно быть 40–60 мбар). Заменить масло в вакуумном насосе, прочистить конденсатор.</li>
+        <li>Если ничего не помогло – заменить всю партию сырья. Возможная причина – добавка дешёвого наполнителя или загрязнение полиамидом.</li></ol>
+
+        <div class="highlight">📌 Когда пена опасна? При переработке LDPE во вторичную гранулу для литья под давлением пена недопустима – пузыри в грануле приведут к раковинам. При выдуве пленки пузыри рвут плёнку. При плоскощелевой экструзии листа пена ухудшает внешний вид и снижает прочность. Если пена появилась – остановить экструдер и выявить причину.</div>
+
+        <h2>5. Заключение</h2>
+        <p>Пена на LDPE в экструдере – чёткий сигнал о проблемах: влага, перегрев, плохая дегазация или загрязнённый рециклат. Систематическая проверка температур, влажности сырья, давления на фильтре, оборотов шнека и вакуума позволяет быстро локализовать и устранить неисправность. Инвестиции в контролируемую сушку и регулярное обслуживание системы дегазации окупаются стабильной работой и постоянным качеством продукции.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
