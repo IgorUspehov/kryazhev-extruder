@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kritische Extruderprobleme: Überlast (OL), Schneckenklemmung, Siebriss, Vakuumverlust</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Kritische Extruderprobleme: Überlast (OL), Schneckenklemmung, Siebriss, Vakuumverlust</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Frequenzumrichter zeigt Fehler OL (Überlast)</h2>
+        <p>OL bedeutet Motorüberlast – der Strom ist zu hoch, der Motor kann die Schnecke nicht drehen. Ursachen und Lösungen:</p>
+        <ul>
+            <li><strong>Zu hohe Viskosität (niedriger MFI):</strong> Material mit MFI 1,5 ist sehr viskos, besonders wenn die Temperatur in den Plastifizierzonen zu niedrig ist. Prüfen Sie die tatsächlichen Temperaturen an den Heizzonen.</li>
+            <li><strong>Zu viel Kreidefüllung:</strong> Schon 20–30% Kreide erhöhen die Viskosität erheblich.</li>
+            <li><strong>Mechanische Blockade:</strong> Fremdkörper (Schraube, Mutter) in der Schnecke. Magnetgitter im Einfülltrichter sind Pflicht!</li>
+            <li><strong>Zu kurze Anlauframpe:</strong> Erhöhen Sie die Hochlaufzeit im Frequenzumrichter (auf 20–30 s). Senken Sie ggf. die Drehzahl.</li>
+        </ul>
+
+        <h2>2. Schnecke im Doppelschneckenextruder klemmt</h2>
+        <p>Bei Doppelschneckenextrudern sind die Spiele sehr klein. Klemmen ist ein schwerwiegendes Problem.</p>
+        <ul>
+            <li><strong>Fremdkörper:</strong> Metallteile (Schrauben, Muttern) führen sofort zum Klemmen – Magnetabscheider sind obligatorisch.</li>
+            <li><strong>Kreideverklumpung:</strong> Bei zu hoher Kreidezufuhr und niedrigen Drehzahlen kann sich die Kreide in der Kompressionszone verfestigen.</li>
+            <li><strong>Thermische Dehnung:</strong> Bei ungleichmäßiger Temperatur (Schnecke heißer als Zylinder) können sich die Schnecken spreizen.</li>
+        </ul>
+        <div class="highlight">🔧 Was tun? Niemals mit Gewalt den Motor einschalten – sonst werden Mitnehmer oder Getriebe zerstört. Den Zylinder um 20–30°C über die Arbeitstemperatur heizen und die Schnecken per Hand (mit Spezialwerkzeug) hin- und herbewegen.</div>
+
+        <h2>3. Siebwechsler reißt alle 20 Minuten</h2>
+        <p>Ein Siebwechsel alle 20 Minuten ist extrem kurz und deutet auf sehr hohen Druck oder falsche Siebanordnung hin.</p>
+        <ul>
+            <li><strong>Stark verunreinigtes Material:</strong> Viel Sand oder mineralische Füllstoffe blockieren die Siebe schnell. Abhilfe: bessere Vorfiltration des Materials oder gröbere Siebe (zunächst nur 150–200 µm).</li>
+            <li><strong>Zu kalte Düse:</strong> Die Schmelze erstarrt auf den Sieben, der Druck steigt extrem. Erhöhen Sie die Düsentemperatur.</li>
+            <li><strong>Falscher Siebaufbau („Kuchen“):</strong> Eine zu feine Sieblage ohne grobe Stützsiebe wird sofort zerrissen.</li>
+        </ul>
+        <p><strong>Korrekte Siebanordnung (von innen nach außen):</strong> 20 mesh / 60 mesh / 100–120 mesh / 20 mesh. Die groben Siebe an den Seiten wirken als Träger für das feine Filtriersieb. Der Druck vor dem Sieb sollte 120–150 bar nicht überschreiten. Bei Überschreitung sofort wechseln.</p>
+
+        <h2>4. Vakuum (Entgasung) funktioniert nicht</h2>
+        <p>Ohne funktionierendes Vakuum enthält das Granulat Blasen und riecht verbrannt.</p>
+        <ul>
+            <li><strong>Verstopfte Entgasungsöffnung:</strong> Polymer ist in den Entgasungsstutzen gestiegen und erstarrt. Kanal mechanisch reinigen.</li>
+            <li><strong>Verstopfter Abscheider (Falle):</strong> Der Behälter zwischen Extruder und Pumpe ist oft mit Wachsen und Ölen zugesetzt – reinigen.</li>
+            <li><strong>Verschlissene Vakuumpumpe:</strong> Bei Wasserringpumpen die Wassertemperatur prüfen (warmes Wasser erzeugt schlechtes Vakuum). Kaltwasser zuführen oder Pumpe überholen.</li>
+            <li><strong>Zu flüssige Schmelze (MFI zu hoch):</strong> Bei MFI > 2 steigt die Schmelze in die Entgasungsöffnung. Temperatur absenken oder Entgasungszone kühler fahren.</li>
+        </ul>
+        <div class="highlight">📌 Typischer Zusammenhang: Ein zu hoher MFI (z. B. durch Überhitzung) führt zum Überlaufen der Entgasungsöffnung – der Vakuumdruck steigt auf >100 mbar, die Pumpe verliert ihre Wirkung.</div>
+
+        <h2>5. Wechselwirkungen – eine Ursache, mehrere Symptome</h2>
+        <p>Oft hängen die Probleme zusammen: Eine verschlissene Schnecke (großer Spalt) erhöht den Rückfluss und die Reibungswärme → der Motor wird überlastet (OL), die Schmelze überhitzt (Brandgeruch), die Viskosität sinkt (MFI steigt) → die Schmelze läuft in den Vakuumstutzen und blockiert die Entgasung. Gleichzeitig steigt der Druck vor dem Sieb, weil die Schmelze zu heiß/dünnflüssig ist und die feinen Füllstoffe nicht zurückhält → Siebe reißen.</p>
+        <p><strong>Systematische Fehlersuche:</strong> Beginnen Sie mit der Überprüfung des Schneckenspiels (siehe separaten Artikel zur Verschleißmessung), der tatsächlichen Schmelzetemperatur (Pyrometer) und der Druckverhältnisse. Oft reicht eine moderate Temperaturabsenkung um 10–20°C, kombiniert mit einem feineren Siebpack, um alle vier Probleme zu mildern.</p>
+
+        <h2>6. Fazit</h2>
+        <p>OL-Fehler, Schneckenklemmer, häufige Siebriss und Vakuumverlust sind typische „Kreuzschmerzen“ beim Extrudieren von Rezyklaten. Sie sind häufig auf einen verschlissenen Extruder (zu große Schneckenspiele), falsche Temperaturen (zu kalt → OL; zu heiß → Vakuumüberlauf) oder verunreinigtes Material zurückzuführen. Eine systematische Diagnose – beginnend mit Temperaturmessung, Druckchecks und einer Inspektion der Schnecken/Zylinder – bringt schnell den eigentlichen Übeltäter ans Licht. Siebaufbau (20/60/120/20 mesh) und rechtzeitiger Wechsel (vor 150 bar) verlängern die Standzeit erheblich.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Critical extruder issues: OL overload, screw jamming, screen ruptures, vacuum loss</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>OL error:</strong> Motor overload – too low MFI, too much chalk, too low temperature, mechanical blockage. → Increase ramp time, check actual zone temperatures, install magnetic grid.</p>
+        <p><strong>Screw jamming (twin screw):</strong> Foreign objects (metal), chalk cementation, thermal expansion. → Heat cylinder 20–30°C above setpoint, turn screws manually – never force the motor.</p>
+        <p><strong>Screen rupture every 20 min:</strong> Contaminated feed, too cold die, wrong screen stack. → Correct stack: 20 / 60 / 100–120 / 20 mesh. Outer coarse screens support the fine filter. Change before pressure exceeds 150 bar.</p>
+        <p><strong>Vacuum fails:</strong> Plugged degassing port, clogged trap, worn pump (water ring pump needs cold water), too fluid melt (MFI >2). → Clean port and trap, check pump, reduce temperature.</p>
+        <div class="highlight">✅ Often one root cause (e.g. worn screw → high friction → overheating) triggers OL, screen burst and vacuum loss simultaneously. Check screw/barrel gap first.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Оборудование и ремонт: частотник выбивает ошибку OL, заклинило шнек в двухшнеке, рвёт сетки фильтра каждые 20 минут, вакуум не тянет</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Частотник выбивает ошибку OL (перегрузка)</h2>
+        <p>OL – перегрузка двигателя по току. Причины и решения:</p>
+        <ul>
+            <li><strong>Низкий ПТР (вязкий материал):</strong> При ПТР 1,5 и недостаточной температуре в зонах плавления двигатель пытается продавить холодную пробку. Проверьте фактический нагрев зон.</li>
+            <li><strong>Слишком много меловой добавки:</strong> 20–30% мела сильно увеличивают нагрузку.</li>
+            <li><strong>Механическое заклинивание:</strong> кусок металла в шнеке. Магнитная решётка в бункере обязательна!</li>
+            <li><strong>Слишком короткое время разгона:</strong> увеличьте время разгона в частотнике (до 20–30 с), снизьте обороты.</li>
+        </ul>
+
+        <h2>2. Заклинило шнек в двухшнековом экструдере</h2>
+        <p>В двухшнековых машинах зазоры минимальны, клин – серьёзная проблема.</p>
+        <ul>
+            <li><strong>Инородное тело:</strong> болт, гайка, кусок металла – магнитная решётка обязательна.</li>
+            <li><strong>Запрессовка мелом:</strong> при слишком большой подаче мела на низких оборотах происходит цементация в зоне сжатия.</li>
+            <li><strong>Тепловое расширение:</strong> шнеки греются сильнее цилиндра и распирают.</li>
+        </ul>
+        <div class="highlight">🔧 Ни в коем случае не пытайтесь страгивать двигателем – срежете шлицы или сожжёте редуктор. Разогрейте цилиндр на 20–30°C выше рабочей и пробуйте проворачивать шнек вручную за вал.</div>
+
+        <h2>3. Рвёт сетки фильтра каждые 20 минут</h2>
+        <p>Экстремально частая замена указывает на огромное давление или неправильную сборку пакета.</p>
+        <ul>
+            <li><strong>Грязное сырьё:</strong> слишком много песка или негорячих примесей.</li>
+            <li><strong>Слишком холодная головка:</strong> расплав застывает на сетке, давление растёт.</li>
+            <li><strong>Неправильный «пирог» сеток:</strong> мелкая сетка без опорных грубых сеток рвётся моментально.</li>
+        </ul>
+        <p><strong>Правильная сборка пакета (от шнека к выходу):</strong> 20 mesh / 60 mesh / 100–120 mesh / 20 mesh. Грубые сетки по краям – каркас для мелкой фильтрующей сетки. Давление перед сеткой не должно превышать 120–150 бар. При превышении – менять.</p>
+
+        <h2>4. Вакуум не тянет (дегазация не работает)</h2>
+        <p>Без вакуума гранула будет с пузырями и запахом гари.</p>
+        <ul>
+            <li><strong>Забился порт дегазации:</strong> полимер вылез в отверстие и застыл – прочистить канал.</li>
+            <li><strong>Забита ловушка (фильтр-бак):</strong> между экструдером и насосом накапливаются воски и парафины – чистить.</li>
+            <li><strong>Износ вакуумного насоса:</strong> для водокольцевых насосов проверить наличие воды и её температуру (горячая вода даёт плохой вакуум).</li>
+            <li><strong>Слишком текучий расплав (ПТР >2):</strong> заливает вакуумное отверстие – снизить температуру или прикрыть порт.</li>
+        </ul>
+
+        <div class="highlight">📌 Взаимосвязь проблем: изношенный шнек (большой зазор) повышает обратный поток и трение – двигатель перегружается (OL), расплав перегревается (запах), вязкость падает (ПТР растёт) – расплав лезет в вакуумный порт, а давление перед сеткой растёт из-за забивания мелкими частицами – сетки рвутся. Часто решением становится умеренное снижение температуры на 10–20°C и правильная сборка сеточного пакета.</div>
+
+        <h2>5. Заключение</h2>
+        <p>Ошибка OL, заклинивание шнеков, частый разрыв сеток и отказ вакуума – критически связанные проблемы при переработке рециклатов. Их причины лежат в износе оборудования (зазоры шнек-цилиндр), неправильных температурах (слишком холодно → OL; слишком горячо → вакуум заливает), загрязнении сырья и неверной сборке пакета сеток. Системная диагностика (замер фактических температур, давления, проверка вакуумной линии) позволяет быстро найти корень. Правильный пакет 20/60/120/20 mesh и своевременная замена сеток (до 150 бар) – основа стабильной работы.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
