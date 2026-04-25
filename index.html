@@ -885,6 +885,7 @@ function setLang(lang) {
   var fp = document.querySelector('.footer p:nth-child(2)');
   if(fp) fp.innerHTML = l.foot;
   localStorage.setItem('lang', lang);
+  setLangArt(lang);
 }
 
   // Articles section translations
@@ -915,9 +916,7 @@ function setLang(lang) {
     }
   };
 
-  var origSetLang = setLang;
-  function setLang(lang) {
-    origSetLang(lang);
+  function setLangArt(lang) {
     var a = artLabels[lang];
     var el;
     el = document.getElementById('art-label'); if(el) el.innerHTML = a.label;
