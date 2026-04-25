@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LDPE Recycling: MFI ändert sich im Extruder – Ursachen und Lösungen | Igor Kryazhev</title>
+<meta name="description" content="Warum sich der Schmelzefließindex (MFI) bei der Verarbeitung von 100% LDPE-Recyclingmaterial im Extruder ändert. Ursachen für MFI-Anstieg, MFI-Abfall und instabilen MFI.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#222;background:#f5f5f5;padding:20px}
+.container{max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}
+.lang-tabs{display:flex;background:#2c3e50;flex-wrap:wrap}
+.lang-btn{background:#34495e;border:none;padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;color:#ecf0f1;border-right:1px solid #2c3e50}
+.lang-btn.active{background:#27ae60;color:#fff}
+.lang-panel{display:none;padding:30px 40px;animation:fadeIn .3s ease}
+.lang-panel.active-panel{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.8rem;color:#27ae60;border-left:5px solid #27ae60;padding-left:20px;margin-bottom:15px}
+h2{font-size:1.4rem;color:#2c3e50;margin:25px 0 15px;border-bottom:2px solid #ecf0f1}
+h3{font-size:1.2rem;color:#34495e;margin:20px 0 10px}
+.author{background:#e8f5e9;padding:12px 20px;border-radius:8px;margin:20px 0;font-style:italic;color:#2e7d32}
+ul{margin:15px 0 15px 30px}
+li{margin:8px 0}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ecf0f1;font-size:.85rem;color:#7f8c8d;text-align:center}
+@media (max-width:768px){.lang-panel{padding:20px}h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
+
+<!-- DEUTSCH - Hauptsprache -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Recycling von 100% LDPE – Der MFI ändert sich am Extruder: Welche Ursachen sind zuerst zu prüfen?</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Sekundärkunststoff-Recycling</div>
+
+<h2>1. Einleitung: Warum der MFI bei LDPE-Recycling kritisch ist</h2>
+<p>Bei der Verarbeitung von 100% recyceltem LDPE aus Folienabfällen, Säcken oder Agrarfolien ist die Änderung des Schmelzefließindex (MFI) am Extruderaustritt eines der häufigsten Probleme. Eine Abweichung des MFI vom Zielwert führt zu Prozessinstabilität, Ausschuss und geringerer Wirtschaftlichkeit. Dieser Artikel systematisiert die Hauptursachen für MFI-Änderungen bei 100% LDPE-Recyclingmaterial.</p>
+
+<h2>2. Mechanismus der MFI-Änderung: Zuerst die Richtung bestimmen</h2>
+<p>Der erste Schritt ist zu bestimmen, ob der MFI steigt, fällt oder schwankt. Ein steigender MFI bedeutet geringere Viskosität – das Material fließt leichter. Ein fallender MFI bedeutet höhere Viskosität – das Material fließt schwerer. Ein schwankender MFI deutet auf Homogenisierungsprobleme oder Prozessinstabilität hin. Bei 100% LDPE-Recycling ist der MFI-Anstieg durch thermische Zersetzung die häufigste Ursache.</p>
+
+<h2>3. Ursachen für MFI-Anstieg (erhöhte Fließfähigkeit) bei LDPE-Recycling</h2>
+<p>Ein steigender MFI ist ein klares Zeichen für Polymerkettenabbau. Die Molekularmasse sinkt, das Material wird dünnflüssiger. Die Hauptursachen bei 100% Recycling-LDPE sind:<br>
+<strong>Überhitzung des Schmelze:</strong> LDPE ist relativ thermostabil, aber oberhalb von 240-250°C beginnt intensiver Kettenabbau. Oft versuchen Bediener, durch höhere Temperaturen mehr Durchsatz zu erreichen. Die Schmelzetemperatur sollte 230°C nicht überschreiten.<br>
+<strong>Lange Verweilzeit im Extruder:</strong> Recycling-LDPE hat oft eine breitere Molmassenverteilung. Bei geringem Durchsatz oder schlechter Schneckengeometrie steigt die Verweilzeit und damit der thermische Abbau.<br>
+<strong>Katalysatoren für Kettenabbau:</strong> Druckfarbenreste (besonders Nitrocellulose) zersetzen sich unter Wärme und initiieren Polymerabbau. Restfeuchte aus der Wäsche fördert ebenfalls hydrolytischen Abbau.<br>
+<strong>Zu hohe Scherung:</strong> Hohe Schneckendrehzahlen erzeugen intensive Scherung und innere Reibung, besonders mit Mischelementen oder bei sehr hohem MFI.</p>
+
+<h2>4. Ursachen für MFI-Abfall (verringerte Fließfähigkeit) bei LDPE-Recycling</h2>
+<p>Ein fallender MFI ist bei Recycling-LDPE seltener als Abbau, aber möglich. Die Viskosität steigt – der fließt schwerer.<br>
+<strong>Vernetzte Anteile oder Gele:</strong> Bei starker Überhitzung in Totzonen (Adapter, Düsenkopf) kann LDPE nicht nur abbauen, sondern auch vernetzen. Mikrogele erhöhen die Viskosität.<br>
+<strong>Verunreinigungen mit inkompatiblen Polymeren:</strong> HDPE- oder PP-Anteile im LDPE-Strom haben höhere Schmelztemperaturen und Viskositäten. Der Gesamt-MFI der Mischung sinkt.<br>
+<strong>Füllstoffe und Fasern:</strong> Bei laminierten Abfällen (Papier, Textil, Holzmehl) wirken nichtschmelzende Partikel als Füllstoffe und senken den MFI. Kreide, Papierreste oder Aluminium behindern das Fließen.<br>
+<strong>Mangel an Gleitmitteln:</strong> Der Rezeptur fehlen innere oder äußere Gleitmittel. Zusatz von Stearaten oder PE-Wachs erhöht den MFI linear.</p>
+
+<h2>5. Ursachen für instabilen, schwankenden MFI</h2>
+<p>Schwankende MFI-Werte zwischen Proben zeigen Homogenisierungsprobleme oder Prozessinstabilität.<br>
+<strong>Ungleichmäßige Materialzufuhr:</strong> Tote Zonen im Trichter oder ein ungleichmäßiger Dosierer führen zu Schwankungen im Füllgrad des Extruders. Die Verweilzeit ändert sich ständig.<br>
+<strong>Temperaturpulsationen:</strong> Probleme mit PID-Reglern an Heizzonen verursachen starke Schwankungen der tatsächlichen Schmelzetemperatur, was sofort die Viskosität beeinflusst.<br>
+<strong>Inhomogenität des Recyclingmaterials:</strong> Eine Charge kann Mischungen verschiedener Herkünfte enthalten. Ohne ausreichende Vormischung oder intensives Mischen im Extruder schwankt der MFI.</p>
+
+<h2>6. Erste Maßnahmen bei MFI-Änderung am LDPE-Extruder</h2>
+<p>Die folgenden Schritte sollten als erstes durchgeführt werden, sobald eine MFI-Abweichung festgestellt wird:<br>
+1. Temperaturprofil prüfen – lokale Überhitzungen besonders im Düsenkopf und Adapter ausschließen. Schmelzetemperatur mit Pyrometer messen.<br>
+2. Rohmaterialqualität bewerten: Aschegehalt, Restfeuchte (max. 0.2-0.3%) und sichtbare Verunreinigungen prüfen.<br>
+3. Bei Verwendung von gewaschenem Mahlgut: Trocknungseffizienz überprüfen. Überschüssige Feuchte katalysiert Abbau.<br>
+4. Bei erhöhtem MFI: Totzonen (Ablagerungen auf der Schnecke, im Adapter) prüfen und Schneckendrehzahl reduzieren.<br>
+5. Bei Material mit Füllstoffen (Kreide, Papier): Dosierung und Verteilungsgleichmäßigkeit prüfen.<br>
+6. MFI des Eingangsmaterials messen – wenn dieses bereits stark schwankt, ist das Problem im Extruder kaum lösbar.</p>
+
+<h2>7. Parametrierung für stabilen MFI bei LDPE-Recycling</h2>
+<p>Für stabiles Recycling von 100% LDPE sind folgende Parameter zu empfehlen: Temperaturprofil Zone 1 140-150°C, Zone 2 150-170°C, Zone 3 170-190°C, Zone 4 180-190°C, Düsenkopf 170-190°C. Die Schmelzetemperatur sollte 230°C nicht überschreiten. Die Schneckendrehzahl ist so zu wählen, dass die Verweilzeit 2-3 Minuten nicht überschreitet. Bei Material mit Restfeuchte über 0.5% ist eine Entgasungszone bei 180-190°C erforderlich.</p>
+
+<h2>8. Fallbeispiele aus der Praxis</h2>
+<p><strong>Fall 1 – MFI steigt von 2.5 auf 5.0:</strong> Ein Betrieb verarbeitete LDPE aus Agrarfolien mit 12% Restfeuchte bei einer Zone-3-Temperatur von 220°C. Der MFI stieg innerhalb von 2 Stunden von 2.5 auf 5.0. Nach Installation einer Vakuumentgasung und Absenkung von Zone 3 auf 190°C stabilisierte sich der MFI bei 2.8.<br>
+<strong>Fall 2 – MFI fällt von 3.0 auf 1.5:</strong> Ein anderer Betrieb bemerkte sinkenden MFI bei LDPE aus Tragetaschen. Die Analyse zeigte 8% HDPE-Anteile im Input. Nach Umstellung auf eine reine LDPE-Fraktion kehrte der MFI auf 3.0 zurück.<br>
+<strong>Fall 3 – Schwankender MFI zwischen 2.0 und 4.5:</strong> Der MFI schwankte stark. Ursache war ein verschlissener Dosierer, der ungleichmäßig förderte. Nach Reparatur des Dosierers stabilisierte sich der MFI bei 2.5 ±0.3.</p>
+
+<h2>9. Typische Fehler bei der MFI-Problemanalyse</h2>
+<ul>
+<li><strong>Fehler:</strong> Nur die Zonentemperaturen prüfen, nicht die Schmelzetemperatur. <strong>Folge:</strong> Lokale Überhitzungen in Totzonen werden nicht erkannt. <strong>Lösung:</strong> Infrarot-Pyrometer zur Messung der Schmelze im Düsenkopf verwenden.</li>
+<li><strong>Fehler:</strong> Rohmaterial nicht auf MFI prüfen. <strong>Folge:</strong> Der Extruder kann Schwankungen nicht ausgleichen. <strong>Lösung:</strong> Jede Charge vor Verarbeitung auf MFI testen.</li>
+<li><strong>Fehler:</strong> Temperatur erhöhen bei fallendem MFI. <strong>Folge:</strong> Beschleunigt Abbau bei bereits vernetzten Anteilen. <strong>Lösung:</strong> Zuerst auf Verunreinigungen prüfen.</li>
+<li><strong>Fehler:</strong> Feuchte im Material ignorieren. <strong>Folge:</strong> Hydrolytischer Abbau erhöht MFI. <strong>Lösung:</strong> Restfeuchte unter 0.2-0.3% halten, Entgasung installieren.</li>
+</ul>
+
+<h2>10. Fazit und Handlungsempfehlungen</h2>
+<p>Die MFI-Änderung bei 100% LDPE-Recycling ist meist ein Zeichen für thermischen Abbau, Verunreinigungen oder Prozessinstabilität. Ein steigender MFI deutet auf Überhitzung (über 230°C), lange Verweilzeit oder katalytische Verunreinigungen (Druckfarben, Feuchte) hin. Ein fallender MFI weist auf HDPE/PP-Kontamination oder Füllstoffe hin. Ein schwankender MFI zeigt Homogenisierungsprobleme oder ungleichmäßige Zufuhr an. Die ersten Maßnahmen sind: Temperaturprofil prüfen (Schmelzetemperatur unter 230°C halten), Rohmaterial auf MFI und Reinheit testen, Restfeuchte auf unter 0.3% reduzieren und bei Feuchte eine Entgasungszone installieren. Die regelmäßige MFI-Messung jeder Charge vor der Verarbeitung ist die effektivste Maßnahme zur Prozessstabilisierung.</p>
+
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Recycling 100% LDPE – MFI Changes in Extruder: First Causes to Check</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Secondary Polymer Processing</div>
+
+<h2>1. Introduction: Why MFI is critical for LDPE recycling</h2>
+<p>Processing 100% recycled LDPE from film waste, bags or agricultural film often causes MFI changes at the extruder exit. MFI deviation from target leads to process instability, scrap, and lower profitability. This article systematizes the main causes of MFI changes in 100% LDPE recycling.</p>
+
+<h2>2. MFI change mechanism: First determine the direction</h2>
+<p>First determine if MFI increases, decreases, or fluctuates. Increasing MFI means lower viscosity – material flows easier. Decreasing MFI means higher viscosity – material flows harder. Fluctuating MFI indicates homogenization problems or process instability. For 100% LDPE recycling, MFI increase from thermal degradation is most common.</p>
+
+<h2>3. Causes of MFI increase in LDPE recycling</h2>
+<p>Increasing MFI indicates polymer chain degradation. Main causes: overheating above 240-250°C, long residence time, catalyst residues from printing inks (nitrocellulose), residual moisture causing hydrolytic degradation, and excessive shear from high screw speeds.</p>
+
+<h2>4. Causes of MFI decrease in LDPE recycling</h2>
+<p>A decreasing MFI is less common but possible: crosslinked fractions or gels from overheating in dead zones, contamination with HDPE or PP, fillers and fibers (paper, wood, aluminum) that impede flow, or lack of lubricants (stearates, PE wax).</p>
+
+<h2>5. Causes of fluctuating MFI</h2>
+<p>Fluctuating MFI indicates: uneven material feed (dead zones in hopper, worn feeder), temperature pulsations from PID control problems, or inhomogeneity of the recycled material itself.</p>
+
+<h2>6. First actions when MFI changes</h2>
+<p>Check temperature profile, measure melt temperature with pyrometer (must stay below 230°C), evaluate raw material quality (ash, moisture below 0.2-0.3%), check drying efficiency, inspect for dead zones, and measure incoming MFI.</p>
+
+<h2>7. Parameter recommendations for stable LDPE recycling</h2>
+<p>Temperature profile: Zone 1 140-150°C, Zone 2 150-170°C, Zone 3 170-190°C, Zone 4 180-190°C, die head 170-190°C. Melt temperature below 230°C. Residence time 2-3 minutes maximum. For material with >0.5% moisture, install degassing zone at 180-190°C.</p>
+
+<h2>8. Case studies</h2>
+<p><strong>Case 1 – MFI rose from 2.5 to 5.0:</strong> Agricultural LDPE with 12% moisture at 220°C. After vacuum degassing and cooling Zone 3 to 190°C, MFI stabilized at 2.8.<br>
+<strong>Case 2 – MFI fell from 3.0 to 1.5:</strong> 8% HDPE contamination found in LDPE stream. After switching to pure LDPE fraction, MFI returned to 3.0.<br>
+<strong>Case 3 – Fluctuating MFI 2.0 to 4.5:</strong> Worn feeder caused uneven feed. After repair, MFI stabilized at 2.5 ±0.3.</p>
+
+<h2>9. Common MFI analysis errors</h2>
+<ul>
+<li>Checking only zone temperatures, not melt temperature → local overheating missed → use pyrometer</li>
+<li>Not testing incoming MFI → extruder can't compensate → test each batch</li>
+<li>Increasing temperature when MFI drops → accelerates degradation → check contamination first</li>
+<li>Ignoring moisture → hydrolytic degradation → keep moisture below 0.2-0.3%</li>
+</ul>
+
+<h2>10. Conclusion</h2>
+<p>MFI changes in 100% LDPE recycling indicate thermal degradation, contamination, or process instability. Increasing MFI suggests overheating (>230°C), long residence time, or catalytic contaminants. Decreasing MFI suggests HDPE/PP contamination or fillers. Fluctuating MFI suggests homogenization problems. First actions: check temperature profile (melt below 230°C), test incoming MFI, reduce moisture below 0.3%, install degassing. Regular MFI testing of each batch is the most effective stabilization measure.</p>
+
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Переработка 100% LDPE – ПТР изменяется на экструдере: какие причины искать в первую очередь</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+<h2>1. Введение: почему ПТР критичен при переработке LDPE</h2>
+<p>При переработке 100% вторичного LDPE из пленочных отходов, мешков или сельхозпленки изменение показателя текучести расплава (ПТР) на выходе из экструдера – одна из самых частых проблем. Отклонение ПТР от целевого значения ведет к нестабильности процесса, браку и снижению экономической эффективности. В статье систематизированы основные причины изменения ПТР при переработке 100% вторичного LDPE.</p>
+
+<h2>2. Механизм изменения ПТР: сначала определить направление</h2>
+<p>Сначала нужно понять: ПТР увеличивается, уменьшается или скачет. Увеличение ПТР означает снижение вязкости – материал стал более текучим. Уменьшение ПТР означает повышение вязкости – материал хуже течет. Нестабильный ПТР указывает на проблемы с гомогенизацией или нестабильность процесса. Для 100% вторичного LDPE увеличение ПТР из-за термодеструкции – самая частая причина.</p>
+
+<h2>3. Причины увеличения ПТР при переработке LDPE</h2>
+<p>Увеличение ПТР – сигнал о деструкции полимерных цепей. Основные причины при 100% вторичном LDPE: перегрев расплава выше 240-250°C, длительное время пребывания в экструдере (малая загрузка или неоптимальный шнек), наличие катализаторов деструкции (остатки нитроцеллюлозных красок, влага), слишком высокая скорость сдвига при высоких оборотах шнека.</p>
+
+<h2>4. Причины уменьшения ПТР при переработке LDPE</h2>
+<p>Уменьшение ПТР встречается реже, но возможно: наличие сшитых фракций или гелей (перегрев в застойных зонах), загрязнение несовместимыми полимерами (HDPE, PP), наличие наполнителей и волокон (бумага, текстиль, древесная мука, мел), недостаток смазки (стеаратов, полиэтиленового воска).</p>
+
+<h2>5. Причины нестабильного, скачущего ПТР</h2>
+<p>Скачущий ПТР указывает на проблемы гомогенизации или нестабильность процесса: неравномерная подача сырья (мертвые зоны в бункере, изношенный дозатор), пульсации температуры (проблемы с ПИД-регуляторами), неоднородность самого вторичного сырья (смесь материалов разного происхождения).</p>
+
+<h2>6. Первоочередные действия при изменении ПТР</h2>
+<p>Проверьте температурный профиль, убедитесь в отсутствии локальных перегревов, замерьте фактическую температуру расплава пирометром. Оцените качество сырья: зольность, влажность (не более 0.2-0.3%), видимые загрязнения. При использовании дробленки после мойки проверьте эффективность сушки. При повышенном ПТР проверьте зоны застоя и снизьте скорость шнека. Измерьте ПТР исходного сырья.</p>
+
+<h2>7. Настройка параметров для стабильного ПТР при переработке LDPE</h2>
+<p>Температурный профиль: зона 1 140-150°C, зона 2 150-170°C, зона 3 170-190°C, зона 4 180-190°C, головка 170-190°C. Температура расплава не должна превышать 230°C. Время пребывания – не более 2-3 минут. При влажности материала более 0.5% необходима зона дегазации при 180-190°C.</p>
+
+<h2>8. Примеры из практики</h2>
+<p><strong>Пример 1 – ПТР вырос с 2.5 до 5.0:</strong> LDPE из агропленки с влажностью 12% при температуре зоны 3 220°C. После установки вакуумной дегазации и снижения зоны 3 до 190°C ПТР стабилизировался на 2.8.<br>
+<strong>Пример 2 – ПТР упал с 3.0 до 1.5:</strong> В потоке LDPE обнаружено 8% примесей HDPE. После перехода на чистую фракцию LDPE ПТР вернулся к 3.0.<br>
+<strong>Пример 3 – Скачущий ПТР от 2.0 до 4.5:</strong> Изношенный дозатор подавал материал неравномерно. После ремонта дозатора ПТР стабилизировался на 2.5 ±0.3.</p>
+
+<h2>9. Типичные ошибки при анализе проблем с ПТР</h2>
+<ul>
+<li>Проверяют только температуры зон, а не расплава → локальные перегревы не видны → использовать пирометр</li>
+<li>Не проверяют ПТР входящего сырья → экструдер не может скомпенсировать разброс → тестировать каждую партию</li>
+<li>Повышают температуру при падении ПТР → ускоряют деструкцию → сначала проверить загрязнения</li>
+<li>Игнорируют влажность материала → гидролитическая деструкция → держать влажность ниже 0.2-0.3%</li>
+</ul>
+
+<h2>10. Заключение и рекомендации</h2>
+<p>Изменение ПТР при переработке 100% вторичного LDPE – признак термодеструкции, загрязнений или нестабильности процесса. Рост ПТР указывает на перегрев (выше 230°C), долгое время пребывания или каталитические примеси (краски, влага). Падение ПТР указывает на загрязнение HDPE/PP или наличие наполнителей. Скачущий ПТР – на проблемы гомогенизации или неравномерную подачу. Первоочередные действия: проверить температурный профиль (температура расплава ниже 230°C), протестировать ПТР и чистоту сырья, снизить влажность ниже 0.3%, установить дегазацию. Регулярное измерение ПТР каждой партии до переработки – самая эффективная мера стабилизации процесса.</p>
+
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
+</div>
+<script>
+(function(){
+var b=document.querySelectorAll('.lang-btn'),p=document.querySelectorAll('.lang-panel');
+b.forEach(function(btn){btn.addEventListener('click',function(){
+var l=btn.getAttribute('data-lang');
+b.forEach(function(x){x.classList.remove('active');});
+btn.classList.add('active');
+p.forEach(function(panel){panel.classList.remove('active-panel');});
+document.getElementById('lang-'+l).classList.add('active-panel');
+});});
+})();
+</script>
+</body>
+</html>
