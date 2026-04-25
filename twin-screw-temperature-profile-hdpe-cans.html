@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperaturprofil für Doppelschneckenextruder bei HDPE-Kanisterrecycling</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>Temperaturprofil für Doppelschneckenextruder bei HDPE-Kanisterrecycling</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. Grundlagen – warum die Temperaturführung entscheidend ist</h2>
+        <p>Bei der Verarbeitung von HDPE aus Kanistern, Flaschen oder landwirtschaftlichen Behältern ist die Temperatureinstellung kritisch. Der MFI von HDPE-Rezyklat liegt oft bei 0,5–1,5 g/10min. Ein zu niedriger MFI (0,3–0,5) führt zu einem zu viskosen Material; eine Erhöhung der Temperatur birgt die Gefahr von thermischer Zersetzung („Verbrennung“).</p>
+
+        <h2>2. Empfohlenes Temperaturprofil (Doppelschnecke 75–90 mm, L/D 40–48)</h2>
+        <ul>
+            <li><strong>Zone 1 (Einzug):</strong> 140–160°C – nicht zu heiß, um ein vorzeitiges Aufschmelzen und Brückenbildung zu vermeiden.</li>
+            <li><strong>Zonen 2–3 (Plastifizierung/Kompression):</strong> 180–200°C – intensive Scherung, Aufschmelzen der HDPE-Kristalle.</li>
+            <li><strong>Zonen 4–5 (Entgasung/Dosierung):</strong> 190–210°C – kritische Zone; die Schnecke erzeugt zusätzlich Reibungswärme. Überhitzung vermeiden!</li>
+            <li><strong>Adapter + Siebwechsler:</strong> 200–210°C – sicherstellen, dass die Filtration bei ausreichend niedriger Viskosität stattfindet.</li>
+            <li><strong>Granulatkopf / Blasformkopf / Breitschlitzdüse:</strong> 190–200°C – 10–20°C kühler als die Dosierzone. Bei der Blasfolie oder Extrusionsblasformen sorgt das für eine höhere Schmelzefestigkeit.</li>
+        </ul>
+        <div class="highlight">🔧 Faustregel: Die Schmelzetemperatur sollte 210–220°C nicht überschreiten, sonst droht Gelbfärbung, Abbau und Brandgeruch. Für MFI &lt;0,5 sind 220°C die absolute Obergrenze.</div>
+
+        <h2>3. Anzeichen für Überhitzung der Schmelze</h2>
+        <ul>
+            <li><strong>Weißer, stechender Rauch + Paraffin- oder Brandgeruch:</strong> Beginn der thermischen Zersetzung.</li>
+            <li><strong>Gelbe bis braune Verfärbung des Granulats oder der Folienkante:</strong> Oxidation bei Schmelztemperaturen über 230–240°C.</li>
+            <li><strong>Speichelbildung an der Düse / Auslaufen der Schmelze:</strong> zu niedrige Viskosität (Überhitzung). Beim Blasformen führt das zum Durchhängen des Schlauchs.</li>
+            <li><strong>Blasen / Schaum im austretenden Strang:</strong> Gasentwicklung durch Polymerabbau.</li>
+            <li><strong>Sehr weiche, „schleimige“ Schmelze mit geringer Festigkeit:</strong> Folienblase reißt sofort.</li>
+        </ul>
+
+        <h2>4. Messung der Schmelzetemperatur – Pyrometer vs. Kontaktfühler</h2>
+        <p>Ein gewöhnliches Baustellen‑Pyrometer misst aufgrund der Teiltransparenz der Schmelze und des Emissionsgrades von PE (ε≈0,92–0,94) oft um 20–50°C zu niedrig. Ein einstellbares Pyrometer (ε auf 0,92–0,94 setzen) ist für Trendbeobachtungen geeignet. Für absolute Genauigkeit (±1–2°C) ist ein <strong>Eintauchthermoelement (Typ K)</strong> zu empfehlen, das direkt in die Schmelze (durch eine Bohrung im Kopf) gesteckt wird.</p>
+
+        <h2>5. MFI zu niedrig? – Anheben der Fließfähigkeit ohne Zersetzung</h2>
+        <p>Liegt der MFI des HDPE-Rezyklats bei 0,3–0,5, benötigt man für Spritzguss oder Folienblasen einen höheren MFI (1,5–2,0). Methoden:</p>
+        <ul>
+            <li><strong>Zumischen von LLDPE oder LDPE:</strong> 10–30% LLDPE (MFI 2,5–4,0) oder LDPE (MFI 4–8) erhöht den MFI spürbar. Beispiel: 20% LLDPE zu HDPE (0,8) bringt den MFI auf 1,5–1,8.</li>
+            <li><strong>Peroxid‑Degradation (organische Peroxide):</strong> 0,05–0,2% Peroxid spaltet Ketten und erhöht den MFI (z. B. von 0,5 auf 1,5–2,0). Nachteil: die Schlagzähigkeit kann um 20–30% sinken.</li>
+            <li><strong>Reine Temperaturerhöhung:</strong> 30–50°C über Normal steigert den MFI, führt aber zu Gelbfärbung, Geruch und Festigkeitsverlust. Bei 210–220°C erreicht man aus 0,5 MFI etwa 1,0–1,2; über 240°C nicht empfehlenswert.</li>
+            <li><strong>Prozesshilfsmittel (PPA):</strong> auf Fluorkautschukbasis senken den Druck im Schneckenkanal, ändern aber den MFI nicht. Nach 30–60 min Laufzeit spürbare Entlastung bei viskosen Materialien.</li>
+        </ul>
+        <div class="highlight">📌 Empfehlung für sehr niedrigen MFI (&lt;0,5): Mischen Sie 20–30% eines höherfließenden Polymers (LLDPE/LDPE) zu, bevor Sie die Temperatur drastisch anheben. Die Materialkosten steigen minimal, die Produktqualität bleibt hoch.</div>
+
+        <h2>6. Wechselwirkungen mit anderen Störungen</h2>
+        <p>Eine zu hohe Schmelzetemperatur (z. B. >220°C) kann den MFI unkontrolliert ansteigen lassen (auf 3–5). Das wiederum führt zum Überlaufen der Entgasungsöffnung, zu niedrigem Schmelzedruck und zu Siebrissen. Umgekehrt bewirkt zu niedrige Temperatur eine Überlast des Antriebs (OL‑Fehler) und ungeschmolzene Partikel. Daher sollte das Temperaturprofil immer Schritt für Schritt (5°C‑Änderungen) optimiert werden.</p>
+
+        <h2>7. Fazit</h2>
+        <p>Ein gut eingestelltes Temperaturprofil für HDPE-Rezyklat aus Kanistern lautet: Einzug 140–160°C, Plastifizierung 180–200°C, Dosierung/Entgasung 190–210°C, Werkzeug 190–200°C. Die Schmelzetemperatur sollte 210–220°C möglichst nicht überschreiten. Ist der MFI zu niedrig, ist die Zumischung von LLDPE/LDPE oder eines Peroxid‑Abbauers der schonendere Weg als rohe Temperaturerhöhung. Kontrollieren Sie die tatsächliche Schmelzetemperatur mit einem Eintauchfühler (Typ K) – ein einfaches Pyrometer kann stark abweichen.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Twin‑screw extruder temperature profile for recycled HDPE from cans</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>Recommended profile (75–90 mm, L/D 40–48):</strong> Feed zone 140–160°C, zones 2–3 180–200°C, zones 4–5 190–210°C, adapter+screen changer 200–210°C, die 190–200°C. Melt temperature should stay below 210–220°C.</p>
+        <p><strong>Signs of overheating:</strong> white smoke, paraffin/burnt smell, yellow/brown colour, drooling at die, bubbles, very soft melt.</p>
+        <p><strong>Temperature measurement:</strong> Use an immersion thermocouple (type K) for accuracy (±1–2°C). A pyrometer with adjustable emissivity (ε=0.92–0.94) is only for trend monitoring.</p>
+        <p><strong>Raising too low MFI (0.3–0.5):</strong> blend with 10–30% LLDPE (MFI 2.5–4.0) or LDPE (MFI 4–8); or use 0.05–0.2% peroxide degrader (impacts impact strength). Pure temperature increase above 220°C causes degradation.</p>
+        <div class="highlight">✅ For very low MFI, blending is the preferred method – it avoids yellowing, smell and loss of mechanical properties.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Температурный профиль двухшнекового экструдера для переработки вторичного HDPE из канистр</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Введение: почему важен температурный баланс</h2>
+        <p>При переработке вторичного HDPE из канистр, флаконов и агроканистр температурный режим критичен. Показатель текучести расплава исходного сырья часто низкий (0,5–1,5), а попытка «разогнать» его температурой легко приводит к пережогу и деструкции.</p>
+
+        <h2>2. Температурный профиль для двухшнека 75–90 мм (L/D 40–48)</h2>
+        <ul>
+            <li><strong>Зона 1 (загрузка):</strong> 140–160°C – не перегревать, чтобы избежать пробки и преждевременного плавления.</li>
+            <li><strong>Зоны 2–3 (плавление и сжатие):</strong> 180–200°C – интенсивный сдвиг, плавление кристаллической структуры.</li>
+            <li><strong>Зоны 4–5 (дегазация и дозирование):</strong> 190–210°C – критическая зона, шнек сам добавляет тепло за счёт трения.</li>
+            <li><strong>Адаптер и гидравлический фильтр расплава:</strong> 200–210°C.</li>
+            <li><strong>Головка гранулятора или дорн для листа/выдува:</strong> 190–200°C – на 10–20°C ниже, чем в дозировании, для лучшей прочности заготовки.</li>
+        </ul>
+        <div class="highlight">🔧 Правило: температура расплава не должна превышать 210–220°C, иначе начинается пожелтение, запах и потеря прочности. Для HDPE с ПТР 0,5–0,8 ориентируйтесь на нижнюю границу (190–210°C).</div>
+
+        <h2>3. Признаки перегрева расплава</h2>
+        <ul>
+            <li><strong>Едкий белый дым и запах парафина или гари:</strong> начало термодеструкции.</li>
+            <li><strong>Пожелтение гранулы или кромки листа:</strong> окисление при &gt;230–240°C.</li>
+            <li><strong>Слюни на фильере, подтёки расплава, налипание на дорн:</strong> слишком жидкая шнель (перегрев).</li>
+            <li><strong>Пузырьки и пена в расплаве:</strong> газовыделение при деструкции.</li>
+            <li><strong>Сопливая, слабая шнель (рвётся при вытяжке):</strong> снижение прочности.</li>
+        </ul>
+
+        <h2>4. Измерение температуры расплава – пирометр vs. контактный датчик</h2>
+        <p>Обычный строительный пирометр на расплаве даёт большую погрешность из-за прозрачности полимера и коэффициента эмиссии (ε=0,92–0,94). Пирометр может видеть сквозь шнель горячий металл головки – ошибка 20–50°C. Для точных значений (погрешность ±1–2°C) используйте <strong>игольчатый термометр (термопара K)</strong>, погружаемый прямо в расплав через отверстие в головке. Пирометр с настройкой ε годится только для оперативного контроля тренда (становится горячее/холоднее).</p>
+
+        <h2>5. Низкий ПТР у вторичного HDPE – способы повышения текучести</h2>
+        <p>Если ПТР вторичного HDPE составляет 0,3–0,5 (а требуется 1,5–2,0 для литья или пленки), можно действовать так:</p>
+        <ul>
+            <li><strong>Смешение с более текучим полимером:</strong> добавьте 10–30% LLDPE (ПТР 2,5–4,0) или LDPE (ПТР 4–8). Например, 20% LLDPE к HDPE с ПТР 0,8 поднимает ПТР до 1,5–1,8.</li>
+            <li><strong>Использование пероксидных деструкторов:</strong> 0,05–0,2% пероксида разрывает цепи – ПТР растёт (0,5 → 1,5–2,0). Минус: ударная вязкость падает на 20–30%.</li>
+            <li><strong>Повышение температуры экструзии:</strong> даёт прирост ПТР, но ведёт к пожелтению, запаху и деструкции. Для ПТР 0,5 при 210–220°C получите ПТР 1,0–1,2. Выше 240°C – не рекомендуется.</li>
+            <li><strong>Процессинговые добавки (PPA) на фторкаучуке:</strong> не меняют ПТР, но снижают давление и помогают протолкнуть вязкий материал через узкую фильеру. Эффект через 30–60 минут работы.</li>
+        </ul>
+        <div class="highlight">📌 Для очень низкого ПТР (&lt;0,5) наиболее безопасно смешение с LLDPE или LDPE – это сохраняет цвет, запах и механические свойства.</div>
+
+        <h2>6. Связь с другими неисправностями</h2>
+        <p>Слишком высокая температура расплава (выше 220°C) приводит к неконтролируемому росту ПТР (до 3–5), что в свою очередь вызывает заливание вакуумного порта, падение давления и разрыв сеток. Слишком низкая температура – к перегрузке двигателя (ошибка OL), непроплавам и высокому крутящему моменту. Поэтому настройка профиля должна производиться малыми шагами (5°C) и контролироваться измерением фактической температуры расплава.</p>
+
+        <h2>7. Заключение</h2>
+        <p>Оптимальный профиль для вторичного HDPE из канистр: загрузка 140–160°C, пластикация 180–200°C, дозирование/дегазация 190–210°C, головка 190–200°C. Расплав не должен перегреваться выше 210–220°C. Если ПТР исходного сырья слишком низкий (0,3–0,5), предпочтительнее добавить LLDPE или LDPE, чем поднимать температуру до разрушительных значений. Контролируйте реальную температуру расплава игольчатой термопарой – пирометр может сильно врать.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
