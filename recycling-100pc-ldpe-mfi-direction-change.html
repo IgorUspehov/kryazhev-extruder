@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 % LDPE-Recycling – Warum sich der MFI im Extruder ändert (Anstieg oder Abfall)</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:#eef2f5;font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.5;color:#1a2c3e;padding:2rem 1rem;}
+        .container{max-width:1300px;margin:0 auto;background:white;border-radius:32px;box-shadow:0 20px 35px -12px rgba(0,0,0,0.1);overflow:hidden;}
+        .lang-tabs{display:flex;gap:0.5rem;background:#f8fafc;padding:1rem 1.5rem 0 1.5rem;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;}
+        .lang-btn{border:none;background:transparent;font-size:1rem;font-weight:600;padding:0.6rem 1.2rem;border-radius:40px;cursor:pointer;color:#2c3e50;}
+        .lang-btn.active{background:#1a4d5f;color:white;}
+        .lang-btn:hover:not(.active){background:#e2e8f0;}
+        .lang-panel{display:none;padding:2rem 2rem 3rem 2rem;animation:fade 0.25s ease;}
+        .lang-panel.active-panel{display:block;}
+        @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+        h1{font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,#1a4d5f,#2c7a6e);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem;}
+        .author{font-size:1rem;color:#4a627a;border-left:4px solid #f1c40f;padding-left:1rem;margin:0.75rem 0 2rem 0;font-weight:500;}
+        h2{font-size:1.5rem;font-weight:600;margin-top:2rem;margin-bottom:1rem;color:#1f4e6a;border-bottom:2px solid #cbdde6;padding-bottom:0.4rem;}
+        h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 0.75rem 0;color:#266b6b;}
+        p,li{color:#2d3e50;margin-bottom:0.75rem;}
+        ul,ol{margin:0.75rem 0 1rem 1.5rem;}
+        .highlight{background:#fef9e3;padding:1rem 1.5rem;border-left:5px solid #f7b32b;border-radius:16px;margin:1.5rem 0;font-weight:500;}
+        footer{text-align:center;font-size:0.8rem;color:#6c86a3;border-top:1px solid #e2edf2;padding-top:2rem;margin-top:2rem;}
+        @media(max-width:700px){.lang-tabs{padding:0.75rem 1rem 0 1rem;}.lang-panel{padding:1.5rem;}h1{font-size:1.6rem;}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="lang-tabs">
+        <button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-panel active-panel">
+        <h1>100 % LDPE-Recycling – Warum sich der MFI im Extruder ändert (Anstieg oder Abfall)</h1>
+        <div class="author">Autor: Igor Krjazhev, Verfahrenstechnologe für Kunststoffrecycling</div>
+
+        <h2>1. MFI-Änderungen als zentrales Qualitätsmerkmal</h2>
+        <p>Bei der Verarbeitung von 100% recyceltem LDPE (z. B. aus Agrarfolie, Stretchfolie) ist eine stabile Schmelzeviskosität entscheidend für die Blasstabilität der Folie oder die Maßhaltigkeit von Extrusionsplatten. Der MFI des Rezyklats kann während des Extrudierens ansteigen oder abfallen – die Richtung hängt von der thermischen Vorgeschichte, Verunreinigungen und der Stabilisierung ab.</p>
+
+        <h2>2. MFI-Anstieg – Kettenbruch durch thermisch-oxidativen Abbau</h2>
+        <p>Überschreitet die Massetemperatur 220–230°C, werden die Polymerketten gespalten (thermooxidative Degradation) – der MFI steigt. So kann z. B. ein LDPE mit ursprünglichem MFI 1,5 durch eine Temperaturerhöhung von 190°C auf 230°C auf MFI 3,5–4,0 ansteigen. In manchen Werken wird dieser Effekt genutzt, um zu viskoses Material zu verflüssigen – allerdings auf Kosten mechanischer Eigenschaften (geringere Reißfestigkeit) und mit der Gefahr von Brandgeruch.</p>
+
+        <h2>3. MFI-Abfall – Vernetzung durch Katalysatorrückstände oder Totzonen</h2>
+        <p>Ein Absinken des MFI (die Schmelze wird zähflüssiger) wird durch Vernetzungsreaktionen verursacht. Auslöser sind oft Rückstände von Katalysatoren (z. B. Metalle wie Kupfer oder Eisen) oder lange Verweilzeiten in Totzonen des Extruders. Bei LDPE aus Agrarfolie, das Spuren von Metallen enthalten kann, kann die Vernetzungsgeschwindigkeit 3–5× höher sein als bei sauberem Material. Ohne Stabilisierung steigt die Motorlast, der Strom des Extruderantriebs nimmt zu.</p>
+
+        <div class="highlight">🔧 Entscheidend: Ob der MFI steigt oder fällt, hängt davon ab, welcher Prozess dominiert – Kettenbruch (bei zu hoher Temperatur) oder Vernetzung (durch Katalysatorrückstände/lange Verweilzeit).</div>
+
+        <h2>4. Stabilisierung mit Antioxidantien</h2>
+        <p>Primäre (phenolische) Antioxidantien wie Irganox 1010 unterbrechen die radikalische Kette und verhindern sowohl Kettenbruch als auch Vernetzung. Phosphit‑Sekundärantioxidantien zersetzen Hydroperoxide. Eine Kombination aus beiden (z. B. 0,2–0,3% Irganox 1010 + 0,1–0,2% Irgafos 168) stabilisiert den MFI beim Recyceln von 100% LDPE. In Dänemark wird eine solche Zweikomponentenstabilisierung bereits im Granulierprozess eingesetzt.</p>
+
+        <h2>5. Aktive MFI-Regelung – Temperaturkorrektur in Abhängigkeit vom Gegendruck</h2>
+        <p>Moderne Extrusionsanlagen (z. B. in Belgien) nutzen eine automatische Kompensation: Sinkt der MFI (die Viskosität steigt), erhöht das System die Temperatur in den letzten Zonen und im Werkzeug leicht (in 5°C‑Schritten), um die Fließfähigkeit zu erhöhen. Steigt der MFI zu stark, wird die Temperatur abgesenkt. Ein wiederkehrender Labormesswert (alle 2–4 Stunden) dient als Referenz für die Profilanpassung.</p>
+
+        <div class="highlight">📌 Betriebspraxis: Kontrollieren Sie den MFI jeder Charge vor dem Einatz (operativer Eingangstest). Bei einer Abweichung von mehr als ±20% vom Sollwert passen Sie das Temperaturprofil an oder ändern die Rezeptur (Mischung mit einem entgegengesetzt reagierenden Material).</div>
+
+        <h2>6. Praktische Folgen zu hoher bzw. zu niedriger MFI-Änderung</h2>
+        <ul>
+            <li><strong>MFI zu stark gestiegen (Schmelze zu dünnflüssig):</strong> Folienblase instabil, Schwankungen der Dicke, erhöhte Neigung zu Schweißnahtbrüchen, Geruchsbelästigung durch flüchtige Abbauprodukte.</li>
+            <li><strong>MFI zu stark gefallen (Schmelze zu viskos):</strong> Motorüberlast (OL-Fehler), hoher Druck im Siebwechsler (vorzeitiger Siebwechsel), schlechtere Füllung von Spritzgussformen.</li>
+        </ul>
+
+        <h2>7. Fazit für das 100%-LDPE-Recycling</h2>
+        <p>Die Richtung der MFI-Änderung beim Extrudieren von 100% LDPE-Rezyklat wird vom Wettbewerb zwischen Kettenbruch (thermooxidativ, dominiert bei T > 220–230°C) und Vernetzung (katalysiert durch Metallrückstände) bestimmt. Durch den Einsatz von Antioxidantien (z. B. Irganox 1010) und einer aktiven Temperaturführung kann der MFI stabilisiert werden. Eine routinemäßige MFI-Kontrolle jeder Charge (operativer Labortest) ist die Grundlage für eine gleichbleibende Produktqualität im Folienblas- oder Extrusionsprozess.</p>
+        <footer>© Igor Krjazhev – Technologieberatung für Kunststoffrecycling</footer>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-panel">
+        <h1>Recycling of 100% LDPE – why MFI changes in the extruder (increase or decrease)</h1>
+        <div class="author">Author: Igor Kryazhev, Process Consultant for Polymer Recycling</div>
+        <p><strong>MFI increase:</strong> chain scission by thermo‑oxidative degradation at melt temperatures above 220–230°C. Ex.: LDPE MFI 1.5 → 3.5–4.0 after heating from 190 to 230°C. Can be used to liquefy too‑viscous material but reduces mechanical strength and may cause odour.</p>
+        <p><strong>MFI decrease:</strong> crosslinking caused by catalyst residues (e.g. Cu, Fe) or long residence times in dead zones. For agricultural LDPE containing metal traces, crosslinking can be 3–5× faster. Without stabilisation → motor overload, higher current.</p>
+        <p><strong>Stabilisation:</strong> Primary antioxidant (e.g. Irganox 1010, 0.2–0.3%) plus secondary phosphite (e.g. Irgafos 168) prevents both chain scission and crosslinking.</p>
+        <p><strong>Active MFI control:</strong> Some lines automatically correct temperature if pressure changes (increase T when MFI drops, decrease T when MFI rises). Lab checks every 2–4 h.</p>
+        <div class="highlight">✅ Pro tip: Test MFI of every incoming LDPE batch. If deviation >20%, adjust temperature profile or blend with a polymer that moves MFI in the opposite direction.</div>
+        <footer>© Igor Kryazhev – Polymer Recycling Consulting</footer>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="lang-ru" class="lang-panel">
+        <h1>Recycling 100% LDPE – ПТР изменяется на экструдере: от чего зависит направление?</h1>
+        <div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+        <h2>1. Стабильность ПТР – главный критерий качества</h2>
+        <p>При переработке 100% вторичного LDPE (плёнка, мешки, стрейч) показатель текучести расплава может расти или падать. Направление изменения зависит от термической истории, загрязнений и эффективности стабилизации.</p>
+
+        <h2>2. ПТР растёт – термоокислительная деструкция</h2>
+        <p>При температуре расплава выше 220–230°C цепи разрываются – ПТР увеличивается. Например, LDPE с ПТР 1,5 при повышении температуры с 190 до 230°C может дать ПТР 3,5–4,0. Этот эффект иногда используют для разжижения слишком вязкого сырья, но это ведёт к потере прочности пленки и появлению запаха.</p>
+
+        <h2>3. ПТР падает – сшивка молекул</h2>
+        <p>Если доминирует сшивка (под действием остаточных катализаторов, металлов или длительного нагрева в застойных зонах), ПТР снижается. Для вторичного LDPE из сельхозпленки, содержащего следы меди или железа, скорость сшивки может быть в 3–5 раз выше, чем у чистого материала. Вязкость растёт – нагрузка на двигатель увеличивается, ток экструдера повышается.</p>
+
+        <div class="highlight">🔧 Направление изменения ПТР – это соревнование двух процессов. При перегреве (>220–230°C) побеждает деструкция (ПТР растёт). При низких температурах, наличии металлов или застойных зонах – сшивка (ПТР падает).</div>
+
+        <h2>4. Стабилизация антиоксидантами</h2>
+        <p>Первичный фенольный антиоксидант (Irganox 1010) в дозировке 0,2–0,3% останавливает радикальный механизм как деструкции, так и сшивки. Вторичные фосфитные антиоксиданты (Irgafos 168, 0,1–0,2%) разлагают гидропероксиды. Комбинация этих двух компонентов считается стандартом для стабилизации ПТР при переработке 100% LDPE.</p>
+
+        <h2>5. Активное управление ПТР по давлению</h2>
+        <p>На линиях в Бельгии внедрена автоматическая компенсация: если ПТР падает (вязкость растёт), система плавно повышает температуру в последних зонах и головке на 5–10°C, чтобы восстановить текучесть. Если ПТР слишком высокий – температуру снижают. Контрольный замер ПТР на входе и выходе каждые 2–4 часа позволяет корректировать профиль.</p>
+
+        <div class="highlight">📌 Практика: обязательно проводите оперативный контроль ПТР каждой входящей партии вторичного LDPE перед загрузкой в бункер. Отклонение более чем на 20% от целевого значения требует корректировки температурного профиля или смешения с полимером, дающим противоположное направление изменения ПТР.</div>
+
+        <h2>6. Что делать на практике</h2>
+        <ul>
+            <li><strong>ПТР слишком вырос (расплав слишком жидкий):</strong> снизьте температуру в зоне дозирования и головке на 10–15°C. Добавьте 0,2–0,3% Irganox 1010 в рецептуру.</li>
+            <li><strong>ПТР упал (расплав слишком вязкий):</strong> повысьте температуру в последних зонах на 5–10°C (но не выше 230°C). Проверьте наличие застойных зон – очистите головку и адаптер. Рассмотрите добавление небольшого количества (5–10%) первичного LDPE с высоким ПТР.</li>
+            <li><strong>Нестабильность от партии к партии:</strong> введите обязательный входной контроль ПТР. Сортируйте материал по диапазонам ПТР и перерабатывайте партии с близкими значениями вместе.</li>
+        </ul>
+
+        <h2>7. Заключение</h2>
+        <p>Направление изменения ПТР при экструзии 100% вторичного LDPE – это не случайность, а следствие баланса между деструкцией (рост ПТР) и сшивкой (падение ПТР). Управление процессом достигается контролем температуры (избегать перегрева выше 220–230°C), добавлением антиоксидантов (Irganox 1010 + Irgafos 168) и регулярным лабораторным контролем каждой партии. Только так можно получить стабильную пленку с предсказуемыми свойствами.</p>
+        <footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров</footer>
+    </div>
+</div>
+<script>
+    (function(){
+        const btns = document.querySelectorAll('.lang-btn');
+        const panels={de:document.getElementById('lang-de'),en:document.getElementById('lang-en'),ru:document.getElementById('lang-ru')};
+        function activate(lang){
+            Object.values(panels).forEach(p=>p?.classList.remove('active-panel'));
+            if(panels[lang])panels[lang].classList.add('active-panel');
+            btns.forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-lang')===lang)btn.classList.add('active');});
+        }
+        btns.forEach(btn=>{btn.addEventListener('click',()=>{const l=btn.getAttribute('data-lang');if(l==='de'||l==='en'||l==='ru')activate(l);});});
+        activate('de');
+    })();
+</script>
+</body>
+</html>
+EOF
