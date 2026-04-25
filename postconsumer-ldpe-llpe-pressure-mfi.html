@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recycling von Post-Consumer LDPE/LLDPE – Warum Druck und MFI von Charge zu Charge springen | Igor Kryazhev</title>
+<meta name="description" content="Ursachen für Druckschwankungen und MFI-Variationen bei der Verarbeitung von Post-Consumer LDPE/LLDPE-Mischungen. Analyse von Sortierfehlern, Feuchte, Verschnitt und Additiven.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#222;background:#f5f5f5;padding:20px}
+.container{max-width:1200px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}
+.lang-tabs{display:flex;background:#2c3e50;flex-wrap:wrap}
+.lang-btn{background:#34495e;border:none;padding:14px 28px;font-size:1rem;font-weight:600;cursor:pointer;color:#ecf0f1;border-right:1px solid #2c3e50}
+.lang-btn.active{background:#27ae60;color:#fff}
+.lang-panel{display:none;padding:30px 40px;animation:fadeIn .3s ease}
+.lang-panel.active-panel{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.8rem;color:#27ae60;border-left:5px solid #27ae60;padding-left:20px;margin-bottom:15px}
+h2{font-size:1.4rem;color:#2c3e50;margin:25px 0 15px;border-bottom:2px solid #ecf0f1}
+h3{font-size:1.2rem;color:#34495e;margin:20px 0 10px}
+.author{background:#e8f5e9;padding:12px 20px;border-radius:8px;margin:20px 0;font-style:italic;color:#2e7d32}
+ul{margin:15px 0 15px 30px}
+li{margin:8px 0}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid #ecf0f1;font-size:.85rem;color:#7f8c8d;text-align:center}
+@media (max-width:768px){.lang-panel{padding:20px}h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-tabs">
+<button class="lang-btn active" data-lang="de">🇩🇪 Deutsch (Haupt)</button>
+<button class="lang-btn" data-lang="en">🇬🇧 English</button>
+<button class="lang-btn" data-lang="ru">🇷🇺 Русский</button>
+</div>
+
+<!-- DEUTSCH - Hauptsprache -->
+<div id="lang-de" class="lang-panel active-panel">
+<h1>Recycling von Post-Consumer LDPE/LLDPE – warum Druck in der Düse und MFI von Charge zu Charge springen</h1>
+<div class="author">Autor: Igor Kryazhev, Technologieberater für Sekundärkunststoff-Recycling</div>
+
+<h2>1. Einleitung: Das Problem der Chargenschwankungen</h2>
+<p>Betreiber von Recyclinganlagen für Post-Consumer LDPE/LLDPE kennen das Problem: Eine Charge läuft stabil mit konstantem Druck in der Düse (80-100 bar) und gleichmäßigem MFI. Die nächste Charge – äußerlich identisch – zeigt Druckspitzen bis 180 bar, der MFI fällt von 2.5 auf 1.2 oder steigt auf 4.5. Der Extruder beginnt zu pulsieren, die Folienblase wird instabil. Dieser Artikel analysiert die sechs häufigsten Ursachen für Chargenschwankungen und gibt praktische Lösungen.</p>
+
+<h2>2. Mechanismus: Warum Post-Consumer keine gleichbleibende Qualität hat</h2>
+<p>Post-Consumer LDPE/LLDPE stammt aus Haushalten, Gewerbe und Landwirtschaft. Die Zusammensetzung variiert stark: Folien unterschiedlicher Hersteller, verschiedene Bedruckungen, Restfeuchte nach der Wäsche, Verschnitt mit anderen Polymeren, unterschiedliche Alterung durch UV-Einstrahlung. Keine dieser Variablen ist konstant. Der Extruder reagiert auf jede Änderung mit Druck- und MFI-Schwankungen.</p>
+
+<h2>3. Ursache 1: Schwankender LLDPE-Anteil im LDPE-Strom</h2>
+<p>Die häufigste Ursache für Chargenschwankungen ist der variable LLDPE-Anteil. Eine Charge besteht zu 90% aus LDPE (dünne Verpackungsfolien, Tragetaschen) und zu 10% aus LLDPE (Stretchfolie). Die nächste Charge hat 40% LLDPE durch Beimischung von Silagefolie. LLDPE erhöht die Schmelzeviskosität – der Druck steigt, der MFI fällt. Bei einem 500-kg/h-Extruder kann ein Anstieg des LLDPE-Anteils von 10% auf 40% den Druck von 80 auf 160 bar erhöhen. Die Lösung ist die MFI-Messung jeder Charge vor der Verarbeitung und die Rezepturanpassung mit höherviskosem LDPE oder Viskositätsmodifikatoren.</p>
+
+<h2>4. Ursache 2: Restfeuchte nach der Wäsche</h2>
+<p>Post-Consumer Folien werden gewaschen, aber die Trocknung ist oft unzureichend. Die Restfeuchte schwankt zwischen 0.1% und 1.5% je nach Effizienz der Zentrifuge und Lufttrocknung. Wasser im Extruder verdampft schlagartig – der Druck bricht ein, es kommt zu Schaumbildung an der Düse. Der MFI steigt durch hydrolytischen Abbau kurzfristig an. Bei 1% Restfeuchte kann der MFI eines LDPE von 2.0 auf 3.5-4.0 steigen – der Druck fällt von 100 auf 50 bar. Die Lösung ist die Installation einer Vakuumentgasungszone bei 180-190°C. Zusätzlich hilft die Trocknung des Materials bei 80°C für 2-4 Stunden vor der Extrusion. Ein Feuchtemessgerät vor dem Extruder warnt bei Überschreitung von 0.3%.</p>
+
+<h2>5. Ursache 3: Verschnitt mit HDPE, PP oder PA</h2>
+<p>Post-Consumer Ströme enthalten oft Verschnitt mit anderen Polymeren. HDPE aus Milchflaschen-Verschlüssen, PP aus Deckeln von Joghurtbechern, PA aus Käseverpackungen oder Wursthüllen. Schon 2-5% HDPE oder PP im LDPE-Strom verändern Viskosität und MFI massiv. PA ist am gefährlichsten – es bildet harte Einschlüsse, die nicht schmelzen. Der Druck steigt durch ungeschmolzene Partikel, der MFI sinkt scheinbar. Die Lösung ist die manuelle oder optische Sortierung vor der Wäsche. Bei bereits gekaufter Charge hilft nur die Zugabe von Kompatibilisatoren (Haftvermittler) oder die Verwendung für weniger anspruchsvolle Produkte.</p>
+
+<h2>6. Ursache 4: Unterschiedliche Druckfarben und Lacke</h2>
+<p>Bedruckte Folien sind die Regel bei Post-Consumer Material. Die Farben variieren: wasserbasierte Farben, lösemittelbasierte Farben, UV-härtende Lacke. Bei 200-220°C verhalten sie sich unterschiedlich. Manche Farben verkoken zu harten Kohlenstoffpartikeln, die Siebe verstopfen – der Druck steigt. Andere Farben migrieren in die Schmelze und wirken als Weichmacher – der MFI steigt. Eine Charge mit 30% bunter Bedruckung kann einen MFI von 3.5 haben, die nächste mit 60% Bedruckung einen MFI von 2.0. Die Lösung ist die Filtration mit 150-200 µm Sieben und die Zugabe von 0.5-1.0% Prozesshilfsmittel (PPA) zur Verbesserung des Fließverhaltens.</p>
+
+<h2>7. Ursache 5: Unterschiedliche Alterung und UV-Schädigung</h2>
+<p>Post-Consumer Folien haben unterschiedliche Lebensdauern draußen. Eine silagefolie war 12 Monate auf dem Feld und ist stark UV-geschädigt. Eine Tragetasche war 2 Wochen im Einsatz. Gealtertes LDPE/LLDPE hat bereits kürzere Ketten durch Photo-Oxidation. Der MFI des Ausgangsmaterials ist höher – oft 3-5 statt 1.5-2.5. Die Lösung ist die MFI-Messung des Eingangsmaterials. Bei stark gealterten Chargen helfen Antioxidantien (0.2-0.3% Irganox 1010) sowie eine Absenkung der Extrusionstemperatur um 10-20°C.</p>
+
+<h2>8. Ursache 6: Schwankende Materialdichte und Schüttgewicht</h2>
+<p>Die Dichte des Mahlguts variiert mit der Folienart. Stretchfolie (LLDPE) hat eine höhere Dichte als LDPE. Auch die Flockengröße schwankt. Material mit niedrigem Schüttgewicht fördert ungleichmäßig aus dem Trichter – der Extruder läuft teils leer, teils überfüllt. Der Druck pulsiert im Takt der Förderschnecke. Die Lösung ist ein Zwangsbeschicker oder ein Schneckendosierer mit Drehzahlregelung. Bei stark schwankendem Schüttgewicht kann ein Gewichtsdosierer die Förderrate stabilisieren.</p>
+
+<h2>9. Typische Fehler bei der Ursachenanalyse</h2>
+<ul>
+<li><strong>Nur auf den Extruder schauen:</strong> Die Ursache liegt meist im Eingangsmaterial. Lösung: MFI und Feuchte jeder Charge vor Verarbeitung messen.</li>
+<li><strong>Keine Rückstellproben:</strong> Bei schlechter Charge kann die Ursache nicht mehr analysiert werden. Lösung: Von jeder Charge 5 kg zurückbehalten.</li>
+<li><strong>Sortierfehler ignorieren:</strong> Ein Posten mit 5% HDPE zerstört den Prozess. Lösung: Manuelle Sortierung verbessern, optische Sortierung prüfen.</li>
+<li><strong>Falsche Siebwechsler-Einstellung:</strong> Zu feine Siebe verstopfen bei schwankender Reinheit. Lösung: Maschenweite 200-300 µm statt 120-150 µm.</li>
+<li><strong>Keine Vakuumentgasung:</strong> Bei schwankender Restfeuchte unverzichtbar. Lösung: Entgasungszone bei 180-190°C installieren.</li>
+</ul>
+
+<p><strong>Checkliste für stabile Verarbeitung:</strong> MFI jeder Charge vor Verarbeitung messen (sollte Schwankung <0.5 haben. Bei höherer Schwankung Chargen mischen oder mit Viskositätsmodifikator anpassen). Restfeuchte unter 0.3% halten (Feuchtemessgerät vor Extruder). Sortierqualität dokumentieren (visuelle Kontrolle der Ballen vor dem Aufgeben). Temperaturprofil an MFI des Eingangsmaterials anpassen (je höher der MFI, desto niedriger die Temperatur). Siebwechsler-Maschenweite 200-300 µm für gemischte Post-Consumer Fraktionen. Vakuumentgasung bei 180-190°C obligatorisch für gewaschene Materialien. Antioxidantien (0.2%) bei gealterten Chargen. Pressdruckdifferenz überwachen – bei Schwankungen über 30 bar Grundursache prüfen.</p>
+
+<h2>10. Fazit und Handlungsempfehlungen</h2>
+<p>Chargenschwankungen bei Post-Consumer LDPE/LLDPE sind kein Zufall, sondern die logische Folge der Materialvarianz. Die sechs Hauptursachen sind schwankender LLDPE-Anteil, Restfeuchte, Verschnitt mit HDPE/PP/PA, unterschiedliche Druckfarben, unterschiedliche Alterung und schwankendes Schüttgewicht. Die Lösung ist nicht die Suche nach dem perfekten Extruder – das Problem liegt vor dem Extruder. Die wichtigste Maßnahme ist die MFI-Messung jeder Charge vor der Verarbeitung. Bei Schwankungen über 0.5 wird der MFI durch Mischen mit einer anderen Charge oder Zugabe von Viskositätsmodifikatoren (0.3-1.0%) angeglichen. Die Restfeuchte muss unter 0.3% liegen – eine Vakuumentgasung ist für gewaschene Materialien Pflicht. Die manuelle oder optische Sortierung muss HDPE, PP und PA zuverlässig entfernen. Bei stark gealterten Chargen helfen Antioxidantien und niedrigere Temperaturen. Mit diesen Maßnahmen sinken die Druckschwankungen von 50-100 bar auf 10-20 bar, und der MFI bleibt innerhalb von ±0.5 des Zielwerts.</p>
+
+<footer>© Igor Kryazhev – Technologieberatung für Kunststoffrecycling, 2026</footer>
+</div>
+
+<!-- ENGLISH -->
+<div id="lang-en" class="lang-panel">
+<h1>Post-Consumer LDPE/LLDPE Recycling – Why Die Pressure and MFI Fluctuate from Batch to Batch</h1>
+<div class="author">Author: Igor Kryazhev, Technology Consultant for Secondary Polymer Processing</div>
+
+<h2>1. Introduction</h2>
+<p>Recyclers of post-consumer LDPE/LLDPE know the problem: one batch runs stable with constant die pressure (80-100 bar) and consistent MFI. The next batch – visually identical – shows pressure spikes to 180 bar, MFI drops from 2.5 to 1.2 or rises to 4.5.</p>
+
+<h2>2. Mechanism: Why post-consumer quality varies</h2>
+<p>Post-consumer LDPE/LLDPE comes from households, commerce, and agriculture. Composition varies: films from different producers, various printing inks, residual moisture, contamination with other polymers, different UV aging. The extruder reacts to every change with pressure and MFI fluctuations.</p>
+
+<h2>3. Cause 1: Variable LLDPE content in LDPE stream</h2>
+<p>The most common cause is variable LLDPE content. LLDPE increases melt viscosity – pressure rises, MFI drops. At 500 kg/h, increasing LLDPE from 10% to 40% can raise pressure from 80 to 160 bar.</p>
+
+<h2>4. Cause 2: Residual moisture after washing</h2>
+<p>Residual moisture varies between 0.1% and 1.5%. At 1% moisture, LDPE MFI can rise from 2.0 to 3.5-4.0, pressure drops from 100 to 50 bar. Solution: Vacuum degassing at 180-190°C.</p>
+
+<h2>5. Cause 3: Contamination with HDPE, PP or PA</h2>
+<p>As little as 2-5% HDPE or PP changes viscosity and MFI dramatically. PA forms hard inclusions. Solution: Manual or optical sorting before washing.</p>
+
+<h2>6. Cause 4: Different printing inks and coatings</h2>
+<p>Some inks carbonize and clog screens (pressure rises), others migrate into the melt and act as plasticizers (MFI rises). Solution: Filtration with 150-200 µm screens, add 0.5-1.0% PPA.</p>
+
+<h2>7. Cause 5: Different aging and UV damage</h2>
+<p>Aged LDPE/LLDPE has shorter chains. Incoming MFI is often 3-5 instead of 1.5-2.5. Solution: Add 0.2-0.3% antioxidants (Irganox 1010), reduce extrusion temperature by 10-20°C.</p>
+
+<h2>8. Cause 6: Fluctuating material density and bulk density</h2>
+<p>Low bulk density feeds unevenly – extruder runs partially empty, pressure pulses. Solution: Force feeder or gravimetric doser.</p>
+
+<h2>9. Troubleshooting checklist</h2>
+<ul><li>Measure MFI of every batch before processing</li><li>Keep residual moisture below 0.3%</li><li>Remove HDPE/PP/PA through sorting</li><li>Use 200-300 µm screens for mixed fractions</li><li>Install vacuum degassing at 180-190°C</li><li>Add 0.2% antioxidants for aged material</li></ul>
+
+<h2>10. Conclusion</h2>
+<p>Batch fluctuations are not random – they result from material variance. The most important measure is measuring MFI of every batch before processing. With proper sorting, moisture control, and vacuum degassing, pressure fluctuations drop from 50-100 bar to 10-20 bar, and MFI stays within ±0.5 of target.</p>
+
+<footer>© Igor Kryazhev – Polymer Processing Technology Consulting, 2026</footer>
+</div>
+
+<!-- RUSSIAN -->
+<div id="lang-ru" class="lang-panel">
+<h1>Переработка Post-Consumer LDPE/LLDPE – почему давление в головке и ПТР скачут от партии к партии</h1>
+<div class="author">Автор: Игорь Кряжев, технолог-консультант по переработке вторичных полимеров</div>
+
+<h2>1. Введение</h2>
+<p>Переработчики пост-потребительских LDPE/LLDPE знают проблему: одна партия идёт стабильно с постоянным давлением в головке (80-100 бар) и ровным ПТР. Следующая партия – внешне идентичная – даёт скачки давления до 180 бар, ПТР падает с 2.5 до 1.2 или растёт до 4.5.</p>
+
+<h2>2. Механизм: почему пост-потребительское сырьё нестабильно</h2>
+<p>Пост-потребительские LDPE/LLDPE поступают из домохозяйств, торговли и сельского хозяйства. Состав варьируется: плёнки разных производителей, разные краски, остаточная влага, примеси других полимеров, разное УФ-старение. Экструдер реагирует на каждое изменение скачками давления и ПТР.</p>
+
+<h2>3. Причина 1: Колеблющееся содержание LLDPE в потоке LDPE</h2>
+<p>Самая частая причина – переменное содержание LLDPE. LLDPE повышает вязкость расплава – давление растёт, ПТР падает. На 500 кг/ч увеличение LLDPE с 10% до 40% может поднять давление с 80 до 160 бар.</p>
+
+<h2>4. Причина 2: Остаточная влага после мойки</h2>
+<p>Остаточная влажность колеблется от 0.1% до 1.5%. При влажности 1% ПТР LDPE может вырасти с 2.0 до 3.5-4.0, давление падает со 100 до 50 бар. Решение: вакуумная дегазация при 180-190°C.</p>
+
+<h2>5. Причина 3: Загрязнение HDPE, PP или PA</h2>
+<p>Всего 2-5% HDPE или PP меняют вязкость и ПТР. Полиамид образует твёрдые включения. Решение: ручная или оптическая сортировка перед мойкой.</p>
+
+<h2>6. Причина 4: Разные типографские краски и лаки</h2>
+<p>Одни краски коксуются и забивают сетки (давление растёт), другие мигрируют в расплав и действуют как пластификаторы (ПТР растёт). Решение: фильтрация 150-200 мкм, добавка 0.5-1.0% PPA.</p>
+
+<h2>7. Причина 5: Разное старение и УФ-повреждение</h2>
+<p>Состаренный LDPE/LLDPE имеет более короткие цепи. Входящий ПТР часто 3-5 вместо 1.5-2.5. Решение: добавка 0.2-0.3% антиоксиданта (Irganox 1010), снижение температуры экструзии на 10-20°C.</p>
+
+<h2>8. Причина 6: Колеблющаяся насыпная плотность</h2>
+<p>Низкая насыпная плотность подаётся неравномерно – экструдер работает то пустой, то переполненный, давление пульсирует. Решение: принудительный питатель или гравиметрический дозатор.</p>
+
+<h2>9. Чек-лист для стабильной работы</h2>
+<ul><li>Измерять ПТР каждой партии до переработки</li><li>Держать остаточную влажность ниже 0.3%</li><li>Удалять HDPE/PP/PA сортировкой</li><li>Использовать сетки 200-300 мкм для смешанных фракций</li><li>Установить вакуумную дегазацию при 180-190°C</li><li>Добавлять 0.2% антиоксиданта для состаренных партий</li></ul>
+
+<h2>10. Заключение</h2>
+<p>Скачки ПТР от партии к партии – не случайность, а следствие вариабельности сырья. Самая важная мера – измерение ПТР каждой партии до переработки. При правильной сортировке, контроле влажности и вакуумной дегазации колебания давления снижаются с 50-100 бар до 10-20 бар, а ПТР остаётся в пределах ±0.5 от целевого значения.</p>
+
+<footer>© Игорь Кряжев – технологическое консультирование по переработке полимеров, 2026</footer>
+</div>
+</div>
+<script>
+(function(){
+var b=document.querySelectorAll('.lang-btn'),p=document.querySelectorAll('.lang-panel');
+b.forEach(function(btn){btn.addEventListener('click',function(){
+var l=btn.getAttribute('data-lang');
+b.forEach(function(x){x.classList.remove('active');});
+btn.classList.add('active');
+p.forEach(function(panel){panel.classList.remove('active-panel');});
+document.getElementById('lang-'+l).classList.add('active-panel');
+});});
+})();
+</script>
+</body>
+</html>
