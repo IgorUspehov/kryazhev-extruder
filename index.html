@@ -849,7 +849,7 @@ function setLang(lang) {
     var el = document.querySelector(sel);
     if(el) el.innerHTML = els[sel];
   }
-  var cta = document.querySelector('.cta-btn');
+  var cta = document.querySelector('.cta-btn:not(#btn-articles)');
   if(cta) cta.innerHTML = l.btn;
   var sl = document.querySelector('.section-label');
   if(sl) sl.innerHTML = l.pain_label;
