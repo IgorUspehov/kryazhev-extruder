@@ -177,5 +177,27 @@ document.getElementById('lang-'+l).classList.add('active-panel');
 </script>
 <!-- Last updated: 2026-04-24 23:10:18 -->
 <!-- last-updated: 2026-04-25_17:21:18 -->
-<div class="kk-cta" style="background:linear-gradient(135deg,#1a2a4a,#0d1b35);border-left:4px solid #e8690a;border-radius:8px;padding:28px 32px;margin:48px auto 32px;max-width:760px;font-family:sans-serif;color:#fff;box-shadow:0 4px 24px rgba(0,0,0,.3)"><p style="margin:0 0 6px;font-size:13px;color:#e8690a;letter-spacing:1px;text-transform:uppercase">Похожая ситуация?</p><h3 style="margin:0 0 12px;font-size:22px;font-weight:700">Игорь Кряжев — консультант по переработке полимеров</h3><p style="margin:0 0 20px;font-size:15px;color:#c8d8f0;line-height:1.6">25+ лет с экструзионным оборудованием · LDPE, LLDPE, HDPE, PP · Онлайн и выезд · Ответ 24ч</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="https://wa.me/4915258400610" style="background:#25d366;color:#fff;padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px">&#128172; WhatsApp</a><a href="https://igoruspehov.github.io/polymer-consult/" style="background:#e8690a;color:#fff;padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px">→ Страница консультанта</a></div></div></body>
+<div class="kk-cta" style="background:linear-gradient(135deg,#1a2a4a,#0d1b35);border-left:4px solid #e8690a;border-radius:8px;padding:28px 32px;margin:48px auto 32px;max-width:760px;font-family:sans-serif;color:#fff;box-shadow:0 4px 24px rgba(0,0,0,.3)">
+<p id="kk-label" style="margin:0 0 6px;font-size:13px;color:#e8690a;letter-spacing:1px;text-transform:uppercase">Haben Sie ein ähnliches Problem?</p>
+<h3 id="kk-title" style="margin:0 0 12px;font-size:22px;font-weight:700">Ihor Kryazhev — Technologie-Berater für Sekundärpolymer-Recycling</h3>
+<p id="kk-desc" style="margin:0 0 20px;font-size:15px;color:#c8d8f0;line-height:1.6">25+ Jahre Erfahrung · LDPE, LLDPE, HDPE, PP · Online und vor Ort · Antwort in 24h</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<a href="https://wa.me/4915258400610" style="background:#25d366;color:#fff;padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px">&#128172; WhatsApp</a>
+<a href="https://igoruspehov.github.io/polymer-consult/" style="background:#e8690a;color:#fff;padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px" id="kk-btn">→ Zur Beratungsseite</a>
+</div>
+<script>
+var kk={
+  de:{label:"Haben Sie ein ähnliches Problem?",title:"Ihor Kryazhev — Technologie-Berater für Sekundärpolymer-Recycling",desc:"25+ Jahre Erfahrung · LDPE, LLDPE, HDPE, PP · Online und vor Ort · Antwort in 24h",btn:"→ Zur Beratungsseite"},
+  en:{label:"Facing a similar issue?",title:"Ihor Kryazhev — Polymer Recycling Consultant",desc:"25+ years with extrusion equipment · LDPE, LLDPE, HDPE, PP · Remote & on-site · 24h response",btn:"→ Consulting page"},
+  ru:{label:"Похожая ситуация?",title:"Игорь Кряжев — консультант по переработке полимеров",desc:"25+ лет с экструзионным оборудованием · LDPE, LLDPE, HDPE, PP · Онлайн и выезд · Ответ 24ч",btn:"→ Страница консультанта"}
+};
+var lang=navigator.language||'de';
+lang=lang.startsWith('ru')?'ru':lang.startsWith('en')?'en':'de';
+var l=kk[lang];
+document.getElementById('kk-label').innerHTML=l.label;
+document.getElementById('kk-title').innerHTML=l.title;
+document.getElementById('kk-desc').innerHTML=l.desc;
+document.getElementById('kk-btn').innerHTML=l.btn;
+</script>
+</div></div></body>
 </html>
