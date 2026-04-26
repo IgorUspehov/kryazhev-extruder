@@ -846,6 +846,8 @@ function setLang(lang) {
   if(fp) fp.innerHTML = l.foot;
   localStorage.setItem('lang', lang);
   setLangArt(lang);
+  var btnArt = document.getElementById('btn-articles');
+  if(btnArt) btnArt.innerHTML = lang==='en' ? '📚 Articles' : lang==='ru' ? '📚 Статьи' : '📚 Artikel';
 }
 
   // Articles section translations
