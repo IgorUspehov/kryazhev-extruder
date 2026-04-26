@@ -571,7 +571,7 @@
       </div>
     </div>
 
-    <a href="https://igoruspehov.github.io/polymer-consult/articles.html" class="cta-btn" style="background:#1a2a4a;border:2px solid #e8690a;">📚 Articles</a> <a href="https://wa.me/4915258400610" class="cta-btn">
+    <a href="https://igoruspehov.github.io/polymer-consult/articles.html" class="cta-btn" style="background:transparent;border:2px solid #f97316;margin-right:12px;" id="btn-articles">📚 Wissensbasis</a><a href="https://wa.me/4915258400610" class="cta-btn">
       💬 Написать в WhatsApp
     </a>
   </div>
@@ -927,7 +927,7 @@ function setLang(lang) {
     el = document.getElementById('art2-desc'); if(el) el.innerHTML = a.art2d;
   }
 
-  var saved = localStorage.getItem('lang') || 'de';
+  var saved = 'de';
 document.addEventListener('DOMContentLoaded', function(){ setLang(saved); });
 </script>
 <!-- Last updated: 2026-04-24 23:10:18 -->
